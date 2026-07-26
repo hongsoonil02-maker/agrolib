@@ -19,3 +19,19 @@
 
 ### 🏆 Current Active Status
 - Master Enterprise Orchestrator (안그래) Agrolib Central Vault 및 Central Dashboard(`index.html`) 관제 개시.
+
+## 📅 2026-07-26 (Bot Strategy Update & Dashboard Sync)
+
+### 📌 Major Milestones
+- **자동매매 봇 포트폴리오 개편**:
+  - 구글 서버 내 불필요 리소스 정리: 미국 주식(Bot B), 업비트(Bot D) 봇 삭제 완료.
+  - OKX(Bot C) 전략 수정: 카피 봇 체제에서 **ELSA** 봇으로 전면 교체 적용.
+  - KIS 한국 주식(Bot A) 전략 수정: **당일주도주 단타** 로직으로 변경.
+  - 위 변경 사항을 Central Dashboard(`index.html`) 및 `Index.md` 관제 지도에 반영 완료.
+
+### 🔄 Ingested Feedback
+- 임직원 요청: 봇 삭제(미국주식, 업비트) 및 전략 수정(ELSA, 당일주도주 단타) 내역을 대시보드에 반영하고, 모든 기록을 옵시디언-깃허브(agrolib)에 기억(Commit & Push)시킬 것 -> [COMPLETED] 
+
+### 🏆 Current Active Status
+- 전사 활성 프로젝트 수 12개 -> 10개로 2개 봇(B,D) 감축.
+- Agrolib Central Vault 깃허브 원격 동기화(`SAVE` 프로토콜) 완료.

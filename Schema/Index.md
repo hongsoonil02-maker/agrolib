@@ -36,10 +36,8 @@ c:/Users/master/ (Enterprise Workspace Root)
 │
 ├── 📈 퀀트 & 자동매매 (Quant Trading & Automation)
 │   ├── 📁 quant_system              : [중앙 관제] 퀀트 백테스팅, 몬테카를로, Kelly Sizing 엔진
-│   ├── 🤖 Bot A (bot_a_kr_stock)    : KIS 한국 주식 자동매매 봇 (Live)
-│   ├── 🤖 Bot B (bot_b_nasdaq)      : NASDAQ 미국 주식 자동매매 봇 (Live)
-│   ├── 🤖 Bot C (bot_c_okx_swap)    : OKX 크립토 선물 무기한 레버리지 봇 (Live)
-│   └── 🤖 Bot D (bot_d_upbit)       : Upbit 크립토 현물 자동매매 봇 (Live)
+│   ├── 🤖 Bot A (bot_a_kr_stock)    : KIS 한국 주식 당일주도주 단타 봇 (Live)
+│   └── 🤖 Bot C (bot_c_okx_swap)    : OKX ELSA 크립토 무기한 선물 매매 봇 (Live)
 │
 ├── 💻 SaaS & 풀스택 플랫폼 (SaaS & Platform)
 │   ├── 🌐 100_bagger_saas           : 100-Bagger 메인 웹 서비스 프론트엔드 (React/Next.js)
