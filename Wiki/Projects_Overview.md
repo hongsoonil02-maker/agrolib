@@ -58,11 +58,11 @@
 
 ### 📄 Monsmecta Landing Page (`monsmecta-landing`)
 - **경로**: `c:\Users\master\monsmecta-landing\`
-- **설명**: 몬스멕타(Monsmecta) 소화기 치료제 공식 랜딩페이지
+- **설명**: 몬스멕타(Monsmecta) 소화기 치료제 공식 랜딩페이지 (글로벌 다국어 번역/자동 변환 지원)
 
 ### 📄 Parvogel Landing Page (`parvogel_landing`)
 - **경로**: `c:\Users\master\parvogel_landing\`
-- **설명**: 파보겔(Parvogel) 파보바이러스 백신/치료제 공식 랜딩페이지
+- **설명**: 파보겔(Parvogel) 파보바이러스 백신/치료제 공식 랜딩페이지 (글로벌 다국어 번역/자동 변환 지원)
 
 ---
 
