@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AGROLIB Central Enterprise Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #0f172a;
+      --card-bg: rgba(30, 41, 59, 0.7);
+      --card-border: rgba(255, 255, 255, 0.1);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent-blue: #38bdf8;
+      --accent-purple: #c084fc;
+      --accent-green: #4ade80;
+      --accent-orange: #fb923c;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      min-height: 100vh;
+      background: radial-gradient(circle at top left, #1e1b4b, #0f172a, #090d16);
+      padding: 2rem;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--card-border);
+      margin-bottom: 2rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .logo-icon {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: white;
+      font-size: 1.2rem;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .status-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(74, 222, 128, 0.1);
+      border: 1px solid rgba(74, 222, 128, 0.3);
+      color: var(--accent-green);
+      padding: 0.4rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .pulse {
+      width: 8px;
+      height: 8px;
+      background-color: var(--accent-green);
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--accent-green);
+      animation: pulse-anim 2s infinite;
+    }
+
+    @keyframes pulse-anim {
+      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.7); }
+      70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(74, 222, 128, 0); }
+      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 1.5rem;
+      transition: all 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(56, 189, 248, 0.4);
+      box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.5);
+    }
+
+    .card-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .card-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 1.25rem;
+    }
+
+    .links-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .links-list a {
+      color: var(--accent-blue);
+      text-decoration: none;
+      font-size: 0.9rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.4rem 0.6rem;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.03);
+      transition: background 0.2s;
+    }
+
+    .links-list a:hover {
+      background: rgba(56, 189, 248, 0.1);
+    }
+
+    .tag {
+      font-size: 0.75rem;
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--text-muted);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .project-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      background: var(--card-bg);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--card-border);
+    }
+
+    .project-table th, .project-table td {
+      padding: 0.85rem 1.2rem;
+      text-align: left;
+      font-size: 0.9rem;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .project-table th {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .project-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--card-border);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <div class="logo-icon">A</div>
+        <div>
+          <h1>AGROLIB Enterprise Central OS</h1>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">Antigravity 16-Agent Army & Obsidian Vault Control Tower</p>
+        </div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <button onclick="shareToKakao()" style="background: #FEE500; color: #191919; border: none; padding: 0.5rem 1rem; border-radius: 20px; font-weight: 700; font-size: 0.85rem; cursor: pointer; display: flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 12px rgba(254, 229, 0, 0.3); transition: transform 0.15s ease;">
+          <span>💬 카카오톡 공유하기</span>
+        </button>
+        <div class="status-badge">
+          <div class="pulse"></div>
+          16-Agents System Active
+        </div>
+      </div>
+    </header>
+
+    <div class="grid">
+      <!-- Tutorial Banner Card -->
+      <div class="card" style="border-color: rgba(74, 222, 128, 0.4); background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(6, 78, 59, 0.3));">
+        <div class="card-title" style="color: var(--accent-green);">
+          🎬 비개발자 3분 GitHub 협업 튜토리얼
+        </div>
+        <div class="card-desc">
+          코딩 지식 없이 웹 브라우저 버튼 클릭과 한글 작성으로 안그래 군단과 소통하는 3단계 가이드입니다.
+        </div>
+        <ul class="links-list">
+          <li><a href="tutorial.html" style="background: rgba(74, 222, 128, 0.15); font-weight: 700; color: #4ade80;">▶ 비개발자 인터랙티브 튜토리얼 실행 <span class="tag">HTML</span></a></li>
+          <li><a href="Wiki/Tutorial_Video_Script.md">3분 동영상 대본 & 스토리보드 <span class="tag">MD</span></a></li>
+        </ul>
+      </div>
+
+      <!-- Quick Docs Card -->
+      <div class="card">
+        <div class="card-title" style="color: var(--accent-blue);">
+          📘 핵심 시스템 문서 (System Documents)
+        </div>
+        <div class="card-desc">
+          임직원 실무 지침서, 16개 에이전트 롤 정의 및 전사 헌장 문서를 즉시 확인하세요.
+        </div>
+        <ul class="links-list">
+          <li><a href="Wiki/Staff_Collaboration_Guide.docx">임직원 실무 협업 가이드라인 <span class="tag">DOCX</span></a></li>
+          <li><a href="Wiki/Staff_Collaboration_Guide.md">임직원 실무 협업 가이드라인 <span class="tag">MD</span></a></li>
+          <li><a href="Schema/Agent.docx">16개 에이전트 롤 정의서 <span class="tag">DOCX</span></a></li>
+          <li><a href="Schema/AGENTS_DIRECTIVE.docx">전사 에이전트 헌장 지침서 <span class="tag">DOCX</span></a></li>
+          <li><a href="Schema/Index.docx">중앙 위키 대시보드 명세 <span class="tag">DOCX</span></a></li>
+        </ul>
+      </div>
+
+      <!-- Feedback & Workspace Card -->
+      <div class="card">
+        <div class="card-title" style="color: var(--accent-purple);">
+          💬 임직원 피드백 & 관제 (Collaboration)
+        </div>
+        <div class="card-desc">
+          요청사항 등록 및 전사 12개 프로젝트의 통합 현황과 작업 일지를 조회합니다.
+        </div>
+        <ul class="links-list">
+          <li><a href="Wiki/Feedback.docx">임직원 피드백 수집 서식 <span class="tag">DOCX</span></a></li>
+          <li><a href="Wiki/Feedback.md">임직원 피드백 수집 서식 <span class="tag">MD</span></a></li>
+          <li><a href="Wiki/Projects_Overview.docx">전사 12개 프로젝트 사양서 <span class="tag">DOCX</span></a></li>
+          <li><a href="Schema/Log.docx">전사 시스템 작업 일지 <span class="tag">DOCX</span></a></li>
+          <li><a href="Raw/README.docx">불변 원본 데이터 구역 가이드 <span class="tag">DOCX</span></a></li>
+        </ul>
+      </div>
+
+      <!-- Quick Commands Card -->
+      <div class="card">
+        <div class="card-title" style="color: var(--accent-orange);">
+          ⚡ 안그래 제어 키워드 (System Commands)
+        </div>
+        <div class="card-desc">
+          16개 에이전트 파이프라인 트리거 시 사용하는 영문 고정 명령어입니다.
+        </div>
+        <ul class="links-list">
+          <li><span style="color: var(--text-main); font-weight: 600;">EXECUTE_TOURNAMENT</span> <span class="tag">토너먼트</span></li>
+          <li><span style="color: var(--text-main); font-weight: 600;">INGEST</span> <span class="tag">이슈/피드백 수집</span></li>
+          <li><span style="color: var(--text-main); font-weight: 600;">LINT</span> <span class="tag">보안/코드 검사</span></li>
+          <li><span style="color: var(--text-main); font-weight: 600;">SAVE</span> <span class="tag">5-Filter 저장 & Git Push</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem;">🏢 관제 대상 전사 12개 프로젝트 (Enterprise Projects)</h2>
+    <table class="project-table">
+      <thead>
+        <tr>
+          <th>카테고리</th>
+          <th>프로젝트명</th>
+          <th>기술 스택 / 플랫폼</th>
+          <th>상태</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>SaaS & Platform</td>
+          <td><strong>100_bagger_saas</strong></td>
+          <td>Next.js / React / TypeScript</td>
+          <td><span style="color: var(--accent-green);">● Active</span></td>
+        </tr>
+        <tr>
+          <td>SaaS & Platform</td>
+          <td><strong>100_bagger_backend</strong></td>
+          <td>Python / FastAPI / PostgreSQL</td>
+          <td><span style="color: var(--accent-green);">● Active</span></td>
+        </tr>
+        <tr>
+          <td>Quant Trading</td>
+          <td><strong>quant_system</strong></td>
+          <td>Python / Kelly Engine / Backtest</td>
+          <td><span style="color: var(--accent-green);">● Active</span></td>
+        </tr>
+        <tr>
+          <td>Trading Bot</td>
+          <td><strong>Bot A (bot_a_kr_stock)</strong></td>
+          <td>KIS 한국 주식 실시간 매매</td>
+          <td><span style="color: var(--accent-green);">● Live</span></td>
+        </tr>
+        <tr>
+          <td>Trading Bot</td>
+          <td><strong>Bot B (bot_b_nasdaq)</strong></td>
+          <td>NASDAQ 미국 주식 실시간 매매</td>
+          <td><span style="color: var(--accent-green);">● Live</span></td>
+        </tr>
+        <tr>
+          <td>Trading Bot</td>
+          <td><strong>Bot C (bot_c_okx_swap)</strong></td>
+          <td>OKX 크립토 무기한 선물 매매</td>
+          <td><span style="color: var(--accent-green);">● Live</span></td>
+        </tr>
+        <tr>
+          <td>Trading Bot</td>
+          <td><strong>Bot D (bot_d_upbit)</strong></td>
+          <td>Upbit 크립토 현물 실시간 매매</td>
+          <td><span style="color: var(--accent-green);">● Live</span></td>
+        </tr>
+        <tr>
+          <td>Bio Landing</td>
+          <td><strong>rotagal-landing</strong></td>
+          <td>로타갈 동물약품 브랜딩 랜딩</td>
+          <td><span style="color: var(--accent-green);">● Deployed</span></td>
+        </tr>
+        <tr>
+          <td>Bio Landing</td>
+          <td><strong>vetacol-landing</strong></td>
+          <td>베타콜 동물약품 브랜딩 랜딩</td>
+          <td><span style="color: var(--accent-green);">● Deployed</span></td>
+        </tr>
+        <tr>
+          <td>Bio Landing</td>
+          <td><strong>monsmecta-landing</strong></td>
+          <td>몬스멕타 치료제 브랜딩 랜딩</td>
+          <td><span style="color: var(--accent-green);">● Deployed</span></td>
+        </tr>
+        <tr>
+          <td>Bio Landing</td>
+          <td><strong>parvogel_landing</strong></td>
+          <td>파보겔 치료제 브랜딩 랜딩</td>
+          <td><span style="color: var(--accent-green);">● Deployed</span></td>
+        </tr>
+        <tr>
+          <td>Smart Livestock</td>
+          <td><strong>smart_livestock_redesign</strong></td>
+          <td>스마트 축산 리디자인 솔루션</td>
+          <td><span style="color: var(--accent-green);">● Active</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+  <!-- KakaoTalk Share Modal -->
+  <div id="kakaoModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); backdrop-filter: blur(8px); z-index: 9999; justify-content: center; align-items: center;">
+    <div style="background: #1e293b; border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; padding: 2rem; max-width: 500px; width: 90%; text-align: center; box-shadow: 0 25px 50px rgba(0,0,0,0.8);">
+      <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">💬</div>
+      <h3 style="font-size: 1.3rem; font-weight: 700; color: #FEE500; margin-bottom: 0.5rem;">카카오톡 공유 양식 준비 완료</h3>
+      <p style="font-size: 0.9rem; color: #94a3b8; margin-bottom: 1.25rem;">아래 복사 버튼을 눌러 카카오톡 단체방이나 임직원 채팅방에 그대로 붙여넣으세요!</p>
+      
+      <textarea id="kakaoShareText" readonly style="width: 100%; height: 160px; background: #0f172a; border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; color: #f8fafc; padding: 0.8rem; font-family: 'JetBrains Mono', monospace; font-size: 0.82rem; resize: none; margin-bottom: 1.25rem;"></textarea>
+
+      <div style="display: flex; gap: 0.75rem; justify-content: center;">
+        <button onclick="copyKakaoText()" style="background: #FEE500; color: #191919; border: none; padding: 0.7rem 1.4rem; border-radius: 10px; font-weight: 700; cursor: pointer;">📋 클립보드 복사하기</button>
+        <button onclick="closeKakaoModal()" style="background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.2); padding: 0.7rem 1.2rem; border-radius: 10px; font-weight: 600; cursor: pointer;">닫기</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function shareToKakao() {
+      const shareText = `[📢 AGROLIB 전사 중앙 관제 대시보드 알림]
+
+🏢 안그래 16-Agent Army & 12개 프로젝트 현황 보고
+
+▶ 전사 관제 대시보드 바로가기:
+file:///C:/Users/master/agrolib/index.html
+
+▶ 비개발자 3분 GitHub 협업 튜토리얼:
+file:///C:/Users/master/agrolib/tutorial.html
+
+📌 활성 프로젝트: SaaS(2종), 4대 자동매매 봇(A/B/C/D), 동물약품 랜딩(4종), 스마트축산
+💬 피드백 남기기: agrolib/Wiki/Feedback.md`;
+
+      document.getElementById('kakaoShareText').value = shareText;
+      document.getElementById('kakaoModal').style.display = 'flex';
+    }
+
+    function copyKakaoText() {
+      const textArea = document.getElementById('kakaoShareText');
+      textArea.select();
+      document.execCommand('copy');
+      alert('카카오톡 공유 텍스트가 클립보드에 복사되었습니다!\n카톡 대화창에 바로 붙여넣기(Ctrl+V) 하세요.');
+    }
+
+    function closeKakaoModal() {
+      document.getElementById('kakaoModal').style.display = 'none';
+    }
+  </script>
+</body>
+</html>

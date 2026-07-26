@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AGROLIB 3분 완성 비개발자 GitHub 협업 튜토리얼</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #0b0f19;
+      --card-bg: rgba(23, 32, 54, 0.75);
+      --card-border: rgba(255, 255, 255, 0.12);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent-cyan: #38bdf8;
+      --accent-purple: #c084fc;
+      --accent-green: #4ade80;
+      --accent-amber: #fbbf24;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: radial-gradient(circle at 10% 20%, #1e1b4b 0%, #0f172a 50%, #080c14 100%);
+      color: var(--text-main);
+      min-height: 100vh;
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .container {
+      max-width: 1000px;
+      width: 100%;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .brand-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.3rem;
+      box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+    }
+
+    .back-link {
+      color: var(--accent-cyan);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      border: 1px solid var(--card-border);
+      transition: all 0.2s;
+    }
+
+    .back-link:hover {
+      background: rgba(56, 189, 248, 0.15);
+      border-color: var(--accent-cyan);
+    }
+
+    /* Video Simulation Player */
+    .player-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+      margin-bottom: 2rem;
+    }
+
+    .player-header {
+      background: rgba(15, 23, 42, 0.9);
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .step-indicator {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .step-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .step-dot.active {
+      background: var(--accent-cyan);
+      box-shadow: 0 0 10px var(--accent-cyan);
+      transform: scale(1.2);
+    }
+
+    .stage-canvas {
+      min-height: 420px;
+      padding: 3rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+    }
+
+    .stage-badge {
+      display: inline-block;
+      padding: 0.35rem 0.9rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      background: rgba(56, 189, 248, 0.15);
+      color: var(--accent-cyan);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+    }
+
+    .stage-title {
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      line-height: 1.3;
+      background: linear-gradient(to right, #ffffff, #cbd5e1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .stage-desc {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 680px;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    /* Simulation Box */
+    .sim-box {
+      width: 100%;
+      max-width: 720px;
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px dashed rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-top: 1rem;
+      text-align: left;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9rem;
+    }
+
+    .sim-btn {
+      background: var(--accent-green);
+      color: #0f172a;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: transform 0.15s ease;
+    }
+
+    .sim-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(74, 222, 128, 0.4);
+    }
+
+    /* Player Controls */
+    .player-controls {
+      background: rgba(15, 23, 42, 0.95);
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--card-border);
+    }
+
+    .ctrl-btns {
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .ctrl-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--card-border);
+      color: var(--text-main);
+      padding: 0.5rem 1.2rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .ctrl-btn:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .ctrl-btn.primary {
+      background: linear-gradient(135deg, var(--accent-cyan), #0284c7);
+      border: none;
+      color: white;
+    }
+
+    .ctrl-btn.primary:hover {
+      box-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
+    }
+
+    .progress-bar {
+      height: 4px;
+      background: rgba(255, 255, 255, 0.1);
+      width: 100%;
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 25%;
+      background: linear-gradient(to right, var(--accent-cyan), var(--accent-purple));
+      transition: width 0.4s ease;
+    }
+
+    /* Grid cards for quick reference */
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .sum-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 1.25rem;
+    }
+
+    .sum-num {
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--accent-purple);
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .sum-title {
+      font-weight: 700;
+      font-size: 1.05rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .sum-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="brand-icon">🎬</div>
+        <div>
+          <h1 style="font-size: 1.35rem; font-weight: 800;">AGROLIB 3분 비개발자 GitHub 튜토리얼</h1>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">Non-Developer Interactive Visual Guide & Storyboard</p>
+        </div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <button onclick="shareToKakao()" style="background: #FEE500; color: #191919; border: none; padding: 0.5rem 1rem; border-radius: 8px; font-weight: 700; font-size: 0.85rem; cursor: pointer; display: flex; align-items: center; gap: 0.4rem;">
+          <span>💬 카톡으로 튜토리얼 공유</span>
+        </button>
+        <a href="index.html" class="back-link">
+          <span>← 대시보드로 돌아가기</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- Interactive Simulation Player -->
+    <div class="player-card">
+      <div class="player-header">
+        <div style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted);" id="stepText">
+          STEP 1 / 4
+        </div>
+        <div class="step-indicator">
+          <div class="step-dot active" id="dot0"></div>
+          <div class="step-dot" id="dot1"></div>
+          <div class="step-dot" id="dot2"></div>
+          <div class="step-dot" id="dot3"></div>
+        </div>
+      </div>
+
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+
+      <div class="stage-canvas" id="stageCanvas">
+        <!-- Dynamic JS Content rendered here -->
+      </div>
+
+      <div class="player-controls">
+        <div class="ctrl-btns">
+          <button class="ctrl-btn" id="prevBtn" onclick="changeStep(-1)">이전 (Prev)</button>
+          <button class="ctrl-btn primary" id="nextBtn" onclick="changeStep(1)">다음 (Next Step)</button>
+        </div>
+        <div style="font-size: 0.85rem; color: var(--text-muted);">
+          💡 3분 안에 비개발자도 깃허브 피드백 완료!
+        </div>
+      </div>
+    </div>
+
+    <!-- 3-Step Summary Cards -->
+    <h2 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 1rem;">📌 핵심 요약 (Quick 3 Steps)</h2>
+    <div class="summary-grid">
+      <div class="sum-card">
+        <div class="sum-num">STEP 01</div>
+        <div class="sum-title">GitHub Issue 클릭 작성</div>
+        <div class="sum-desc">상단 `Issues` 탭 ➔ `New Issue` 클릭 후 원하는 요구사항을 한글로 카톡처럼 편하게 작성합니다.</div>
+      </div>
+      <div class="sum-card">
+        <div class="sum-num">STEP 02</div>
+        <div class="sum-title">Feedback.md 연필 클릭</div>
+        <div class="sum-desc">`Wiki/Feedback.md` 파일에서 연필(Edit) 버튼을 누르고 요구사항을 적은 뒤 저장(Commit)합니다.</div>
+      </div>
+      <div class="sum-card">
+        <div class="sum-num">STEP 03</div>
+        <div class="sum-title">안그래 16-Agent 자동 처리</div>
+        <div class="sum-desc">안그래 군단이 실시간 수집(`INGEST`)하여 작업을 완료하고 보고서 댓글을 남겨드립니다.</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const stepsData = [
+      {
+        badge: "INTRO - 3분 튜토리얼",
+        title: "개발자 언어를 몰라도 100% 코웍 가능합니다!",
+        desc: "복잡한 명령어(Git, Push, PR 등)나 프로그램 설치가 전혀 필요 없습니다. 오직 웹 브라우저 마우스 클릭과 한글 글쓰기로 안그래 16-Agent 군단과 협업하세요.",
+        simHTML: `
+          <div class="sim-box" style="text-align: center;">
+            <p style="color: var(--accent-cyan); font-weight: 600; margin-bottom: 0.5rem;">🤖 안그래 16-Agent 군단 대기 완료</p>
+            <p style="color: var(--text-muted); font-size: 0.85rem;">"임직원 여러분의 한글 지시사항을 기다리고 있습니다."</p>
+          </div>
+        `
+      },
+      {
+        badge: "STEP 1 - 업무 요청",
+        title: "GitHub Issue (이슈)로 업무를 지시하세요",
+        desc: "GitHub 저장소 상단의 Issues 탭을 누르고 초록색 [New Issue] 버튼을 클릭하세요. 카카오톡처럼 한글로 원하는 내용을 적어주시면 안그래가 수집합니다.",
+        simHTML: `
+          <div class="sim-box">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+              <span style="color: var(--text-muted);">예시: 100_bagger_saas 랜딩 디자인 수정 요청</span>
+              <button class="sim-btn" onclick="alert('이슈 등록 시뮬레이션 성공! 안그래 군단이 INGEST를 시작합니다.')">Submit new issue 🚀</button>
+            </div>
+            <div style="background: rgba(255,255,255,0.05); padding: 0.75rem; border-radius: 6px; color: var(--accent-green);">
+              ✓ 이미지 드래그 앤 드롭 지원 / 한글 지시어 100% 호환
+            </div>
+          </div>
+        `
+      },
+      {
+        badge: "STEP 2 - 피드백 등록",
+        title: "Feedback.md 수집판에 남기기",
+        desc: "agrolib/Wiki/Feedback.md 웹 페이지에서 오른쪽 상단 연필(Edit) 아이콘을 눌러 피드백을 추가하고 [Commit changes]를 클릭하세요.",
+        simHTML: `
+          <div class="sim-box">
+            <p style="color: var(--accent-purple); font-weight: 600;">📝 Feedback.md 템플릿 예시</p>
+            <pre style="color: var(--text-muted); margin-top: 0.5rem; font-size: 0.8rem;">
+### 🟡 [2026-07-26] 로타갈 랜딩페이지 문구 변경
+- 작성자: 마케팅팀
+- 지시사항: 메인 헤드라인을 '스마트 동물약품'으로 수정해줘!
+            </pre>
+          </div>
+        `
+      },
+      {
+        badge: "STEP 3 - 작업 완료 확인",
+        title: "안그래 군단의 작업 보고서 확인",
+        desc: "안그래 군단이 5-Filter 검증을 완료한 후, GitHub PR 댓글 및 central index.html 대시보드에 작업 완료 상태를 자동으로 갱신합니다.",
+        simHTML: `
+          <div class="sim-box" style="text-align: center; border-color: var(--accent-green);">
+            <span style="color: var(--accent-green); font-size: 1.2rem; font-weight: 700;">● Active / Completed</span>
+            <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.4rem;">agrolib 중앙 대시보드에서 12개 프로젝트 상태를 한눈에 파악하세요!</p>
+          </div>
+        `
+      }
+    ];
+
+    let currentStep = 0;
+
+    function renderStep() {
+      const step = stepsData[currentStep];
+      document.getElementById('stepText').innerText = `STEP ${currentStep + 1} / ${stepsData.length}`;
+      document.getElementById('progressFill').style.width = `${((currentStep + 1) / stepsData.length) * 100}%`;
+
+      // Update dots
+      for (let i = 0; i < stepsData.length; i++) {
+        const dot = document.getElementById(`dot${i}`);
+        if (i === currentStep) dot.classList.add('active');
+        else dot.classList.remove('active');
+      }
+
+      // Render Stage Content
+      const canvas = document.getElementById('stageCanvas');
+      canvas.innerHTML = `
+        <div class="stage-badge">${step.badge}</div>
+        <h2 class="stage-title">${step.title}</h2>
+        <p class="stage-desc">${step.desc}</p>
+        ${step.simHTML}
+      `;
+
+      // Control buttons state
+      document.getElementById('prevBtn').disabled = (currentStep === 0);
+      if (currentStep === stepsData.length - 1) {
+        document.getElementById('nextBtn').innerText = "튜토리얼 완료 (Complete)";
+      } else {
+        document.getElementById('nextBtn').innerText = "다음 (Next Step)";
+      }
+    }
+
+    function changeStep(delta) {
+      currentStep += delta;
+      if (currentStep < 0) currentStep = 0;
+      if (currentStep >= stepsData.length) currentStep = stepsData.length - 1;
+      renderStep();
+    }
+
+    // Initialize
+    renderStep();
+  </script>
+
+  <!-- KakaoTalk Share Modal -->
+  <div id="kakaoModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); backdrop-filter: blur(8px); z-index: 9999; justify-content: center; align-items: center;">
+    <div style="background: #1e293b; border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; padding: 2rem; max-width: 500px; width: 90%; text-align: center; box-shadow: 0 25px 50px rgba(0,0,0,0.8);">
+      <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">💬</div>
+      <h3 style="font-size: 1.3rem; font-weight: 700; color: #FEE500; margin-bottom: 0.5rem;">카카오톡 튜토리얼 공유</h3>
+      <p style="font-size: 0.9rem; color: #94a3b8; margin-bottom: 1.25rem;">아래 텍스트를 복사하여 카카오톡 임직원 채팅방에 공유해보세요!</p>
+      
+      <textarea id="kakaoShareText" readonly style="width: 100%; height: 150px; background: #0f172a; border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; color: #f8fafc; padding: 0.8rem; font-family: 'JetBrains Mono', monospace; font-size: 0.82rem; resize: none; margin-bottom: 1.25rem;"></textarea>
+
+      <div style="display: flex; gap: 0.75rem; justify-content: center;">
+        <button onclick="copyKakaoText()" style="background: #FEE500; color: #191919; border: none; padding: 0.7rem 1.4rem; border-radius: 10px; font-weight: 700; cursor: pointer;">📋 클립보드 복사하기</button>
+        <button onclick="closeKakaoModal()" style="background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.2); padding: 0.7rem 1.2rem; border-radius: 10px; font-weight: 600; cursor: pointer;">닫기</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function shareToKakao() {
+      const shareText = `[🎬 AGROLIB 비개발자 3분 GitHub 협업 튜토리얼]
+
+개발자 지식 없이 브라우저 마우스 클릭과 한글 글쓰기만으로 안그래 16-Agent 군단과 협업하는 3단계 가이드!
+
+▶ 3분 비주얼 인터랙티브 튜토리얼 실행:
+file:///C:/Users/master/agrolib/tutorial.html
+
+▶ 전사 관제 대시보드:
+file:///C:/Users/master/agrolib/index.html`;
+
+      document.getElementById('kakaoShareText').value = shareText;
+      document.getElementById('kakaoModal').style.display = 'flex';
+    }
+
+    function copyKakaoText() {
+      const textArea = document.getElementById('kakaoShareText');
+      textArea.select();
+      document.execCommand('copy');
+      alert('카카오톡 공유 텍스트가 클립보드에 복사되었습니다!\n카톡 대화창에 바로 붙여넣기(Ctrl+V) 하세요.');
+    }
+
+    function closeKakaoModal() {
+      document.getElementById('kakaoModal').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
