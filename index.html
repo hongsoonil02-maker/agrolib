@@ -401,18 +401,23 @@
 
   <script>
     function shareToKakao() {
+      const isHttp = window.location.protocol.startsWith('http');
+      const baseUrl = isHttp ? window.location.href.replace(/\/index\.html.*$/, '').replace(/\/$/, '') : 'https://hongsoonil02-maker.github.io/agrolib';
+      const dashUrl = `${baseUrl}/index.html`;
+      const tutUrl = `${baseUrl}/tutorial.html`;
+
       const shareText = `[📢 AGROLIB 전사 중앙 관제 대시보드 알림]
 
 🏢 안그래 16-Agent Army & 12개 프로젝트 현황 보고
 
 ▶ 전사 관제 대시보드 바로가기:
-file:///C:/Users/master/agrolib/index.html
+${dashUrl}
 
 ▶ 비개발자 3분 GitHub 협업 튜토리얼:
-file:///C:/Users/master/agrolib/tutorial.html
+${tutUrl}
 
 📌 활성 프로젝트: SaaS(2종), 4대 자동매매 봇(A/B/C/D), 동물약품 랜딩(4종), 스마트축산
-💬 피드백 남기기: agrolib/Wiki/Feedback.md`;
+💬 피드백 남기기: https://github.com/hongsoonil02-maker/agrolib/blob/main/Wiki/Feedback.md`;
 
       document.getElementById('kakaoShareText').value = shareText;
       document.getElementById('kakaoModal').style.display = 'flex';

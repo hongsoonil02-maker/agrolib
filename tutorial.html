@@ -482,15 +482,20 @@
 
   <script>
     function shareToKakao() {
+      const isHttp = window.location.protocol.startsWith('http');
+      const baseUrl = isHttp ? window.location.href.replace(/\/tutorial\.html.*$/, '').replace(/\/$/, '') : 'https://hongsoonil02-maker.github.io/agrolib';
+      const dashUrl = `${baseUrl}/index.html`;
+      const tutUrl = `${baseUrl}/tutorial.html`;
+
       const shareText = `[🎬 AGROLIB 비개발자 3분 GitHub 협업 튜토리얼]
 
 개발자 지식 없이 브라우저 마우스 클릭과 한글 글쓰기만으로 안그래 16-Agent 군단과 협업하는 3단계 가이드!
 
 ▶ 3분 비주얼 인터랙티브 튜토리얼 실행:
-file:///C:/Users/master/agrolib/tutorial.html
+${tutUrl}
 
-▶ 전사 관제 대시보드:
-file:///C:/Users/master/agrolib/index.html`;
+▶ 전사 관제 대시보드 바로가기:
+${dashUrl}`;
 
       document.getElementById('kakaoShareText').value = shareText;
       document.getElementById('kakaoModal').style.display = 'flex';
