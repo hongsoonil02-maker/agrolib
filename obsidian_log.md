@@ -8,3 +8,5 @@
 - **자동화 스크립트 적용**: 파이썬 스크립트(`update_translations.py`)를 활용해 각 언어에 맞게 예금주명과 계좌번호 일괄 치환 적용 완료
 - **GitHub 반영**: `git commit -m "Update account numbers in all languages"` 후 `git push` 정상 완료
 - [2026-08-01] coinbot 라이브 서버 quant_system 동기화 및 3단계 진단 완료. 에러로그 0건 확인 및 master_bot_orchestrator 비동기 병렬 라우팅(병목 현상) 패치 적용.
+
+- 2026-08-01 22:42:13: 4대 전략 봇(메이저, 주식연계, 밈, 신규상장)에 Smart Volume Filter(1.2x) 및 동적 Trailing Stop 로직 통합 이식 완료 (coinbot_live/quant_system).
