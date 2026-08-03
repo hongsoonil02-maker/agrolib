@@ -10,3 +10,5 @@
 - [2026-08-01] coinbot 라이브 서버 quant_system 동기화 및 3단계 진단 완료. 에러로그 0건 확인 및 master_bot_orchestrator 비동기 병렬 라우팅(병목 현상) 패치 적용.
 
 - 2026-08-01 22:42:13: 4대 전략 봇(메이저, 주식연계, 밈, 신규상장)에 Smart Volume Filter(1.2x) 및 동적 Trailing Stop 로직 통합 이식 완료 (coinbot_live/quant_system).
+
+- [2026-08-03 20:35:12] Saved agrolib definition rule to local .agents/AGENTS.md within the vault.
