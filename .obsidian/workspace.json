@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "환영합니다!.md",
+                "file": "obsidian_log.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "환영합니다!"
+              "title": "obsidian_log"
             }
           }
         ]
@@ -201,6 +201,9 @@
   },
   "active": "98eff2840f3ac926",
   "lastOpenFiles": [
+    "ui_fixes_log.md",
+    "obsidian_log.md",
+    "환영합니다!.md",
     "Wiki/landing_pages_audit.md",
     "~$Index.docx",
     "~$환영합니다!.docx",
@@ -220,7 +223,6 @@
     "Wiki/Projects_Overview.md",
     "Index.md",
     "Schema/Index.md",
-    "Schema/Agent.md",
-    "환영합니다!.md"
+    "Schema/Agent.md"
   ]
 }
