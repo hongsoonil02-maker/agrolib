@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=1250">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MONSMECTA ORIGINAL High-Tech Label</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
@@ -14,6 +14,22 @@
         .glass-panel { background: rgba(0, 0, 0, 0.4); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); border-top: 1px solid rgba(255,255,255,0.2); border-left: 1px solid rgba(255,255,255,0.2); }
         .neon-text { color: #10b981; text-shadow: 0 0 5px #10b981, 0 0 10px #10b981; }
         .neon-border { border-color: #10b981; box-shadow: 0 0 10px #10b981 inset, 0 0 10px #10b981; }
+        #screen-scale { transform-origin: center top; transition: transform .2s ease; }
+        body.hc { background: #000 !important; }
+        body.hc #label-container { filter: contrast(1.5) saturate(1.5) brightness(0.95); }
+        #a11y-toolbar { position: fixed; bottom: 20px; right: 20px; z-index: 99999; display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
+        #a11y-toggle { width: 50px; height: 50px; border-radius: 50%; background: #2563eb; color: #fff; font-size: 24px; border: none; cursor: pointer; box-shadow: 0 4px 14px rgba(0,0,0,.3); }
+        #a11y-toggle:hover { background: #1d4ed8; }
+        #a11y-menu { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; box-shadow: 0 8px 24px rgba(0,0,0,.18); padding: 12px; display: flex; flex-direction: column; gap: 8px; width: 170px; }
+        #a11y-menu[hidden] { display: none; }
+        .a11y-title { font-size: 13px; font-weight: 700; color: #374151; border-bottom: 1px solid #e5e7eb; padding-bottom: 8px; margin-bottom: 4px; }
+        #a11y-menu button { padding: 9px 10px; font-size: 13px; font-weight: 600; border-radius: 6px; border: none; cursor: pointer; text-align: left; background: #f3f4f6; color: #374151; }
+        #a11y-menu button:hover { background: #e5e7eb; }
+        #a11y-menu button.on { background: #00513b; color: #fff; }
+        @media print {
+            #a11y-toolbar { display: none !important; }
+            #google_translate_element { display: none !important; }
+        }
         @media print {
             @page { size: 94mm 45mm; margin: 0; }
             body { -webkit-print-color-adjust: exact; print-color-adjust: exact; background: white !important; margin: 0 !important; padding: 0 !important; display: block !important; min-height: 0 !important; }
@@ -47,7 +63,15 @@
     </style>
 </head>
 <body class="bg-gray-900 flex items-center justify-center min-h-screen p-4">
-    <div id="google_translate_element" style="position:absolute; top:10px; right:10px; z-index:9999; transform:scale(0.8); transform-origin:top right;"></div>
+    <div id="google_translate_element" style="position:absolute; top:10px; right:10px; z-index:99999; transform:scale(0.8); transform-origin:top right;"></div>
+    <div id="a11y-toolbar" role="toolbar" aria-label="접근성 설정">
+        <div id="a11y-menu" hidden>
+            <div class="a11y-title">접근성 설정</div>
+            <button id="a11y-contrast" aria-pressed="false">고대비 켜기</button>
+            <button id="a11y-text" aria-pressed="false">글씨 확대</button>
+        </div>
+        <button id="a11y-toggle" aria-expanded="false" aria-controls="a11y-menu" aria-label="접근성 메뉴 열기" title="접근성 설정">♿</button>
+    </div>
     <div class="scale-[0.5] origin-center" id="screen-scale">
         <div id="print-box">
         <div id="label-container" class="cyber-bg text-gray-100 w-[2350px] h-[1125px] shrink-0 rounded-[40px] overflow-hidden border-[8px] border-[#047857] relative flex flex-col">
@@ -249,6 +273,53 @@
     }
   </script>
   <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <script type="text/javascript">
+    (function () {
+      var toolbar = document.getElementById('a11y-toolbar');
+      var toggle = document.getElementById('a11y-toggle');
+      var menu = document.getElementById('a11y-menu');
+      var cBtn = document.getElementById('a11y-contrast');
+      var tBtn = document.getElementById('a11y-text');
+      var screen = document.getElementById('screen-scale');
+
+      function setContrast(on) {
+        document.body.classList.toggle('hc', on);
+        cBtn.classList.toggle('on', on);
+        cBtn.setAttribute('aria-pressed', on ? 'true' : 'false');
+        cBtn.textContent = on ? '고대비 끄기' : '고대비 켜기';
+        try { localStorage.setItem('label-hc', on ? '1' : '0'); } catch (e) {}
+      }
+      function setText(on) {
+        document.body.classList.toggle('lt', on);
+        tBtn.classList.toggle('on', on);
+        tBtn.setAttribute('aria-pressed', on ? 'true' : 'false');
+        tBtn.textContent = on ? '글씨 크기 원상복구' : '글씨 확대';
+        try { localStorage.setItem('label-lt', on ? '1' : '0'); } catch (e) {}
+        fitScale();
+      }
+      function fitScale() {
+        if (!screen) return;
+        var pad = 32;
+        var w = window.innerWidth - pad;
+        var s = Math.min(w / 2400, 0.5);
+        if (document.body.classList.contains('lt')) s *= 1.15;
+        screen.style.transform = 'scale(' + s + ')';
+      }
+      toggle.addEventListener('click', function () {
+        var open = menu.hasAttribute('hidden');
+        menu.hidden = !open;
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      cBtn.addEventListener('click', function () { setContrast(!document.body.classList.contains('hc')); });
+      tBtn.addEventListener('click', function () { setText(!document.body.classList.contains('lt')); });
+      window.addEventListener('resize', fitScale);
+      try {
+        setContrast(localStorage.getItem('label-hc') === '1');
+        setText(localStorage.getItem('label-lt') === '1');
+      } catch (e) {}
+      fitScale();
+    })();
+  </script>
 </body>
 </html>
 
