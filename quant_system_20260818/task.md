@@ -1,0 +1,5 @@
+- `[x]` Update `strategy_common.py` to support `PORTFOLIO_WEIGHT` and `PYRAMID_RATIO`
+- `[x]` Update `okx_venture_strategy.py` for weight=1.5, stop=-0.15, pyramid=0.50
+- `[x]` Update `okx_major_strategy.py` for weight=0.5, stop=-0.30, pyramid=0.35
+- `[x]` Restart bot services
+- `[x]` Update walkthrough.md
