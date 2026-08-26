@@ -121,29 +121,14 @@ class WebhookPayload:
     @classmethod
     def from_json(cls, json_str: str) -> 'WebhookPayload':
         data = json.loads(json_str)
-        # 키를 대소문자 구분 없이 처리하기 위해 소문자로 변환 (TradingView 등에서 "Action"으로 보낼 때 대비)
-        data_lower = {k.lower(): v for k, v in data.items()}
-        
         valid_fields = {f.name for f in fields(cls)}
-        filtered_data = {k: v for k, v in data_lower.items() if k in valid_fields}
-        
+        filtered_data = {k: v for k, v in data.items() if k in valid_fields}
         if "action" not in filtered_data:
-            # [Fix] Master 라우팅 시 action 누락 방어: side만 있으면 EXEC로 간주
-            if "side" in filtered_data:
-                filtered_data["action"] = ActionType.EXEC.value
-            else:
-                raise ValueError("WebhookPayload: 'action' 또는 'side' 필드 누락 (JSON 형식을 확인하세요)")
-        
+            raise ValueError("WebhookPayload: 'action' 필드 누락")
         if "side" not in filtered_data:
-            # [Fix] action 필드에 BUY/SELL 등이 들어온 경우 (사용자 실수 방어)
-            if str(filtered_data["action"]).upper() in [s.value for s in SideType]:
-                filtered_data["side"] = str(filtered_data["action"]).upper()
-                filtered_data["action"] = ActionType.EXEC.value
-            else:
-                raise ValueError("WebhookPayload: 'side' 필드 누락")
-                
-        filtered_data['action'] = ActionType(str(filtered_data['action']).upper())
-        filtered_data['side']   = SideType(str(filtered_data['side']).upper())
+            raise ValueError("WebhookPayload: 'side' 필드 누락")
+        filtered_data['action'] = ActionType(filtered_data['action'])
+        filtered_data['side']   = SideType(filtered_data['side'])
         return cls(**filtered_data)
 
 
