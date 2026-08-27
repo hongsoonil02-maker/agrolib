@@ -7,25 +7,20 @@ okx_venture_strategy.py — OKX Crypto Auto Trading Engine (VENTURE/MEME)
 """
 import asyncio
 import sys
-import os
 from strategy_common import BaseStrategyBrain
 
 class OKXVentureStrategyBrain(BaseStrategyBrain):
     STRATEGY_NAME = "OKX_Venture"
     LOG_FILE = "okx_venture_strategy.log"
     LOGGER_NAME = "OKX_Venture_Strategy"
-    STRATEGY_LEVERAGE = int(os.getenv("OKX_VENTURE_LEVERAGE", "5"))
     
     # [포트폴리오 & 리스크 튜닝]
     PORTFOLIO_WEIGHT = 1.5       # 자본 집중 배분
-    HARD_STOP_LOSS_PCT = -0.15   # 꼬리 위험 방어 (15% 컷)
+    HARD_STOP_LOSS_PCT = -0.10   # 꼬리 위험 방어 (기존 -15% -> -10% 타이트하게 조정)
     PYRAMID_RATIO = 0.50         # 추세 승자 적극 불타기
     
     STOCK_KEYWORDS = []
-    BLACKLIST = ['KR200', 'SKHYNIX', 'MU', 'SHAZ', 'ISRG', 'ROBO', 'RAM', 'DRAM', 'GME',
-                 'GPS', 'SNXX', 'POL',  # GPS(-64.7%), SNXX(-38.3%), POL(-21.6%) 반복 손실 차단
-                 'LIT', 'CHIP', 'BOME', 'FIL',  # [8/26 백테스트] 90일 누적 출혈 상위 알트 차단
-                 'CAP']  # [8/26] 5일간 48회 매수 반복 손실 — 무한 재진입 차단
+    BLACKLIST = ['KR200', 'SKHYNIX', 'MU', 'SHAZ', 'ISRG', 'ROBO', 'RAM', 'DRAM', 'GME']
     # 주식/상품 토큰 전부 제외 (주식 전용 봇과 중복 거래 방지)
     MAJORS_AND_STOCKS = ['BTC', 'ETH', 'SOL', 'XRP', 'ADA', 'AVAX', 'LINK', 'DOT', 'BNB', 'TRX',
                          'TSLA', 'NVDA', 'AAPL', 'AMZN', 'MSFT', 'META', 'GOOG', 'GOOGL', 'COIN',
