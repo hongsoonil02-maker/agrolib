@@ -53,10 +53,7 @@ def main():
     for r in trades:
         key = (r["symbol"], pos_side_of(r))
         p = pos[key]
-        px = float(r["price"])
-        # Use contract_size to convert amount (contracts) to actual coin quantity
-        c_size = float(r.get("contract_size", 1.0))
-        amt = float(r["amount"]) * c_size
+        px, amt = float(r["price"]), float(r["amount"])
         is_open = r["side"] in ("BUY", "SELL")
 
         if is_open:

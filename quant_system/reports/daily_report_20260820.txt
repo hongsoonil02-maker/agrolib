@@ -1,8 +1,8 @@
 📊 [Bot Daily Auto-Tuning Report]
 =========================
 📦 Lookback: 30d | Trades: 0
-📈 Market Regime: Normal Volatility
-🔹 BTC 24h Avg Hourly Volatility: 0.79%
+📈 Market Regime: Low Volatility (Tighter Stops)
+🔹 BTC 24h Avg Hourly Volatility: 0.33%
 
 📌 [Market Summary]
 OKX  | N=0 | WR=0.0% | Avg=+0.000% | Sum=+0.00%
@@ -14,6 +14,6 @@ None (Crypto runs 24/7)
 None
 
 ⚙️ [Adjusted Params]
-OKX: Pos 5.0%, TS 2.0%, SL 5.0%, ORB 6 candles, EB 0.04%, MOM 0.03%, RNG 0.60%
+OKX: Pos 18.0%, TS 1.5%, SL 3.0%, ORB 4 candles, EB 0.04%, MOM 0.03%, RNG 0.60%
 =========================
 ✅ 파라미터 자동 반영 완료.
