@@ -16,6 +16,7 @@ from utils_telegram import send_telegram_alert
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 LOG_FILE = os.path.join(BASE_DIR, "sizing_trade_log.csv")
+TRADES_JSONL = os.path.join(BASE_DIR, "state", "trades.jsonl")  # [Fix] 실거래 데이터 원본 파일
 CONFIG_FILE = os.path.join(BASE_DIR, "auto_tune_config.json")
 REPORT_DIR = os.path.join(BASE_DIR, "reports")
 KST = ZoneInfo("Asia/Seoul")
@@ -70,36 +71,105 @@ def _apply_regime_tuning(okx_p: dict, volatility_pct: float):
 
     return okx_p, regime
 
-def analyze_trades(lookback_days: int = 30):
-    if not os.path.exists(LOG_FILE):
-        return {
-            "bad_symbols": {"OKX": []},
-            "summary": {},
-            "lookback_days": lookback_days,
-            "trade_count": 0,
-        }
+def _load_trades_jsonl(lookback_days: int):
+    """[Fix] state/trades.jsonl 실거래 데이터를 읽어서 청산(CLOSE 포지션)만 반환.
+    [Fix #2] DCA 물타기 평균가: 마지막 매수가 대신 가중평균진입가(WAAP) 추적.
+    """
+    if not os.path.exists(TRADES_JSONL):
+        return []
+    cutoff_ts = (datetime.now() - timedelta(days=lookback_days)).timestamp()
+    # sym -> {'qty': float, 'total_cost': float}  가중평균 진입가 추적용
+    sym_pos = {}
+    rows = []
+    try:
+        with open(TRADES_JSONL, encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if not line:
+                    continue
+                try:
+                    t = json.loads(line)
+                except Exception:
+                    continue
+                ts = t.get('ts', 0)
+                if ts > 1e10:
+                    ts = ts / 1000
+                if ts < cutoff_ts:
+                    continue
+                sym = t.get('symbol', '')
+                side = (t.get('side') or '').upper()
+                price = t.get('price') or 0
+                amount = float(t.get('amount') or 0)
+                if not price:
+                    continue
+                price = float(price)
 
+                if 'BUY' in side:
+                    # [Fix] DCA 가중평균: 기존 qty × 기존 avg + 신규 qty × 신규 px
+                    pos = sym_pos.get(sym, {'qty': 0.0, 'total_cost': 0.0})
+                    new_qty = pos['qty'] + amount
+                    new_cost = pos['total_cost'] + price * amount
+                    sym_pos[sym] = {'qty': new_qty, 'total_cost': new_cost}
+
+                elif 'CLOSE' in side or 'SELL' in side:
+                    pos = sym_pos.get(sym)
+                    if pos and pos['qty'] > 0 and pos['total_cost'] > 0:
+                        avg_entry = pos['total_cost'] / pos['qty']
+                        pnl_pct = ((price - avg_entry) / avg_entry * 100) if avg_entry else 0.0
+                        # 청산 수량 차감 (부분 청산 지원)
+                        close_qty = amount if amount > 0 else pos['qty']
+                        remaining = max(0.0, pos['qty'] - close_qty)
+                        if remaining > 1e-9:
+                            sym_pos[sym] = {
+                                'qty': remaining,
+                                'total_cost': avg_entry * remaining,
+                            }
+                        else:
+                            sym_pos[sym] = {'qty': 0.0, 'total_cost': 0.0}
+                    else:
+                        pnl_pct = 0.0
+                    rows.append({
+                        'symbol': sym,
+                        'market': 'OKX',
+                        'side': side,
+                        'pnl': pnl_pct,
+                        'ts': ts,
+                    })
+    except Exception as e:
+        print(f"[daily_analyzer] trades.jsonl 로드 오류: {e}")
+    return rows
+
+
+def analyze_trades(lookback_days: int = 30):
     trades = []
-    cutoff = datetime.now(KST) - timedelta(days=lookback_days)
-    with open(LOG_FILE, newline="", encoding="utf-8") as f:
-        reader = csv.DictReader(f)
-        for row in reader:
-            try:
-                ts = datetime.fromisoformat(row["timestamp"])
-                if ts.tzinfo is None:
-                    ts = ts.replace(tzinfo=KST)
-                if ts.astimezone(KST) < cutoff:
+
+    # 1) sizing_trade_log.csv (원래 소스)
+    if os.path.exists(LOG_FILE):
+        cutoff = datetime.now(KST) - timedelta(days=lookback_days)
+        with open(LOG_FILE, newline="", encoding="utf-8") as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                try:
+                    ts = datetime.fromisoformat(row["timestamp"])
+                    if ts.tzinfo is None:
+                        ts = ts.replace(tzinfo=KST)
+                    if ts.astimezone(KST) < cutoff:
+                        continue
+                    row["ts"] = ts
+                    row["pnl"] = float(row["pnl_pct"])
+                    side = (row.get("side") or "").upper()
+                    if side in {"BUY", "SELL"} and row["pnl"] == 0:
+                        continue
+                    if row.get("market", "").upper() == "UPBIT":
+                        continue
+                    trades.append(row)
+                except Exception:
                     continue
-                row["ts"] = ts
-                row["pnl"] = float(row["pnl_pct"])
-                side = (row.get("side") or "").upper()
-                if side in {"BUY", "SELL"} and row["pnl"] == 0:
-                    continue
-                if row.get("market", "").upper() == "UPBIT":
-                    continue
-                trades.append(row)
-            except Exception:
-                continue
+
+    # 2) [Fix] state/trades.jsonl (실거래 원본)
+    jsonl_trades = _load_trades_jsonl(lookback_days)
+    trades.extend(jsonl_trades)
+    print(f"[daily_analyzer] CSV={len(trades)-len(jsonl_trades)}건, JSONL={len(jsonl_trades)}건 합산={len(trades)}건")
 
     if not trades:
         return {

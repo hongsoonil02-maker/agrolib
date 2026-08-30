@@ -1,11 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-run_scaling_backtest.py — 자산 규모별 수익률 변화 검증
-19K → 1.9M → 19M → 190M → 1.9B 스케일에서 슬리피지·유동성 한계 반영
-
-슬리피지 모델: 주문규모 / 평균 15분 거래량 비율에 비례하여 체결가 불리하게 이동.
-수용 한도: 심볼별 (24h 거래량 × 허용비율) → 초과 분은 포기.
+run_copy_trading_backtest.py — 카피트레이딩 팔로워 증가에 따른 수익률 변화
+리드 자본 19K 고정, 팔로워 자축 0x~1000x 변화.
+리드 체결가 악화 = 리드 주문 슬리피지 + 팔로워 주문의 시장 충격 추가.
 """
 import asyncio
 from datetime import datetime, timezone
@@ -18,6 +16,7 @@ FEE_RATE = 0.0005
 MAX_POS = 15
 WEIGHT = 1.5
 NEW_RATIO = 0.50
+INITIAL_EQUITY = 19000.0
 CHOP_START = datetime(2026, 8, 21, 14, 0, tzinfo=timezone.utc).timestamp() * 1000
 
 SYMBOLS = [
@@ -28,9 +27,7 @@ SYMBOLS = [
     "LIT/USDT:USDT", "FIL/USDT:USDT", "HYPE/USDT:USDT", "BOME/USDT:USDT",
 ]
 
-# 슬리피지: (order_size / avg_volume_15m) 비율 → 0.01(1%)당 0.05% 슬리피지
-SLIPPAGE_PER_RATIO = 0.0005  # 거래량 대비 1% 주문 시 0.05% 슬리피지
-# 심볼별 수용 한도: 24h 거대비 최대 3%까지
+SLIPPAGE_PER_RATIO = 0.0005
 VOLUME_LIMIT_RATIO = 0.03
 
 
@@ -76,29 +73,22 @@ async def fetch_all(ex, sym, tf, since_ms):
     return df.sort_values('t').reset_index(drop=True)
 
 
-def simulate_scaled(data, initial_equity, slippage_enabled, volume_cap_enabled):
+def simulate_copy(data, copy_multiplier):
     """
-    slippage_enabled: 주문규모/거래량 비례 슬리피지 반영
-    volume_cap_enabled: 심볼별 24h 거래량 대비 VOLUME_LIMIT_RATIO 이상 포지션 불가
+    copy_multiplier: 팔로우 자축 / 리드 자축 비율 (0=팔로워없음, 10=10배, 100=100배)
+    리드 체결 슬리피지 = 리드 주문 + 팔로워 주문이 같은 호가창을 친 누적 충격.
     """
-    cash = initial_equity
+    cash = INITIAL_EQUITY
     positions = {}
-    trades = []
-    fees = 0.0
-    slippage_cost = 0.0
-
-    # 심볼별 평균 15분 거래량 (관용 한도 계산용)
-    avg_vol_15m = {}
-    for sym, df in data.items():
-        avg_vol_15m[sym] = df['v'].mean() if len(df) > 0 else 1.0
+    avg_vol_15m = {sym: df['v'].mean() for sym, df in data.items()}
 
     all_ts = sorted(set().union(*[set(df['t']) for df in data.values()]))
     warmup = 60
+    total_slippage = 0.0
 
     for idx, t in enumerate(all_ts):
         if idx < warmup:
             continue
-
         for sym, df in data.items():
             rows = df.index[df['t'] == t]
             if len(rows) == 0:
@@ -110,7 +100,6 @@ def simulate_scaled(data, initial_equity, slippage_enabled, volume_cap_enabled):
             px = float(curr['c'])
 
             plist = positions.get(sym, [])
-            # 청산
             remaining = []
             for p in plist:
                 p['last_px'] = px
@@ -127,8 +116,6 @@ def simulate_scaled(data, initial_equity, slippage_enabled, volume_cap_enabled):
                     gross = p['margin'] * pnl_pct
                     fee = p['margin'] * LEVERAGE * FEE_RATE
                     cash += p['margin'] + gross - fee
-                    fees += fee
-                    trades.append({'pnl': gross - fee})
                 else:
                     remaining.append(p)
             positions[sym] = remaining
@@ -136,53 +123,41 @@ def simulate_scaled(data, initial_equity, slippage_enabled, volume_cap_enabled):
             if remaining:
                 continue
 
-            # 진입
             long_sig = curr['st_dir'] == 1 and prev['stoch_k'] < 20 and curr['stoch_k'] >= 20
             if not long_sig:
                 continue
-
             equity = sum(p['margin'] * (1 + (p['last_px'] - p['entry']) / p['entry'] * LEVERAGE * p['dir']) for s, pl in positions.items() for p in pl) + cash
             margin = (equity / MAX_POS) * WEIGHT * NEW_RATIO
-
             if margin < 100 or margin > cash:
                 continue
 
-            # 수용 한도 체크 (volume_cap)
-            if volume_cap_enabled:
-                max_notional = avg_vol_15m.get(sym, 1.0) * 96 * VOLUME_LIMIT_RATIO * px  # 96 = 하루 15분 캔들 수
-                if margin * LEVERAGE > max_notional:
-                    margin = max_notional / LEVERAGE
-                    if margin < 100:
-                        continue
+            # 수용 한도 (리드 자축 기준)
+            max_notional = avg_vol_15m.get(sym, 1.0) * 96 * VOLUME_LIMIT_RATIO * px
+            if margin * LEVERAGE > max_notional:
+                margin = max_notional / LEVERAGE
+                if margin < 100:
+                    continue
 
-            # 슬리피지 계산
-            entry_px = px
-            if slippage_enabled:
-                order_ratio = (margin * LEVERAGE) / (avg_vol_15m.get(sym, 1.0) * px) if avg_vol_15m.get(sym, 1.0) > 0 else 0
-                slip = min(order_ratio * SLIPPAGE_PER_RATIO, 0.01)  # 최대 1% 슬리피지
-                slippage_cost += margin * LEVERAGE * slip
-                entry_px = px * (1 + slip)  # 슬리피지 반영 진입가
+            # 슬리피지 = 리드 주문 + 팔로워 주문이 같은 방향으로 부림
+            # 팔로워 주문은 리드 주문의 copy_multiplier 배 → 시장 충격 누적
+            lead_ratio = (margin * LEVERAGE) / (avg_vol_15m.get(sym, 1.0) * px) if avg_vol_15m.get(sym, 1.0) > 0 else 0
+            total_ratio = lead_ratio * (1 + copy_multiplier)  # 리드 + 팔로워 누적
+            slip = min(total_ratio * SLIPPAGE_PER_RATIO, 0.02)  # 최대 2% 슬리피지
+            total_slippage += margin * LEVERAGE * slip
 
+            entry_px = px * (1 + slip)  # 슬리피지만큼 불리한 가격에 진입
             fee = margin * LEVERAGE * FEE_RATE
             cash -= margin + fee
-            fees += fee
             positions[sym] = [{'entry': entry_px, 'margin': margin, 'dir': 1, 'extreme': 0.0, 'last_px': entry_px}]
 
     equity = cash
     for sym, plist in positions.items():
         for p in plist:
             pnl_pct = (p['last_px'] - p['entry']) / p['entry'] * LEVERAGE * p['dir']
-            fee = p['margin'] * LEVERAGE * FEE_RATE
-            equity += p['margin'] * (1 + pnl_pct) - fee
-            fees += fee
-            trades.append({'pnl': p['margin'] * pnl_pct - fee})
+            equity += p['margin'] * (1 + pnl_pct) - p['margin'] * LEVERAGE * FEE_RATE
 
-    pnl = equity - initial_equity
-    roi_pct = pnl / initial_equity * 100
-    return {
-        'pnl': pnl, 'roi_pct': roi_pct, 'fees': fees, 'slippage': slippage_cost,
-        'equity': equity, 'trades': len(trades),
-    }
+    roi_pct = (equity - INITIAL_EQUITY) / INITIAL_EQUITY * 100
+    return {'equity': equity, 'roi_pct': roi_pct, 'slippage': total_slippage}
 
 
 async def main():
@@ -203,26 +178,21 @@ async def main():
                 pass
         print(f"{len(data)}개 심볼 수집\n")
 
-        scales = [
-            ("19K  (현재)", 19000),
-            ("190K (10x)", 190000),
-            ("1.9M (100x)", 1900000),
-            ("19M  (1,000x)", 19000000),
-            ("190M (10,000x)", 190000000),
+        scenarios = [
+            ("팔로워 0명 (리드만)", 0),
+            ("팔로워 소수 (1x)", 1),
+            ("팔로워 10명 (10x)", 10),
+            ("팔로워 50명 (50x)", 50),
+            ("팔로워 100명 (100x)", 100),
+            ("팔로워 500명 (500x)", 500),
+            ("팔로워 1000명 (1000x)", 1000),
         ]
 
-        configs = [
-            ("슬리피지·한도 없음 (이상)", False, False),
-            ("슬리피지만 반영", True, False),
-            ("슬리피지+수용한도 반영 (현실)", True, True),
-        ]
-        for cname, slip, vcap in configs:
-            print(f"=== {cname} ===")
-            print(f"{'규모':20s} {'손익':>14s} {'ROI%':>8s} {'수수료':>10s} {'슬리피지':>10s} {'거래':>4s}")
-            for sname, eq in scales:
-                r = simulate_scaled(data, eq, slip, vcap)
-                print(f"  {sname:18s} {r['pnl']:>+14.0f} {r['roi_pct']:>7.1f}% {r['fees']:>10.0f} {r['slippage']:>10.0f} {r['trades']:4d}")
-            print()
+        print(f"{'시나리오':24s} {'리드 자산':>12s} {'카피 총자축':>12s} {'ROI%':>8s} {'슬리피지':>10s}")
+        for name, mult in scenarios:
+            r = simulate_copy(data, mult)
+            copy_aum = INITIAL_EQUITY * mult
+            print(f"  {name:22s} 19,000{'':>5s} {copy_aum:>12,} {r['roi_pct']:>+7.1f}% {r['slippage']:>10.0f}")
     finally:
         await ex.close()
 
