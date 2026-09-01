@@ -33,7 +33,6 @@ export default function StickyBottomCTA({ onOpenOrder }) {
             aria-label={t('stickyCta.buyBtn', '쿠팡 로켓배송 구매')}
             className="relative flex-1 md:flex-initial px-4 py-2.5 bg-rose-600 hover:bg-rose-700 text-white font-extrabold text-xs sm:text-sm rounded-xl shadow-lg transition-all flex items-center justify-center gap-1.5 focus:outline-none focus:ring-2 focus:ring-rose-400"
           >
-            <span className="absolute -top-2 -right-2 px-1.5 py-0.5 bg-amber-400 text-amber-900 text-[9px] font-black rounded-full shadow">{t('store.comingSoon', '입점 예정')}</span>
             <span>{t('stickyCta.buyBtn', '🚀 쿠팡 로켓배송 구매')}</span>
           </a>
           

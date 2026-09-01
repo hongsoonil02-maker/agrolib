@@ -1,6 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
+// 상담 API 프록시 주소 — Agrokorea 공용 Cloudflare Worker (4개 제품 공유)
+const CHAT_API_URL = import.meta.env.VITE_CHAT_API_URL
+    || 'https://vetacol.hongsoonil02.workers.dev/api/chat';
+const CHAT_TIMEOUT_MS = 15000;
+
 export default function Chatbot() {
     const { t, i18n } = useTranslation();
     const [isOpen, setIsOpen] = useState(false);
@@ -13,11 +18,11 @@ export default function Chatbot() {
 
     useEffect(() => {
         setMessages(prev => {
-            const newMsgs = [...prev];
-            if (newMsgs.length > 0 && newMsgs[0].role === 'assistant') {
-                newMsgs[0].content = t('chat.greeting');
+            if (prev.length > 0 && prev[0].role === 'assistant') {
+                // 불변성 유지: 첫 인사말 객체를 새로 생성해 교체
+                return [{ ...prev[0], content: t('chat.greeting') }, ...prev.slice(1)];
             }
-            return newMsgs;
+            return prev;
         });
     }, [i18n.language, t]);
 
@@ -31,6 +36,13 @@ export default function Chatbot() {
 
     const toggleChat = () => setIsOpen(!isOpen);
 
+    // 푸터 '자주 묻는 질문' 등 외부에서 챗봇 열기 요청 수신
+    useEffect(() => {
+        const openChat = () => setIsOpen(true);
+        window.addEventListener('parvogel:open-chat', openChat);
+        return () => window.removeEventListener('parvogel:open-chat', openChat);
+    }, []);
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (!input.trim() || isLoading) return;
@@ -40,49 +52,78 @@ export default function Chatbot() {
         setMessages(prev => [...prev, { role: 'user', content: userMessage }]);
         setIsLoading(true);
 
+        const controller = new AbortController();
+        const timer = setTimeout(() => controller.abort(), CHAT_TIMEOUT_MS);
+
         try {
-            // 100_bagger_saas API proxy 호출
-            const response = await fetch('https://100baggersaas.vercel.app/api/parvogel-chat', {
+            // Agrokorea 공용 챗봇 프록시 호출
+            const response = await fetch(CHAT_API_URL, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    messages: [...messages, { role: 'user', content: userMessage }].map(m => ({ role: m.role, content: m.content })),
+                    product: 'parvogel',
+                    message: userMessage,
                     language: i18n.language
                 }),
+                signal: controller.signal,
             });
 
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
 
+            // 응답이 JSON이 아니거나(예: SPA HTML fallback) reply가 비어 있으면 에러로 처리
+            const contentType = response.headers.get('content-type') || '';
+            if (!contentType.includes('application/json')) {
+                throw new Error('Unexpected non-JSON response');
+            }
             const data = await response.json();
+            if (!data || typeof data.reply !== 'string' || !data.reply.trim()) {
+                throw new Error('Empty reply');
+            }
             setMessages(prev => [...prev, { role: 'assistant', content: data.reply }]);
         } catch (error) {
             console.error('Chat error:', error);
             setMessages(prev => [...prev, { role: 'assistant', content: t('chat.error') }]);
         } finally {
+            clearTimeout(timer);
             setIsLoading(false);
         }
     };
 
+    // ESC 키 누를 때 열려있는 챗봇 창 닫기
+    useEffect(() => {
+        const handleKeyDown = (e) => {
+            if (e.key === 'Escape' && isOpen) {
+                setIsOpen(false);
+            }
+        };
+        window.addEventListener('keydown', handleKeyDown);
+        return () => window.removeEventListener('keydown', handleKeyDown);
+    }, [isOpen]);
+
     return (
-        <div className="fixed bottom-24 right-4 sm:bottom-28 sm:right-6 z-50">
-            {/* 챗봇 토글 버튼 */}
+        <div className="fixed bottom-[calc(5.2rem+env(safe-area-inset-bottom,0px))] end-3 sm:end-6 z-[80] flex flex-col items-end">
+            {/* 챗봇 토글 버튼 (56px 원형, WCAG 48px 이상 터치 타겟, z-[80] 전역 항상 노출) */}
             <button
                 onClick={toggleChat}
-                className={`${isOpen ? 'hidden' : 'flex'} items-center justify-center w-16 h-16 bg-primary-600 text-white rounded-full shadow-2xl hover:scale-105 transition-transform duration-300 focus:outline-none`}
-                aria-label="Open AI Chat"
+                className={`${isOpen ? 'hidden' : 'flex'} items-center justify-center w-14 h-14 min-w-[48px] min-h-[48px] bg-primary-600 hover:bg-primary-700 active:bg-primary-800 text-white rounded-full shadow-2xl border-2 border-primary-300/90 focus:outline-none focus-visible:ring-4 focus-visible:ring-primary-400/50 transition-all hover:scale-110 active:scale-95 group cursor-pointer`}
+                aria-label={t('chat.openButton', 'AI 맞춤 상담 챗봇 열기')}
+                aria-expanded={isOpen}
+                aria-haspopup="dialog"
             >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7 transition-transform group-hover:scale-105" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
                 </svg>
             </button>
 
             {/* 챗봇 창 */}
             <div
-                className={`${isOpen ? 'flex' : 'hidden'} flex-col w-[350px] sm:w-[400px] h-[550px] max-h-[80vh] bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden transition-all duration-300 origin-bottom-right`}
+                role="dialog"
+                aria-label={t('chat.title', '파보겔 AI 맞춤 상담')}
+                className={`${isOpen ? 'flex' : 'hidden'} flex-col w-[92vw] sm:w-[400px] h-[550px] max-h-[82vh] bg-white rounded-3xl shadow-2xl border border-slate-300/80 overflow-hidden transition-all duration-300 origin-bottom-right z-[85] mb-2`}
             >
                 {/* 헤더 */}
                 <div className="flex items-center justify-between px-4 py-3 bg-primary-600 text-white">

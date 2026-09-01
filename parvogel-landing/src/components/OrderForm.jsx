@@ -1,5 +1,6 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
+import { getStoreUrl } from '../config/storeLinks'
 
 // 채널별 할인율 (소비자 정가 대비). 실제 공급 정책에 맞게 조정하세요.
 const PRICING = {
@@ -47,7 +48,43 @@ const OrderForm = ({ formData, onChange, setFormData, onSubmit, isSubmitting, pr
                 </div>
             </div>
 
-            {/* 채널별 가격 안내 */}
+            {/* 채널별 가격 안내 및 소비자 즉시 구매 패스트트랙 */}
+            {formData.requestType === 'consumer' && (
+                <div className="p-4 rounded-2xl bg-gradient-to-r from-emerald-50 via-blue-50 to-emerald-50 border border-emerald-300 shadow-sm text-start">
+                    <div className="flex items-center justify-between gap-2 mb-1.5 flex-wrap">
+                        <span className="text-xs font-black text-emerald-900 flex items-center gap-1.5">
+                            <span>⚡</span>
+                            <span>{t('order.fastTrackTitle', '빠른 익일 수령 & 간편 카드결제를 원하시는 보호자님')}</span>
+                        </span>
+                        <span className="text-[10px] font-bold text-blue-700 bg-white/90 px-2 py-0.5 rounded-full border border-blue-200">
+                            {t('order.fastTrackBadge', '공식 직영몰 당일 출고')}
+                        </span>
+                    </div>
+                    <p className="text-xs text-slate-600 mb-3 leading-relaxed break-keep">
+                        {t('order.fastTrackDesc', '무통장 입금 주문 외에, 쿠팡 로켓배송 및 네이버 스마트스토어(네이버페이)에서 즉시 간편 구매가 가능합니다.')}
+                    </p>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                        <a
+                            href={getStoreUrl('coupang')}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="py-2.5 px-3 rounded-xl bg-red-600 hover:bg-red-500 text-white font-black text-xs text-center transition-all shadow flex items-center justify-center gap-1.5"
+                        >
+                            <span>🚀 {t('order.coupangBtn', '쿠팡 로켓배송 (내일 아침 도착)')}</span>
+                            <span aria-hidden="true">➔</span>
+                        </a>
+                        <a
+                            href={getStoreUrl('naver')}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="py-2.5 px-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-black text-xs text-center transition-all shadow flex items-center justify-center gap-1.5"
+                        >
+                            <span>🟢 {t('order.smartstoreBtn', '네이버 펫츄리 (네이버페이 구매)')}</span>
+                            <span aria-hidden="true">➔</span>
+                        </a>
+                    </div>
+                </div>
+            )}
             {formData.requestType === 'hospital' && (
                 <div className="bg-accent-50 border border-accent-200 rounded-xl px-4 py-3 text-sm font-medium text-accent-900 break-keep">
                     💡 {t('order.hospitalDiscountNote', '동물병원·수의사 공급가는 소비자 정가 대비 {{discount}}% 할인된 병원 공급가로, 견적서를 통해 안내드립니다.', { discount: PRICING.hospitalDiscount })}
@@ -231,6 +268,12 @@ const OrderForm = ({ formData, onChange, setFormData, onSubmit, isSubmitting, pr
                     placeholder={t('order.messagePh')}
                     className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:border-transparent transition-all resize-none"
                 />
+            </div>
+
+            {/* 결제 계좌 정보 */}
+            <div className="bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-700 text-center">
+                <span className="font-bold block mb-1 text-gray-900">무통장 입금 안내</span>
+                농협 301-0133-0281-01 <span className="text-gray-500 ml-2">예금주: (주)한국아그로</span>
             </div>
 
             <button
