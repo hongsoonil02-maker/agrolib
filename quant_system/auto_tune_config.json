@@ -8,12 +8,13 @@
       "SKDD/USDT:USDT",
       "SPX/USDT:USDT",
       "STX/USDT:USDT",
-      "UB/USDT:USDT"
+      "UB/USDT:USDT",
+      "VIRTUAL/USDT:USDT"
     ]
   },
   "okx_params": {
     "TRAILING_PCT": 0.015,
-    "HARD_SL_PCT": 0.03,
+    "HARD_SL_PCT": 0.08,
     "ORB_LOOKBACK": 4,
     "POSITION_PCT": 0.18,
     "OKX_MIN_RANGE_PCT": 0.6,
