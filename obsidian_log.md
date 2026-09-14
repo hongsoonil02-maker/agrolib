@@ -20,3 +20,5 @@
 - index.html 및 hospital-config.js 내 파보겔 표기를 500ml 대용량 겔로 수정 완료.
 
 - [2026-09-14 21:45:10] parvogel_landing: muse spark 1.2 개선안(W-1~W-7, C-1~C-6) 종합 코드 리뷰 수행 및 Apps Script 폴백 누락·CSP 리다이렉트 등 잠재 장애 요인 도출.
+
+- [2026-09-14 21:51:18] parvogel_landing: Apps Script 폴백 URL 복구, CSP connect-src 리다이렉트 보완, 404 SPA 리다이렉트 핸들러 추가 및 A11y 번역 키 복원 완료 (commit: 6e3acde).
