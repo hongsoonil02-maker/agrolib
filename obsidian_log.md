@@ -18,3 +18,5 @@
 
 ## [2026-09-14 08:17:00] 파보겔 규격 수정 (50ml -> 500ml)
 - index.html 및 hospital-config.js 내 파보겔 표기를 500ml 대용량 겔로 수정 완료.
+
+- [2026-09-14 21:45:10] parvogel_landing: muse spark 1.2 개선안(W-1~W-7, C-1~C-6) 종합 코드 리뷰 수행 및 Apps Script 폴백 누락·CSP 리다이렉트 등 잠재 장애 요인 도출.
