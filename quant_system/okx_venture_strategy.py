@@ -21,7 +21,8 @@ class OKXVentureStrategyBrain(BaseStrategyBrain):
     # [Fix] 마진 -10%/-7% 고정 스탑 제거 (3x에서 가격 -2.3% = 알트 30m 1 ATR 안 → 실거래 알트 28건 승률 7%).
     # 스탑은 BaseStrategyBrain ATR 스탑(OKX_ATR_STOP_K) 사용, HARD_STOP은 env 최후 방어선만 유지.
     HARD_STOP_LOSS_PCT = float(os.getenv("OKX_HARD_STOP_LOSS", "-0.30"))
-    PYRAMID_RATIO = 0.50         # 추세 승자 적극 불타기
+    # [토너먼트 1위 반영] Chandelier_Max_Runner: ARM=0.35, K=3.5 (백테스트 1위: +35.3%, PF 3.92)
+    ATR_TRAIL_ARM_PNL = 0.35
     
     # [백테스트 검증 최적화] 30m 승격 + ADX >= 20 횡보 휩쏘 차단
     # 백테스트 성과: 수익률 +125.3%, PF 1.88, MDD 35.9% (15m 노필터 대비 2.3배 초과수익)

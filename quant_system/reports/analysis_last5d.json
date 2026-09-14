@@ -1,0 +1,521 @@
+{
+  "window": [
+    "2026-08-30",
+    "2026-09-03"
+  ],
+  "summary": {
+    "bills": {
+      "trades": 51,
+      "wins": 3,
+      "losses": 48,
+      "win_rate": 5.9,
+      "total_net_pnl": -657.55,
+      "total_fee": -52.07,
+      "profit_factor": 0.19,
+      "avg_win": 50.71,
+      "avg_loss": -16.87,
+      "payoff": 3.01,
+      "expectancy": -12.89,
+      "avg_roe_pct": -4.1,
+      "mdd_usdt": -719.88,
+      "mdd_pct_of_start": null,
+      "avg_hold_h": 6.9,
+      "median_hold_h": 1.8,
+      "avg_win_hold_h": 10.4,
+      "avg_loss_hold_h": 6.7,
+      "avg_dca_entries": 14.9,
+      "liquidations": 0,
+      "taker_ratio": 1.0
+    },
+    "jsonl": {
+      "trades": 10,
+      "wins": 1,
+      "losses": 9,
+      "win_rate": 10.0,
+      "total_net_pnl": -116.4,
+      "total_fee": -16.85,
+      "profit_factor": 0.47,
+      "avg_win": 102.65,
+      "avg_loss": -24.34,
+      "payoff": 4.22,
+      "expectancy": -11.64,
+      "avg_roe_pct": -3.5,
+      "mdd_usdt": -124.22,
+      "mdd_pct_of_start": null,
+      "avg_hold_h": 44.5,
+      "median_hold_h": 3.3,
+      "avg_win_hold_h": 9.6,
+      "avg_loss_hold_h": 48.4,
+      "avg_dca_entries": 1.4,
+      "liquidations": 0,
+      "taker_ratio": 1.0
+    }
+  },
+  "by_side": {
+    "long": {
+      "n": 29,
+      "win_rate": 6.9,
+      "net_pnl": -376.16,
+      "avg_pnl": -12.97,
+      "pf": 0.25,
+      "avg_hold_h": 3.2
+    },
+    "short": {
+      "n": 22,
+      "win_rate": 4.5,
+      "net_pnl": -281.39,
+      "avg_pnl": -12.79,
+      "pf": 0.09,
+      "avg_hold_h": 11.9
+    }
+  },
+  "by_sector": {
+    "alt": {
+      "n": 28,
+      "win_rate": 7.1,
+      "net_pnl": -468.22,
+      "avg_pnl": -16.72,
+      "pf": 0.21,
+      "avg_hold_h": 4.6
+    },
+    "major": {
+      "n": 19,
+      "win_rate": 0.0,
+      "net_pnl": -161.07,
+      "avg_pnl": -8.48,
+      "pf": 0.0,
+      "avg_hold_h": 10.8
+    },
+    "meme": {
+      "n": 4,
+      "win_rate": 25.0,
+      "net_pnl": -28.27,
+      "avg_pnl": -7.07,
+      "pf": 0.49,
+      "avg_hold_h": 4.8
+    }
+  },
+  "by_regime": {
+    "trend_down": {
+      "n": 26,
+      "win_rate": 7.7,
+      "net_pnl": -342.14,
+      "avg_pnl": -13.16,
+      "pf": 0.26,
+      "avg_hold_h": 5.7
+    },
+    "trend_up": {
+      "n": 19,
+      "win_rate": 5.3,
+      "net_pnl": -235.26,
+      "avg_pnl": -12.38,
+      "pf": 0.13,
+      "avg_hold_h": 9.7
+    },
+    "chop": {
+      "n": 6,
+      "win_rate": 0.0,
+      "net_pnl": -80.15,
+      "avg_pnl": -13.36,
+      "pf": 0.0,
+      "avg_hold_h": 3.5
+    }
+  },
+  "by_entry_hour_kst": {
+    "2": {
+      "n": 13,
+      "win_rate": 7.7,
+      "net_pnl": -144.63,
+      "avg_pnl": -11.13,
+      "pf": 0.19,
+      "avg_hold_h": 3.2
+    },
+    "10": {
+      "n": 8,
+      "win_rate": 0.0,
+      "net_pnl": -114.02,
+      "avg_pnl": -14.25,
+      "pf": 0.0,
+      "avg_hold_h": 1.2
+    },
+    "9": {
+      "n": 4,
+      "win_rate": 0.0,
+      "net_pnl": -93.1,
+      "avg_pnl": -23.27,
+      "pf": 0.0,
+      "avg_hold_h": 2.2
+    },
+    "22": {
+      "n": 2,
+      "win_rate": 0.0,
+      "net_pnl": -71.19,
+      "avg_pnl": -35.59,
+      "pf": 0.0,
+      "avg_hold_h": 5.2
+    },
+    "17": {
+      "n": 3,
+      "win_rate": 0.0,
+      "net_pnl": -59.93,
+      "avg_pnl": -19.98,
+      "pf": 0.0,
+      "avg_hold_h": 19.7
+    },
+    "6": {
+      "n": 3,
+      "win_rate": 0.0,
+      "net_pnl": -51.85,
+      "avg_pnl": -17.28,
+      "pf": 0.0,
+      "avg_hold_h": 1.3
+    },
+    "21": {
+      "n": 2,
+      "win_rate": 0.0,
+      "net_pnl": -51.14,
+      "avg_pnl": -25.57,
+      "pf": 0.0,
+      "avg_hold_h": 36.7
+    },
+    "16": {
+      "n": 2,
+      "win_rate": 0.0,
+      "net_pnl": -37.13,
+      "avg_pnl": -18.56,
+      "pf": 0.0,
+      "avg_hold_h": 5.7
+    },
+    "7": {
+      "n": 2,
+      "win_rate": 0.0,
+      "net_pnl": -32.54,
+      "avg_pnl": -16.27,
+      "pf": 0.0,
+      "avg_hold_h": 0.7
+    },
+    "19": {
+      "n": 1,
+      "win_rate": 0.0,
+      "net_pnl": -28.29,
+      "avg_pnl": -28.29,
+      "pf": 0.0,
+      "avg_hold_h": 4.0
+    },
+    "15": {
+      "n": 2,
+      "win_rate": 0.0,
+      "net_pnl": -25.64,
+      "avg_pnl": -12.82,
+      "pf": 0.0,
+      "avg_hold_h": 3.1
+    },
+    "11": {
+      "n": 1,
+      "win_rate": 0.0,
+      "net_pnl": -23.56,
+      "avg_pnl": -23.56,
+      "pf": 0.0,
+      "avg_hold_h": 0.2
+    },
+    "5": {
+      "n": 2,
+      "win_rate": 0.0,
+      "net_pnl": -23.19,
+      "avg_pnl": -11.59,
+      "pf": 0.0,
+      "avg_hold_h": 46.3
+    },
+    "3": {
+      "n": 1,
+      "win_rate": 0.0,
+      "net_pnl": -11.17,
+      "avg_pnl": -11.17,
+      "pf": 0.0,
+      "avg_hold_h": 5.6
+    },
+    "13": {
+      "n": 2,
+      "win_rate": 0.0,
+      "net_pnl": -5.49,
+      "avg_pnl": -2.74,
+      "pf": 0.0,
+      "avg_hold_h": 0.2
+    },
+    "1": {
+      "n": 2,
+      "win_rate": 50.0,
+      "net_pnl": 24.69,
+      "avg_pnl": 12.34,
+      "pf": 9.85,
+      "avg_hold_h": 7.6
+    },
+    "14": {
+      "n": 1,
+      "win_rate": 100.0,
+      "net_pnl": 90.62,
+      "avg_pnl": 90.62,
+      "pf": 90616481575.87,
+      "avg_hold_h": 9.6
+    }
+  },
+  "by_symbol": {
+    "0G/USDT:USDT": {
+      "n": 3,
+      "win_rate": 0.0,
+      "net_pnl": -71.76,
+      "avg_pnl": -23.92,
+      "pf": 0.0,
+      "avg_hold_h": 0.5
+    },
+    "HUMA/USDT:USDT": {
+      "n": 1,
+      "win_rate": 0.0,
+      "net_pnl": -69.49,
+      "avg_pnl": -69.49,
+      "pf": 0.0,
+      "avg_hold_h": 5.5
+    },
+    "ANIME/USDT:USDT": {
+      "n": 2,
+      "win_rate": 0.0,
+      "net_pnl": -57.8,
+      "avg_pnl": -28.9,
+      "pf": 0.0,
+      "avg_hold_h": 0.5
+    },
+    "ZORA/USDT:USDT": {
+      "n": 3,
+      "win_rate": 0.0,
+      "net_pnl": -55.36,
+      "avg_pnl": -18.45,
+      "pf": 0.0,
+      "avg_hold_h": 0.4
+    },
+    "ZKP/USDT:USDT": {
+      "n": 2,
+      "win_rate": 0.0,
+      "net_pnl": -50.52,
+      "avg_pnl": -25.26,
+      "pf": 0.0,
+      "avg_hold_h": 0.1
+    },
+    "BTC/USDT:USDT": {
+      "n": 3,
+      "win_rate": 0.0,
+      "net_pnl": -43.18,
+      "avg_pnl": -14.39,
+      "pf": 0.0,
+      "avg_hold_h": 11.7
+    },
+    "DOS/USDT:USDT": {
+      "n": 2,
+      "win_rate": 0.0,
+      "net_pnl": -41.7,
+      "avg_pnl": -20.85,
+      "pf": 0.0,
+      "avg_hold_h": 2.3
+    },
+    "SUI/USDT:USDT": {
+      "n": 1,
+      "win_rate": 0.0,
+      "net_pnl": -41.64,
+      "avg_pnl": -41.64,
+      "pf": 0.0,
+      "avg_hold_h": 55.7
+    },
+    "ADA/USDT:USDT": {
+      "n": 4,
+      "win_rate": 0.0,
+      "net_pnl": -36.08,
+      "avg_pnl": -9.02,
+      "pf": 0.0,
+      "avg_hold_h": 4.4
+    },
+    "O/USDT:USDT": {
+      "n": 1,
+      "win_rate": 0.0,
+      "net_pnl": -34.81,
+      "avg_pnl": -34.81,
+      "pf": 0.0,
+      "avg_hold_h": 1.7
+    },
+    "LAB/USDT:USDT": {
+      "n": 2,
+      "win_rate": 0.0,
+      "net_pnl": -31.61,
+      "avg_pnl": -15.81,
+      "pf": 0.0,
+      "avg_hold_h": 0.9
+    },
+    "HYPE/USDT:USDT": {
+      "n": 1,
+      "win_rate": 0.0,
+      "net_pnl": -30.78,
+      "avg_pnl": -30.78,
+      "pf": 0.0,
+      "avg_hold_h": 3.7
+    },
+    "PEPE/USDT:USDT": {
+      "n": 1,
+      "win_rate": 0.0,
+      "net_pnl": -28.29,
+      "avg_pnl": -28.29,
+      "pf": 0.0,
+      "avg_hold_h": 4.0
+    },
+    "DASH/USDT:USDT": {
+      "n": 1,
+      "win_rate": 0.0,
+      "net_pnl": -27.24,
+      "avg_pnl": -27.24,
+      "pf": 0.0,
+      "avg_hold_h": 4.0
+    },
+    "TRUMP/USDT:USDT": {
+      "n": 1,
+      "win_rate": 0.0,
+      "net_pnl": -23.56,
+      "avg_pnl": -23.56,
+      "pf": 0.0,
+      "avg_hold_h": 0.2
+    },
+    "TAO/USDT:USDT": {
+      "n": 1,
+      "win_rate": 0.0,
+      "net_pnl": -21.79,
+      "avg_pnl": -21.79,
+      "pf": 0.0,
+      "avg_hold_h": 10.2
+    },
+    "ZK/USDT:USDT": {
+      "n": 1,
+      "win_rate": 0.0,
+      "net_pnl": -21.79,
+      "avg_pnl": -21.79,
+      "pf": 0.0,
+      "avg_hold_h": 0.9
+    },
+    "EDEN/USDT:USDT": {
+      "n": 1,
+      "win_rate": 0.0,
+      "net_pnl": -13.94,
+      "avg_pnl": -13.94,
+      "pf": 0.0,
+      "avg_hold_h": 5.9
+    },
+    "XRP/USDT:USDT": {
+      "n": 1,
+      "win_rate": 0.0,
+      "net_pnl": -13.65,
+      "avg_pnl": -13.65,
+      "pf": 0.0,
+      "avg_hold_h": 3.5
+    },
+    "AVAX/USDT:USDT": {
+      "n": 1,
+      "win_rate": 0.0,
+      "net_pnl": -13.56,
+      "avg_pnl": -13.56,
+      "pf": 0.0,
+      "avg_hold_h": 30.5
+    },
+    "TRX/USDT:USDT": {
+      "n": 2,
+      "win_rate": 0.0,
+      "net_pnl": -12.63,
+      "avg_pnl": -6.31,
+      "pf": 0.0,
+      "avg_hold_h": 5.2
+    },
+    "LINK/USDT:USDT": {
+      "n": 1,
+      "win_rate": 0.0,
+      "net_pnl": -11.1,
+      "avg_pnl": -11.1,
+      "pf": 0.0,
+      "avg_hold_h": 0.4
+    },
+    "ETH/USDT:USDT": {
+      "n": 1,
+      "win_rate": 0.0,
+      "net_pnl": -10.91,
+      "avg_pnl": -10.91,
+      "pf": 0.0,
+      "avg_hold_h": 0.4
+    },
+    "DOT/USDT:USDT": {
+      "n": 1,
+      "win_rate": 0.0,
+      "net_pnl": -9.5,
+      "avg_pnl": -9.5,
+      "pf": 0.0,
+      "avg_hold_h": 17.7
+    },
+    "BNB/USDT:USDT": {
+      "n": 4,
+      "win_rate": 0.0,
+      "net_pnl": -8.87,
+      "avg_pnl": -2.22,
+      "pf": 0.0,
+      "avg_hold_h": 22.5
+    },
+    "GIGGLE/USDT:USDT": {
+      "n": 1,
+      "win_rate": 0.0,
+      "net_pnl": -6.48,
+      "avg_pnl": -6.48,
+      "pf": 0.0,
+      "avg_hold_h": 0.7
+    },
+    "PENGU/USDT:USDT": {
+      "n": 1,
+      "win_rate": 0.0,
+      "net_pnl": -3.9,
+      "avg_pnl": -3.9,
+      "pf": 0.0,
+      "avg_hold_h": 0.2
+    },
+    "ZHIPU/USDT:USDT": {
+      "n": 1,
+      "win_rate": 0.0,
+      "net_pnl": -2.68,
+      "avg_pnl": -2.68,
+      "pf": 0.0,
+      "avg_hold_h": 5.0
+    },
+    "SOL/USDT:USDT": {
+      "n": 1,
+      "win_rate": 0.0,
+      "net_pnl": -1.59,
+      "avg_pnl": -1.59,
+      "pf": 0.0,
+      "avg_hold_h": 0.2
+    },
+    "TURBO/USDT:USDT": {
+      "n": 1,
+      "win_rate": 100.0,
+      "net_pnl": 27.48,
+      "avg_pnl": 27.48,
+      "pf": 27477940286.23,
+      "avg_hold_h": 15.0
+    },
+    "AUCTION/USDT:USDT": {
+      "n": 1,
+      "win_rate": 100.0,
+      "net_pnl": 34.04,
+      "avg_pnl": 34.04,
+      "pf": 34039515836.0,
+      "avg_hold_h": 6.5
+    },
+    "GRVT/USDT:USDT": {
+      "n": 3,
+      "win_rate": 33.3,
+      "net_pnl": 77.15,
+      "avg_pnl": 25.72,
+      "pf": 6.73,
+      "avg_hold_h": 6.2
+    }
+  },
+  "loss_concentration_top5_pct": 25.6
+}

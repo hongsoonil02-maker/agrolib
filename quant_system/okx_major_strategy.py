@@ -25,9 +25,9 @@ class OKXMajorStrategyBrain(BaseStrategyBrain):
     # 최후 방어선만 유지. (서브클래스에서 -8%로 두면 ATR 스탑(예: 2%×5x = -10%)보다 먼저 발동해 ATR 스탑이 무력화됨)
     HARD_STOP_LOSS_PCT = float(os.getenv("OKX_HARD_STOP_LOSS", "-0.30"))
 
-    # [alv*** 빅스윙 트레일링] 샹들리에 ATR 트레일링으로 대세 추세 홀딩
-    # K / 가동 임계는 env(OKX_ATR_TRAIL_K / OKX_ATR_TRAIL_ARM_PNL)로 통일 (기존 하드코딩 0.20은 3x에서 사실상 미도달)
+    # [토너먼트 1위 반영] Chandelier_Max_Runner: ARM=0.35, K=3.5 (백테스트 1위: +35.3%, PF 3.92)
     ATR_TRAILING_ENABLED = True
+    ATR_TRAIL_ARM_PNL = 0.35
 
 
     # [수익성 개선] 메이저 1h 복원: 실거래 15m에서 19건 0승(-161 USDT).
@@ -38,9 +38,9 @@ class OKXMajorStrategyBrain(BaseStrategyBrain):
 
     MAJOR_COINS = ['BTC', 'ETH', 'SOL', 'XRP', 'ADA', 'AVAX', 'LINK', 'DOT', 'BNB', 'TRX']
 
-    # [Fix] 트레일링청산 플립 기본 비활성: 15m 미확정 신호 + 1h 재진입과 결합해 ADA/BNB 4회/5일 왕복 유발.
-    # 확정 캔들 신호 전환 후 데이터로 재검증되면 OKX_FLIP_ON_TRAILING_CLOSE=true로 재활성.
-    FLIP_ON_TRAILING_CLOSE = os.getenv("OKX_FLIP_ON_TRAILING_CLOSE", "false").lower() == "true"
+    # [수익성 개선] 트레일링청산 플립 활성화: Major 30m에서 PF 0.76→1.22 (흑자 전환)
+    # Venture에서는 악화(1.23→1.13)하므로 Major에만 활성화
+    FLIP_ON_TRAILING_CLOSE = True
 
     def _symbol_matches(self, symbol: str, ticker_data: dict, markets: dict) -> bool:
         if symbol not in markets or not markets[symbol].get('swap'):

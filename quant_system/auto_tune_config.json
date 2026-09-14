@@ -14,7 +14,7 @@
   },
   "okx_params": {
     "TRAILING_PCT": 0.015,
-    "HARD_SL_PCT": 0.08,
+    "HARD_SL_PCT": 0.30,
     "ORB_LOOKBACK": 4,
     "POSITION_PCT": 0.18,
     "OKX_MIN_RANGE_PCT": 0.6,

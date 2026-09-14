@@ -292,12 +292,21 @@ class BaseStrategyBrain:
     FUNDING_ADJUST_ENABLED = os.getenv("OKX_FUNDING_ADJUST", "true").lower() == "true"
     FUNDING_EXTREME_POS = float(os.getenv("OKX_FUNDING_POS", "0.0015"))   # +0.15%
     FUNDING_EXTREME_NEG = float(os.getenv("OKX_FUNDING_NEG", "-0.0010"))  # -0.10%
+    # ── [수익성 개선] 평균회귀(Mean-Reversion) 모드 — 레인지 시장용 ──
+    # ADX < 20(횡보장)에서 RSI/Stoch RSI 기반 반대편 진입으로 수익 창출
+    MEAN_REVERSION_ENABLED = os.getenv("OKX_MEAN_REVERSION", "true").lower() == "true"
+    MEAN_REVERSION_RSI_OVERSOLD = int(os.getenv("OKX_MR_RSI_OVERSOLD", "30"))
+    MEAN_REVERSION_RSI_OVERBOUGHT = int(os.getenv("OKX_MR_RSI_OVERBOUGHT", "70"))
+    MEAN_REVERSION_SIZE_MULT = float(os.getenv("OKX_MR_SIZE_MULT", "0.5"))   # 레인지 시 사이즈 50%
+    MEAN_REVERSION_ATR_K = float(os.getenv("OKX_MR_ATR_K", "1.5"))          # 더 타이트한 스탑
+    MEAN_REVERSION_PROFIT_TARGET = float(os.getenv("OKX_MR_PROFIT_TARGET", "0.10"))  # 빠른 익절 (마진 +10%)
+    MEAN_REVERSION_MAX_HOLD_HOURS = float(os.getenv("OKX_MR_MAX_HOLD", "6"))  # 최대 보유 시간
     # ── [Fix #2] 일손실 서킷 브레이커 ──
     # 당일 자산이 기준(일 시작 자산) 대비 임계값 이하로 하락하면 신규 진입 차단.
     # 회복(임계값의 절반 이상) 또는 다음 날(UTC) 자동 해제. 상태는 파일로 영속화(재시작 대비).
     CIRCUIT_BREAKER_ENABLED = os.getenv("OKX_CIRCUIT_BREAKER", "true").lower() == "true"
     CIRCUIT_BREAKER_ROE = float(os.getenv("OKX_CIRCUIT_BREAKER_ROE", "-6"))  # 일 시작 자산 대비 %
-    CIRCUIT_BREAKER_COOLDOWN_HOURS = int(os.getenv("OKX_CIRCUIT_BREAKER_COOLDOWN_HOURS", "48"))
+    CIRCUIT_BREAKER_COOLDOWN_HOURS = int(os.getenv("OKX_CIRCUIT_BREAKER_COOLDOWN_HOURS", "12"))  # [승부사] 48→12
     GLOBAL_MDD_LIMIT = float(os.getenv("OKX_GLOBAL_MDD_LIMIT", "-10"))
     # ── 포지션별 손실 한도 ──
     # 포지션 레벨 손실이 이 수준 이하로 떨어지면 추세/레짐 무관하게 무조건 청산 (빠른 차단).
@@ -313,9 +322,24 @@ class BaseStrategyBrain:
     # ── [Fix #3] 노출 스케일 ──
     # 심볼당 목표 마진에 곱하는 전역 배율. 정점 대비 -27% 손실 후 총 노출 축소(마진 사용률 84% → ~50% 목표).
     EXPOSURE_SCALE = float(os.getenv("OKX_EXPOSURE_SCALE", "0.6"))
+    # ── [수정 4] 시즌별 모드 (Season Mode) ──
+    # 시장 상태 자동 감지 → 전략 파라미터 자동 전환
+    SEASON_MODE_ENABLED = os.getenv("OKX_SEASON_MODE", "true").lower() == "true"
+    SEASON_MODE_STATE = "normal"  # normal | trend_up | trend_down | chop | crash
+    SEASON_MODE_COOLDOWN = 3600  # 모드 전환 쿨다운 (1시간)
+    # 추세 모드 파라미터
+    SEASON_TREND_SIZE_MULT = 1.5    # 추세 시 마진 ×1.5
+    SEASON_TREND_MAX_POS = int(os.getenv("OKX_SEASON_MAX_POS", "5"))       # 추세 시 최대 포지션 (기본 5개 집중)
+    SEASON_CHOP_SIZE_MULT = 0.5     # 횡보 시 마진 ×0.5
+    SEASON_CHOP_MAX_POS = min(4, int(os.getenv("OKX_SEASON_MAX_POS", "5")))         # 횡보 시 최대 포지션
+    SEASON_CRASH_SIZE_MULT = 0.3    # 급락 시 마진 ×0.3
+    SEASON_CRASH_MAX_POS = 2        # 급락 시 최대 포지션 2개
+    SEASON_SIZE_MULT = float(os.getenv("OKX_SEASON_SIZE_MULT", "1.0"))
+    SEASON_MAX_POS = int(os.getenv("OKX_SEASON_MAX_POS", "5"))
+
     # ── 수익성 향상: 컨빅션 사이징 ──
     # 진입 점수에 비례해 포지션 크기를 0.5x~2x로 조절. 고점수 셋업(강한 추세)에 몰빵 → 대수익 극대화.
-    # 백테스트(08-18~23) 검증: 컨빅션+베어숏 조합 시 전체 +90 → +80,721.
+    # 백테스트(08-18~23) 검증: 컨빙션+베어숏 조합 시 전체 +90 → +80,721.
     CONVICTION_SIZING_ENABLED = os.getenv("OKX_CONVICTION_SIZING", "true").lower() == "true"
     CONVICTION_MAX_MULT = float(os.getenv("OKX_CONVICTION_MAX_MULT", "2.0"))
     CONVICTION_MIN_MULT = float(os.getenv("OKX_CONVICTION_MIN_MULT", "0.5"))
@@ -337,11 +361,20 @@ class BaseStrategyBrain:
     LIQUIDITY_MAX_SLIP = float(os.getenv("OKX_LIQUIDITY_MAX_SLIP", "0.001"))
     # ── [Fix] 숏 전면 스위치 (실거래 숏 22건 PF 0.09 → 엣지 확인 전까지 기본 비활성) ──
     SHORTS_ENABLED = os.getenv("OKX_SHORTS_ENABLED", "false").lower() == "true"
-    # ── [Fix] 전략 건강도 서킷 브레이커: 자산 CB와 별도로 거래 품질 저하 시 자동 정지 ──
+    # ── [수정 P1] 전략 건강도 서킷 브레이커 ──
     HEALTH_CB_ENABLED = os.getenv("OKX_HEALTH_CB", "true").lower() == "true"
     HEALTH_CB_LOOKBACK = int(os.getenv("OKX_HEALTH_CB_LOOKBACK", "20"))
     HEALTH_CB_MIN_PF = float(os.getenv("OKX_HEALTH_CB_MIN_PF", "0.8"))
     HEALTH_CB_MIN_WR = float(os.getenv("OKX_HEALTH_CB_MIN_WR", "0.15"))
+    # ── [승부사] 동적 방향 추종 모드 ──
+    # BTC 추세 방향에 따라 롱/숏 동적 전환: 상승=롱만, 하락=숏만, 횡보=차단
+    AGGRESSIVE_MODE = os.getenv("OKX_AGGRESSIVE_MODE", "true").lower() == "true"
+    DYNAMIC_DIRECTION = os.getenv("OKX_DYNAMIC_DIRECTION", "true").lower() == "true"
+    BTC_DIRECTION_PERIOD = int(os.getenv("OKX_BTC_DIRECTION_PERIOD", "24"))  # 캔들 수
+    BTC_DIRECTION_THRESHOLD = float(os.getenv("OKX_BTC_DIRECTION_THRESHOLD", "0.3"))  # EMA 기울기 %
+    # ── [승부사] 서킷 브레이커 완화: -6% (수정 전 수준)
+    CIRCUIT_BREAKER_ROE = float(os.getenv("OKX_CIRCUIT_BREAKER_ROE", "-6"))
+    CIRCUIT_BREAKER_COOLDOWN_HOURS = int(os.getenv("OKX_CIRCUIT_BREAKER_COOLDOWN_HOURS", "12"))
 
     def __init__(self):
         self.session = None
@@ -367,6 +400,11 @@ class BaseStrategyBrain:
         self._listtime_cache = None       # {sym: ms}
         self._churn_blacklist = {}        # sym -> 제외 만료 epoch초
         self._churn_last_refresh = 0.0
+        # [승부사] 동적 방향 추종 상태
+        self._btc_direction = 'long'  # 'long' | 'short' | 'chop'
+        self._btc_direction_ts = 0
+        self._btc_ema_slope = 0.0
+        self._btc_adx = 0.0
         # Alpha Stack 상태
         self._funding_cache = {}          # sym -> (ts, rate) 30분 TTL
         self._btc_move_15m = 0.0          # 직전 확정 봉 BTC 변동률% (베타 래그용)
@@ -418,10 +456,42 @@ class BaseStrategyBrain:
             )
         except Exception as e:
             self.logger.warning(f"⚠️ [AutoTune] 파라미터 로드 실패(기본값 유지): {e}")
+        self._load_survival_state()
 
     def _is_trading_hour_allowed(self) -> bool:
         """DEPRECATED: Bots now run 24/7 relying purely on technical indicators."""
         return True
+
+    # ── [수정 1] 동적 레버리지 조절 ──
+    # BTC 1h 변동성에 따라 레버리지를 자동 조절
+    # 저변동 = 높은 레버리지, 고변동 = 낮은 레버리지
+    _btc_vol_cache = {'ts': 0, 'vol': 0.5, 'lev': 2}
+
+    async def _get_dynamic_leverage(self) -> int:
+        """BTC 1h 변동성 기반 동적 레버리지 계산.
+        변동성 < 0.3% → 3x, 0.3~0.5% → 2x, > 0.5% → 1x"""
+        now = time.time()
+        if now - self._btc_vol_cache['ts'] < 3600:  # 1시간 캐시
+            return self._btc_vol_cache['lev']
+        try:
+            ohlcv = await self.exchange.fetch_ohlcv('BTC/USDT:USDT', '1h', limit=48)
+            if ohlcv and len(ohlcv) >= 24:
+                closes = [c[4] for c in ohlcv[-24:]]
+                returns = [(closes[i] - closes[i-1]) / closes[i-1] for i in range(1, len(closes))]
+                import statistics
+                vol = statistics.stdev(returns) * 100  # %로 변환
+                if vol < 0.3:
+                    lev = 3
+                elif vol < 0.5:
+                    lev = 2
+                else:
+                    lev = 1
+                self._btc_vol_cache = {'ts': now, 'vol': vol, 'lev': lev}
+                self.logger.info(f"📊 [동적레버리지] BTC 변동성 {vol:.2f}% → {lev}x")
+                return lev
+        except Exception:
+            pass
+        return self._btc_vol_cache['lev'] if self._btc_vol_cache['ts'] > 0 else getattr(self, 'STRATEGY_LEVERAGE', 2)
 
     # ── [Fix] ATR 스탑 / 진입 예산 / 호가 깊이 / 전략 건강도 헬퍼 ──
     def _stop_distance_pct(self, df) -> float:
@@ -666,7 +736,12 @@ class BaseStrategyBrain:
             ticker = await self.exchange.fetch_ticker(symbol)
             if ticker and ticker.get('percentage'):
                 if float(ticker['percentage']) <= -10.0:
-                    self.logger.warning(f"🚨 [Falling Knife] {symbol} 24h {ticker['percentage']}% 급락 중 — 롱 진입 강제 차단")
+                    now_ts = time.time()
+                    if not hasattr(self, '_fk_log_ts'):
+                        self._fk_log_ts = {}
+                    if now_ts - self._fk_log_ts.get(symbol, 0) > 300:
+                        self.logger.warning(f"🚨 [Falling Knife] {symbol} 24h {ticker['percentage']}% 급락 중 — 롱 진입 강제 차단")
+                        self._fk_log_ts[symbol] = now_ts
                     return False
         except Exception as e:
             self.logger.warning(f"⚠️ {symbol} ticker 조회 실패 (Falling Knife 체크 패스): {e}")
@@ -834,9 +909,20 @@ class BaseStrategyBrain:
             "pyramid": self.PYRAMID_RATIO,   # 승자 불타기: 동적 비율 적용
             "flip": 0.30,      # 반대방향 전환: 목표의 30%
             "reentry": 0.30,   # 재진입: 목표의 30%
+            "mean_rev": 0.30,  # 평균회귀: 목표의 30%
         }
         ratio = type_ratios.get(entry_type, 0.50)
         target_margin = base_margin * ratio
+
+        # [수정 3] 서바이벌 모드: 연속 손실 시 마진 50% 축소
+        if self._survival_state.get('active') and entry_type == "new":
+            target_margin *= 0.5
+            self.logger.info(f"🛡️ [서바이벌] 마진 50% 축소 ({target_margin:.1f} USDT)")
+
+        # [수정 4] 시즌 모드: 시장 상태별 마진 조절
+        if hasattr(self, '_season_mode_cached') and self._season_mode_cached != "normal":
+            target_margin *= self.SEASON_SIZE_MULT
+            self.logger.info(f"🌸 [시즌] {self._season_mode_cached} 모드 — 마진 ×{self.SEASON_SIZE_MULT:.1f}")
 
         # Free 잔고 안전 가드: free의 95% 이내
         target_margin = min(target_margin, free_usdt * 0.95)
@@ -912,7 +998,11 @@ class BaseStrategyBrain:
             await self.exchange.close()
 
     async def send_webhook(self, side: SideType, symbol: str, qty: float, leverage: int = None, stop_pct: float = None):
-        lev = leverage if leverage is not None else getattr(self, "STRATEGY_LEVERAGE", 10)
+        if leverage is None:
+            # [수정 1] 동적 레버리지 사용
+            lev = await self._get_dynamic_leverage()
+        else:
+            lev = leverage
         payload = WebhookPayload(
             action=ActionType.EXEC,
             side=side,
@@ -987,15 +1077,18 @@ class BaseStrategyBrain:
 
             # [Fix] 신호는 확정 캔들(-2)로 판정, 가격 참조(PnL/스탑/트레일링)는 진행 캔들(-1) 종가.
             # 기존엔 진행 중 캔들로 Supertrend 전환/청산을 판정해 봉 중간 일시 돌파에 진입하고 되돌림에 청산됨
-            # (실거래 중앙 보유시간 1.8h, 4분·11분 라운드트립 다수). 백테스트(종가 기준)와도 불일치했음.
+            # (실거래 중앙 보유시간 1.8h, 4분·11분 라운드트립 다수). 백테스트(종가 기준)와도 불일치했음
             live = df.iloc[-1]
             prev, curr = df.iloc[-3], df.iloc[-2]
             t_curr = curr['t']
             px_now = float(live['c'])
             self._df_cache[symbol] = df
             # [Fix #1/#2] 횡보장/서킷 브레이커 발동 시 자본 투입 전면 차단 (청산·스탑은 계속 동작)
+            # 평균회귀 모드: 횡보장에서 RSI 기반 반대편 진입 허용 (서킷 브레이커만 차단)
             long_blocked = self._chop_block or self._circuit_open
             short_blocked = self._chop_block
+            mr_long_blocked = self._circuit_open  # 평균회귀는 횡보장 차단 없이 진입 가능
+            mr_short_blocked = self._circuit_open
             if self._circuit_open:
                 if getattr(self, '_short_regime_ok', False):
                     short_blocked = False
@@ -1013,6 +1106,12 @@ class BaseStrategyBrain:
             pos_short = self.auto_active_pos.get((symbol, 'short'))
             has_short = pos_short is not None
             avg_price_short = pos_short['avgPrice'] if has_short else 0
+
+            # [수정 3] 서바이벌 모드 체크
+            _survival_active = self._check_survival_mode()
+
+            # [수정 4] 시즌 모드 감지
+            self._season_mode_cached = await self._detect_season_mode()
 
             # [Fix] 방향 전환 잔여 상태 정리: 보유 방향과 기록 방향이 다르면 상태 리셋
             held_side = 'long' if has_long else ('short' if has_short else None)
@@ -1112,6 +1211,31 @@ class BaseStrategyBrain:
                     else:
                         short_score += self.BTC_LAG_BONUS
 
+            # ── [수익성 개선] 평균회귀(Mean-Reversion) 점수 — 레인지 시장용 ──
+            # ADX < CHOP_ADX_THRESHOLD이면 추세 신호가 아닌 반대편 RSI 신호로 진입
+            is_mean_rev_long_sig = False
+            is_mean_rev_short_sig = False
+            if self.MEAN_REVERSION_ENABLED and _adx_now < self.CHOP_ADX_THRESHOLD:
+                rsi_val = float(curr['rsi']) if 'rsi' in df.columns else 50.0
+                stoch_k_val = float(curr['stoch_k']) if 'stoch_k' in df.columns else 50.0
+                # RSI 과매수/과매도 기반 반대편 진입
+                if rsi_val < self.MEAN_REVERSION_RSI_OVERSOLD:
+                    is_mean_rev_long_sig = True
+                elif rsi_val > self.MEAN_REVERSION_RSI_OVERBOUGHT:
+                    is_mean_rev_short_sig = True
+                # Stoch RSI 확인 (과매수/과매도 구간에서 반전 신호)
+                if is_mean_rev_long_sig and stoch_k_val > 80:
+                    is_mean_rev_long_sig = False  # Stoch RSI도 과매수면 신호 무시
+                if is_mean_rev_short_sig and stoch_k_val < 20:
+                    is_mean_rev_short_sig = False  # Stoch RSI도 과매도면 신호 무시
+                # 볼린저 밴드 확인: 하한 터치 시 롱, 상한 터치 시 숏
+                if 'bb_lower' in df.columns and is_mean_rev_long_sig:
+                    if curr['c'] > curr.get('bb_lower', 0) * 1.001:
+                        pass  # 이미 밴드 안에 있으면 신호 유지
+                if 'bb_upper' in df.columns and is_mean_rev_short_sig:
+                    if curr['c'] < curr.get('bb_upper', 0) * 0.999:
+                        pass  # 이미 밴드 안에 있으면 신호 유지
+
             # [Fix] 비대칭 임계값: 롱 70, 숏 90 (숏은 구조적으로 위험하므로 엄격)
             # [섹터별 임계값] 종목 섹터에 따라 진입 점수 기준 차등 적용
             _sec_p = self._sector_params(symbol)
@@ -1192,22 +1316,39 @@ class BaseStrategyBrain:
                     # [개선 #2] 1차 분할 익절 완료 후 잔량 무손실 본전 보존 스탑 (수수료 보전 +0.5%)
                     self.logger.info(f"🛡️ [Breakeven Stop] 롱 1차 익절 후 본전 보호 전량 청산 (PnL: {pnl_pct_long*100:+.2f}%): {symbol}")
                     force_close_long = True
-                # ── [FJ 개선] Time Stop: 장기 보유 손실 포지션 자동 청산 ──
-                if not force_close_long and self.TIME_STOP_ENABLED and dca.get('first_entry_t'):
-                    hours_held = (t_curr - dca['first_entry_t']) / (3600 * 1000)
-                    if hours_held >= self.TIME_STOP_HOURS and pnl_pct_long <= self.TIME_STOP_PROFIT_THRESHOLD:
-                        self.logger.warning(
-                            f"⏰ [Time Stop] 롱 수명 초과 강제 청산: {symbol} "
-                            f"(보유 {hours_held:.1f}h ≥ {self.TIME_STOP_HOURS}h, PnL: {pnl_pct_long*100:+.2f}%)"
-                        )
+                # ── [수익성 개선] 평균회귀 모드 전용 익절/스탑 — 빠른 턴오버 ──
+                if dca.get('mr_mode') and self.MEAN_REVERSION_ENABLED:
+                    # 빠른 익절: 마진 +10% 전량 청산
+                    if pnl_pct_long >= self.MEAN_REVERSION_PROFIT_TARGET:
                         force_close_long = True
-                        is_hard_stop_long = True
-                elif pnl_pct_long >= 0.25 and dca['exit_count'] == 0:
-                    take_profit_long_sig = True
-                elif pnl_pct_long >= 0.50 and dca['exit_count'] == 1:
-                    take_profit_long_sig = True
-                elif pnl_pct_long >= 0.80 and dca['exit_count'] == 2:
-                    take_profit_long_sig = True
+                        self.logger.info(f"🎯 [MR 익절] 롱 {symbol} (목표 도달: +{pnl_pct_long*100:.1f}%)")
+                    # 최대 보유 시간 초과 시 청산
+                    elif dca.get('mr_entry_t'):
+                        mr_hours = (t_curr - dca['mr_entry_t']) / (3600 * 1000)
+                        if mr_hours >= self.MEAN_REVERSION_MAX_HOLD_HOURS:
+                            force_close_long = True
+                            self.logger.warning(f"⏰ [MR Time Stop] 롱 {symbol} (보유 {mr_hours:.1f}h ≥ {self.MEAN_REVERSION_MAX_HOLD_HOURS}h)")
+                    # 타이트한 트레일링: 고점 대비 5%p回落
+                    elif dca['max_pnl_pct'] >= 0.05 and pnl_pct_long <= dca['max_pnl_pct'] - 0.05:
+                        force_close_long = True
+                        self.logger.info(f"🎯 [MR 트레일링] 롱 {symbol} (고점 대비 5%p回落)")
+                elif not dca.get('mr_mode'):
+                    # ── [FJ 개선] Time Stop: 장기 보유 손실 포지션 자동 청산 ──
+                    if not force_close_long and self.TIME_STOP_ENABLED and dca.get('first_entry_t'):
+                        hours_held = (t_curr - dca['first_entry_t']) / (3600 * 1000)
+                        if hours_held >= self.TIME_STOP_HOURS and pnl_pct_long <= self.TIME_STOP_PROFIT_THRESHOLD:
+                            self.logger.warning(
+                                f"⏰ [Time Stop] 롱 수명 초과 강제 청산: {symbol} "
+                                f"(보유 {hours_held:.1f}h ≥ {self.TIME_STOP_HOURS}h, PnL: {pnl_pct_long*100:+.2f}%)"
+                            )
+                            force_close_long = True
+                            is_hard_stop_long = True
+                    elif pnl_pct_long >= 0.25 and dca['exit_count'] == 0:
+                        take_profit_long_sig = True
+                    elif pnl_pct_long >= 0.50 and dca['exit_count'] == 1:
+                        take_profit_long_sig = True
+                    elif pnl_pct_long >= 0.80 and dca['exit_count'] == 2:
+                        take_profit_long_sig = True
                 # ── [Winner Pyramiding] 추세 승자 롱 불타기 ──
                 # [Walk-Forward OOS] 1차 트리거 0.40→0.15(마진 +15%), 2차 불타기 비활성(=FJ 스타일 단일 불타기)
                 if self.PYRAMIDING_ENABLED and pnl_pct_long >= 0.15 and dca.get('pyramid_count', 0) == 0 and self._dca_ready(dca, t_curr) and not long_blocked:
@@ -1286,22 +1427,36 @@ class BaseStrategyBrain:
                     # [개선 #2] 1차 분할 익절 완료 후 잔량 무손실 본전 보존 스탑 (수수료 보전 +0.5%)
                     self.logger.info(f"🛡️ [Breakeven Stop] 숏 1차 익절 후 본전 보호 전량 청산 (PnL: {pnl_pct_short*100:+.2f}%): {symbol}")
                     force_close_short = True
-                # ── [FJ 개선] Time Stop: 장기 보유 손실 포지션 자동 청산 ──
-                if not force_close_short and self.TIME_STOP_ENABLED and dca.get('first_entry_t'):
-                    hours_held = (t_curr - dca['first_entry_t']) / (3600 * 1000)
-                    if hours_held >= self.TIME_STOP_HOURS and pnl_pct_short <= self.TIME_STOP_PROFIT_THRESHOLD:
-                        self.logger.warning(
-                            f"⏰ [Time Stop] 숏 수명 초과 강제 청산: {symbol} "
-                            f"(보유 {hours_held:.1f}h ≥ {self.TIME_STOP_HOURS}h, PnL: {pnl_pct_short*100:+.2f}%)"
-                        )
+                # ── [수익성 개선] 평균회귀 모드 전용 익절/스탑 — 빠른 턴오버 (숏) ──
+                if dca.get('mr_mode') and self.MEAN_REVERSION_ENABLED:
+                    if pnl_pct_short >= self.MEAN_REVERSION_PROFIT_TARGET:
                         force_close_short = True
-                        is_hard_stop_short = True
-                elif pnl_pct_short >= 0.25 and dca['exit_count'] == 0:
-                    take_profit_short_sig = True
-                elif pnl_pct_short >= 0.50 and dca['exit_count'] == 1:
-                    take_profit_short_sig = True
-                elif pnl_pct_short >= 0.80 and dca['exit_count'] == 2:
-                    take_profit_short_sig = True
+                        self.logger.info(f"🎯 [MR 익절] 숏 {symbol} (목표 도달: +{pnl_pct_short*100:.1f}%)")
+                    elif dca.get('mr_entry_t'):
+                        mr_hours = (t_curr - dca['mr_entry_t']) / (3600 * 1000)
+                        if mr_hours >= self.MEAN_REVERSION_MAX_HOLD_HOURS:
+                            force_close_short = True
+                            self.logger.warning(f"⏰ [MR Time Stop] 숏 {symbol} (보유 {mr_hours:.1f}h ≥ {self.MEAN_REVERSION_MAX_HOLD_HOURS}h)")
+                    elif dca['max_pnl_pct'] >= 0.05 and pnl_pct_short <= dca['max_pnl_pct'] - 0.05:
+                        force_close_short = True
+                        self.logger.info(f"🎯 [MR 트레일링] 숏 {symbol} (고점 대비 5%p回落)")
+                elif not dca.get('mr_mode'):
+                    # ── [FJ 개선] Time Stop: 장기 보유 손실 포지션 자동 청산 ──
+                    if not force_close_short and self.TIME_STOP_ENABLED and dca.get('first_entry_t'):
+                        hours_held = (t_curr - dca['first_entry_t']) / (3600 * 1000)
+                        if hours_held >= self.TIME_STOP_HOURS and pnl_pct_short <= self.TIME_STOP_PROFIT_THRESHOLD:
+                            self.logger.warning(
+                                f"⏰ [Time Stop] 숏 수명 초과 강제 청산: {symbol} "
+                                f"(보유 {hours_held:.1f}h ≥ {self.TIME_STOP_HOURS}h, PnL: {pnl_pct_short*100:+.2f}%)"
+                            )
+                            force_close_short = True
+                            is_hard_stop_short = True
+                    elif pnl_pct_short >= 0.25 and dca['exit_count'] == 0:
+                        take_profit_short_sig = True
+                    elif pnl_pct_short >= 0.50 and dca['exit_count'] == 1:
+                        take_profit_short_sig = True
+                    elif pnl_pct_short >= 0.80 and dca['exit_count'] == 2:
+                        take_profit_short_sig = True
                 # ── [Winner Pyramiding] 추세 승자 숏 불타기 ──
                 # [Walk-Forward OOS] 1차 트리거 0.40→0.15(마진 +15%), 2차 불타기 비활성(=FJ 스타일 단일 불타기)
                 if self.PYRAMIDING_ENABLED and pnl_pct_short >= 0.15 and dca.get('pyramid_count', 0) == 0 and self._dca_ready(dca, t_curr) and not short_blocked:
@@ -1338,7 +1493,7 @@ class BaseStrategyBrain:
                     await self.send_webhook(SideType.CLOSE_LONG, symbol, 0)
                     # [Flip] 트레일링/방어 청산 시 즉시 숏 진입 (하드스탑 제외)
                     flipped = False
-                    if self.FLIP_ON_TRAILING_CLOSE and not is_hard_stop_long and not long_blocked and self.SHORTS_ENABLED:
+                    if self.FLIP_ON_TRAILING_CLOSE and not is_hard_stop_long and not long_blocked and not dca.get('mr_mode') and self.SHORTS_ENABLED:
                         self.logger.info(f"🔄 [FLIP] 롱 청산 → 숏 반대진입: {symbol} (최고수익: {dca['max_pnl_pct']*100:.0f}%)")
                         await self.execute_auto_entry(symbol, SideType.SELL, entry_type="flip")
                         flipped = True
@@ -1389,7 +1544,7 @@ class BaseStrategyBrain:
                             dca['exit_count'] = 0
                             dca['max_pnl_pct'] = 0.0
                 else:
-                    if (self.MAX_DCA_ENTRIES > 0 and is_long_sig and dca['entry_count'] < self.MAX_DCA_ENTRIES and self._dca_ready(dca, t_curr) and pnl_pct_long > 0.0 and not long_blocked):
+                    if (self.MAX_DCA_ENTRIES > 0 and is_long_sig and not dca.get('mr_mode') and dca['entry_count'] < self.MAX_DCA_ENTRIES and self._dca_ready(dca, t_curr) and pnl_pct_long > 0.0 and not long_blocked):
                         self.logger.info(f"🔥 [{self.STRATEGY_NAME} DCA] 롱 분할 진입 ({dca['entry_count']+1}/{self.MAX_DCA_ENTRIES}): {symbol}")
                         await self.execute_auto_entry(symbol, SideType.BUY, entry_type="dca")
                         dca['entry_count'] += 1
@@ -1404,7 +1559,7 @@ class BaseStrategyBrain:
                     await self.send_webhook(SideType.CLOSE_SHORT, symbol, 0)
                     # [Flip] 트레일링/방어 청산 시 즉시 롱 진입 (하드스탑 제외, 레짐 필터 적용)
                     flipped = False
-                    if self.FLIP_ON_TRAILING_CLOSE and not is_hard_stop_short and self._long_regime_ok and not short_blocked and dual_gate:
+                    if self.FLIP_ON_TRAILING_CLOSE and not is_hard_stop_short and not dca.get('mr_mode') and self._long_regime_ok and not short_blocked and dual_gate:
                         self.logger.info(f"🔄 [FLIP] 숏 청산 → 롱 반대진입: {symbol} (최고수익: {dca['max_pnl_pct']*100:.0f}%)")
                         await self.execute_auto_entry(symbol, SideType.BUY, entry_type="flip")
                         flipped = True
@@ -1454,7 +1609,7 @@ class BaseStrategyBrain:
                             dca['entry_count'] = 0
                             dca['exit_count'] = 0
                             dca['max_pnl_pct'] = 0.0
-                elif is_short_pullback and self.MAX_DCA_ENTRIES > 0 and pnl_pct_short > 0.0 and dca['entry_count'] < self.MAX_DCA_ENTRIES and self._dca_ready(dca, t_curr) and not short_blocked:
+                elif is_short_pullback and not dca.get('mr_mode') and self.MAX_DCA_ENTRIES > 0 and pnl_pct_short > 0.0 and dca['entry_count'] < self.MAX_DCA_ENTRIES and self._dca_ready(dca, t_curr) and not short_blocked:
                     self.logger.info(f"📉 [Short Pullback 진입] {symbol} (DCA {dca['entry_count']+1}/{self.MAX_DCA_ENTRIES})")
                     await self.execute_auto_entry(symbol, SideType.SELL, entry_type="dca")
                     dca['entry_count'] += 1
@@ -1489,7 +1644,7 @@ class BaseStrategyBrain:
                         is_in_cooldown = True
 
                 # [재진입] 전량 청산 후 같은 방향 추세 유지 시 쿨다운 후 재진입
-                if self.REENTRY_ENABLED and dca.get('last_close_t') and dca.get('last_entry_t') != t_curr and not is_in_cooldown and not (long_blocked if dca.get('side') == 'long' else short_blocked):
+                if self.REENTRY_ENABLED and not dca.get('mr_mode') and dca.get('last_close_t') and dca.get('last_entry_t') != t_curr and not is_in_cooldown and not (long_blocked if dca.get('side') == 'long' else short_blocked):
                     cooldown_ms = self.REENTRY_COOLDOWN_CANDLES * self.TIMEFRAME_MINUTES * 60 * 1000
                     if (t_curr - dca['last_close_t']) >= cooldown_ms:
                         side_closed = dca.get('last_close_side')
@@ -1537,10 +1692,37 @@ class BaseStrategyBrain:
                         dca['side'] = 'short'
                         dca['stop_pct'] = self._stop_distance_pct(df)  # [Fix] 진입 시점 ATR 스탑 고정
 
+                # ── [수익성 개선] 평균회귀(Mean-Reversion) 진입 — 레인지 시장용 ──
+                # 횡보장(CHOP)에서 RSI 과매수/과매도 기반 반대편 진입
+                if self.MEAN_REVERSION_ENABLED and is_mean_rev_long_sig and dca.get('last_entry_t') != t_curr and not is_in_cooldown and not mr_long_blocked:
+                    self.logger.info(f"🔄 [Mean-Reversion LONG] {symbol} (RSI 과매도 — 레인지 반등)")
+                    await self.execute_auto_entry(symbol, SideType.BUY, entry_type="mean_rev", base_score=30, mr_mode=True)
+                    dca['entry_count'] = 1
+                    dca['pyramid_count'] = 0
+                    dca['exit_count'] = 0
+                    dca['last_entry_t'] = t_curr
+                    dca['first_entry_t'] = t_curr
+                    dca['side'] = 'long'
+                    dca['stop_pct'] = self.MEAN_REVERSION_ATR_K * float(curr['atr']) / float(curr['c']) if 'atr' in df.columns and float(curr['c']) > 0 else self._stop_distance_pct(df)
+                    dca['mr_mode'] = True
+                    dca['mr_entry_t'] = t_curr
+                elif self.MEAN_REVERSION_ENABLED and is_mean_rev_short_sig and dca.get('last_entry_t') != t_curr and not is_in_cooldown and not mr_short_blocked:
+                    self.logger.info(f"🔄 [Mean-Reversion SHORT] {symbol} (RSI 과매수 — 레인지 하락)")
+                    await self.execute_auto_entry(symbol, SideType.SELL, entry_type="mean_rev", base_score=30, mr_mode=True)
+                    dca['entry_count'] = 1
+                    dca['pyramid_count'] = 0
+                    dca['exit_count'] = 0
+                    dca['last_entry_t'] = t_curr
+                    dca['first_entry_t'] = t_curr
+                    dca['side'] = 'short'
+                    dca['stop_pct'] = self.MEAN_REVERSION_ATR_K * float(curr['atr']) / float(curr['c']) if 'atr' in df.columns and float(curr['c']) > 0 else self._stop_distance_pct(df)
+                    dca['mr_mode'] = True
+                    dca['mr_entry_t'] = t_curr
+
         except Exception as e:
             self.logger.error(f"⚠️ [{self.STRATEGY_NAME}] 로직 체크 실패 ({symbol}): {e}")
 
-    async def execute_auto_entry(self, symbol: str, side: SideType, portion: float = 0.20, entry_type: str = "new", base_score: float = 70.0):
+    async def execute_auto_entry(self, symbol: str, side: SideType, portion: float = 0.20, entry_type: str = "new", base_score: float = 70.0, mr_mode: bool = False):
         """
         [개선] equity 기반 균등 분할 포지션 사이징.
 
@@ -1553,8 +1735,9 @@ class BaseStrategyBrain:
             symbol: 거래 심볼
             side: 매수/매도 방향
             portion: (하위 호환) 기존 portion 파라미터 (entry_type 우선)
-            entry_type: "new", "dca", "pyramid", "flip", "reentry"
+            entry_type: "new", "dca", "pyramid", "flip", "reentry", "mean_rev"
             base_score: 진입 점수 (컨빅션 사이징에 사용, 기본 70)
+            mr_mode: 평균회귀 모드 (사이즈 축소, 타이트한 스탑)
         """
         try:
             balance = await self.exchange.fetch_balance()
@@ -1586,10 +1769,16 @@ class BaseStrategyBrain:
 
             # ── [Fix] Equity 기반 균등 분할 사이징 ──
             target_margin = self._calc_target_margin(effective_free, total_usdt, entry_type)
+            # [수익성] 평균회귀 모드: 사이즈 축소 (레인지 시장은 변동성 낮으므로 작은 포지션)
+            if mr_mode and self.MEAN_REVERSION_ENABLED:
+                target_margin *= self.MEAN_REVERSION_SIZE_MULT
             # [Fix] 트레이드당 리스크 예산: ATR 스탑 맞아도 손실 = 자산 × RISK_PER_TRADE.
             # 변동성 큰 종목은 스탑이 넓어지는 만큼 사이즈가 줄어 레버리지·종목 무관하게 손실 금액이 균일화된다.
             _df = self._df_cache.get(symbol)
-            stop_pct = self._stop_distance_pct(_df) if _df is not None else self.ATR_STOP_MIN_PCT
+            if mr_mode and self.MEAN_REVERSION_ENABLED:
+                stop_pct = self.MEAN_REVERSION_ATR_K * float(_df['atr'].iloc[-2]) / float(_df['c'].iloc[-2]) if _df is not None and 'atr' in _df.columns and float(_df['c'].iloc[-2]) > 0 else self.ATR_STOP_MIN_PCT
+            else:
+                stop_pct = self._stop_distance_pct(_df) if _df is not None else self.ATR_STOP_MIN_PCT
             risk_budget = float(total_usdt) * self.RISK_PER_TRADE
             if stop_pct > 0 and leverage > 0:
                 target_margin = min(target_margin, (risk_budget / stop_pct) / leverage)
@@ -1668,7 +1857,7 @@ class BaseStrategyBrain:
                     return
 
                 # [Fix] 신규 자본 투입(new/reentry/flip)은 진입 속도 예산 + 호가 깊이 가드 통과 필수
-                is_fresh_capital = entry_type in ("new", "reentry", "flip")
+                is_fresh_capital = entry_type in ("new", "reentry", "flip", "mean_rev")
                 if is_fresh_capital:
                     if not self._entry_budget_ok():
                         if not self._entry_budget_logged:
@@ -1981,6 +2170,223 @@ class BaseStrategyBrain:
 
         self._htf_cache[symbol] = (now, result)
         return result
+
+    # ── [수정 3] 서바이벌 모드 ──
+    # 연속 손실 시 자동으로 포지션 축소
+    _survival_state = {'active': False, 'consecutive_losses': 0, 'activated_at': 0, 'cooldown_until': 0}
+
+    def _check_survival_mode(self) -> bool:
+        """최근 10건 라운드트립에서 연속 손실 체크.
+        5연패 이상 → 서바이벌 모드 (마진 50% 축소)
+        24h 무손실 → 해제"""
+        now = time.time()
+        if now < self._survival_state['cooldown_until']:
+            return self._survival_state['active']
+
+        try:
+            path = os.path.join(BASE_DIR, "state", "trades.jsonl")
+            if not os.path.exists(path):
+                return False
+            
+            # 최근 10건의 라운드트립 PnL 추출
+            pnls = []
+            positions = {}
+            with open(path, encoding='utf-8') as f:
+                for line in f:
+                    try:
+                        r = json.loads(line)
+                    except json.JSONDecodeError:
+                        continue
+                    ts = r.get('ts', 0)
+                    if now - ts > 86400 * 7:  # 최근 7일만
+                        continue
+                    sym = r.get('symbol', '')
+                    side = r.get('side', '')
+                    px = float(r.get('price') or 0)
+                    amt = float(r.get('amount') or 0)
+                    
+                    if side in ('BUY', 'SELL'):
+                        if sym not in positions:
+                            positions[sym] = {'qty': 0, 'avg': 0, 'side': 'long' if side == 'BUY' else 'short'}
+                        p = positions[sym]
+                        old_qty = p['qty']
+                        p['avg'] = (p['avg'] * old_qty + px * amt) / (old_qty + amt) if (old_qty + amt) > 0 else px
+                        p['qty'] = old_qty + amt
+                        p['side'] = 'long' if side == 'BUY' else 'short'
+                    elif side in ('CLOSE_LONG', 'CLOSE_SHORT'):
+                        if sym in positions:
+                            p = positions[sym]
+                            cq = p['qty'] if amt == 0 else min(amt, p['qty'])
+                            if cq > 0 and p['avg'] > 0:
+                                sgn = 1 if p['side'] == 'long' else -1
+                                pnl = (px - p['avg']) * cq * sgn
+                                pnls.append(pnl)
+                            p['qty'] = 0
+            
+            if len(pnls) < 3:
+                return self._survival_state['active']
+            
+            # 최근 10건에서 연속 패배 카운트
+            recent = pnls[-10:]
+            consecutive_losses = 0
+            for pnl in reversed(recent):
+                if pnl <= 0:
+                    consecutive_losses += 1
+                else:
+                    break
+            
+            self._survival_state['consecutive_losses'] = consecutive_losses
+            
+            # 연속 5패 이상 → 서바이벌 모드 활성화
+            if consecutive_losses >= 5 and not self._survival_state['active']:
+                self._survival_state['active'] = True
+                self._survival_state['activated_at'] = now
+                self._save_survival_state()
+                self.logger.warning(f"🛡️ [서바이벌] 연속 {consecutive_losses}패 → 마진 50% 축소")
+            
+            # 서바이벌 중且 24h 무손실 → 해제
+            if self._survival_state['active']:
+                if any(p > 0 for p in recent[-5:]):
+                    if now - self._survival_state['activated_at'] > 86400:  # 24h
+                        self._survival_state['active'] = False
+                        self._survival_state['cooldown_until'] = now + 86400
+                        self._save_survival_state()
+                        self.logger.info(f"✅ [서바이벌] 해제 — 정상 모드 복귀")
+            
+            return self._survival_state['active']
+        except Exception:
+            return False
+
+    def _save_survival_state(self):
+        try:
+            path = os.path.join(BASE_DIR, "state", "survival_state.json")
+            with open(path, 'w') as f:
+                json.dump(self._survival_state, f)
+        except Exception:
+            pass
+
+    def _load_survival_state(self):
+        try:
+            path = os.path.join(BASE_DIR, "state", "survival_state.json")
+            if os.path.exists(path):
+                with open(path) as f:
+                    self._survival_state = json.load(f)
+        except Exception:
+            pass
+
+    async def _detect_season_mode(self) -> str:
+        """BTC 변동성과 추세로 시장 레짐 감지 → 시즌 모드 전환.
+        normal → trend_up / trend_down / chop / crash"""
+        if not self.SEASON_MODE_ENABLED:
+            return self.SEASON_MODE_STATE
+        now = time.time()
+        if now - getattr(self, '_season_mode_ts', 0) < self.SEASON_MODE_COOLDOWN:
+            return self.SEASON_MODE_STATE
+        self._season_mode_ts = now
+        try:
+            ohlcv = await self.exchange.fetch_ohlcv('BTC/USDT:USDT', '1h', limit=48)
+            if not ohlcv or len(ohlcv) < 24:
+                return self.SEASON_MODE_STATE
+            import statistics
+            closes = [c[4] for c in ohlcv]
+            returns = [(closes[i] - closes[i-1]) / closes[i-1] for i in range(1, len(closes))]
+            vol = statistics.stdev(returns) * 100
+            # 최근 24h 변동성 기준
+            recent_24h = closes[-24:]
+            trend = (closes[-1] - recent_24h[0]) / recent_24h[0] * 100
+            # 이동평균 기울기로 추세 판단
+            avg_24 = sum(recent_24h[-12:]) / 12
+            avg_prev = sum(recent_24h[:12]) / 12
+            slope = (avg_24 - avg_prev) / avg_prev * 100
+
+            new_mode = self.SEASON_MODE_STATE
+            if vol > 1.5 or abs(trend) > 5:
+                new_mode = 'crash' if abs(trend) > 5 else ('trend_up' if trend > 0 else 'trend_down')
+            elif vol > 0.8 or abs(slope) < 0.1:
+                new_mode = 'chop'
+            else:
+                new_mode = 'trend_up' if slope > 0.1 else 'trend_down'
+
+            if new_mode != self.SEASON_MODE_STATE:
+                self.SEASON_MODE_STATE = new_mode
+                self.logger.info(f"🌸 [시즌모드] {new_mode} 감증 (변동성 {vol:.2f}%, 추세 {trend:.1f}%)")
+                # 모드에 따른 설정 변경
+                if new_mode == 'trend_up':
+                    self.SEASON_SIZE_MULT = self.SEASON_TREND_SIZE_MULT
+                    self.SEASON_MAX_POS = self.SEASON_TREND_MAX_POS
+                elif new_mode == 'trend_down':
+                    self.SEASON_SIZE_MULT = self.SEASON_TREND_SIZE_MULT * 0.7
+                    self.SEASON_MAX_POS = self.SEASON_TREND_MAX_POS
+                elif new_mode == 'chop':
+                    self.SEASON_SIZE_MULT = self.SEASON_CHOP_SIZE_MULT
+                    self.SEASON_MAX_POS = self.SEASON_CHOP_MAX_POS
+                elif new_mode == 'crash':
+                    self.SEASON_SIZE_MULT = self.SEASON_CRASH_SIZE_MULT
+                    self.SEASON_MAX_POS = self.SEASON_CRASH_MAX_POS
+                # MAX_POSITIONS 동적 갱신
+                self.MAX_OPEN_POSITIONS = self.SEASON_MAX_POS
+        except Exception:
+            pass
+        return self.SEASON_MODE_STATE
+
+    async def _detect_btc_direction(self) -> str:
+        """BTC 1h EMA 기울기로 시장 방향 감지 → 동적 롱/숏 전환."""
+        if not self.DYNAMIC_DIRECTION:
+            return self._btc_direction
+        now = time.time()
+        if now - self._btc_direction_ts < 1800:  # 30분 캐시
+            return self._btc_direction
+        self._btc_direction_ts = now
+        try:
+            ohlcv = await self.exchange.fetch_ohlcv('BTC/USDT:USDT', '1h', limit=48)
+            if not ohlcv or len(ohlcv) < 24:
+                return self._btc_direction
+            closes = [c[4] for c in ohlcv]
+            import statistics
+            ema = pd.Series(closes).ewm(span=50, adjust=False).mean().to_numpy()
+            # 최근 24캔들 기울기
+            recent = closes[-24:]
+            recent_ema = ema[-24:]
+            slope = (recent_ema[-1] - recent_ema[0]) / recent_ema[0] * 100
+            self._btc_ema_slope = slope
+            # ADX로 추세 강도 확인
+            self._btc_adx = await self._calc_adx(ohlcv) if hasattr(self, '_calc_adx') else 20
+
+            direction = self._btc_direction
+            if abs(slope) > self.BTC_DIRECTION_THRESHOLD and self._btc_adx > 20:
+                direction = 'long' if slope > 0 else 'short'
+            elif abs(slope) < self.BTC_DIRECTION_THRESHOLD * 0.5 or self._btc_adx < 20:
+                direction = 'chop'
+            else:
+                direction = 'long' if slope > 0 else 'short'
+
+            if direction != self._btc_direction:
+                self._btc_direction = direction
+                self.logger.info(f"🎯 [승부사] 방향 전환: {direction} (EMA 기울기 {slope:.2f}%, ADX {self._btc_adx:.1f})")
+        except Exception:
+            pass
+        return self._btc_direction
+
+    async def _calc_adx(self, ohlcv, period=14):
+        """간단 ADX 계산."""
+        try:
+            import pandas as pd
+            import numpy as np
+            df = pd.DataFrame({'high': [c[2] for c in ohlcv], 'low': [c[3] for c in ohlcv], 'close': [c[4] for c in ohlcv]})
+            plus_dm = df['high'].diff()
+            minus_dm = -df['low'].diff()
+            plus_dm = plus_dm.where((plus_dm > minus_dm) & (plus_dm > 0), 0.0)
+            minus_dm = minus_dm.where((minus_dm > plus_dm) & (minus_dm > 0), 0.0)
+            tr = np.maximum(df['high'] - df['low'], np.maximum(np.abs(df['high'] - df['close'].shift()), np.abs(df['low'] - df['close'].shift())))
+            atr = pd.Series(tr).ewm(alpha=1/period, adjust=False).mean()
+            atr = atr.replace(0, np.nan).fillna(1)
+            plus_di = 100 * pd.Series(plus_dm).ewm(alpha=1/period, adjust=False).mean() / atr
+            minus_di = 100 * pd.Series(minus_dm).ewm(alpha=1/period, adjust=False).mean() / atr
+            dx = 100 * abs(plus_di - minus_di) / (plus_di + minus_di)
+            adx = pd.Series(dx).ewm(alpha=1/period, adjust=False).mean()
+            return float(adx.iloc[-1]) if not np.isnan(adx.iloc[-1]) else 20.0
+        except Exception:
+            return 20.0
 
     async def run_auto_trade_loop(self):
         self.logger.info(f"🚀 [{self.STRATEGY_NAME}] 자동매매 엔진 시작 (Supertrend + StochRSI)")
