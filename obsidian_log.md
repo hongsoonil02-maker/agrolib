@@ -15,3 +15,6 @@
 
 ### 커밋
 - `feat: 17 improvements — video poster/manualChunks/BrowserRouter + SEO/CRO/신뢰성/A11y`
+
+## [2026-09-14 08:17:00] 파보겔 규격 수정 (50ml -> 500ml)
+- index.html 및 hospital-config.js 내 파보겔 표기를 500ml 대용량 겔로 수정 완료.
