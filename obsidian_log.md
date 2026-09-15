@@ -24,3 +24,5 @@
 - [2026-09-14 21:51:18] parvogel_landing: Apps Script 폴백 URL 복구, CSP connect-src 리다이렉트 보완, 404 SPA 리다이렉트 핸들러 추가 및 A11y 번역 키 복원 완료 (commit: 6e3acde).
 
 - **2026-09-15 09:59:13**: 블랙 앤 화이트(문수미 대표, 광주 서구 봉학길 38) 113번 주문 및 쿠팡 2병 유료 주문 확인 등록 완료, 우체국택배 113건 접수 파일 및 맞춤 A4 알림판(HTML, PDF, PNG) 제작 완료
+
+- **2026-09-15 10:04:08**: 구글시트 샘플 신청(sample_petshop) 연동 실전 테스트 성공(HTTP 200/success 확인), 어제 커밋 히스토리 감사 및 Apps Script URL 폴백/HashRouter/CSP 정합성 최종 점검 완료
