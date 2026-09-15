@@ -22,3 +22,5 @@
 - [2026-09-14 21:45:10] parvogel_landing: muse spark 1.2 개선안(W-1~W-7, C-1~C-6) 종합 코드 리뷰 수행 및 Apps Script 폴백 누락·CSP 리다이렉트 등 잠재 장애 요인 도출.
 
 - [2026-09-14 21:51:18] parvogel_landing: Apps Script 폴백 URL 복구, CSP connect-src 리다이렉트 보완, 404 SPA 리다이렉트 핸들러 추가 및 A11y 번역 키 복원 완료 (commit: 6e3acde).
+
+- **2026-09-15 09:59:13**: 블랙 앤 화이트(문수미 대표, 광주 서구 봉학길 38) 113번 주문 및 쿠팡 2병 유료 주문 확인 등록 완료, 우체국택배 113건 접수 파일 및 맞춤 A4 알림판(HTML, PDF, PNG) 제작 완료
