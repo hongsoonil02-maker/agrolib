@@ -66,8 +66,8 @@
 ## [2026-09-16 08:55:43] Parvogel Landing 깃허브 커밋 및 푸시 완료
 - 커밋: fix: 몬모릴로나이트 성분 표기 수정 및 파보 바이러스 항목 추가 (9fa0d89)
 - GitHub remote origin master 푸시 완료
-- [2026-09-16 09:22] [parvogel_landing] ��ǥ �ݷ��� ������ �޼� ���� ȸ�� ��ȭ ���丮�ڸ� ������Ʈ(GomiPoopStory) �� ������ �躯 ����/������ ��, ī�� ��ȭ UI, ���� �躯 3�� �Ǻ� ���̵� ���� �Ϸ�.
-- [2026-09-16 09:25] [parvogel_landing] ���� �躯 ȸ�� ��ȭ(GomiPoopStory) �� ���� �̹���, ���� �ڵ� GitHub ���� �����(master) Ŀ�� �� Ǫ�� �Ϸ� (commit: ae37546).
+- [2026-09-16 09:22] [parvogel_landing] ǥ ݷ  ޼  ȸ ȭ 丮ڸ Ʈ(GomiPoopStory)   躯 / , ī ȭ UI,  躯 3 Ǻ ̵  Ϸ.
+- [2026-09-16 09:25] [parvogel_landing]  躯 ȸ ȭ(GomiPoopStory)   ̹,  ڵ GitHub  (master) Ŀ  Ǫ Ϸ (commit: ae37546).
 
 
 - **2026-09-16 16:34:15**: 파보겔 무료 샘플 신청 웹 폼 종단간(E2E) 테스트 주문 전송 및 구글 스프레드시트 웹앱 API 수신 확인 완료. 본사 관리자/테스트 번호(01054075708, 01055435708) 인허가 사업자 화이트리스트 등록 및 깃허브 배포(45f1a49) 완료.
@@ -84,4 +84,4 @@
 
 - [2026-09-18 08:09:25] vet_animal_hospital: GitHub 원격 저장소 main 브랜치 커밋 및 푸시 완료 (commit: 1240bf4 - feat: complete live dynamic hospital portal engine, studio QR bridge, and partner apply UX)
 
-0
+- [2026-09-18 08:28:00] vet_animal_hospital: 고해상도 메디컬 오픈그래프(OG) 이미지 배포, 실시간 브랜디드 QR 코드 생성·다운로드·A4 알림판 인쇄 및 카카오톡 모바일 공유 브리지 연동 완료 (Cloudflare Pages 배포 및 GitHub 2ac8ab9 푸시 완료)
