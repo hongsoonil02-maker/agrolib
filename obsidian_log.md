@@ -81,3 +81,5 @@
 - **2026-09-17 07:10:37**: 홍대표 제작 앵무새 꼬미 24시간 임상실화 유튜브 숏츠(2vGdq9EbDwA) 반응형 영상 임베드 및 다이렉트 링크를 홈페이지(GomiPoopStory 및 블로그)에 전격 연동 완료. 충주 루미가든 대표님의 동물병원(에스앤제이) 100ml 첫 구매 후 500ml 5병 도매 대량 재구매 성공 실화를 실제 추천사(t7), 신규 블로그 포스트 및 인허가 사업자 화이트리스트에 반영하고 깃허브 원격 배포(cf6df47) 완료.
 
 - [2026-09-18 08:02:30] vet_animal_hospital: Union Alpha 중단 작업 리뷰 및 홈페이지 구축 서비스 정상화 완료 (실시간 동적 맞춤 포털 URL 엔진, Studio 실시간 연동, A4 알림판 QR 생성, 파트너 무상 키트 간편 신청 폼 복원 및 빌드 검증)
+
+- [2026-09-18 08:09:25] vet_animal_hospital: GitHub 원격 저장소 main 브랜치 커밋 및 푸시 완료 (commit: 1240bf4 - feat: complete live dynamic hospital portal engine, studio QR bridge, and partner apply UX)
