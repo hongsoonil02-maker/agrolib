@@ -86,3 +86,7 @@
 
 - [2026-09-18 08:28:00] vet_animal_hospital: 고해상도 메디컬 오픈그래프(OG) 이미지 배포, 실시간 브랜디드 QR 코드 생성·다운로드·A4 알림판 인쇄 및 카카오톡 모바일 공유 브리지 연동 완료 (Cloudflare Pages 배포 및 GitHub 2ac8ab9 푸시 완료)
 - [2026-09-18 08:35:10] vet_animal_hospital: 상단 면책고지 배너와 플로팅 네비게이션 필 헤더 간의 겹침(Overlap) 결함 긴급 수정 및 통합 스티키 헤더 시스템(.site-header) 구축 완료 (Cloudflare Pages 및 GitHub efa5b8c 배포 완료)
+
+### [2026-09-18 08:57:35] VetLink AI - 백의의 천사 메디컬 화이트 전면 개편
+- 어두운 배경을 제거하고 순백색(#ffffff, #f8fafc) 및 소프트 클리니컬 틴트(Teal)로 전면 전환 완료.
+- 전체 페이지(메인, 병원 포털, 약관) 및 Cloudflare Pages 배포 완료.
