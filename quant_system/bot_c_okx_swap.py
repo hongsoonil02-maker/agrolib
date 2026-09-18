@@ -430,6 +430,17 @@ class BotCOKXSwap:
                         )
                         return {"status": "failed", "error": "insufficient_margin"}
 
+                    # [Fix] 51155 컴플라이언스/현지 규제 제한: 재시도 무의미 → 즉시 중단
+                    if "51155" in last_err or "compliance restrictions" in last_err.lower():
+                        logger.warning(
+                            f"🚫 [컴플라이언스 제한] {ccxt_symbol} 거래 불가 (51155): 즉시 주문 포기"
+                        )
+                        try:
+                            send_telegram_alert(f"⚠️ [OKX Bot C] {ccxt_symbol} 현지 규제(51155)로 거래 불가 — 주문 즉시 취소")
+                        except Exception:
+                            pass
+                        return {"status": "failed", "error": "compliance_restriction"}
+
                     # [Fix] 51004 포지션 한도 초과: 한도 내로 수량 클램프 후 재시도
                     if "51004" in last_err:
                         m = re.search(r"more than ([\d,]+)\s*\(contracts\)", last_err)

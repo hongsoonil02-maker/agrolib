@@ -1,5 +1,11 @@
-# Temporary files
+# Temporary and sensitive files
 *.tmp
 *.bak
 .DS_Store
 Thumbs.db
+.env
+*.env
+*.log
+__pycache__/
+*.pyc
+state/

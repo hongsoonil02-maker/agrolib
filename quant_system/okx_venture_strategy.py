@@ -31,7 +31,7 @@ class OKXVentureStrategyBrain(BaseStrategyBrain):
     CHOP_ADX_BLOCK_THRESHOLD = 20.0
     
     STOCK_KEYWORDS = []
-    BLACKLIST = ['KR200', 'SKHYNIX', 'MU', 'SHAZ', 'ISRG', 'ROBO', 'RAM', 'DRAM', 'GME',
+    BLACKLIST = ['KR200', 'SKHYNIX', 'SAMSUNG', 'MU', 'SHAZ', 'ISRG', 'ROBO', 'RAM', 'DRAM', 'GME',
                  'GPS', 'SNXX', 'POL',  # GPS(-64.7%), SNXX(-38.3%), POL(-21.6%) 반복 손실 차단
                  'LIT', 'CHIP', 'BOME', 'FIL',  # [8/26 백테스트] 90일 누적 출혈 상위 알트 차단
                  'CAP']  # [8/26] 5일간 48회 매수 반복 손실 — 무한 재진입 차단
@@ -44,6 +44,7 @@ class OKXVentureStrategyBrain(BaseStrategyBrain):
                          'PLTR', 'AMD', 'INTC', 'QCOM', 'BABA', 'UBER', 'ABNB', 'SNAP',
                          'MSTR', 'HOOD', 'RIVN', 'NIO', 'PYPL', 'SQ', 'SHOP',
                          'SPY', 'QQQ', 'IWM', 'DIA', 'GLD', 'SLV', 'XAG',
+                         'SAMSUNG',
                          ]
     # [백테스트 검증] Venture 15m에서 재진입 PF 1.15→1.20 (180일, N=231)
     REENTRY_ENABLED = True

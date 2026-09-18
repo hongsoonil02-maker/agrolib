@@ -439,8 +439,9 @@ class BaseStrategyBrain:
                 tuned_val = -tuned_sl  # 음수로 변환 (-0.05)
                 # [Fix] 서브클래스가 명시 오버라이드(클래스 속성)한 경우 건드리지 않음
                 # → 현재 인스턴스 값이 base 기본값과 같을 때만 auto_tune 적용
+                # [안전 가드] ATR 스탑의 정상 변동성을 보장하기 위해 base_hard_sl(-30%)보다 타이트하게 조여지지 않도록 보장
                 if abs(self.HARD_STOP_LOSS_PCT - base_hard_sl) < 0.001:
-                    self.HARD_STOP_LOSS_PCT = tuned_val
+                    self.HARD_STOP_LOSS_PCT = min(tuned_val, base_hard_sl)
 
             tuned_trail = self.config.okx_trailing_pct  # 양수 (예: 0.02 = 2%)
             if tuned_trail and tuned_trail > 0:

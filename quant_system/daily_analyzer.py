@@ -25,8 +25,8 @@ MIN_SAMPLES_PER_MARKET = 5
 
 DEFAULT_OKX_PARAMS = {
     "TRAILING_PCT": 0.03,
-    # [Walk-Forward OOS] HARD_SL_PCT는 레짐 튜닝에서 제외·고정 (마진 -8% 손절 최적값)
-    "HARD_SL_PCT": 0.08,
+    # [Fix] HARD_SL_PCT 최후 방어선 30% (동적 ATR 스탑을 1차 스탑으로 온전히 사용)
+    "HARD_SL_PCT": abs(float(os.getenv("OKX_HARD_STOP_LOSS", "-0.30"))),
     "ORB_LOOKBACK": 4,
     "POSITION_PCT": 0.18,
     "OKX_MIN_RANGE_PCT": 0.6,
