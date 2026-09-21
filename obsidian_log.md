@@ -42,3 +42,8 @@
 - 몬스멕타 검색자 대상 동물병원 내원 유치 및 동일 나노 포뮬러 파보겔(쿠팡/스토어) 즉시 구매 전환 게이트웨이(/monsmecta) 구축 완료.
 - 수의사 전용 비공개 영역(공급 단가, 발주 시스템, 임상 프로토콜 락) 및 기존 홈페이지용 독립형 팝업 소스(monsmecta-popup-embed.html) 패키지 배포.
 
+
+## [2026-09-21 19:21:23] 몬스멕타(monsmecta) 및 파보겔(parvogel) GitHub 배포 푸시 완료
+- monsmecta 레포지토리(https://github.com/hongsoonil02-maker/monsmecta): 수의사 전용 비공개 락, 일반인 안내 팝업 및 파보겔 전환 배너 푸시 완료(커밋: b122290). GitHub Actions 배포 트리거.
+- parvogel 레포지토리(https://github.com/hongsoonil02-maker/parvogel): 몬스멕타 게이트웨이(/monsmecta) 및 SEO 검색 연동 푸시 완료(커밋: 57cec3f).
+
