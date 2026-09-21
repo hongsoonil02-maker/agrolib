@@ -47,3 +47,8 @@
 - monsmecta 레포지토리(https://github.com/hongsoonil02-maker/monsmecta): 수의사 전용 비공개 락, 일반인 안내 팝업 및 파보겔 전환 배너 푸시 완료(커밋: b122290). GitHub Actions 배포 트리거.
 - parvogel 레포지토리(https://github.com/hongsoonil02-maker/parvogel): 몬스멕타 게이트웨이(/monsmecta) 및 SEO 검색 연동 푸시 완료(커밋: 57cec3f).
 
+
+## [2026-09-21 19:29:20] 몬스멕타 공급가 완전 비공개 락 긴급 조치 완료
+- monsmecta(https://github.com/hongsoonil02-maker/monsmecta): 몬스멕타 헤파맥스, 레날디톡스 등 전 라인업 공급가 및 발주폼 단가 노출 완전 차단.
+- '🔒 수의사 전용 비공개 (사업자 인증 후 적용)' 락 적용 완료 (커밋: cc497cc) 및 즉시 GitHub Actions 배포 푸시.
+
