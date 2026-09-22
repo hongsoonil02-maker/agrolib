@@ -60,3 +60,15 @@
 - [2026-09-22 10:08] 오라클 서버 제외 확인. GCP (nasdaq, coinbot) 원격 SSH 접속 체계 최종 세팅 완료.
 
 - [2026-09-22 10:20] Antigravity IDE Remote-SSH 연결 오류('SSH server closed unexpectedly') 진단 및 해결: 원격 서버(e2-micro) 부팅 지연 대비 extension.js 내 시작 대기 루프 시간(7.5초->60초) 확장 패치 및 원격 lock 정리 완료.
+
+## [2026-09-22] OKX 자동매매 Breakeven 스탑 수술, JEV Supreme 확립 및 PnL 원장 정밀 감사
+
+### 요약
+- 비트코인 상승장 속 손실 원인 규명: Breakeven Stop에 레버리지 ROE 오적용(-0.025% 미세 하락에도 조기 털림) 수술
+- `spot_pnl_pct`(레버리지 제외 순수 가격 변동률) 분리 도입 및 ATR Stop 배수 2.5 → 3.5 확대
+- JEV Supreme 아키텍처 확립: JEV AI가 매크로 레짐 및 ADX chop 게이트를 바이패스하고 최우선 1번 판단권 행사
+- Health Circuit Breaker 해제 및 과거 손실 제외 베이스라인 갱신
+- PnL 원장 감사: 이전 보고서의 +$9,496은 OKX 선물 스왑 계약 단위(ctVal=0.01) 미반영으로 인한 100배 과대계상 착시(실제 7일 순손익 -$228.67 USDT로 계좌 우하향과 100% 일치) 규명
+- 불필요 캐시/PID/로그 정리 및 봇 3종 정상 가동 (현재 계좌 $10,687 USDT)
+- 상세 문서: [[2026-09-22_OKX_자동매매_Breakeven스탑수술_및_PnL원장정밀감사]]
+
