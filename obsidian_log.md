@@ -52,3 +52,5 @@
 - monsmecta(https://github.com/hongsoonil02-maker/monsmecta): 몬스멕타 헤파맥스, 레날디톡스 등 전 라인업 공급가 및 발주폼 단가 노출 완전 차단.
 - '🔒 수의사 전용 비공개 (사업자 인증 후 적용)' 락 적용 완료 (커밋: cc497cc) 및 즉시 GitHub Actions 배포 푸시.
 
+
+- [2026-09-22 10:01] GCP quant-nasdaq-only 원격 연결 불가 원인 진단 완료 및 SSH 접속 가이드 제공.
