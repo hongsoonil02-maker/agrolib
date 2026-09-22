@@ -58,3 +58,5 @@
 - [2026-09-22 10:07] SSH config 진단 완료: nasdaq/quant-nasdaq-only/coinbot 정상 접속 확인, oracle-new (144.24.65.250) 타임아웃 원인(인스턴스 전원/IP변경/보안목록) 분석.
 
 - [2026-09-22 10:08] 오라클 서버 제외 확인. GCP (nasdaq, coinbot) 원격 SSH 접속 체계 최종 세팅 완료.
+
+- [2026-09-22 10:20] Antigravity IDE Remote-SSH 연결 오류('SSH server closed unexpectedly') 진단 및 해결: 원격 서버(e2-micro) 부팅 지연 대비 extension.js 내 시작 대기 루프 시간(7.5초->60초) 확장 패치 및 원격 lock 정리 완료.
