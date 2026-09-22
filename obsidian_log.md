@@ -54,3 +54,5 @@
 
 
 - [2026-09-22 10:01] GCP quant-nasdaq-only 원격 연결 불가 원인 진단 완료 및 SSH 접속 가이드 제공.
+
+- [2026-09-22 10:07] SSH config 진단 완료: nasdaq/quant-nasdaq-only/coinbot 정상 접속 확인, oracle-new (144.24.65.250) 타임아웃 원인(인스턴스 전원/IP변경/보안목록) 분석.
