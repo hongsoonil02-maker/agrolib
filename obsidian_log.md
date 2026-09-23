@@ -109,3 +109,7 @@
 - GCP 실서버(136.111.207.137) SSH 직접 연결 및 실계좌 조회 완료.
 - 계좌 자산(Equity) 10,687.36 USDT(09-22) -> 11,008.21 USDT(09-24)로 +320.85 USDT(+3.0%) 순증가 확인.
 - JEV Supreme AI 정상 가동(400~500ms 레이턴시, 61개 LOB 피드, 0.55 미만 횡보장 컷 차단) 및 Breakeven Stop 수술 후 SEI/UNI/ZHIPU 익절 보존 확인.
+## [2026-09-24 07:22:36] Google Cloud Nasdaq 서버 알파카 자동매매 시스템 실시간 리뷰
+- Google Cloud nasdaq 서버(34.24.136.72)의 Bun Jev 사이드카 및 alpaca_jev_trader.py 가동 상태 점검.
+- 알파카 가상계좌 자산(,689.81, 5개 보유 포지션) 및 25건 실체결 매매 통계 분석 완료, 양방향 ETF(TQQQ/SQQQ) 동시 보유 문제 및 브라켓 GTC 개선점 도출.
+
