@@ -113,3 +113,13 @@
 - Google Cloud nasdaq 서버(34.24.136.72)의 Bun Jev 사이드카 및 alpaca_jev_trader.py 가동 상태 점검.
 - 알파카 가상계좌 자산(,689.81, 5개 보유 포지션) 및 25건 실체결 매매 통계 분석 완료, 양방향 ETF(TQQQ/SQQQ) 동시 보유 문제 및 브라켓 GTC 개선점 도출.
 
+
+## [2026-09-24 07:27:43] Google Cloud Nasdaq 알파카 자동매매 v2.1 긴급 개선 및 배포 완료
+- **개선 배포 완료**: alpaca_jev_trader.py v2.1 구글 nasdaq 서버 배포 및 데몬 재가동(PID: 2315163).
+- **주요 개선 항목**:
+  1. 롱/인버스 레버리지 ETF 상호 배제(Mutual Exclusion) 및 매크로 추세 반전 시 역방향 자동 청산(Regime Shift Unwind) 구현.
+  2. 최대 포지션 4개 엄격 제한(미체결 주문 포함 get_active_count 카운트).
+  3. 손절 후 30분 쿨다운 락아웃(Post-Loss Lockout)으로 고점 뇌동 재진입 방지.
+  4. 브라켓 주문 time_in_force를 GTC로 변경하여 오버나잇 스탑로스 소멸 차단.
+  5. 장 개장 시 충돌 포지션 자동 조율(Reconciliation) 루틴 탑재.
+
