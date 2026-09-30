@@ -271,3 +271,5 @@
 [2026-09-30] [USER PREFERENCE UPDATED] 우체국 택배 대량 접수용 엑셀 파일은 항상 작업 후 업로드 편의를 위해 `c:\Users\master\Downloads\` (다운로드 폴더) 경로에 바로 저장되도록 파이썬 스크립트 수정 완료.
 
 [2026-09-30] Fixed Post Office bulk upload format to use the official 17-column template (template_befrecev_parcel_new.xls).
+
+[2026-09-30] Fixed missing detail address (상세주소) issue by falling back to shop name or '고객님' to prevent epost validation errors.
