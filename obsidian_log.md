@@ -265,3 +265,5 @@
 [2026-09-30] Added 정성일 (Adorable) and 홍정의 to the sheet. Rebuilt batch-print.html for 176 unique targets.
 
 [2026-09-30] Created Post Office Excel upload file (우체국_택배접수용_최종.xlsx) from the 176 unique targets.
+
+[2026-09-30] Re-created Post Office Excel upload file (우체국_택배접수용_144번부터_최종.xlsx) to only include 33 new orders starting from seq #144.
