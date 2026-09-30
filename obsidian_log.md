@@ -259,3 +259,5 @@
 - [2026-09-29 10:13:03] [parvogel_landing] 펫샵 및 브리더 10월 환절기 알리고 LMS 예약 발송 완료: 1단계(오늘 9/29 14:00 VIP 116개소 도매 재발주 115건 성공), 2단계(내일 9/30 14:00 미신청 1,349개소 2차 무료체험 1,349건 전량 성공 등록).
 
 [2026-09-30 16:57:27] Removed real farm names (공주 구암농장, 충주 루미가든) from UI, blog posts, translations, and all related data files in parvogel_landing due to sensitive feedback.
+
+[2026-09-30] Added export_all feature to Google Apps Script, downloaded current sample requests (including 10 new SMS requests), cleaned/deduplicated data (175 unique), and rebuilt batch-print.html for label printing.
