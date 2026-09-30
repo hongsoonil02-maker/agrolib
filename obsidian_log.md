@@ -257,3 +257,5 @@
 - [2026-09-29 09:59:08] [parvogel_landing] 모바일 헤더 및 드롭다운 메뉴 주문/상담 신청 CTA 시인성 버그 수정: Tailwind primary-850 미등록으로 인한 투명 배경 및 흰색 글씨 가림 현상 해결, 주문·상담 신청 및 1병 무료체험 버튼 복원 및 깃허브 푸시 완료 (commit: aad458f).
 
 - [2026-09-29 10:13:03] [parvogel_landing] 펫샵 및 브리더 10월 환절기 알리고 LMS 예약 발송 완료: 1단계(오늘 9/29 14:00 VIP 116개소 도매 재발주 115건 성공), 2단계(내일 9/30 14:00 미신청 1,349개소 2차 무료체험 1,349건 전량 성공 등록).
+
+[2026-09-30 16:57:27] Removed real farm names (공주 구암농장, 충주 루미가든) from UI, blog posts, translations, and all related data files in parvogel_landing due to sensitive feedback.
