@@ -276,3 +276,4 @@
 
 [2026-09-30] Fixed post office 150 byte length limit on delivery request notes by safely truncating long notes to 45 characters.
 - **2026-10-01 06:59**: 구글 앱스 스크립트(google_apps_script.gs) 및 알림판 인쇄 페이지(batch-print.html)에서 상호명이 비어있을 경우 성명(수령인/담당자명)이 출력되도록 기본값 롤백(수정) 완료.
+- **2026-10-01 07:03**: 최신 구글 시트 데이터를 동기화(fetch_and_save_raw.py 실행) 후 중복 제거 로직(run_clean_dedup.py)과 알림판 인쇄 스크립트(sync_batch_print_full.py)를 재실행하여 177번째 신청자를 정상적으로 업데이트 완료함.
