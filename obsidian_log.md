@@ -277,3 +277,5 @@
 [2026-09-30] Fixed post office 150 byte length limit on delivery request notes by safely truncating long notes to 45 characters.
 - **2026-10-01 06:59**: ±¸±Û ¾Û½º ½ºÅ©¸³Æ®(google_apps_script.gs) ¹× ¾Ë¸²ÆÇ ÀÎ¼â ÆäÀÌÁö(batch-print.html)¿¡¼­ »óÈ£¸íÀÌ ºñ¾îÀÖÀ» °æ¿ì ¼º¸í(¼ö·ÉÀÎ/´ã´çÀÚ¸í)ÀÌ Ãâ·ÂµÇµµ·Ï ±âº»°ª ·Ñ¹é(¼öÁ¤) ¿Ï·á.
 - **2026-10-01 07:03**: ÃÖ½Å ±¸±Û ½ÃÆ® µ¥ÀÌÅÍ¸¦ µ¿±âÈ­(fetch_and_save_raw.py ½ÇÇà) ÈÄ Áßº¹ Á¦°Å ·ÎÁ÷(run_clean_dedup.py)°ú ¾Ë¸²ÆÇ ÀÎ¼â ½ºÅ©¸³Æ®(sync_batch_print_full.py)¸¦ Àç½ÇÇàÇÏ¿© 177¹øÂ° ½ÅÃ»ÀÚ¸¦ Á¤»óÀûÀ¸·Î ¾÷µ¥ÀÌÆ® ¿Ï·áÇÔ.
+
+- 2026-10-01: Fixed fetch_and_save_raw.py to properly fetch hospitalName and fallback to name. Fixed batch-print.html fallback logic issue. ê°•ì•„ì§€ë‚˜ë¼ correctly displays as ìƒí˜¸ëª….
