@@ -261,3 +261,5 @@
 [2026-09-30 16:57:27] Removed real farm names (ê³µì£¼ êµ¬ì•”ë†ì¥, ì¶©ì£¼ ë£¨ë¯¸ê°€ë“ ) from UI, blog posts, translations, and all related data files in parvogel_landing due to sensitive feedback.
 
 [2026-09-30] Added export_all feature to Google Apps Script, downloaded current sample requests (including 10 new SMS requests), cleaned/deduplicated data (175 unique), and rebuilt batch-print.html for label printing.
+
+[2026-09-30] Added Á¤¼ºÀÏ (Adorable) and È«Á¤ÀÇ to the sheet. Rebuilt batch-print.html for 176 unique targets.
