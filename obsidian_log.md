@@ -273,3 +273,5 @@
 [2026-09-30] Fixed Post Office bulk upload format to use the official 17-column template (template_befrecev_parcel_new.xls).
 
 [2026-09-30] Fixed missing detail address (惑技林家) issue by falling back to shop name or '绊按丛' to prevent epost validation errors.
+
+[2026-09-30] Fixed post office 150 byte length limit on delivery request notes by safely truncating long notes to 45 characters.
