@@ -275,3 +275,4 @@
 [2026-09-30] Fixed missing detail address (상세주소) issue by falling back to shop name or '고객님' to prevent epost validation errors.
 
 [2026-09-30] Fixed post office 150 byte length limit on delivery request notes by safely truncating long notes to 45 characters.
+- **2026-10-01 06:59**: 구글 앱스 스크립트(google_apps_script.gs) 및 알림판 인쇄 페이지(batch-print.html)에서 상호명이 비어있을 경우 성명(수령인/담당자명)이 출력되도록 기본값 롤백(수정) 완료.
