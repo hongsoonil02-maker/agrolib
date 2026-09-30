@@ -267,3 +267,5 @@
 [2026-09-30] Created Post Office Excel upload file (우체국_택배접수용_최종.xlsx) from the 176 unique targets.
 
 [2026-09-30] Re-created Post Office Excel upload file (우체국_택배접수용_144번부터_최종.xlsx) to only include 33 new orders starting from seq #144.
+
+[2026-09-30] [USER PREFERENCE UPDATED] 우체국 택배 대량 접수용 엑셀 파일은 항상 작업 후 업로드 편의를 위해 `c:\Users\master\Downloads\` (다운로드 폴더) 경로에 바로 저장되도록 파이썬 스크립트 수정 완료.
