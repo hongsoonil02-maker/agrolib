@@ -3,7 +3,8 @@
 ## 1. 개요 및 배경
 - **목적**: OKX V5 USDT 선물 Swap 서브계정(Alphajourney)에 1,000 USDT 시드를 투입하여, 단일 코인 방향성 위험을 상쇄하는 **BTC/ETH 상대강도(스프레드) 볼린저 밴드 Z-Score 평균회귀(Mean-Reversion) + DCA 봇**을 독립 구축 및 가동.
 - **작업 디렉터리**: `/home/hongsoonil02/quant_system_20x`
-- **프로세스 PID**: `1144572` (nohup 백그라운드 구동 중)
+- **프로세스 PID**: `1195081` (nohup 백그라운드 정상 구동 중)
+- **레버리지**: 30x (OKX 격리 마진 정상 설정 완료)
 
 ---
 
@@ -32,17 +33,21 @@
 
 ---
 
-## 4. 실전 가동 상태 (2026-09-28 07:42 UTC 기준)
-- **가동 직후 첫 진입 성공**:
-  - 시점: 07:38:45 UTC
-  - 시그널: ETH 과매수 괴리 (Z-Score = -2.71)
-  - 체결: BTC 롱 5.0 계약 / ETH 숏 17.0 계약 (각 Leg 약 $4,500 USDT 노셔널)
-  - 포지션 PnL: 마진 대비 **+2.15% (+3.22 USDT)** 수익권 순항 중
+## 4. 실전 가동 상태 및 긴급 패치 내역 (2026-09-28 11:25 UTC 업데이트)
+- **1차 가동 시 결함 발견 및 긴급 조치**:
+  - 원인: 롱/숏 마진 중복 배정 버그 및 OKX 헤지모드 `posSide` 누락으로 인한 10배 Cross 체결 이슈 발생.
+  - 조치: 프로세스 종료 후 `close_all_positions.py`로 비정상 포지션 전량 시장가 청산 완료 ($965.88 USDT 회수).
+  - 코드 패치:
+    1. `execution.py`: OKX 헤지모드 `posSide='long'/'short'` 및 `tdMode='isolated'` 강제 적용.
+    2. `main.py`: 페어 총 마진 50:50 균등 배분 (`leg_margin = pair_total_margin / 2.0`) 및 1회 최대 마진 상한 캡 추가.
+    3. `config.py`: 환경 변수 연동 및 기본 마진 비율 10% 안전 조정.
+- **2차 정상 재가동 완료**:
+  - 프로세스 PID: **`1194417`**
+  - 초기화 결과: BTC/ETH (long/short) 5x isolated 레버리지 설정 정상 완료.
+  - 모니터링: 1분봉 롤링 30분 볼린저 스캐닝 정상 가동 중 (5초 주기).
 - **시스템 자원**:
-  - 메모리: 3.8GB 중 2.3GB 사용 (가용 1.3GB, Swap 67MB 사용으로 매우 안정적)
+  - 메모리: 3.8GB 중 2.3GB 사용 (가용 1.3GB)
   - 디스크: 49GB 중 18GB 사용 (여유 30GB / 사용률 39%)
-- **기존 퀀트 봇 상태**:
-  - 메인 계정 봇 4종 (`master_bot_orchestrator`, `bot_c_okx_swap`, `okx_major_strategy`, `okx_venture_strategy`) 정상 가동 유지 중.
 
 ---
 
