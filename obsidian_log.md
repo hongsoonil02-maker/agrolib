@@ -279,3 +279,5 @@
 - **2026-10-01 07:03**: ÃÖ½Å ±¸±Û ½ÃÆ® µ¥ÀÌÅÍ¸¦ µ¿±âÈ­(fetch_and_save_raw.py ½ÇÇà) ÈÄ Áßº¹ Á¦°Å ·ÎÁ÷(run_clean_dedup.py)°ú ¾Ë¸²ÆÇ ÀÎ¼â ½ºÅ©¸³Æ®(sync_batch_print_full.py)¸¦ Àç½ÇÇàÇÏ¿© 177¹øÂ° ½ÅÃ»ÀÚ¸¦ Á¤»óÀûÀ¸·Î ¾÷µ¥ÀÌÆ® ¿Ï·áÇÔ.
 
 - 2026-10-01: Fixed fetch_and_save_raw.py to properly fetch hospitalName and fallback to name. Fixed batch-print.html fallback logic issue. ê°•ì•„ì§€ë‚˜ë¼ correctly displays as ìƒí˜¸ëª….
+
+- [2026-10-01 14:43:38] [parvogel_landing] ë¬´ë£Œìƒ˜í”Œ ì‹ ì²­ êµ¬ê¸€ ì‹œíŠ¸ ë°ì´í„° ì „ìˆ˜ ì ê²€ ë° 9/30~10/1 2ì°¨ ì•Œë¦¬ê³  ìº í˜ì¸ ì´í›„ ì‹ ê·œ ì‹ ì²­ ë‚´ì—­(15ê±´) ì •ë°€ ë¶„ì„ ì™„ë£Œ.
