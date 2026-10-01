@@ -281,3 +281,5 @@
 - 2026-10-01: Fixed fetch_and_save_raw.py to properly fetch hospitalName and fallback to name. Fixed batch-print.html fallback logic issue. 강아지나라 correctly displays as 상호명.
 
 - [2026-10-01 14:43:38] [parvogel_landing] 무료샘플 신청 구글 시트 데이터 전수 점검 및 9/30~10/1 2차 알리고 캠페인 이후 신규 신청 내역(15건) 정밀 분석 완료.
+
+- [2026-10-01 14:53:02] [parvogel_landing] 중복 건(강아지나라, 유선환) 정리 확인 및 인접 농장(정읍애견사랑 원태경), 청통농장 도병천 A4 알림판 및 우체국 택배 명단(총 183개소) 반영 완료.
