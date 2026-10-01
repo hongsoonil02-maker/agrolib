@@ -289,3 +289,7 @@
 ### [2026-10-01 22:23:00] Naver Blog Auto-Publishing Engine Integration Complete
 - Playwright 기반 네이버 스마트에디터 ONE 자동 포스팅 엔진 연동 및 실배포 테스트 완료 (발행 URL: https://blog.naver.com/soonilhong/224428731358).
 - 영구 로그인 세션 및 쿠키 보존 체계 구축, 바탕화면 즉시 실행 배치 파일 제공 및 마케팅 공장 파이프라인 결합 완료.
+
+### [2026-10-01 22:46:22] Naver Blog Title, Intro, and Categories Restructured
+- 블로그 메인명을 (주)한국아그로 수의학연구소로 개편하고, 소개글에 로타갈, 베타콜, 젬스밀크(어린동물 분유), 파보겔 등 4대 핵심 라인업 전문성 반영 완료.
+- 낙서장 카테고리를 파보겔 (강아지 장염·설사)로 리뉴얼 및 젬스밀크, 산업동물, 수의사 칼럼 메뉴 체계 구축 완료.
