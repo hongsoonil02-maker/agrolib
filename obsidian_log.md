@@ -334,3 +334,8 @@
 - Resolved duplicate run block when Naver Blog failed on initial run.
 - Added smart per-channel skip logic to avoid duplicate social posts while retrying failed channels.
 - Fixed batch echo parsing for Coupang keyword.
+
+
+## [2026-10-02 12:21:38] Added Sample Recipient & Generated A4 Notice Board (K타운 윤익수)
+- Added applicant 'K타운 윤익수' (010-8248-1048, 경산시 와촌면 상암길37길 124) to sampleRecipients.json (#117), orders_cleaned.json (#186), cleaned_batch_input.tsv, and batch-print.html.
+- Created dedicated custom A4 notice board `parvogel-notice-ktown.html` ready for print.
