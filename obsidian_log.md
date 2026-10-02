@@ -318,3 +318,8 @@
 ### [2026-10-01 22:54:39] Order Reclassification: Hong Jeong-ui to Breeder (B2B: 41, Friends: 28)
 - #180 홍정의 대표님을 전문 브리더(B2B)로 정보 갱신 및 재분류 완료.
 - 최종 분리: 순수 B2B 사업자 41건 / 추석 달맞이100 지인 선물 28건으로 우체국 접수 엑셀 갱신 완료.
+
+
+## [2026-10-02 11:29:58] Parvogel Marketing Batch Path Fix
+- Fixed working directory path in Desktop batch file to correctly target parvogel_landing.
+- Verified marketing scripts status.
