@@ -323,3 +323,8 @@
 ## [2026-10-02 11:29:58] Parvogel Marketing Batch Path Fix
 - Fixed working directory path in Desktop batch file to correctly target parvogel_landing.
 - Verified marketing scripts status.
+
+
+## [2026-10-02 11:34:35] Parvogel Marketing Pipeline Bugfixes
+- Fixed FFmpeg Windows drawtext font path colon escaping in video_maker.py.
+- Successfully verified 9:16 Shorts rendering and batch file echo encoding.
