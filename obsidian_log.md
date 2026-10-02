@@ -328,3 +328,9 @@
 ## [2026-10-02 11:34:35] Parvogel Marketing Pipeline Bugfixes
 - Fixed FFmpeg Windows drawtext font path colon escaping in video_maker.py.
 - Successfully verified 9:16 Shorts rendering and batch file echo encoding.
+
+
+## [2026-10-02 11:50:42] Parvogel Marketing Duplicate Blocker & Retry Logic
+- Resolved duplicate run block when Naver Blog failed on initial run.
+- Added smart per-channel skip logic to avoid duplicate social posts while retrying failed channels.
+- Fixed batch echo parsing for Coupang keyword.
