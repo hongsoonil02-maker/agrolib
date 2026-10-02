@@ -1,3 +1,16 @@
+# Obsidian Log â€” 2026-10-02
+
+## ì—…ë¹„íŠ¸ ë“€ì–¼ í€€íŠ¸ ì—”ì§„ êµ¬ì¶• ë° 200ì¼ ë°±í…ŒìŠ¤íŠ¸ ìµœì í™” ì ìš©
+
+### ìš”ì•½
+- KIS í•œêµ­ì£¼ì‹ ë° OKX í€€íŠ¸ ì—”ì§„ ë¡œì§ì„ ì—…ë¹„íŠ¸(Upbit) í˜„ë¬¼ë¡œ ì™„ë²½ ë³µì œ ì´ì‹.
+- ë©”ì´ì € íŠ¸ë Œë“œ ë´‡(`upbit_trend_trader`) + ì•ŒíŠ¸ ë²¤ì²˜ ìŠ¤ë‚˜ì´í¼ ë´‡(`upbit_venture_trader`) ë“€ì–¼ ì—”ì§„ êµ¬ì¡° êµ¬ì¶•.
+- ìê¸ˆ ë³€ë™(20ë§Œ ì› â†’ 155ë§Œ ì›)ì— ë§ì¶˜ í¬ì§€ì…˜ ì‚¬ì´ì§•(ë©”ì´ì € 25%, ë²¤ì²˜ 15%) ë° ìº¡ ë¦¬ë°¸ëŸ°ì‹±.
+- 200ì¼ ë°±í…ŒìŠ¤íŠ¸ ê·¸ë¦¬ë“œ ì„œì¹˜ë¥¼ í†µí•´ 1ìœ„ íŒŒë¼ë¯¸í„° ë„ì¶œ: ëˆí‚¤ì–¸ 10ì¼, ATR 3.0x, ì†ì ˆ 10%, RSI 50~75 í•„í„° (ìˆ˜ìµë¥  +19.06%, MDD -3.87%, ìŠ¹ë¥  61.9%, ì†ìµë¹„ 3.63) ì‹¤ê°€ë™ ë°˜ì˜ ì™„ë£Œ.
+- ìƒì„¸ ë¬¸ì„œ: [[2026-10-02_ì—…ë¹„íŠ¸_ë“€ì–¼ì—”ì§„_êµ¬ì¶•_ë°_200ì¼_ë°±í…ŒìŠ¤íŠ¸_ìµœì í™”_ì ìš©]]
+
+---
+
 # Obsidian Log â€” 2026-09-14
 
 ## íŒŒë³´ê²” í™ˆí˜ì´ì§€ 17ê°œì„  ì™„ë£Œ (parvogel.kr)
@@ -262,21 +275,21 @@
 
 [2026-09-30] Added export_all feature to Google Apps Script, downloaded current sample requests (including 10 new SMS requests), cleaned/deduplicated data (175 unique), and rebuilt batch-print.html for label printing.
 
-[2026-09-30] Added Á¤¼ºÀÏ (Adorable) and È«Á¤ÀÇ to the sheet. Rebuilt batch-print.html for 176 unique targets.
+[2026-09-30] Added ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ (Adorable) and È«ï¿½ï¿½ï¿½ï¿½ to the sheet. Rebuilt batch-print.html for 176 unique targets.
 
-[2026-09-30] Created Post Office Excel upload file (¿ìÃ¼±¹_ÅÃ¹èÁ¢¼ö¿ë_ÃÖÁ¾.xlsx) from the 176 unique targets.
+[2026-09-30] Created Post Office Excel upload file (ï¿½ï¿½Ã¼ï¿½ï¿½_ï¿½Ã¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½_ï¿½ï¿½ï¿½ï¿½.xlsx) from the 176 unique targets.
 
-[2026-09-30] Re-created Post Office Excel upload file (¿ìÃ¼±¹_ÅÃ¹èÁ¢¼ö¿ë_144¹øºÎÅÍ_ÃÖÁ¾.xlsx) to only include 33 new orders starting from seq #144.
+[2026-09-30] Re-created Post Office Excel upload file (ï¿½ï¿½Ã¼ï¿½ï¿½_ï¿½Ã¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½_144ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½_ï¿½ï¿½ï¿½ï¿½.xlsx) to only include 33 new orders starting from seq #144.
 
-[2026-09-30] [USER PREFERENCE UPDATED] ¿ìÃ¼±¹ ÅÃ¹è ´ë·® Á¢¼ö¿ë ¿¢¼¿ ÆÄÀÏÀº Ç×»ó ÀÛ¾÷ ÈÄ ¾÷·Îµå ÆíÀÇ¸¦ À§ÇØ `c:\Users\master\Downloads\` (´Ù¿î·Îµå Æú´õ) °æ·Î¿¡ ¹Ù·Î ÀúÀåµÇµµ·Ï ÆÄÀÌ½ã ½ºÅ©¸³Æ® ¼öÁ¤ ¿Ï·á.
+[2026-09-30] [USER PREFERENCE UPDATED] ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½Ã¹ï¿½ ï¿½ë·® ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½×»ï¿½ ï¿½Û¾ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½Îµï¿½ ï¿½ï¿½ï¿½Ç¸ï¿½ ï¿½ï¿½ï¿½ï¿½ `c:\Users\master\Downloads\` (ï¿½Ù¿ï¿½Îµï¿½ ï¿½ï¿½ï¿½ï¿½) ï¿½ï¿½Î¿ï¿½ ï¿½Ù·ï¿½ ï¿½ï¿½ï¿½ï¿½Çµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì½ï¿½ ï¿½ï¿½Å©ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ ï¿½Ï·ï¿½.
 
 [2026-09-30] Fixed Post Office bulk upload format to use the official 17-column template (template_befrecev_parcel_new.xls).
 
-[2026-09-30] Fixed missing detail address (»ó¼¼ÁÖ¼Ò) issue by falling back to shop name or '°í°´´Ô' to prevent epost validation errors.
+[2026-09-30] Fixed missing detail address (ï¿½ï¿½ï¿½Ö¼ï¿½) issue by falling back to shop name or 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½' to prevent epost validation errors.
 
 [2026-09-30] Fixed post office 150 byte length limit on delivery request notes by safely truncating long notes to 45 characters.
-- **2026-10-01 06:59**: ±¸±Û ¾Û½º ½ºÅ©¸³Æ®(google_apps_script.gs) ¹× ¾Ë¸²ÆÇ ÀÎ¼â ÆäÀÌÁö(batch-print.html)¿¡¼­ »óÈ£¸íÀÌ ºñ¾îÀÖÀ» °æ¿ì ¼º¸í(¼ö·ÉÀÎ/´ã´çÀÚ¸í)ÀÌ Ãâ·ÂµÇµµ·Ï ±âº»°ª ·Ñ¹é(¼öÁ¤) ¿Ï·á.
-- **2026-10-01 07:03**: ÃÖ½Å ±¸±Û ½ÃÆ® µ¥ÀÌÅÍ¸¦ µ¿±âÈ­(fetch_and_save_raw.py ½ÇÇà) ÈÄ Áßº¹ Á¦°Å ·ÎÁ÷(run_clean_dedup.py)°ú ¾Ë¸²ÆÇ ÀÎ¼â ½ºÅ©¸³Æ®(sync_batch_print_full.py)¸¦ Àç½ÇÇàÇÏ¿© 177¹øÂ° ½ÅÃ»ÀÚ¸¦ Á¤»óÀûÀ¸·Î ¾÷µ¥ÀÌÆ® ¿Ï·áÇÔ.
+- **2026-10-01 06:59**: ï¿½ï¿½ï¿½ï¿½ ï¿½Û½ï¿½ ï¿½ï¿½Å©ï¿½ï¿½Æ®(google_apps_script.gs) ï¿½ï¿½ ï¿½Ë¸ï¿½ï¿½ï¿½ ï¿½Î¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(batch-print.html)ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½/ï¿½ï¿½ï¿½ï¿½Ú¸ï¿½)ï¿½ï¿½ ï¿½ï¿½ÂµÇµï¿½ï¿½ï¿½ ï¿½âº»ï¿½ï¿½ ï¿½Ñ¹ï¿½(ï¿½ï¿½ï¿½ï¿½) ï¿½Ï·ï¿½.
+- **2026-10-01 07:03**: ï¿½Ö½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½ï¿½ï¿½ï¿½È­(fetch_and_save_raw.py ï¿½ï¿½ï¿½ï¿½) ï¿½ï¿½ ï¿½ßºï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½(run_clean_dedup.py)ï¿½ï¿½ ï¿½Ë¸ï¿½ï¿½ï¿½ ï¿½Î¼ï¿½ ï¿½ï¿½Å©ï¿½ï¿½Æ®(sync_batch_print_full.py)ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ 177ï¿½ï¿½Â° ï¿½ï¿½Ã»ï¿½Ú¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½Ï·ï¿½ï¿½ï¿½.
 
 - 2026-10-01: Fixed fetch_and_save_raw.py to properly fetch hospitalName and fallback to name. Fixed batch-print.html fallback logic issue. ê°•ì•„ì§€ë‚˜ë¼ correctly displays as ìƒí˜¸ëª….
 
