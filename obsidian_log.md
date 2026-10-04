@@ -382,3 +382,6 @@
 
 ## [2026-10-04 11:29:46] Parvogel Video Spacing Final Halving & Border Elimination
 - 동영상 아카이브 하단 경계선(border-b) 제거, 섹션 하단 패딩 pb-0 설정, 꼬미 스토리 상단 마진 mt-0 및 내부 상단 패딩 반감(p-3 sm:p-5 lg:p-6), 캐시 방지 메타태그 적용으로 실제 렌더링 간격 완벽 압축.
+
+## [2026-10-04 11:43:31] Root Cause Fix: Remove section:not(#hero) py-20 !important override
+- src/index.css의 section:not(#hero) { @apply py-12 sm:py-16 lg:py-20 !important; } 전역 강제 룰을 완전 삭제하여, 동영상 및 섹션 상하에 강제로 부여되던 200px 이상의 거대한 여백 근본 해결 및 정상 밀착 완료.
