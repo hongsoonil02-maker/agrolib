@@ -370,3 +370,6 @@
 - [2026-10-04 10:30:39] [parvogel_landing] Fixed blank screen issue on parvogel.kr caused by undefined siteUrl ReferenceError in SEO.jsx and verified production deployment.
 
 - [2026-10-04 10:41:47] [parvogel_landing] Relocated bird/parrot clinical story below puppy documentary, updated SEO metadata & schema, added bird diarrhea blog guide, and scheduled biweekly bird marketing content in marketing factory.
+
+## [2026-10-04 10:54:35] Parvogel Landing Spacing Compact Optimization
+- 전역 세션(Hero, About, Features, 임상다큐, 조류실화 고미스토리, 나노작용원리, 타겟, 고객후기, 제품라인업, FAQ, 주문안내, 푸터 등)의 과도한 상·하단 마진/패딩을 통일된 컴팩트 규격으로 대폭 축소하여 벙벙하고 허술한 레이아웃을 밀도 높은 세련된 완성도로 정돈 완료 및 GitHub Pages 배포 연동.
