@@ -368,3 +368,5 @@
 - **2026-10-03 19:42 KST**: [파보겔 마케팅 공장] 윈도우 작업 스케줄러(Windows Task Scheduler)에 Parvogel_Daily_Marketing_Factory 정식 등록 완료 (매일 오전 08:30 자동 실행, PC 부팅 시 즉시 실행 설정). 네이버 블로그 자동 포스팅 및 숏폼 영상/멀티채널 자동화 파이프라인 무인 가동 체계 구축.
 
 - [2026-10-04 10:30:39] [parvogel_landing] Fixed blank screen issue on parvogel.kr caused by undefined siteUrl ReferenceError in SEO.jsx and verified production deployment.
+
+- [2026-10-04 10:41:47] [parvogel_landing] Relocated bird/parrot clinical story below puppy documentary, updated SEO metadata & schema, added bird diarrhea blog guide, and scheduled biweekly bird marketing content in marketing factory.
