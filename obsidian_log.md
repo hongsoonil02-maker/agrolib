@@ -373,3 +373,6 @@
 
 ## [2026-10-04 10:54:35] Parvogel Landing Spacing Compact Optimization
 - 전역 세션(Hero, About, Features, 임상다큐, 조류실화 고미스토리, 나노작용원리, 타겟, 고객후기, 제품라인업, FAQ, 주문안내, 푸터 등)의 과도한 상·하단 마진/패딩을 통일된 컴팩트 규격으로 대폭 축소하여 벙벙하고 허술한 레이아웃을 밀도 높은 세련된 완성도로 정돈 완료 및 GitHub Pages 배포 연동.
+
+## [2026-10-04 11:02:51] Parvogel Video Archive Spacing Precision Adjustment
+- 6대 직캠 아카이브 동영상 영역 상·하단 및 동영상 하단 빈 여백을 대폭 축소 (ParvogelClinicalDocumentary 하단 패딩 pb-2, 상단 마진 축소, GomiPoopStory 상단 여백 mt-2로 압축하여 70px 이상 벌어지던 공백 완전 해결).
