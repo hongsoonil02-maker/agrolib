@@ -379,3 +379,6 @@
 
 ## [2026-10-04 11:15:28] Parvogel Video Bottom Spacing Cut in Half
 - 6대 직캠 동영상 아카이브 하단 여백을 반으로 대폭 압축 (ParvogelClinicalDocumentary 하단 패딩 pb-1로 반감, GomiPoopStory 상단 여백 mt-1로 축소, 각 비디오 카드 내부 패딩 p-2 sm:p-2.5로 군더더기 없는 밀착형 디자인 완성).
+
+## [2026-10-04 11:29:46] Parvogel Video Spacing Final Halving & Border Elimination
+- 동영상 아카이브 하단 경계선(border-b) 제거, 섹션 하단 패딩 pb-0 설정, 꼬미 스토리 상단 마진 mt-0 및 내부 상단 패딩 반감(p-3 sm:p-5 lg:p-6), 캐시 방지 메타태그 적용으로 실제 렌더링 간격 완벽 압축.
