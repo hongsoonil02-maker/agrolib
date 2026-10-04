@@ -376,3 +376,6 @@
 
 ## [2026-10-04 11:02:51] Parvogel Video Archive Spacing Precision Adjustment
 - 6대 직캠 아카이브 동영상 영역 상·하단 및 동영상 하단 빈 여백을 대폭 축소 (ParvogelClinicalDocumentary 하단 패딩 pb-2, 상단 마진 축소, GomiPoopStory 상단 여백 mt-2로 압축하여 70px 이상 벌어지던 공백 완전 해결).
+
+## [2026-10-04 11:15:28] Parvogel Video Bottom Spacing Cut in Half
+- 6대 직캠 동영상 아카이브 하단 여백을 반으로 대폭 압축 (ParvogelClinicalDocumentary 하단 패딩 pb-1로 반감, GomiPoopStory 상단 여백 mt-1로 축소, 각 비디오 카드 내부 패딩 p-2 sm:p-2.5로 군더더기 없는 밀착형 디자인 완성).
