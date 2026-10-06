@@ -389,3 +389,6 @@
 ## [2026-10-07 08:43:57] 파보겔(PARVOGEL) 마케팅 공장 바이럴 숏폼 역설계 엔진 및 D2C 퍼널 고도화 1차 구축 완료
 - 바이럴 레퍼런스 역설계 엔진(ViralShortformEngine) 및 사료관리법 컴플라이언스 자동 필터(compliance_rules.json), 20종 B-roll 카탈로그(broll_catalog.json) 구축 완료.
 - 반려견 2종(감성공감형, 수의학기전형) 및 한우 송아지 1종(농가손실방지형) 3대 숏폼 대본/어셈블러(자동렌더링/외주웹훅) 및 댓글 폭탄 D2C 스마트스토어 전환 퍼널 설계 및 단위 테스트 통과.
+## [2026-10-07 08:54:15] 파보겔 숏폼 3편 실제 렌더링 완료 및 외주/댓글퍼널/대시보드 전 파이프라인 가동
+- ShortformAutoRenderer(FFmpeg + Edge-TTS)로 버전 A(감성공감 40초), 버전 B(수의학기전 45.7초), 버전 C(한우송아지 48.3초) 9:16 비디오 실제 렌더링 완료.
+- OutsourceDispatcher(옵션 B TSV/마크다운 지시서), CommentFunnelEngine(댓글 폭탄 '파보'/'골든타임'/'송아지' 자동 DM/답글 퍼널), DashboardService(viral_funnel_dashboard.html) 구축 및 통합 테스트(4/4 통과) 완료.
