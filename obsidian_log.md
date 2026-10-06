@@ -385,3 +385,7 @@
 
 ## [2026-10-04 11:43:31] Root Cause Fix: Remove section:not(#hero) py-20 !important override
 - src/index.css의 section:not(#hero) { @apply py-12 sm:py-16 lg:py-20 !important; } 전역 강제 룰을 완전 삭제하여, 동영상 및 섹션 상하에 강제로 부여되던 200px 이상의 거대한 여백 근본 해결 및 정상 밀착 완료.
+
+## [2026-10-07 08:43:57] 파보겔(PARVOGEL) 마케팅 공장 바이럴 숏폼 역설계 엔진 및 D2C 퍼널 고도화 1차 구축 완료
+- 바이럴 레퍼런스 역설계 엔진(ViralShortformEngine) 및 사료관리법 컴플라이언스 자동 필터(compliance_rules.json), 20종 B-roll 카탈로그(broll_catalog.json) 구축 완료.
+- 반려견 2종(감성공감형, 수의학기전형) 및 한우 송아지 1종(농가손실방지형) 3대 숏폼 대본/어셈블러(자동렌더링/외주웹훅) 및 댓글 폭탄 D2C 스마트스토어 전환 퍼널 설계 및 단위 테스트 통과.
