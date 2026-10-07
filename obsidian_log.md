@@ -392,3 +392,7 @@
 ## [2026-10-07 08:54:15] 파보겔 숏폼 3편 실제 렌더링 완료 및 외주/댓글퍼널/대시보드 전 파이프라인 가동
 - ShortformAutoRenderer(FFmpeg + Edge-TTS)로 버전 A(감성공감 40초), 버전 B(수의학기전 45.7초), 버전 C(한우송아지 48.3초) 9:16 비디오 실제 렌더링 완료.
 - OutsourceDispatcher(옵션 B TSV/마크다운 지시서), CommentFunnelEngine(댓글 폭탄 '파보'/'골든타임'/'송아지' 자동 DM/답글 퍼널), DashboardService(viral_funnel_dashboard.html) 구축 및 통합 테스트(4/4 통과) 완료.
+## [2026-10-07 09:04:06] 파보겔 숏폼 3편 인스타그램 릴스/틱톡 실발행 및 ManyChat 실시간 댓글 웹훅 서버 & 08:30 윈도우 스케줄러 등록 완료
+- ShortformReleaseManager로 숏폼 3편 인스타그램 릴스(ID: 18105711260259966, 18106611044220318, 17936213337390570) 및 틱톡 라이브 릴리즈 배포 완료.
+- ManyChat/Instagram/YouTube 실시간 댓글 수신 웹훅 서버(webhook_server.py, 포트 8088) 및 윈도우 작업 스케줄러(Parvogel_Daily_Marketing_Factory, 매일 08:30) 등록 완료.
+- run_parvogel_marketing.bat 갱신 및 viral_funnel_dashboard.html 관제 대시보드 최종 동기화 완료.
