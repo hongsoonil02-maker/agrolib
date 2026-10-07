@@ -402,3 +402,4 @@
 [2026-10-07 09:17:12] [Parvogel Marketing Factory] 유튜브 1회 인증 배치 파일 UTF-8 BOM 제거 및 절대 경로 이중화 수정 완료 (Windows CMD 호환성 해결).
 [2026-10-07 09:23:54] [Parvogel Marketing Factory] 유튜브 1회 OAuth 인증 승인 완료 및 파보겔 바이럴 숏폼 3편(버전 A, B, C) YouTube Shorts 실전 자동 업로드 성공 (Live 배포 완료).
 [2026-10-07 09:35:49] [Parvogel Marketing Factory] 숏폼 동영상 제품 사진 전면 개편: 로타겔/시제품 혼재 사진 전량 제거 및 홈페이지 파보겔 공식 실사 3종 교체 완료. 숏폼 3편 재렌더링 및 YouTube Shorts 재업로드 완료.
+[2026-10-07 09:37:39] [Parvogel Marketing Factory] 파보겔 공식 제품 실사 사진 영구 강제화 원칙 확립. (1) compliance_rules.json 비주얼 에셋 가이드라인 등록 (2) shortform_renderer.py 내 로타겔/시제품 자동 차단 및 홈페이지 정품 실사 강제 치환 가드 구축.
