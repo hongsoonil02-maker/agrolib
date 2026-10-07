@@ -396,3 +396,6 @@
 - ShortformReleaseManager로 숏폼 3편 인스타그램 릴스(ID: 18105711260259966, 18106611044220318, 17936213337390570) 및 틱톡 라이브 릴리즈 배포 완료.
 - ManyChat/Instagram/YouTube 실시간 댓글 수신 웹훅 서버(webhook_server.py, 포트 8088) 및 윈도우 작업 스케줄러(Parvogel_Daily_Marketing_Factory, 매일 08:30) 등록 완료.
 - run_parvogel_marketing.bat 갱신 및 viral_funnel_dashboard.html 관제 대시보드 최종 동기화 완료.
+## [2026-10-07 09:10:05] 유튜브 쇼츠 업로드 보류 원인 진단(Google OAuth 토큰 만료) 및 1클릭 브라우저 인증/업로드 도구 구축 완료
+- 인스타그램 릴스/틱톡 라이브 배포 완료 후 유튜브 토큰 만료(HTTP 400 invalid_grant) 확인.
+- 1회 브라우저 구글 로그인으로 토큰 갱신 및 3편 쇼츠 자동 업로드가 실행되는 setup_youtube_auth.py 및 유튜브_1회_인증_및_업로드.bat 구축 완료.
