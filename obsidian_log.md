@@ -401,3 +401,4 @@
 - 1회 브라우저 구글 로그인으로 토큰 갱신 및 3편 쇼츠 자동 업로드가 실행되는 setup_youtube_auth.py 및 유튜브_1회_인증_및_업로드.bat 구축 완료.[2026-10-07 09:14:16] [Parvogel Marketing Factory] 유튜브 1회 인증 배치 파일 경로 정비 및 바탕화면 바로가기 최적화 안내 (위치: 바탕화면 및 프로젝트 루트).
 [2026-10-07 09:17:12] [Parvogel Marketing Factory] 유튜브 1회 인증 배치 파일 UTF-8 BOM 제거 및 절대 경로 이중화 수정 완료 (Windows CMD 호환성 해결).
 [2026-10-07 09:23:54] [Parvogel Marketing Factory] 유튜브 1회 OAuth 인증 승인 완료 및 파보겔 바이럴 숏폼 3편(버전 A, B, C) YouTube Shorts 실전 자동 업로드 성공 (Live 배포 완료).
+[2026-10-07 09:35:49] [Parvogel Marketing Factory] 숏폼 동영상 제품 사진 전면 개편: 로타겔/시제품 혼재 사진 전량 제거 및 홈페이지 파보겔 공식 실사 3종 교체 완료. 숏폼 3편 재렌더링 및 YouTube Shorts 재업로드 완료.
