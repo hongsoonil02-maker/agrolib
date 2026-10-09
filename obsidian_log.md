@@ -436,3 +436,5 @@
 ## [2026-10-09 20:55:29] Naver Search Ad Strategy Prepped (Pain Points)
 - Core protective symptom keywords planned: 1. 식욕부진/섭취거부 2. 설사 3. 구토 4. 혈변.
 - Ready for execution next week.
+
+- **[2026-10-09 21:09:08]** [Parvogel Asset Update] bottle_group.png subtext corrected and Kakao ad/profile assets generated.
