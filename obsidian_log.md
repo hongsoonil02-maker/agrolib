@@ -427,3 +427,8 @@
 
 ## [2026-10-09 19:56:20] Kakao Moment Payment Card Registered
 - Registered corporate payment card (Shinhan Card) for BizWallet, setting account status to fully operational.
+
+## [2026-10-09 20:42:31] Kakao BizBoard Ad Campaign Live Submitted
+- Campaign: Parvogel BizBoard Visit Campaign (Target: Pet Shopping, Age 25-59, Domestic Only).
+- Creative: Parvogel 3-Bottle Group Banner linking to parvogel.kr.
+- Status: In Review / Live (มýวเ ม฿).
