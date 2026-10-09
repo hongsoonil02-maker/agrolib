@@ -432,3 +432,7 @@
 - Campaign: Parvogel BizBoard Visit Campaign (Target: Pet Shopping, Age 25-59, Domestic Only).
 - Creative: Parvogel 3-Bottle Group Banner linking to parvogel.kr.
 - Status: In Review / Live (집행 중).
+
+## [2026-10-09 20:55:29] Naver Search Ad Strategy Prepped (Pain Points)
+- Core protective symptom keywords planned: 1. 식욕부진/섭취거부 2. 설사 3. 구토 4. 혈변.
+- Ready for execution next week.
