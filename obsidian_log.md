@@ -424,3 +424,6 @@
 
 ## [2026-10-09 19:30:09] KakaoTalk Personal Profile Bio Updated
 - Updated personal profile status message linking to official Kakao channel (_YwRrX) with Parvogel premier positioning.
+
+## [2026-10-09 19:56:20] Kakao Moment Payment Card Registered
+- Registered corporate payment card (Shinhan Card) for BizWallet, setting account status to fully operational.
