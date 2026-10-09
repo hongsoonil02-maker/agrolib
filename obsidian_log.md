@@ -418,3 +418,6 @@
 
 ## [2026-10-09 19:13:43] Kakao Business Parvogel Setup Complete
 - Configured Kakao Channel Profile, Bio, Video feeds (3 clinical videos), and Chat List Menu (FAQ FAQ).
+
+## [2026-10-09 19:20:43] Kakao Channel Quick Answers Registered
+- Configured 3 FAQ Quick Answers: B2B Sample Confirmation, Emergency Diarrhea Protocol, Order & Delivery Guide.
