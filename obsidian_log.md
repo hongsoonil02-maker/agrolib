@@ -487,3 +487,8 @@
 ## [2026-10-12 18:16:40] 9:16 Shorts Video Maker Upgraded & Pushed (parvogel: master)
 - Enhanced video_maker.py with E-E-A-T badges, high-clarity MalgunBD typography, and 몬모릴로나이트 guarantee.
 - Integrated audio_synthesizer.py pipeline.
+
+
+## [2026-10-12 18:38:57] Dual-Track Brand Isolation Policy Deployed
+- Isolated Korea Agro (Rotagal, Parvogel) from personal 100Bagger Labs (Quant Fintech).
+- Deployed brand_isolation_registry.json to both parvogel and quant_system repos.
