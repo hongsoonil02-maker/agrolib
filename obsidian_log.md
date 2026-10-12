@@ -462,3 +462,8 @@
 ## [2026-10-12 17:16:14] Marketing Automation Pipeline & Spelling Rule Synced
 - Verified marketing automation pipeline integration feasibility for Parvogel and 100bagger_backend.
 - Enforced strict spelling convention: 몬모릴로나이트 (never 몽모릴로나이트).
+
+
+## [2026-10-12 17:18:00] Marketing Factory Pipeline Updated
+- Applied strict spelling enforcement for 몬모릴로나이트 in content_enricher.py and naver_blog_adapter.py.
+- Hardened Naver Blog rich HTML converter against misspellings.
