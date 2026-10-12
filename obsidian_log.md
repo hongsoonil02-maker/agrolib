@@ -457,3 +457,8 @@
 
 ### [2026-10-11 16:55:46] 카카오 광고 성과 분석 및 익일 주문/박스 수요 예측
 - 카카오 비즈보드 광고 지표(클릭 약 230건, CPC 230~280원) 기반 전환율 분석 및 월요일 출고 박스(8~12개 권장) 수량 예측 완료.
+
+
+## [2026-10-12 17:16:14] Marketing Automation Pipeline & Spelling Rule Synced
+- Verified marketing automation pipeline integration feasibility for Parvogel and 100bagger_backend.
+- Enforced strict spelling convention: 몬모릴로나이트 (never 몽모릴로나이트).
