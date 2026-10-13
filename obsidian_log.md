@@ -498,3 +498,7 @@
 - Successfully logged into tnt111 on Naver.
 - Formally mapped tnt111 exclusively to Korea Agro livestock pharmaceuticals (Rotagal vaccine, Betacol).
 - Reserved soonilhong for Parvogel/Monsmecta D2C and plplurtrte for 100Bagger.
+
+## [2026-10-13 18:28:47] 사랑하개켄넬 무료샘플 등록 및 맞춤 알림판 제작
+- [무료샘플 신청 구글 시트] 사랑하개켄넬(선문규 대표님, 010-3740-0729, 인천 검단구 이음3로220 엘에이치20단지 2001동1812호) 추가 완료
+- [시스템 DB & 인쇄물] clean_87_orders(194번), batch-print, 우체국택배 파일 동기화 및 전용 A4 맞춤 알림판(HTML, PDF, PNG) 생성 완료
