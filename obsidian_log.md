@@ -9,7 +9,8 @@
 - 기존 제임스 헌법(ROE > 20%, ROIC > 15%, Net Cash) 100배거 코어 유지 + 카메론 모멘텀 + 🎯 하이브리드 스나이퍼 3중 탭 체제 확립.
 - Linux `systemd timer` (`bagger_cameron_pipeline.timer`) 매일 06:00 KST 등록 및 GitHub/Vercel 프로덕션 자동 배포 완료.
 - KIS 국내주식 3대 봇(토리, 추세추종, 카메론 30분봉) 1,500만 원 계좌 킬 스위치 리셋 및 상호 충돌 방지 아키텍처 점검.
-- 상세 문서: [[2026-10-16_100배거_마케팅파이프라인수술_카메론스캐너_KIS봇_통합보고서]]
+- 상세 문서 1: [[2026-10-16_100배거_마케팅파이프라인수술_카메론스캐너_KIS봇_통합보고서]]
+- 상세 문서 2 (진정한 알파): [[2026-10-16_로스카메론_1시간봉_진정한알파_검증_및_재발방지_안전운용백서]] (1H 6개월 백테스트: 승률 74.6%, PF 5.95, SL 16.8%, MDD 0.86%, 누적 +380.18% 확증)
 
 ---
 
@@ -446,17 +447,17 @@
 ## [2026-10-09 20:42:31] Kakao BizBoard Ad Campaign Live Submitted
 - Campaign: Parvogel BizBoard Visit Campaign (Target: Pet Shopping, Age 25-59, Domestic Only).
 - Creative: Parvogel 3-Bottle Group Banner linking to parvogel.kr.
-- Status: In Review / Live (���� ��).
+- Status: In Review / Live (���� ��).
 
 ## [2026-10-09 20:55:29] Naver Search Ad Strategy Prepped (Pain Points)
-- Core protective symptom keywords planned: 1. �Ŀ����/����ź� 2. ���� 3. ���� 4. ����.
+- Core protective symptom keywords planned: 1. �Ŀ����/����ź� 2. ���� 3. ���� 4. ����.
 - Ready for execution next week.
 
 - **[2026-10-09 21:09:08]** [Parvogel Asset Update] bottle_group.png subtext corrected and Kakao ad/profile assets generated.
 
 - **[2026-10-09 21:11:12]** [GitHub Push] 랜딩페이지 5가지 복합체 수정 이미지 및 카카오 광고/프로필 규격 에셋 origin/master 푸시 완료.
-[2026-10-10 07:50:38] [parvogel-landing] īī���� ä��(1:1 ä��) ���� ���������� ���� �Ϸ�: ���/����ϸ޴�/�ϴܽ�ƼŰ��/Ǫ�� �� B2B ���ý�û(OrderForm, ��������� ���, �ߺ����� ���)�� īī���� 1:1 ä�� ����â�� �ݿ�.
-[2026-10-10 07:53:18] [parvogel-landing] GitHub ���� master �귣ġ Ŀ�� �� Ǫ�� �Ϸ� (īī���� ä�� ���� �� B2B ���ý�û ����������)
+[2026-10-10 07:50:38] [parvogel-landing] īī���� ä��(1:1 ä��) ���� ���������� ���� �Ϸ�: ���/����ϸ޴�/�ϴܽ�ƼŰ��/Ǫ�� �� B2B ���ý�û(OrderForm, ��������� ���, �ߺ����� ���)�� īī���� 1:1 ä�� ����â�� �ݿ�.
+[2026-10-10 07:53:18] [parvogel-landing] GitHub ���� master �귣ġ Ŀ�� �� Ǫ�� �Ϸ� (īī���� ä�� ���� �� B2B ���ý�û ����������)
 
 ## [2026-10-10 17:12:40] Kakao Pixel Integration
 - 파보겔 공식 랜딩페이지(index.html)에 카카오 픽셀 추적 스크립트(ID: 9019188145294848683) 연동 및 GitHub 배포 완료
