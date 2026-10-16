@@ -1,3 +1,18 @@
+# Obsidian Log — 2026-10-16
+
+## 100-Bagger 마케팅 파이프라인 전면 수술, 카메론 스캐너 연동 및 KIS 자동매매 봇 점검
+
+### 요약
+- 100-Bagger SaaS 및 백엔드 7일간 데이터 중단 원인 규명: Linux systemd 부재, .env 누락, API 정적 목업 배열 하드코딩.
+- 일일 주가 동기화(`sync_yfinance_data.py`)로 240개 종목(미국/한국/베트남/인니) Supabase 라이브 갱신.
+- Ross Cameron $1~$25 저유통(Float < 50M) 폭등주 스캐너(`cameron_scanner.py`) 신규 개발 및 Supabase `system_configs` 연동.
+- 기존 제임스 헌법(ROE > 20%, ROIC > 15%, Net Cash) 100배거 코어 유지 + 카메론 모멘텀 + 🎯 하이브리드 스나이퍼 3중 탭 체제 확립.
+- Linux `systemd timer` (`bagger_cameron_pipeline.timer`) 매일 06:00 KST 등록 및 GitHub/Vercel 프로덕션 자동 배포 완료.
+- KIS 국내주식 3대 봇(토리, 추세추종, 카메론 30분봉) 1,500만 원 계좌 킬 스위치 리셋 및 상호 충돌 방지 아키텍처 점검.
+- 상세 문서: [[2026-10-16_100배거_마케팅파이프라인수술_카메론스캐너_KIS봇_통합보고서]]
+
+---
+
 # Obsidian Log — 2026-10-02
 
 ## 업비트 듀얼 퀀트 엔진 구축 및 200일 백테스트 최적화 적용
