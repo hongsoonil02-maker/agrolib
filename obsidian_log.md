@@ -623,3 +623,5 @@
 - **[2026-10-18 16:37:31] [100-Bagger Branding & Pipeline Standardize]**: 마케팅 컨텐츠 생성 및 배포 파이프라인 전체(AWS Social Uploader, Shorts Manifest 생성기, 트위터 워커, 백엔드 스캐너, 데일리 알파 시그널, 스크리너 서브타이틀 등)에서 로스 카메론 실명 표기를 전면 삭제하고 자체 브랜드 '제임스(James) 모멘텀 레이더'로 100% 통일 완료.
 
 - **[2026-10-18 18:10:53] [Brand Isolation & YouTube Fix]**: 100-Bagger 유튜브 채널의 축산/동물약품 영상 전량 영구 삭제 완료 확인 및 uploader 스크립트에 비주식/동물약품 영상 업로드를 원천 차단하는 헌법적 Brand Isolation Guard 적용 완료.
+
+- **[2026-10-18 18:46:04] [YouTube Architecture 2-Channel Restructure]**: 기존 2011년 채널(76개 영상, agrokorea 링크)을 원조 '한국아그로' 공식 채널로 완벽 복원하고, 신규 브랜드 채널을 순수 '100-Bagger Quant Lab'(@100bagger_quant, 100bagger.app)으로 완전 분리 세팅 완료.
