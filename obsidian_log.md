@@ -609,3 +609,9 @@
 - **2026-10-18 16:06:23** [100-Bagger SaaS Direct Payment UI Enhancement]:
   1. 요금제 카드 바로 아래에 '카드 없이 1초 결제: 카카오뱅크 원화 송금 & OKX USDT 코인 결제' 전용 섹션(DirectPaymentSection.tsx)을 상시 노출로 추가.
   2. 고객이 모달 버튼을 누르지 않아도 즉시 카카오뱅크 안심계좌(7942-21-16380) 및 OKX USDT 지갑(TTSsDLobSQkRJydRGdXhDYJiXvCRKfMG79)을 확인하고 원클릭 복사 및 송금 신청 가능하도록 개선.
+
+- **2026-10-18 16:16:19** [100-Bagger SaaS Multi-language, Mobile, A11y, and ChatBot Upgrade]:
+  1. 외국어 전환 완료: /en 등 영문 모드 시 'Zero-Fee Direct Payment: OKX USDT (Crypto) & Local/Wire Transfer'로 자동 전환 및 USDT(TRC20) 탭 기본 활성화.
+  2. 모바일 터치 최적화: iOS 줌 방지(16px font), 44px 이상 터치 타겟(min-h-[44px]) 적용.
+  3. 장애인 편의제공(WCAG 2.2 AA): 명도 대비 4.5:1 이상, ARIA 태그(role=tablist/tab/region/alert), 스크린리더 지원.
+  4. AI 챗봇 고객 편의 업그레이드: 원클릭 퀵 FAQ 칩 탑재 및 시스템 프롬프트에 카카오뱅크/OKX USDT 결제 정보 탑재.
