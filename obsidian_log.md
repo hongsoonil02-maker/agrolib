@@ -576,3 +576,5 @@
 - [2026-10-18 13:21:09] Fixed YouTube automated upload pipelines for 100-Bagger and Parvogel: resolved expired/mismatched OAuth tokens, synced valid credentials across local envs and GitHub Secrets, fixed silent failure masking in uploader script, and verified live uploads (kYkumAHqxZQ, yoz7CLzJGwg).
 
 - [2026-10-18 13:34:05] Completed Google Cloud Console OAuth transition to Production (Permanent token). Confirmed all 3 live YouTube uploads (Parvogel daily pipeline kYkumAHqxZQ, clinical test mZsv19-dih4, 100-Bagger DRD yoz7CLzJGwg) returning HTTP 200.
+
+- [2026-10-18 13:40:10] Investigated blog distribution systems: confirmed Parvogel Naver Blog Playwright session is ready on local Windows PC and draft archiving in GitHub Actions; analyzed 100-Bagger SEO blog success and WordPress 403 token expiration.
