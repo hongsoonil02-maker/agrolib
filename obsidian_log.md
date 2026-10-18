@@ -601,3 +601,7 @@
   1. 랜딩 페이지에 로그인 없이 1초 만에 관심 종목의 100배주 잠재력을 분석하는 'Instant Ticker Checker' 컴포넌트 및 API(/api/ticker-check) 구현.
   2. 최상단 배너에 '로스 카메론 급등주 & 하이브리드 레이더 LIVE 무료 공개' 연결 및 Pricing 섹션에 '창립 얼리어답터 100명 한정 7일 무위험 100% 무료체험' 파격 보장 배너 탑재.
   3. 디스코드 웹훅 실시간 브로드캐스트 및 국내외 주식 커뮤니티(디시 미주갤, 펨코, 레딧) 즉시 배포용 데일리 알파 시그널 자동 생성 엔진(scripts/daily_community_alpha.py) 구축 및 1차 배포 완료.
+
+- **2026-10-18 15:59:14** [100-Bagger SaaS Multi-Payment Integration]:
+  1. 대표님 소유 카카오뱅크 안심계좌(7942-21-16380 / 실계좌 3333-26-3248376) 및 OKX USDT Tron(TRC20: TTSsDLobSQkRJydRGdXhDYJiXvCRKfMG79) 다이렉트 결제 모듈(DirectPaymentModal.tsx) 구축 및 런칭.
+  2. 고객이 입금 신청 시 디스코드 웹훅으로 실시간 알림(플랜, 이메일, 입금자명/TXID)을 전송하는 백엔드 API(/api/payment-request) 구현 완료. 수수료 0% 직거래 및 해외 카드 결제 이탈 완벽 차단.
