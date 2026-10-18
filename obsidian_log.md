@@ -605,3 +605,7 @@
 - **2026-10-18 15:59:14** [100-Bagger SaaS Multi-Payment Integration]:
   1. 대표님 소유 카카오뱅크 안심계좌(7942-21-16380 / 실계좌 3333-26-3248376) 및 OKX USDT Tron(TRC20: TTSsDLobSQkRJydRGdXhDYJiXvCRKfMG79) 다이렉트 결제 모듈(DirectPaymentModal.tsx) 구축 및 런칭.
   2. 고객이 입금 신청 시 디스코드 웹훅으로 실시간 알림(플랜, 이메일, 입금자명/TXID)을 전송하는 백엔드 API(/api/payment-request) 구현 완료. 수수료 0% 직거래 및 해외 카드 결제 이탈 완벽 차단.
+
+- **2026-10-18 16:06:23** [100-Bagger SaaS Direct Payment UI Enhancement]:
+  1. 요금제 카드 바로 아래에 '카드 없이 1초 결제: 카카오뱅크 원화 송금 & OKX USDT 코인 결제' 전용 섹션(DirectPaymentSection.tsx)을 상시 노출로 추가.
+  2. 고객이 모달 버튼을 누르지 않아도 즉시 카카오뱅크 안심계좌(7942-21-16380) 및 OKX USDT 지갑(TTSsDLobSQkRJydRGdXhDYJiXvCRKfMG79)을 확인하고 원클릭 복사 및 송금 신청 가능하도록 개선.
