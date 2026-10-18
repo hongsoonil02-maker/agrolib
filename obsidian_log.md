@@ -574,3 +574,5 @@
 - **2026-10-17 08:00:25**: 파마겔 스레드(Threads) 인바운드 마케팅 콘텐츠 자동 생성 및 90초 지연 첫 댓글 타래 배포 파이프라인 구축 및 실전 검증 완료
 
 - [2026-10-18 13:21:09] Fixed YouTube automated upload pipelines for 100-Bagger and Parvogel: resolved expired/mismatched OAuth tokens, synced valid credentials across local envs and GitHub Secrets, fixed silent failure masking in uploader script, and verified live uploads (kYkumAHqxZQ, yoz7CLzJGwg).
+
+- [2026-10-18 13:34:05] Completed Google Cloud Console OAuth transition to Production (Permanent token). Confirmed all 3 live YouTube uploads (Parvogel daily pipeline kYkumAHqxZQ, clinical test mZsv19-dih4, 100-Bagger DRD yoz7CLzJGwg) returning HTTP 200.
