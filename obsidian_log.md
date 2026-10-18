@@ -615,3 +615,7 @@
   2. 모바일 터치 최적화: iOS 줌 방지(16px font), 44px 이상 터치 타겟(min-h-[44px]) 적용.
   3. 장애인 편의제공(WCAG 2.2 AA): 명도 대비 4.5:1 이상, ARIA 태그(role=tablist/tab/region/alert), 스크린리더 지원.
   4. AI 챗봇 고객 편의 업그레이드: 원클릭 퀵 FAQ 칩 탑재 및 시스템 프롬프트에 카카오뱅크/OKX USDT 결제 정보 탑재.
+
+- **2026-10-18 16:25:03** [100-Bagger SaaS Branding Refactoring: Real-name Anonymization]:
+  1. 외부 인물 실명(로스 카메론 / Ross Cameron) 전역 제거 및 자사 고유 브랜드인 '제임스(James) 모멘텀 / James Momentum'으로 전면 교체 완료.
+  2. 랜딩 페이지, 스크리너 탭, 위젯, AI 챗봇 FAQ 칩, 데일리 알파 커뮤니티 배포 템플릿 전역에 'James Breakout Radar & Hybrid Sniper' 통일 적용.
