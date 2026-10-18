@@ -572,3 +572,5 @@
 - **2026-10-16 20:07:35**: GitHub Secret YOUTUBE_REFRESH_TOKEN 갱신 완료 확인 및 GitHub Actions 워크플로우 실전 트리거 테스트 성공 (1m 44s 성공 완료)
 
 - **2026-10-17 08:00:25**: 파마겔 스레드(Threads) 인바운드 마케팅 콘텐츠 자동 생성 및 90초 지연 첫 댓글 타래 배포 파이프라인 구축 및 실전 검증 완료
+
+- [2026-10-18 13:21:09] Fixed YouTube automated upload pipelines for 100-Bagger and Parvogel: resolved expired/mismatched OAuth tokens, synced valid credentials across local envs and GitHub Secrets, fixed silent failure masking in uploader script, and verified live uploads (kYkumAHqxZQ, yoz7CLzJGwg).
