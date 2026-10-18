@@ -580,3 +580,5 @@
 - [2026-10-18 13:40:10] Investigated blog distribution systems: confirmed Parvogel Naver Blog Playwright session is ready on local Windows PC and draft archiving in GitHub Actions; analyzed 100-Bagger SEO blog success and WordPress 403 token expiration.
 
 - [2026-10-18 14:12:59] Formulated Monday 2PM VIP LMS text message drafts for 200 ParvoGel sample recipients emphasizing oil-pump direct feeding, Dr. Kim Dong-jun clinical video link, and VIP purchase benefits.
+
+- [2026-10-18 14:28:24] [parvogel.kr] 상세페이지 최상단에 김동준 원장 7일 완치 6단계 직캠 다큐멘터리 전진 배치 완료. 히어로 뱃지 및 헤드라인을 '오일펌프 1초 쏙 직접 펌핑(약 먹이기 전쟁 해방)'으로 전면 개편하고 빌드/배포 완료(336fdca). 무료 샘플 수령 VIP 200명 및 1,400개소 펫샵/브리더 대상 월요일 14시 알리고 LMS 발송 템플릿 확정 저장.
