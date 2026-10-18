@@ -582,3 +582,5 @@
 - [2026-10-18 14:12:59] Formulated Monday 2PM VIP LMS text message drafts for 200 ParvoGel sample recipients emphasizing oil-pump direct feeding, Dr. Kim Dong-jun clinical video link, and VIP purchase benefits.
 
 - [2026-10-18 14:28:24] [parvogel.kr] 상세페이지 최상단에 김동준 원장 7일 완치 6단계 직캠 다큐멘터리 전진 배치 완료. 히어로 뱃지 및 헤드라인을 '오일펌프 1초 쏙 직접 펌핑(약 먹이기 전쟁 해방)'으로 전면 개편하고 빌드/배포 완료(336fdca). 무료 샘플 수령 VIP 200명 및 1,400개소 펫샵/브리더 대상 월요일 14시 알리고 LMS 발송 템플릿 확정 저장.
+
+- [2026-10-18 14:59:23] [마케팅 전략] 대표님 지침에 따라 1차 VIP 발송문 톤앤매너와 구조를 100% 계승하여 1, 2차 통합 VIP(약 200명) 월요일 14시 LMS 문안 확정. 향후 로드맵(10월말 1,400개소 3차 샘플발송 -> 3차 VIP 후속 -> 펫샵/브리더 마감 후 후기체험단 착수) 수립 완료.
