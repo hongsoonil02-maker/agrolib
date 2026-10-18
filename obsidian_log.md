@@ -642,3 +642,7 @@
 - **2026-10-19 07:18:37** [Aligo LMS Contact Sanitization & Hong Hyo-seon Restoration]:
   1. Removed hallucinated contact name ('서플라이어 백효정') from Aligo 1400 LMS draft and standardized all templates to official '대표이사 홍효선 (010-5543-5708)'.
   2. Verified VIP 194 recipient scheduled LMS for today (10/19 14:00) with clean contact info and active Aligo quota.
+
+- **2026-10-19 07:20:51** [Aligo VIP 194 Recipient Scheduled LMS Dispatch Completed]:
+  1. Successfully scheduled Aligo LMS reservation for 194 VIP petshop/breeder recipients for today (2026-10-19 14:00) with 100% success (msg_id: 1480440818).
+  2. Updated Landing.jsx to auto-open B2B wholesale order modal on ?ref=b2b query and deployed to production.
