@@ -646,3 +646,7 @@
 - **2026-10-19 07:20:51** [Aligo VIP 194 Recipient Scheduled LMS Dispatch Completed]:
   1. Successfully scheduled Aligo LMS reservation for 194 VIP petshop/breeder recipients for today (2026-10-19 14:00) with 100% success (msg_id: 1480440818).
   2. Updated Landing.jsx to auto-open B2B wholesale order modal on ?ref=b2b query and deployed to production.
+
+- **2026-10-19 09:08:42** [YouTube 2-Track Shorts Deployment Root-Cause Diagnosis]:
+  1. 오늘 아침 퀀트 쇼츠(SBWMX)가 신규 채널이 아닌 한국아그로 채널로 배포된 원인 정밀 진단 완료: GitHub Actions 및 로컬 .env의 YOUTUBE_REFRESH_TOKEN이 채널 분리 이전의 기존 기본 채널(한국아그로) 귀속 토큰으로 유지되어 있었음.
+  2. 신규 브랜드 채널(100-Bagger Quant Lab) 전용 OAuth2 Refresh Token 재발급 절차 및 GitHub Actions Secrets 자동 연동 파이프라인 준비 완료.
