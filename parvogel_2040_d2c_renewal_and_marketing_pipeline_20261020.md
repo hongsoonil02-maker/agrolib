@@ -44,3 +44,18 @@
    - 파보겔 전용 Instagram 비즈니스 계정 생성 후 `META_IG_ACCOUNT_ID`와 영구 시스템 토큰(`META_ACCESS_TOKEN`)을 교체하면, 이미 구현된 `InstagramAdapter`의 Resumable Upload 엔진으로 매일 9:16 릴스 자동 업로드 즉시 가동 가능.
 4. **4단계 (펫샵·브리더 B2B 알리고 문자 퍼널 자동화)**:
    - `scripts/`에 흩어진 40여 개 알리고 문자 발송 스크립트를 `marketing_factory/adapters/aligo_b2b_adapter.py` 하나로 통합하고, 신규 샘플 신청자 발생 시 **[D+0 발송 안내 ➔ D+3 급여 팁 & 기호성 확인 ➔ D+7 도매 전환 특가 안내 (`parvogel.kr/?sample=b2b`)]** 3단계 드립 캠페인을 자동화.
+
+
+---
+
+## 5. 마케팅 자동화 파이프라인 4대 개선안 구현 완료 (`51b2281`)
+- **요일별 2040 D2C & 펫샵·브리더 B2B 멀티 페르소나 확장**:
+  - `marketing_factory/data/daily_calendar.json`, `marketing_factory/core/content_enricher.py`, `marketing_factory/core/content_formatter.py` 업그레이드 완료.
+  - 월(강아지 새벽 응급) · 화(고양이 스트레스 제로 1초 펌프) · 수(앵무새·특수조류 24h 기력 회복) · 목(55일령 푸들 7일 다큐) · 금(인허가 펫샵·브리더 1병 무료샘플 & VIP 도매) · 토(3일 차 폭풍 먹방) · 일(야간 응급실 30만원 vs 상비키트 3만원 비교) 7일 자동 순환 및 `?sample=petshop`, `?sample=b2b` UTM 자동 주입.
+- **클라우드-로컬 하이브리드 네이버 블로그 큐 브릿지**:
+  - `marketing_factory/core/marketing_master.py`에서 CI 환경(`GITHUB_ACTIONS=true`) 또는 로컬 크롬 세션 부재 시 `SKIPPED_NO_KEY` 대신 `marketing_queue.json`에 `QUEUED_HYBRID` 상태로 자동 적재.
+  - `marketing_factory/run_local_naver_worker.py` 신설 (`python marketing_factory/run_local_naver_worker.py` 실행 시 대기 큐 원고를 로컬 크롬 세션으로 즉시 발행).
+- **알리고 B2B 3단계 드립 퍼널 어댑터 (`marketing_factory/adapters/aligo_b2b_adapter.py`)**:
+  - `D0_SAMPLE_INVITE` (`?sample=petshop`), `D3_FEEDING_TIP` (`#order`), `D7_VIP_WHOLESALE` (`?sample=b2b`) 3단계 템플릿 및 환경변수 기반 인증·`testmode=True` 안전 가드 내장.
+- **로컬 보안 클린업**:
+  - `scripts/sa_key_temp.json` 영구 삭제 및 `.gitignore` 보호 확인 완료.
