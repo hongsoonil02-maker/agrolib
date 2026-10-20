@@ -694,3 +694,5 @@
 - [2026-04-20] GCP coinbot (136.111.207.137) 5-bot Cameron Pullback suite (KIS KR 30M, KIS US 30M, Alpaca US 30M, Alpaca US 1H, OKX Crypto 1H Bi-Directional Option B) patched, deployed under systemd, cleaned 252+ ghost/legacy/cache files, and backed up to agrolib.
 
 - [2026-10-20 20:05] Fixed Antigravity telemetry plugin hook path issue and completed comprehensive codebase & live site review of parvogel.kr (C:\Users\master\parvogel_landing) covering UX/CRO, SEO, performance, B2B lead loss bug, and client-side PII exposure.
+
+- [2026-10-20 20:53] (parvogel_landing) 파보겔 공식몰 전역에서 몬스멕타·동물병원 상담/신청 폼을 완전 제거하고(펫샵·브리더·일반보호자 전용 재정비 및 산업동물 엠오바이오 총판 안내 일원화), 노출된 PII 데이터 삭제·지연 로딩 및 스크롤 리렌더링/SEO 최적화를 완료하여 초기 번들 용량을 대폭 절감함.
