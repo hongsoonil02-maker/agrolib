@@ -692,3 +692,5 @@
 - **2026-10-20 18:34 KST**: Audited OKX JohnBread 4H Grid bot (okx_johnbread_grid_swing.py), identified 5 structural flaws behind yesterday's loss (counter-trend knife catching, 2ms post-SL re-entry loop, 40x breakeven fee bleed), backtested 45-day OKX 1H/4H data, and replaced okx_johnbread_swing.service with okx_cameron_trader.service (okx_cameron_pullback_trader.py, Option B: Bi-Directional 1H Cameron Pullback + 4-stage defensive/trailing stop patch, 63.0% WR, PF 2.00, +67.44% 45d return).
 
 - [2026-04-20] GCP coinbot (136.111.207.137) 5-bot Cameron Pullback suite (KIS KR 30M, KIS US 30M, Alpaca US 30M, Alpaca US 1H, OKX Crypto 1H Bi-Directional Option B) patched, deployed under systemd, cleaned 252+ ghost/legacy/cache files, and backed up to agrolib.
+
+- [2026-10-20 20:05] Fixed Antigravity telemetry plugin hook path issue and completed comprehensive codebase & live site review of parvogel.kr (C:\Users\master\parvogel_landing) covering UX/CRO, SEO, performance, B2B lead loss bug, and client-side PII exposure.
