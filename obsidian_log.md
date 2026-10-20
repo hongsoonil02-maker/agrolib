@@ -684,3 +684,5 @@
 - **2026-10-20 14:02:00**: GitHub Actions Daily Backend Pipeline #148 실패 원인(MarketingMaster 내 brand guard 들여쓰기 오류로 인한 distribute_all_enriched 미등록 AttributeError) 분석 및 최신 커밋(7a439d6b) 기준 정상화 확인. 신규 워크플로우(Run 39372678155) 재실행 트리거 완료.
 
 - [2026-10-20 16:25 KST] GCP coinbot KIS 한국주식 30분봉 카메론 풀백 봇(kis_cameron_pullback_30m.py) 당일 10회 매매 원장 대조 분석 완료 및 실시간 호가 사전 검증·실체결가 기반 SL/TP 동기화·상한가 캡핑 3대 방어 패치 적용 및 재기동 완료.
+
+- **2026-10-20 17:38 KST**: Reviewed and patched KIS US Stock (kis_cameron_pullback_us_30m.py) and Alpaca Paper Trading (lpaca_cameron_pullback_30m.py, lpaca_cameron_pullback_trader.py) bots on GCP coinbot (136.111.207.137): disabled duplicate kis_liquidate_at_open.service race condition, unified 09:30 EDT overnight liquidation for AIBZ and EVAX, blocked 2X/3X leveraged ETFs (APLX, AXTX, BATS/ARCA), fixed TARGET_RR NameError, and added live-price entry gates plus dynamic breakeven/trailing stops.
