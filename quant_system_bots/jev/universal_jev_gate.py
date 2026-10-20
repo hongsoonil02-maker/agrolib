@@ -233,12 +233,17 @@ class UniversalJevGate:
 
     def _build_prompt(self, asset_class: str, symbol: str, setup_name: str, context: Dict[str, Any]) -> str:
         if asset_class == "CRYPTO":
+            is_short = "SHORT" in setup_name.upper()
+            direction_str = "SHORT breakdown below pullback low" if is_short else "LONG breakout above pullback high"
+            impulse_label = "Prior Bearish Impulse Dump" if is_short else "Prior Bullish Impulse Surge"
+            pb_label = "Relief Bounce Retracement" if is_short else "Pullback Retracement"
             return (
-                f"Asset: Crypto Swap ({symbol}) | Setup: {setup_name}\n"
-                f"Surge: {context.get('surge_pct', 0):.2f}% | Retracement: {context.get('retrace_pct', 0):.2f}%\n"
-                f"Volume Ratio: {context.get('vol_ratio', 1.0):.2f}x | Recent High-Low Range: {context.get('range_pct', 0):.2f}%\n"
-                f"Question: Is this a genuine momentum continuation, or a fake breakout / liquidity grab (long trap) near local resistance?\n"
-                f"Approve only if continuation probability >= 65%."
+                f"Asset: Crypto Perpetual Swap ({symbol}) | Setup: {setup_name} ({direction_str})\n"
+                f"{impulse_label}: {context.get('surge_pct', 0):.2f}% | {pb_label}: {context.get('retrace_pct', 0):.1f}%\n"
+                f"Pullback Volume Contraction: {context.get('vol_ratio', 1.0):.2f}x of impulse average | Stop-Loss Risk: {context.get('range_pct', 0):.2f}%\n"
+                f"NOTE ON VOLUME & RETRACEMENT: In the Ross Cameron First Pullback Strategy, a 20%~55% retracement with low/contracting volume (0.20x~1.25x of impulse volume) is a HEALTHY consolidation exhaustion sign before trend continuation, NOT a lack of momentum or trap.\n"
+                f"Question: Does this technical pullback setup show valid trend continuation structure with controlled risk ({context.get('range_pct', 0):.2f}% SL for 1:2.2 R:R), or is it an extreme anomaly?\n"
+                f"Approve (approved=true, confidence>=0.65) if valid technical pullback continuation probability >= 55%."
             )
         elif asset_class == "US_STOCKS":
             surge = context.get('surge_pct') or context.get('gap_pct', 0)

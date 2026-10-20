@@ -90,7 +90,8 @@ RISK_REWARD_RATIO = 2.2           # 1 : 2.2 R:R
 MIN_IMPULSE_PCT = 0.025           # Minimum 2.5% 5-bar impulse surge/dump
 MAX_RETRACE_RATIO = 0.55          # Maximum 55% retracement of impulse wave
 MAX_VOL_RATIO = 1.25              # Pullback volume <= 1.25x impulse average volume
-MIN_SL_PCT = 0.010                # Min 1.0% stop-loss distance
+MIN_SL_PCT = 0.006                # Min 0.6% pullback candle range (allows tight 1H bull/bear flags)
+EXEC_MIN_SL_PCT = 0.008           # Min 0.8% actual stop-loss floor at execution
 MAX_SL_PCT = 0.055                # Max 5.5% stop-loss distance
 
 BREAKEVEN_TRIGGER_PCT = 0.018     # +1.8% unleveraged price move (+9% ROE) -> lock SL at +0.4%
@@ -131,7 +132,7 @@ class OKXCameron1HBiDirectionalTrader:
         self.last_scan_time = 0.0
         self.last_reconcile_time = 0.0
         self.leverage_initialized = set()
-        self.jev_gate = UniversalJevGate(confidence_threshold=0.60)
+        self.jev_gate = UniversalJevGate(confidence_threshold=0.55)
 
         self.active_positions: Dict[str, Dict[str, Any]] = {}
         self.cooldowns: Dict[str, float] = {}
@@ -293,21 +294,25 @@ class OKXCameron1HBiDirectionalTrader:
                     continue
                 if any(x in sym for x in ["BTC/", "ETH/", "USDC/", "USDT/"]):
                     continue
+                mkt = self.exchange.markets.get(sym, {})
+                if str(mkt.get("info", {}).get("instCategory", "1")) != "1":
+                    continue
                 pct = float(t.get("percentage") or 0.0)
-                qvol = float(t.get("quoteVolume") or 0.0)
                 last_px = float(t.get("last") or 0.0)
-                if last_px > 0 and abs(pct) >= 4.0 and qvol >= 10_000_000:
+                vol_ccy = float(t.get("info", {}).get("volCcy24h") or t.get("baseVolume") or 0.0)
+                qvol = float(t.get("quoteVolume") or (vol_ccy * last_px) or 0.0)
+                if last_px > 0 and abs(pct) >= 3.0 and qvol >= 5_000_000:
                     scored.append((abs(pct), sym, pct))
             scored.sort(reverse=True)
-            for _, sym, pct in scored[:10]:
+            for _, sym, pct in scored[:16]:
                 if sym not in valid_core:
                     dynamic_movers.append(sym)
         except Exception as e:
             logger.debug(f"Dynamic ticker scan skipped: {e}")
 
-        self.watchlist = valid_core + dynamic_movers[:8]
+        self.watchlist = valid_core + dynamic_movers[:12]
         self.last_scan_time = now_t
-        logger.info(f"🔍 [Watchlist Updated] Monitoring {len(self.watchlist)} High-Beta Swap Symbols (Core: {len(valid_core)}, Dynamic Movers: {len(dynamic_movers[:8])})")
+        logger.info(f"🔍 [Watchlist Updated] Monitoring {len(self.watchlist)} High-Beta Swap Symbols (Core: {len(valid_core)}, Dynamic Movers: {len(dynamic_movers[:12])}) -> {dynamic_movers[:12]}")
 
     def fetch_1h_bars(self, symbol: str, limit: int = 65) -> Optional[pd.DataFrame]:
         try:
@@ -392,7 +397,7 @@ class OKXCameron1HBiDirectionalTrader:
                     float(curr_bar["high"]) >= trigger_px and
                     curr_close >= trigger_px * 0.998 and
                     curr_close <= trigger_px * 1.015 and
-                    curr_close > sl_px * 1.012
+                    curr_close > sl_px * 1.005
                 ):
                     return "long", {
                         "side": "long",
@@ -433,7 +438,7 @@ class OKXCameron1HBiDirectionalTrader:
                     float(curr_bar["low"]) <= trigger_px and
                     curr_close <= trigger_px * 1.002 and
                     curr_close >= trigger_px * 0.985 and
-                    curr_close < sl_px * 0.988
+                    curr_close < sl_px * 0.995
                 ):
                     return "short", {
                         "side": "short",
@@ -460,11 +465,11 @@ class OKXCameron1HBiDirectionalTrader:
         # 1. Pre-Order Live Ticker Price Gate
         live_px = self.get_realtime_price(symbol) or float(setup["curr_px"])
         if side == "long":
-            if live_px < trigger_px * 0.997 or live_px > trigger_px * 1.015 or live_px <= sl_px * 1.010:
+            if live_px < trigger_px * 0.997 or live_px > trigger_px * 1.015 or live_px <= sl_px * 1.004:
                 logger.info(f"🛡️ [Pre-Order Gate Blocked] {symbol} LONG live=${live_px:.5f} outside valid trigger window (trig=${trigger_px:.5f}, sl=${sl_px:.5f})")
                 return False
         else:
-            if live_px > trigger_px * 1.003 or live_px < trigger_px * 0.985 or live_px >= sl_px * 0.990:
+            if live_px > trigger_px * 1.003 or live_px < trigger_px * 0.985 or live_px >= sl_px * 0.996:
                 logger.info(f"🛡️ [Pre-Order Gate Blocked] {symbol} SHORT live=${live_px:.5f} outside valid trigger window (trig=${trigger_px:.5f}, sl=${sl_px:.5f})")
                 return False
 
@@ -535,7 +540,7 @@ class OKXCameron1HBiDirectionalTrader:
 
         # [Patch 2] Actual Fill Price SL/TP Re-Sync (1 : 2.2 R:R)
         actual_risk = abs(fill_px - sl_px)
-        actual_risk = max(fill_px * MIN_SL_PCT, min(actual_risk, fill_px * MAX_SL_PCT))
+        actual_risk = max(fill_px * EXEC_MIN_SL_PCT, min(actual_risk, fill_px * MAX_SL_PCT))
         if side == "long":
             final_sl = fill_px - actual_risk
             final_tp = fill_px + (actual_risk * RISK_REWARD_RATIO)

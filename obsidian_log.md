@@ -702,3 +702,5 @@
 - **[2026-10-20 21:50] 파보겔 마케팅 생성·자동배포 파이프라인 4대 개선안 전격 구현 및 배포 완료 (51b2281)**: ① 2040 D2C 반려인(강아지·고양이·앵무새·가정용 상비키트) 및 금요일 펫샵·브리더 B2B 무료샘플 7일 멀티 페르소나 캘린더·템플릿 고도화, ② GitHub Actions 클라우드 실행 시 네이버 블로그 원고를 marketing_queue.json에 적재하고 로컬 PC에서 1클릭 발행하는 하이브리드 큐 워커 구축, ③ 인허가 펫샵·브리더 D+0 무료샘플 / D+3 급여팁 / D+7 VIP 도매 3단계 문자 퍼널 어댑터(ligo_b2b_adapter.py) 신설 및 로컬 임시 키(sa_key_temp.json) 영구 삭제 완료.
 
 - **[2026-10-20 22:06] GitHub Actions Marketing Factory Daily Run #55 정상 완료 (6a6656a)**: marketing_master.py 내 Optional 타입 임포트 누락 핫픽스 후 워크플로우 재실행하여 8대 채널 원고 생성, 9:16 쇼츠 렌더링, 아티팩트 업로드(marketing-output-55, marketing-drafts-55)까지 전 단계 100% 성공(Green) 검증 완료.
+
+- [2026-04-20] Patched OKX Cameron 1H bot & UniversalJevGate CRYPTO prompt: fixed CCXT quoteVolume=None bug for Dynamic Movers (now scanning 12 live crypto movers + 16 core), fixed CRYPTO JEV prompt volume-contraction VETO bug, and fixed MIN_SL_PCT/anti-wick self-blocking threshold.
