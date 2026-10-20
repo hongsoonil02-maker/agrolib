@@ -696,3 +696,5 @@
 - [2026-10-20 20:05] Fixed Antigravity telemetry plugin hook path issue and completed comprehensive codebase & live site review of parvogel.kr (C:\Users\master\parvogel_landing) covering UX/CRO, SEO, performance, B2B lead loss bug, and client-side PII exposure.
 
 - [2026-10-20 20:53] (parvogel_landing) 파보겔 공식몰 전역에서 몬스멕타·동물병원 상담/신청 폼을 완전 제거하고(펫샵·브리더·일반보호자 전용 재정비 및 산업동물 엠오바이오 총판 안내 일원화), 노출된 PII 데이터 삭제·지연 로딩 및 스크롤 리렌더링/SEO 최적화를 완료하여 초기 번들 용량을 대폭 절감함.
+
+- **[2026-10-20 21:33]** `parvogel.kr` 2040 D2C 펫 헬스케어 전면 리뉴얼(웜화이트·스카이블루 톤앤매너, 2040 집사 공감 카피, 히어로 실물 제품 쇼케이스 & 3초 신뢰 뱃지, 반려동물·브리더 6대 후기 개편, 학술 표 아코디언 슬림화) 적용 및 `marketing_factory` 내 몬스멕타 잔존 키워드 제거·GitHub Actions 워크플로우(`marketing-factory.yml`) 정상화 후 GitHub 푸시 완료. 상세 문서: `parvogel_2040_d2c_renewal_and_marketing_pipeline_20261020.md`.
