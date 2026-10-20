@@ -682,3 +682,5 @@
 - **2026-10-20 10:04:00**: [긴급 조치] 파보겔 숏폼 영상이 100베거 인스타그램(100baggerquantlab) 계정으로 오발송되는 원인(parvogel .env 내 100베거 IG_ACCOUNT_ID: 17841400565015107 연동) 완전 적출 및 파보겔 인스타/페이스북 어댑터 및 channels_config에서 완전 차단 완료.
 
 - **2026-10-20 14:02:00**: GitHub Actions Daily Backend Pipeline #148 실패 원인(MarketingMaster 내 brand guard 들여쓰기 오류로 인한 distribute_all_enriched 미등록 AttributeError) 분석 및 최신 커밋(7a439d6b) 기준 정상화 확인. 신규 워크플로우(Run 39372678155) 재실행 트리거 완료.
+
+- [2026-10-20 16:25 KST] GCP coinbot KIS 한국주식 30분봉 카메론 풀백 봇(kis_cameron_pullback_30m.py) 당일 10회 매매 원장 대조 분석 완료 및 실시간 호가 사전 검증·실체결가 기반 SL/TP 동기화·상한가 캡핑 3대 방어 패치 적용 및 재기동 완료.
