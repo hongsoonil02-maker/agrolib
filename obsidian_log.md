@@ -709,3 +709,8 @@
 - **2026-10-21 08:16:48** [Alpaca Paper & KIS US Trading Overnight Review]: Reviewed 5 Alpaca trades (+.51 day PnL, 60% WR, SAIQ +4.70% / NCPL +1.81% / GOW +1.22% Trailing wins) and 6 KIS US real trades (SAIQ +2.07% trailing win, HUIZ/NCPL BE defended, MYGN 2x SL, 100% EOD cash preserved).
 - **2026-10-21 08:25:40** [US Trading Daily Loss Blacklist Patch Deployed]: Patched KIS US 30M, Alpaca 30M, and Alpaca 1H bots with Daily Loss Blacklist (locking stop-loss symbols until 16:10 NY EOD to 100% prevent duplicate daily loss churn loops like MYGN/HUIZ), and completed 1H vs 30M Alpaca performance parity review.
 - **2026-10-21 08:30:14** [KIS Korea Stock Daily Loss Blacklist Deployed]: Patched kis_cameron_pullback_30m.py before 09:00 KST market open with Daily Loss Blacklist (locking any stop-loss symbol until 15:35 KST EOD), and restarted kis_cameron_30m.service with \10.65M cash / \3M safety cap.
+
+
+## [2026-10-21 19:44:49] 파보겔 무료 샘플 195번 등록 및 A4 맞춤 알림판 제작 완료
+- 에스앤제이 동물병원 연계 브리더(봄봄켄넬 홍철호 대표님) 구글시트 신청 내역 확인 및 195번 발송 명단(batch-print.html, 실제발송 정제명단) 등록 완료.
+- 봄봄켄넬 전용 맞춤형 A4 알림판 POP(parvogel-notice-봄봄켄넬.html, parvogel-notice-홍철호.html) 생성 완료.
