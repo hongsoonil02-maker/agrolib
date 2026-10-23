@@ -765,3 +765,9 @@
   3. posts.json 내 축산 송아지 설사 글(calf-diarrhea) 제거 및 수의학 7대 칼럼 정적 HTML 프리렌더링 SSG 구축
   4. 	hreads_generator.py 내 'PHARMAGEL' 오기 정정 및 1인칭 가짜 수의사 사칭을 한국아그로 수의학 학술팀 안심 노트로 전면 개편
   5. 모바일 상단 메뉴 및 하단 플로팅 바에서 수기 신청 폼 대신 [🚀 쿠팡 로켓] + [🛍️ 네이버 스마트스토어] 2버튼 직결 체제 구축 완료
+
+## [2026-10-23 10:30] 몬스멕타 홈페이지 코드베이스 및 UI/UX/전환 퍼널 정밀 리뷰
+- App.jsx 내 i18n 미정의로 인한 발주 제출 시 ReferenceError 치명적 결함 식별
+- ESLint 7개 오류(미사용 React 임포트, useEffect 내 동기 setState) 및 #order-section 깨진 앵커 링크 도출
+- 중복 섹션 구조(Lineup vs MonsmectaLineupSection 등) 통합 및 컨테이너 래퍼 누락 개선안 작성
+- 수의사 B2B 맞춤형 무료 샘플 키트 중심 전환 퍼널 최적화 방안 수립
