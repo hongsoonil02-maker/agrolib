@@ -771,3 +771,10 @@
 - ESLint 7개 오류(미사용 React 임포트, useEffect 내 동기 setState) 및 #order-section 깨진 앵커 링크 도출
 - 중복 섹션 구조(Lineup vs MonsmectaLineupSection 등) 통합 및 컨테이너 래퍼 누락 개선안 작성
 - 수의사 B2B 맞춤형 무료 샘플 키트 중심 전환 퍼널 최적화 방안 수립
+
+## [2026-10-23 10:44] 몬스멕타 홈페이지 긴급 결함 수정 및 레이아웃 개선 배포 완료
+- App.jsx의 handleCheckout 내 i18n 미정의 ReferenceError 수정 (주문 전송 마비 해결)
+- VetRestrictedSection의 깨진 앵커 링크(#order-section -> #order) 수정
+- GeneralNoticeModal 내 useEffect 동기 setState를 useState 초기화 함수로 개선 (ESLint 경고 및 렌더링 최적화)
+- 신규 섹션 3종(MonsmectaLineup, MonsmectaMoa, MonsmectaClinicalCase)의 반응형 컨테이너 래퍼 일괄 적용 및 미사용 React 임포트 제거
+- GitHub origin main 푸시 완료 (커밋: 40745f9)
