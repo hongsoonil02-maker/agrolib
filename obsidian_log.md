@@ -810,3 +810,5 @@
 - [2026-10-24 08:04:16] 파보겔 마케팅 공장(marketing_factory) 실발행 테스트 성공: Twitter_X 차단 완료, 네이버 블로그 자동 포스팅 완벽 성공(https://blog.naver.com/soonilhong/224451963235), 틱톡/블루스카이/디스코드 정상 배포 확인
 
 - [2026-10-24 08:07:41] 파보겔 배포 채널 차례대로 정비 3단계: 유튜브 쇼츠 토큰 갱신 배치(run_youtube_auth.bat) 생성 및 갱신 대기
+
+- [2026-10-24 08:12:23] 파보겔 3단계 유튜브 쇼츠 OAuth 토큰 갱신 성공 및 실시간 쇼츠 라이브 업로드 검증 완료 (ID: Ncy1TqcG1Zc, https://www.youtube.com/shorts/Ncy1TqcG1Zc)
