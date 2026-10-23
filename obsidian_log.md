@@ -790,3 +790,5 @@
 [2026-10-23 11:29:40] Implemented all priorities: 1) Updated KakaoBank official account holder to '홍순일(퀀트랩(Quant Lab))' across DirectPaymentModal & DirectPaymentSection. 2) Implemented 24h provisional PRO unlock and 1-click Discord admin approval endpoint. 3) Replaced gTTS with edge-tts neural voice (SunHiNeural, ChristopherNeural) & enhanced subtitle styling with rounded dark pill in video_renderer.py. 4) Added dynamic title/intro variation pool to content_formatter.py for Naver Blog anti-spam. 5) Created weekly_funnel_summary.py for weekly attribution report.
 
 - [2026-10-23 18:38:54] 에스앤제이 동물병원 홈페이지 종합 리뷰 및 기술/UX/비즈니스 분석 완료
+
+- [2026-10-23 19:48:22] 에스앤제이 동물병원 홈페이지 성능 최적화(WebP 변환 85% 이상 절감) 및 현장 진료실 시각 로드맵 카드/원클릭 주소 복사/3대 지도 연동 구현 완료
