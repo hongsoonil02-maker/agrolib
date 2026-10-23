@@ -1,0 +1,90 @@
+{
+  "version": "1.0.0",
+  "updated_at": "2026-10-24",
+  "sites": [
+    {
+      "id": "agrokorea",
+      "domain": "agrokorea.net",
+      "site_url": "https://agrokorea.net",
+      "name": "한국아그로 (Agro Korea)",
+      "category": "친환경 축산·동물약품 제조 및 공식 포털",
+      "target_persona": "한우·낙농 농가, 대형 축산업자, B2B 도매 총판",
+      "core_topics": ["송아지 설사", "가축 면역보강", "친환경 동물보조사료", "축산 질병 예방"],
+      "gsc_property": "sc-domain:agrokorea.net",
+      "cms_type": "static_or_wordpress",
+      "eeat_source": "reports/agrokorea_tech_specs.md"
+    },
+    {
+      "id": "rotagal",
+      "domain": "rotagal.kr",
+      "site_url": "https://rotagal.kr",
+      "name": "로타겔 (Rotagal)",
+      "category": "송아지·자돈 바이러스성 설사 집중 케어 솔루션",
+      "target_persona": "번식우 농가, 양돈 농가, 축산 마이스터",
+      "core_topics": ["송아지 로타바이러스", "신생 송아지 수양성 설사", "자돈 폐사율 방어", "초유 급여 팁"],
+      "gsc_property": "sc-domain:rotagal.kr",
+      "cms_type": "static_or_wordpress",
+      "eeat_source": "reports/rotagal_clinical.md"
+    },
+    {
+      "id": "parvogel",
+      "domain": "parvogel.kr",
+      "site_url": "https://parvogel.kr",
+      "name": "파보겔 (Parvogel)",
+      "category": "2040 D2C 펫 헬스케어 (강아지·고양이·조류 장 컨디션 케어)",
+      "target_persona": "2040 반려견/반려묘 집사, 인허가 펫샵 대표, 전문 브리더(켄넬)",
+      "core_topics": ["파보장염 초기증상", "새끼강아지 노란토", "강아지 급성설사 골든타임", "앵무새 낙조 예방", "펫 구급함 상비템"],
+      "gsc_property": "sc-domain:parvogel.kr",
+      "cms_type": "static_prerender",
+      "eeat_source": "parvogel_2030_d2c_renewal_and_pet_gallery_review_20261023.md"
+    },
+    {
+      "id": "monsmecta",
+      "domain": "monsmecta.kr",
+      "site_url": "https://monsmecta.kr",
+      "name": "몬스멕타 (Monsmecta)",
+      "category": "동물병원 전용 처방 보조제 (수의사 인증 포털)",
+      "target_persona": "임상 수의사, 동물병원 원장, 테크니션",
+      "core_topics": ["동물병원 처방 보조제", "나노 몬모릴로나이트 MOA", "내독소 흡착 메커니즘", "장-간-신장 축 케어"],
+      "gsc_property": "sc-domain:monsmecta.kr",
+      "cms_type": "react_portal",
+      "eeat_source": "reports/monsmecta_vet_moa.md"
+    },
+    {
+      "id": "vetacol",
+      "domain": "vetacol.kr",
+      "site_url": "https://vetacol.kr",
+      "name": "베타콜 (Vetacol)",
+      "category": "가축·반려동물 면역 활성 및 항바이러스 솔루션",
+      "target_persona": "수의사, 대규모 사육 농가, 특수동물 전문 케어어",
+      "core_topics": ["가축 면역글로불린", "항바이러스 면역증강", "환축 기력 회복", "환절기 호흡기 방어"],
+      "gsc_property": "sc-domain:vetacol.kr",
+      "cms_type": "static_or_wordpress",
+      "eeat_source": "reports/vetacol_immunity.md"
+    },
+    {
+      "id": "100bagger",
+      "domain": "100bagger.app",
+      "site_url": "https://100bagger.app",
+      "name": "100-Bagger (백배거 퀀트 랩)",
+      "category": "미국 주식 퀀트 스크리너 & 데이트레이딩 모멘텀 SaaS",
+      "target_persona": "서학개미, 미국 주식 전업 트레이더, 퀀트/모멘텀 투자자",
+      "core_topics": ["미국주식 급등주 스크리너", "모멘텀 트레이딩 알림", "로스 카메론 전략", "Day Trading Scanner", "갭상승 주도주"],
+      "gsc_property": "sc-domain:100bagger.app",
+      "cms_type": "nextjs_blog",
+      "eeat_source": "obsidian_log.md"
+    },
+    {
+      "id": "snj_vet",
+      "domain": "snj-vet.com",
+      "site_url": "https://snj-vet.com",
+      "name": "S&J 동물병원 (에스앤제이)",
+      "category": "외과/내과 전문 임상 동물병원 & 학술 임상 자문",
+      "target_persona": "경기/하남/서울 지역 반려동물 보호자, 중증/난치성 소화기 질환 보호자",
+      "core_topics": ["하남 동물병원 추천", "강아지 파보 임상 완치 사례", "노령견 소화기 내과", "김동준 원장 자문"],
+      "gsc_property": "sc-domain:snj-vet.com",
+      "cms_type": "static_or_wordpress",
+      "eeat_source": "reports/landing_reviews/weekly_2026-10-23.md"
+    }
+  ]
+}
