@@ -778,3 +778,9 @@
 - GeneralNoticeModal 내 useEffect 동기 setState를 useState 초기화 함수로 개선 (ESLint 경고 및 렌더링 최적화)
 - 신규 섹션 3종(MonsmectaLineup, MonsmectaMoa, MonsmectaClinicalCase)의 반응형 컨테이너 래퍼 일괄 적용 및 미사용 React 임포트 제거
 - GitHub origin main 푸시 완료 (커밋: 40745f9)
+
+## [2026-10-23 11:01] 몬스멕타 입금계좌 예금주 통일 및 다국어 반영 완료
+- 카카오뱅크 통장개설확인서의 공식 사업자명에 맞춰 예금주를 '홍순일(에스앤제이동물병원)' (영문: Soon-il Hong (S&J Animal Hospital))로 전면 통일
+- 푸터(Footer), 주문 안내(OrderForm bank_info), 주문 완료 화면(deposit_holder_value) 및 다국어 15개 언어 전체 반영
+- 아랍어(ar)의 기존 계좌번호 오타 교정 완료
+- GitHub origin main 푸시 완료 (커밋: 5ec18b3)
