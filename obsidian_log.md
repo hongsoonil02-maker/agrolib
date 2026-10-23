@@ -794,3 +794,5 @@
 - [2026-10-23 19:48:22] 에스앤제이 동물병원 홈페이지 성능 최적화(WebP 변환 85% 이상 절감) 및 현장 진료실 시각 로드맵 카드/원클릭 주소 복사/3대 지도 연동 구현 완료
 
 - [2026-10-23 20:07:22] 챗봇(FAQ) FAB 버튼 빨간색 알림 배지 개선: 챗봇 창 최초 열람 시 읽음 처리되어 빨간 점 자동 소멸 로직(sessionStorage 연동) 적용 완료
+
+[2026-10-23 20:21:55] Created weekly-landing-audit automation & generated initial weekly review report across 7 projects (SNJ Animal Hospital, Parvogel, Monsmecta, Rotagal, Vetacol, Vet Animal Hospital, AgroKorea).
