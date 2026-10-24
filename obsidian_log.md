@@ -854,3 +854,8 @@
 - 신규 발급 토큰(8981618688:AAG...) GCP 서버 및 로컬 .env 전수 반영.
 - 일일 퀀트 성과 감사(daily_quant_auditor) 라이브 전송 테스트 완료 (Alpaca \.8k, OKX Demo \.0k 정산 브리핑 실시간 수신 검증).
 - 텔레그램 스팸 초대 차단(내 연락처만 허용) 및 트레이딩 데몬 재시작 완료.
+
+## [2026-10-24 11:31:22] 텔레그램 인코딩 UTF-8 전수 교정 및 GitOps 동기화 완벽 완료
+- daily_quant_auditor 및 gitops_auto_deployer 파일 SCP 바이너리 전송으로 물음표(??) 인코딩 깨짐 현상 100% 교정.
+- GCP 서버와 GitHub 원격 저장소 main 브랜치 완전 동기화(git reset --hard)로 GitOps pull 경고 해결.
+- 텔레그램 실시간 한글 브리핑 정상 수신 검증 완료.
