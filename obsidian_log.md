@@ -1043,3 +1043,7 @@
 - content_formatter.py 내 Discord 템플릿 미종결 f-string 문법 에러를 긴급 수정하고 py_compile 및 dry-run 검증 완료.
 - run_marketing.bat에 파이프라인 단계별 영구 로그 스트리밍을 추가하여 작업 스케줄러 장애 진단 체계 확보 및 Supabase 쿼터 유예기간 경고 확인.
 
+
+## [2026-10-26 09:32:17] 파보겔 200ml 라벨 스티커 용법 및 용량 문구 수정
+- parvogel_200ml_140x90.html 내 '용법 및 용량' 문구를 '1일 1~2ml / 체중 5kg ( 1 펌프 = 약 2ml )', '- 증상에 따라 조절 가능'으로 표준화 반영 완료.
+
