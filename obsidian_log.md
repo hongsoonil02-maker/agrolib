@@ -1079,3 +1079,8 @@
 - **2026-10-26 11:32:02**: [헤파맥스 및 전 라인업 라벨 누락분 완벽 보완]
   - 브라우저 뷰어용 monsmecta_hepamax_30ml_94x45.html, monsmecta_renal_30ml_94x45.html 및 전체 *_label_print.html (11종)에 ™ 및 U.S. TM App: 50/041,096 반영 완료.
   - 100ml / 30ml / 94x45mm / 인쇄용 전 파일(총 35개 이상) 100% 반영 검증 완료.
+
+
+### [2026-10-26 17:28:47] 파보겔 펫샵/브리더 무료 샘플 신청 접수 장애 긴급 분석 및 해결
+- 원인 분석: D2C 전환 시 개인정보 제거로 인해 사업자 검증이 모든 신청자를 미등록 일반인(UNVERIFIED_PUBLIC)으로 차단하고 있었으며, 배포된 구글 앱스 스크립트가 이메일 미입력 시 Invalid email format 에러로 저장을 거부함.
+- 조치 내용: Landing.jsx 사업자 차단 해제 및 normPhone 기반 자동 유효 이메일(a010...@parvogel.kr) 폴백 부여, PartnerNoticeModal 및 Apps Script 검증 보완 완료, GitHub Pages 배포 완료.
