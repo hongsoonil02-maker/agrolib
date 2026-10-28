@@ -1156,3 +1156,5 @@
 ### [2026-10-28 08:07:37] 몬스멕타 라벨 표기 수정 및 100ml 인쇄용 라벨 하단 잘림 해결
 - 상세 스펙 모달 및 라벨 데이터 내 판매원 표기를 "위탁제조판매원: S&J 동물병원"으로 전면 통일 (다국어 15개 번역 파일 및 labels.js 반영).
 - 110mm x 75mm 인쇄용 라벨 캔버스 내부 여백 및 타이포그래피 슬림화 패치로 최하단 위탁제조판매원/제조원 연락처 및 노란색 바닥 바의 잘림 현상 완벽 해결 및 전 라벨 재생성 완료.
+
+- [2026-10-28 09:13:38] [100-Bagger & Parvogel] 100-Bagger Quant Lab Agentic API(GET /api/v1/screen), FastMCP 서버(mcp_server.py), llms.txt, 예제 자동매매 봇 구현 완료. 파보겔 온라인동물병원(cafe.naver.com/onlinevet) 몬스멕타 후기 기반 다채널 마케팅 파이프라인(generator/publisher/config) 및 Dry-run 테스트 완료.
