@@ -1191,3 +1191,5 @@
 - [2026-10-29 09:22:52] [Parvogel] Analyzed Flash's marketing pipeline implementation (generator, publisher, config) and audited content generation logic.
 
 - [2026-10-29 09:51:07] [100-Bagger & Parvogel] Completed v2.0 implementation of 100-Bagger Agentic API (/api/v1/screen), FastMCP server, llms.txt, quant bot with live Supabase integration, and upgraded Parvogel multi-channel marketing pipeline (4 topics, 4 channels, idempotency manifest, Task Scheduler).
+
+- [2026-10-29 10:38:49] [Parvogel] Added new customer '냥이마루' (최시영 / 010-8321-7744 / 천안시 서북구 성정동 1117 5층) - Generated A4 notice poster, updated 21-store batch print, and notice viewer.
