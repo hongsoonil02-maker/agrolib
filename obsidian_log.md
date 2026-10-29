@@ -1193,3 +1193,7 @@
 - [2026-10-29 09:51:07] [100-Bagger & Parvogel] Completed v2.0 implementation of 100-Bagger Agentic API (/api/v1/screen), FastMCP server, llms.txt, quant bot with live Supabase integration, and upgraded Parvogel multi-channel marketing pipeline (4 topics, 4 channels, idempotency manifest, Task Scheduler).
 
 - [2026-10-29 10:38:49] [Parvogel] Added new customer '���̸���' (�ֽÿ� / 010-8321-7744 / õ�Ƚ� ���ϱ� ������ 1117 5��) - Generated A4 notice poster, updated 21-store batch print, and notice viewer.
+
+### [2026-10-29 11:34:46] 몬스멕타 라벨 표기 수정 및 100ml 인쇄용 라벨 하단 잘림 해결
+- 상세 스펙 모달 및 라벨 데이터 내 판매원 표기를 "위탁제조판매원: S&J 동물병원"으로 전면 통일 (다국어 15개 번역 파일 및 labels.js 반영).
+- 110mm x 75mm 인쇄용 라벨 캔버스 내부 여백 및 타이포그래피 슬림화 패치로 최하단 위탁제조판매원/제조원 연락처 및 노란색 바닥 바의 잘림 현상 완벽 해결 및 전 라벨 재생성 완료.
