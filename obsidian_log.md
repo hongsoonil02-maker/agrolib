@@ -1262,3 +1262,7 @@
 - 우측 뒷면 위탁제조판매원/제조원 상하 완전 분리 및 하단 1줄 올림, 효과~용법용량~주의사항~포장단위~하단 구분선 간 상하 여백 균형 맞춤 후 전 11종 PDF/HTML 일괄 재생성 완료.
 
 - [2026-10-30 09:52:35] [Parvogel] Updated front left ingredient block across all 3 label sizes (100ml, 200ml, 500ml - both Blue & White themes, total 6 files) to exactly match official 5-complex specification image (DNJ, Patent No. 201188042602.8, Bacillus subtilis MORI, Glucose, Vitamin A, Sodium acetate/propionate, Montmorillonite).
+
+## [2026-10-30 10:04:33] Parvogel Label Spacing & Ingredients Update
+- Updated front ingredient 5-complex specs across 100ml, 200ml, 500ml Blue and White labels (total 6 files).
+- Lowered header badge by 1 line and raised footer weight tag by 1 line for clean vertical margins.
