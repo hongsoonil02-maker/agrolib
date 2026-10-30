@@ -1266,3 +1266,7 @@
 ## [2026-10-30 10:04:33] Parvogel Label Spacing & Ingredients Update
 - Updated front ingredient 5-complex specs across 100ml, 200ml, 500ml Blue and White labels (total 6 files).
 - Lowered header badge by 1 line and raised footer weight tag by 1 line for clean vertical margins.
+
+### [2026-10-30 10:34:45] 몬스멕타 100ml(110x75mm) 라벨 좌측 제품명(™), 핵심효능 박스 및 하단 푸터 바(동물병원 처방) 복원 업데이트
+- 10/28 작업본 기준 좌측 전면 제품명(몬스멕타™ / MONSMECTA™ 7.2mm)과 핵심 효능 박스 디자인 및 좌측 하단 푸터 바(S&J VET FORMULA · 동물병원 처방 | 반려견·반려묘 (100ml)) 반영 완료.
+- 전 11종 100ml HTML(기존 파일명 별칭 포함), A4 실측 PDF 및 롤라벨 PDF 일괄 재생성 완료.
