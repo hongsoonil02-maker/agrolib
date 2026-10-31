@@ -1341,3 +1341,8 @@
 
 ## [2026-10-31 13:14:51] Parvogel label right panel border
 - Replaced black border of right legal panel with gold/silver metallic frame (0.75mm, glow) on all 6 label files.
+
+## [2026-10-31 13:43:08] Parvogel Modern Deep-Blue Label Creation & Viewer Integration
+- Preserved Parvogel deep-blue identity and full veterinary specs while redesigning for modern young pet guardians.
+- Generated modern layouts (parvogel_100ml_modern.html, 200ml, 500ml) with paw silhouette, Pretendard typography, mint check pills, and clean healthcare legal panel.
+- Integrated modern tab into parvogel_labels_viewer.html for direct 1:1 comparison with original blue and clean white versions.
