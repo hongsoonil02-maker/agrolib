@@ -1352,3 +1352,5 @@
 - 30ml: Micro-tuned 5-complex grid to guarantee 0px overflow in 40mm compact height, maintaining full veterinary formula details.
 - 100ml: Features full patent citations (Patent No. 201180042602.8 / US USPTO App No. 50/041,096), 5-ingredient cards, and high-contrast legal table.
 - Created interactive `monsmecta_labels_viewer.html` with 30ml/100ml switching, A4 1:1 real-size calibration ruler, roll-label mode, and bi-directional linking with Parvogel viewer.
+
+- **[2026-10-31 16:26:33] [Monsmecta Claude Design Full Lineup Sync]**: 클로드 모던 딥그린 디자인 시스템을 몬스멕타 11종 전 라인업(01 오리지널 ~ 11 비타플러스)의 30ml(101x42mm, 좌7+중7+우3) 및 100ml(123x75mm, 좌7+중7+우3)에 일괄 적용 완료. 각 제품별 고유 효능·성분·법정고시 반영, 화이트/다크 뒷면 토글 및 통합 라벨 뷰어(monsmecta_labels_viewer.html) 구축 완료.
