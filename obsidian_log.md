@@ -1346,3 +1346,9 @@
 - Preserved Parvogel deep-blue identity and full veterinary specs while redesigning for modern young pet guardians.
 - Generated modern layouts (parvogel_100ml_modern.html, 200ml, 500ml) with paw silhouette, Pretendard typography, mint check pills, and clean healthcare legal panel.
 - Integrated modern tab into parvogel_labels_viewer.html for direct 1:1 comparison with original blue and clean white versions.
+
+## [2026-10-31 14:04:48] Monsmecta 30ml & 100ml Modern Deep-Blue Label Creation & Viewer
+- Applied modern pet guardian aesthetic (세련된 2030 보호자 감성, 발자국 워터마크, 민트 체크 액션 필, 클린 헬스케어 레이아웃) to Monsmecta 30ml (94x40mm) and 100ml (120x75mm).
+- 30ml: Micro-tuned 5-complex grid to guarantee 0px overflow in 40mm compact height, maintaining full veterinary formula details.
+- 100ml: Features full patent citations (Patent No. 201180042602.8 / US USPTO App No. 50/041,096), 5-ingredient cards, and high-contrast legal table.
+- Created interactive `monsmecta_labels_viewer.html` with 30ml/100ml switching, A4 1:1 real-size calibration ruler, roll-label mode, and bi-directional linking with Parvogel viewer.
