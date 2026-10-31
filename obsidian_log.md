@@ -1338,3 +1338,6 @@
 
 ## [2026-10-31 13:08:28] Parvogel label layout polish (6 files)
 - Header/footer symmetric margins, equalized left-column spacing with larger fonts, 7mm middle gap now full-height, right legal panel black thick border (no clipping), bottom gold line fully visible; blue variant right panel text fixed (scripts/polish_labels_layout.py).
+
+## [2026-10-31 13:14:51] Parvogel label right panel border
+- Replaced black border of right legal panel with gold/silver metallic frame (0.75mm, glow) on all 6 label files.
