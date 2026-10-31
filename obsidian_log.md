@@ -1354,3 +1354,5 @@
 - Created interactive `monsmecta_labels_viewer.html` with 30ml/100ml switching, A4 1:1 real-size calibration ruler, roll-label mode, and bi-directional linking with Parvogel viewer.
 
 - **[2026-10-31 16:26:33] [Monsmecta Claude Design Full Lineup Sync]**: 클로드 모던 딥그린 디자인 시스템을 몬스멕타 11종 전 라인업(01 오리지널 ~ 11 비타플러스)의 30ml(101x42mm, 좌7+중7+우3) 및 100ml(123x75mm, 좌7+중7+우3)에 일괄 적용 완료. 각 제품별 고유 효능·성분·법정고시 반영, 화이트/다크 뒷면 토글 및 통합 라벨 뷰어(monsmecta_labels_viewer.html) 구축 완료.
+
+- **[2026-10-31 16:48:34] [Monsmecta Distinct Color Identity Lineup Update]**: 몬스멕타 11종 전 라인업에 각 제품 고유의 기능별 정체성 색상(01 오리지널: 딥에메랄드, 02 헤파맥스: 골드앰버, 03 레날: 인디고바이올렛, 04 캔서: 로열퍼플, 05 콜드: 시안아쿠아, 06 스킨: 로즈핑크, 07 하트: 크림슨레드, 08 조인트: 올리브라임, 09 파워: 비비드오렌지, 10 유산균: 바이탈그린, 11 비타: 골든옐로우)을 완벽 분리 적용. 클로드 모던 라벨 30ml/100ml 규격 및 컬러 인디케이터 탭 통합 뷰어(monsmecta_labels_viewer.html) 동기화 완료.
