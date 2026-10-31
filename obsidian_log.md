@@ -1335,3 +1335,6 @@
 - **작업 내용**: 파보겔 100ml(118x76mm), 200ml(145x96mm), 500ml(181x126mm) 라벨의 우측 뒷면(법정고시 패널)에 몬스멕타와 100% 동일한 진한 검은색 사각 테두리('ㅁ' 형태)를 적용.
 - **상하단 황금선 대칭 완성**: 세로 높이를 2mm 추가 확장하여 상하단 골드 바가 상하 동일한 여백 속에서 선명하게 100% 온전히 관통 및 노출되도록 개선.
 - **배포**: 바탕화면 전용 폴더 및 웹 프로젝트 인쇄용 A4 PDF, 롤라벨 PDF, 고해상도 PNG 전 규격 동기화 완료.
+
+## [2026-10-31 13:08:28] Parvogel label layout polish (6 files)
+- Header/footer symmetric margins, equalized left-column spacing with larger fonts, 7mm middle gap now full-height, right legal panel black thick border (no clipping), bottom gold line fully visible; blue variant right panel text fixed (scripts/polish_labels_layout.py).
