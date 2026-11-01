@@ -1410,3 +1410,5 @@
 - 11종 전 제품(01~11)에 대해 0px 오버플로우(diff=0, scrollHeight == clientHeight) 검증 및 동기화 완료.
 
 - **[2026-11-01 08:52:55] [Monsmecta 30ml Header Gap Compression & Patent Number Restoration]**: 몬스멕타 30ml 라벨 전체에서 상단 헤더 뱃지와 서브타이틀 사이 여백을 11px에서 ~2px로 대폭 압축하여 수직 공간을 확보하고, 30ml 오리지널(01) 원료란 1행에 누락되었던 특허번호 "(Patent No. 201180042602.8)" 서브노트를 볼드체 900으로 선명하게 복원 완료. 11종 전 라인업(100ml / 30ml) Playwright 전수 무오버플로우(diff <= 0px) 검증 완료.
+
+- **[2026-11-01 20:46:57] [Monsmecta Youth 30ml 3-Up PDF Generation]**: 몬스멕타 유스 에디션 30ml 3종(01 오리지널, 02 헤파맥스, 03 레날디톡스) 각각에 대해 A4 1장에 101mm×42mm 실측 라벨 3개와 코너 재단선, 50mm 실측 확인 눈금자가 포함된 개별 3구 PDF 및 3종 통합 콤보 3구 PDF 생성 완료. 바탕화면 인쇄소전달용 폴더 동기화 완료.
