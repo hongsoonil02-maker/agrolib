@@ -1491,3 +1491,8 @@
 - **[2026-11-03 09:10:16] [Monsmecta Closed Popup Barrier & Restricted Section Complete Removal]**: 
   - 사이트 첫 방문 시 화면 전체를 가로막던 폐쇄형 B2B 팝업 모달(GeneralNoticeModal) 및 본문 내 비공개 영역(VetRestrictedSection) 전면 삭제 완료.
   - 일반 반려인, 카페 제휴 회원 및 신규 방문자가 어떠한 차단 팝업이나 심리적 장벽 없이 브랜드 및 제품 정보를 열람할 수 있도록 개선 완료 및 프로덕션 배포.
+
+
+### [2026-11-03 09:26:58] 몬스멕타 장벽 모달 완전 영구 삭제 및 보호자 커뮤니티 라운지·박선생 Q&A 배포 완료
+- B2B 진입 장벽 팝업(GeneralNoticeModal) 및 잠금 영역(VetRestrictedSection) 파일 영구 삭제 및 실서버 배포 완료.
+- 하남사랑동물병원 김동준 원장 = 네이버 카페 박선생 동일인물 단일화([ 💬 공식 답변 박선생(하남사랑동물병원) ]) 및 1~7단계 Fecal Score 후기·Q&A 플랫폼 연동 완료.
