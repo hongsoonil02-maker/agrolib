@@ -1487,3 +1487,7 @@
 - **[2026-11-03 09:03:04] [Monsmecta Consultation & Tax Invoice Banner Text Simplification]**: 
   - 일반 소비자 오해 방지를 위해 도매 공급가/마진 보호 관련 수식어구를 전면 정돈.
   - 라인업 하단 및 입점 문의 모달, 발주서 안내 문구를 "동물병원 맞춤 단가 및 계산서 관련은 에스앤제이 동물병원 원장과 직접 상의하시기 바랍니다."로 깔끔하게 단일화 반영 완료.
+
+- **[2026-11-03 09:10:16] [Monsmecta Closed Popup Barrier & Restricted Section Complete Removal]**: 
+  - 사이트 첫 방문 시 화면 전체를 가로막던 폐쇄형 B2B 팝업 모달(GeneralNoticeModal) 및 본문 내 비공개 영역(VetRestrictedSection) 전면 삭제 완료.
+  - 일반 반려인, 카페 제휴 회원 및 신규 방문자가 어떠한 차단 팝업이나 심리적 장벽 없이 브랜드 및 제품 정보를 열람할 수 있도록 개선 완료 및 프로덕션 배포.
