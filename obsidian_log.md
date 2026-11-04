@@ -1568,3 +1568,7 @@
   2) 기존 공란이었던 대표유선전화 **160건 추가 보강** (전체 유선전화 3,243건 확보).
 - **산출물 갱신**: `전국_동물병원_연락처DB_5545건.xlsx`, `.csv` 전면 업데이트 및 `대한수의사회_크로스체크_결과보고.xlsx` 생성 완료.
 - **2026-11-05 07:46:46** [OKX & Alpaca 7-Day Trading Audit]: Audited Alpaca Paper (8 roundtrips, 1W/7L, -,108.26 PnL due to pre-election tech drawdown, 100% EOD cash preserved at ,007) and OKX Demo (22 roundtrips, 10W/12L, +.36 USDT net profit, DOGE +.94 vs SOL -.58, balance at ,102). OKX live account safely unallocated.
+
+### [2026-11-05 07:58:05] Alpaca 및 OKX 봇 승률/수익률 개선 연구 완료
+- Alpaca: 7일간 승률 12.5% (-,108) 원인 규명(장마감 직전 진입 강제청산 57%, QQQ 5M 속임수, 3배 ETF 과비중). 4대 개선책(14시 진입 컷오프, 1H/VWAP 게이트, 변동성 비례 사이징, +1% 조기 본전락) 수립.
+- OKX: 승률 45.5% (수수료  총수익  86% 잠식, SOL 횡보장 휩소). 4대 개선책(Post-Only 메이커 체결 전환, ADX 횡보 필터, LOB/거래량 기준 강화, 조기 트레일링 락) 수립.
