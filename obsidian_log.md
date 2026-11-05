@@ -1576,3 +1576,5 @@
 ### [2026-11-05 08:39:11] [Argon 정밀 재리뷰] Alpaca & OKX 실거래 코드·원장 전수 재검증
 - **이전 분석 오류 교정**: Alpaca 손실 7건 모두 오전(10:22~11:51 EST) 진입으로 14시 진입차단 무효 확인. 진짜 원인은 (1) 미완성 5분봉(iloc[-1]) 리페인팅 추격매수 버그, (2) EMA50<EMA200 역배열 및 RS 마이너스 종목 진입, (3) 장중 추세붕괴 방치 후 EOD 손절, (4) cancel_orders=true 누락에 따른 HTTP 403 에러임을 규명.
 - **OKX 정밀 진단**: 데모계좌 총자산 \.7k 중 실제 USDT는 \,730뿐인 자금 왜곡, 	rail_arm(1.92%)-trail_drop(0.64%) 전량청산으로 인한 실현 손익비 역전(평균익절 +\ < 평균손절 -\), 1H 역배열(DistE50 < 0) 및 저거래량(Vol 0.85x) 진입 허용 결함 규명.
+
+- [2026-11-05 09:05 KST] GCP coinbot 서버의 Alpaca(alpaca_golden_trader.py) 및 OKX Demo(okx_jev_demo_trader.py, jev/universal_jev_gate.py) 자동매매 봇에 대해 최근 7일/14일/30일 정밀 비교 백테스트 분석을 완료하고, 승률·수익률·MDD 개선이 검증된 Argon V2-C / V3 최적 로직을 실서버에 배포 및 재가동 완료.
