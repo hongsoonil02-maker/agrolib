@@ -1578,3 +1578,4 @@
 - **OKX 정밀 진단**: 데모계좌 총자산 \.7k 중 실제 USDT는 \,730뿐인 자금 왜곡, 	rail_arm(1.92%)-trail_drop(0.64%) 전량청산으로 인한 실현 손익비 역전(평균익절 +\ < 평균손절 -\), 1H 역배열(DistE50 < 0) 및 저거래량(Vol 0.85x) 진입 허용 결함 규명.
 
 - [2026-11-05 09:05 KST] GCP coinbot 서버의 Alpaca(alpaca_golden_trader.py) 및 OKX Demo(okx_jev_demo_trader.py, jev/universal_jev_gate.py) 자동매매 봇에 대해 최근 7일/14일/30일 정밀 비교 백테스트 분석을 완료하고, 승률·수익률·MDD 개선이 검증된 Argon V2-C / V3 최적 로직을 실서버에 배포 및 재가동 완료.
+- [2026-11-05 09:16 KST] GCP coinbot 서버의 유령 프로세스(agy --hub, vscode agent host, 구 guardian 데몬) 종료 및 불필요한 캐시/백업/구형 스크립트/로그 약 6.0GB 일괄 청소 완료 (RAM 사용량 275MiB/3.8GiB[7.1%], 디스크 사용률 41%->29%[6GB 확보]).
