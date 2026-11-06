@@ -1579,3 +1579,4 @@
 
 - [2026-11-05 09:05 KST] GCP coinbot 서버의 Alpaca(alpaca_golden_trader.py) 및 OKX Demo(okx_jev_demo_trader.py, jev/universal_jev_gate.py) 자동매매 봇에 대해 최근 7일/14일/30일 정밀 비교 백테스트 분석을 완료하고, 승률·수익률·MDD 개선이 검증된 Argon V2-C / V3 최적 로직을 실서버에 배포 및 재가동 완료.
 - [2026-11-05 09:16 KST] GCP coinbot 서버의 유령 프로세스(agy --hub, vscode agent host, 구 guardian 데몬) 종료 및 불필요한 캐시/백업/구형 스크립트/로그 약 6.0GB 일괄 청소 완료 (RAM 사용량 275MiB/3.8GiB[7.1%], 디스크 사용률 41%->29%[6GB 확보]).
+- [2026-11-07 08:00 KST] GCP coinbot 서버의 지난 48시간(11/05~11/07) Alpaca 및 OKX Demo 실거래 원장·로그 정밀 감사 완료: Alpaca는 나스닥 급락장(QQQ -5.16%)에서 원금 100% 방어($0 손실)했으나 Jev 매크로 프롬프트 문자열 버그로 SQQQ/SOXS 인버스 진입 8건이 차단됨을 규명했고, OKX Demo는 전반기 +$205.86(승률 75%) 후 후반기 바닥 횡보장 연속 숏 손절(-$414.23) 및 Post-Only 0% 체결 원인을 도출하여 보고함.
