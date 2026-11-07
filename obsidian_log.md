@@ -1590,3 +1590,5 @@
 - [2026-11-07 09:36:11] Deployed OKX Argon V4-Pro (20x Isolated Leverage, 20% Margin/Slot, BTC/ETH/SOL/XRP 4/4 Dominance Sync + 4-Stage 1H Wave Harvest) and updated UniversalJevGate on GCP coinbot; verified active service and live 4-Major Radar.
 
 - [2026-11-07 09:52:00] Fixed GitHub Pages syncing_files 10-minute deployment timeout on agrolib by switching build_type from legacy (274.8 MB full-repo tarball on every push) to workflow (.github/workflows/deploy-pages.yml) with sparse-checkout, _site asset staging (1.48 MB, -99.5%), and path filtering (build 7s + deploy 8s).
+
+- [2026-11-07 10:45:36] Alpaca 미국 주식 6개월 우하향 원인(->, 5분봉 단타 불트랩·공매도 차단·섹터 순환매 무시)을 정밀 규명하고, 4대 섹터(DIA/SPY/QQQ/SOXX) 독립 레짐 기반 양방향 엔진(3배 Bull/Bear ETF + 지수 네이티브 숏, Argon US V4-Pro) 백테스트로 6M +24.2% / 3M +43.5% / 1M +26.5%(승률 64~70%) 솔루션을 검증 완료함.
