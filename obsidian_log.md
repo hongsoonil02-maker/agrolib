@@ -1596,3 +1596,5 @@
 - [2026-11-07 11:02:58] Alpaca 미국 주식 봇(alpaca_golden_trader.py) 및 UniversalJevGate에 Argon US V4-Pro 3번 실전 공격형(1.8x Reg-T 스나이퍼: 슬롯당 60%x3슬롯, 4대 섹터 3배 Bull/Bear ETF + DIA/SPY/QQQ/SOXX 네이티브 공매도 + 빅테크 저점매수, SIP+IEX 하이브리드 피드) 배포 및 서비스 재기동 검증 완료.
 
 [2026-11-07 11:06:31] Fixed GitHub Actions Daily Backend Pipeline 403 Forbidden failure on '2.5 KIS Real Portfolio Sync'. Added continue-on-error: true in daily_pipeline.yml and fault-tolerant token handler in kis_portfolio_sync.py to prevent pipeline crashes when KIS credentials fail.
+
+[2026-11-07 11:10:12] Completely removed KIS real portfolio sync step from GitHub Actions daily_pipeline.yml and placed kis_portfolio_sync.py on permanent hold (disabled) per user request.
