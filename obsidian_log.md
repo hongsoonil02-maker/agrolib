@@ -1598,3 +1598,5 @@
 [2026-11-07 11:06:31] Fixed GitHub Actions Daily Backend Pipeline 403 Forbidden failure on '2.5 KIS Real Portfolio Sync'. Added continue-on-error: true in daily_pipeline.yml and fault-tolerant token handler in kis_portfolio_sync.py to prevent pipeline crashes when KIS credentials fail.
 
 [2026-11-07 11:10:12] Completely removed KIS real portfolio sync step from GitHub Actions daily_pipeline.yml and placed kis_portfolio_sync.py on permanent hold (disabled) per user request.
+
+- [2026-11-08 08:15:13] GCP coinbot OKX 데모 48시간 거래원장 및 Argon V4-Pro(20x) 배포(11/07 09:35 KST) 전후 비교 분석 완료: 변경 전 횡보장 4연속 손절(-.06 신규손실 / 전체 -.22) 대비, 변경 후 구버전 유산 포지션 조기 구조청산(-.61 방어) 및 BTC 0.91% 주말 박스권 가짜 신호 100% 차단(신규 손실 , USDT 잔고 ,465.31 보존) 검증.
