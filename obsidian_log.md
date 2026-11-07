@@ -1586,3 +1586,5 @@
 - [2026-11-07 09:05:57] Completed 45D/30D/14D/8D comparative backtest on OKX 4 Major Coins (BTC, ETH, SOL, XRP): Argon V4-Pro 4-Major Dominance Sync (4/4 1H MA 5/10/20 alignment + wave trailing) achieved 86.7% WR (+40.0%~+47.6%, PF 8.55~9.35, MDD 7.6%~8.3%) over 30D vs +6.9% (50.6% WR, MDD 22.3%) on naive 5m scalping.
 
 - [2026-11-07 09:21:26] Benchmarked OKX Argon V4-Pro (4 Majors: BTC, ETH, SOL, XRP) across 5x/10x/20x/50x leverage over 8D/14D/30D/45D: 10x (+151.9% 30D, 0 liquidations, MDD 17.7%) and 20x w/ 20% margin (+231.9% 30D, 0 liquidations, MDD 23.0%) proved optimal while 50x suffered 3-5 forced liquidations and 76-80% MDD.
+
+- [2026-11-07 09:36:11] Deployed OKX Argon V4-Pro (20x Isolated Leverage, 20% Margin/Slot, BTC/ETH/SOL/XRP 4/4 Dominance Sync + 4-Stage 1H Wave Harvest) and updated UniversalJevGate on GCP coinbot; verified active service and live 4-Major Radar.
