@@ -1582,3 +1582,5 @@
 - [2026-11-07 08:00 KST] GCP coinbot 서버의 지난 48시간(11/05~11/07) Alpaca 및 OKX Demo 실거래 원장·로그 정밀 감사 완료: Alpaca는 나스닥 급락장(QQQ -5.16%)에서 원금 100% 방어($0 손실)했으나 Jev 매크로 프롬프트 문자열 버그로 SQQQ/SOXS 인버스 진입 8건이 차단됨을 규명했고, OKX Demo는 전반기 +$205.86(승률 75%) 후 후반기 바닥 횡보장 연속 숏 손절(-$414.23) 및 Post-Only 0% 체결 원인을 도출하여 보고함.
 
 - **[2026-11-07 08:28 KST]** Argon V2.1-Pro (Alpaca) 및 Argon V3.1-Pro (OKX Demo) 다중 구간(48H/7D/14D/30D) 비교 백테스트 검증 및 `coinbot` 실전 배포 완료: Alpaca의 Jev 매크로 문자열 하드코딩 버그 수정·인버스 ETF(`SQQQ`/`SOXS`) 클라이맥스 추격 상한(`+9.0%`)·당일 1패 서킷브레이커 적용(30D 승률 `75.0%`, PF `2.31`, `+$3,755.6`), OKX의 `ADX(14)>=20` 박스권 차단·동일방향 2연패 4시간 락아웃·`+1틱` Passive Maker 주문 및 `51400` 취소 오류 수정 배포 완료(30D 승률 `62.5%`, PF `1.79`, `+$2,235.4`).
+
+- [2026-11-07 09:05:57] Completed 45D/30D/14D/8D comparative backtest on OKX 4 Major Coins (BTC, ETH, SOL, XRP): Argon V4-Pro 4-Major Dominance Sync (4/4 1H MA 5/10/20 alignment + wave trailing) achieved 86.7% WR (+40.0%~+47.6%, PF 8.55~9.35, MDD 7.6%~8.3%) over 30D vs +6.9% (50.6% WR, MDD 22.3%) on naive 5m scalping.
