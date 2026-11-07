@@ -1588,3 +1588,5 @@
 - [2026-11-07 09:21:26] Benchmarked OKX Argon V4-Pro (4 Majors: BTC, ETH, SOL, XRP) across 5x/10x/20x/50x leverage over 8D/14D/30D/45D: 10x (+151.9% 30D, 0 liquidations, MDD 17.7%) and 20x w/ 20% margin (+231.9% 30D, 0 liquidations, MDD 23.0%) proved optimal while 50x suffered 3-5 forced liquidations and 76-80% MDD.
 
 - [2026-11-07 09:36:11] Deployed OKX Argon V4-Pro (20x Isolated Leverage, 20% Margin/Slot, BTC/ETH/SOL/XRP 4/4 Dominance Sync + 4-Stage 1H Wave Harvest) and updated UniversalJevGate on GCP coinbot; verified active service and live 4-Major Radar.
+
+- [2026-11-07 09:52:00] Fixed GitHub Pages syncing_files 10-minute deployment timeout on agrolib by switching build_type from legacy (274.8 MB full-repo tarball on every push) to workflow (.github/workflows/deploy-pages.yml) with sparse-checkout, _site asset staging (1.48 MB, -99.5%), and path filtering (build 7s + deploy 8s).
