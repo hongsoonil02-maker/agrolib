@@ -1643,3 +1643,6 @@
 
 ## [2026-11-08 20:22:28] Windows 배치 스크립트(run_all_7sites_marketing.bat 외 2종) CP949/UTF-8 오프셋 오류 수정 및 통합 검증 완료
 - cmd.exe 환경에서 한글 UTF-8/LF 개행으로 발생하던 명령어 잘림(cho., thon) 현상을 순수 ASCII + CRLF 규격으로 패치하여 1단계(7대 도메인 GEO 배포) 및 2단계(파보겔 쇼츠 3종 렌더링 + 멀티채널 배포) 무결점 실행 검증 완료.
+
+## [2026-11-08 20:29:22] 7대 도메인(파보겔·100배거·몬스멕타·로타갈·베타콜·한국아그로·S&J) GitHub 프로덕션 일괄 배포 완료
+- parvogel(b6bbe45), quant_system(c467f56d), monsmecta(886623f), rotagal(b65df0d), vetacol(436a6b8), agrokorea(7160ef4), snj-animal-hospital(289e23b) 7개 원격 저장소 푸시 및 CI/CD 배포 트리거 완료.
