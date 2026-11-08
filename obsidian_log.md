@@ -1610,3 +1610,5 @@
 [2026-11-08 09:53:01] [Brand Guard & IG Audit] 100baggerquantlab 인스타그램 전수조사(총 226건) 완료: 파보겔 게시물 0건 확인(완전 정리 상태). parvogel.official 전용 계정 완전 격리 및 교차 배포 영구 차단 검증 완료.
 
 [2026-11-08 10:01:37] [Video Auto-Renderer] 파보겔 1초 펌프 급여 가이드 & 실사 5개 씬 결합 1080x1920 세로 숏폼(41.8초) FFmpeg+OpenAI TTS 자체 렌더링 완료 (Parvogel_Clinical_Pump_Guide_Shorts.mp4).
+
+[2026-11-08 10:22:51] [Pipeline Integration] A안 확정: 5개 실사 클립 1초 펌프 급여 가이드 숏폼 엔진(PumpShortsGenerator)을 ParvogelMarketingMaster 3단계 렌더링 파이프라인에 영구 결합 완료.
