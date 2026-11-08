@@ -1608,3 +1608,5 @@
 - **2026-11-08 09:28:00**: [완전 무인 자동화 구축 완료] 수동 bat 클릭 없이 매일 아침 08:30 및 PC 부팅 시 자동 실행되도록 Windows 작업 스케줄러(Parvogel_Daily_Marketing_Factory)에 풀 마케팅 파이프라인(블로그 대본, 다큐 숏폼, 노마드크리스 랭킹 숏폼 렌더링, 대시보드 갱신) 완전 통합 등록 완료.
 
 [2026-11-08 09:53:01] [Brand Guard & IG Audit] 100baggerquantlab 인스타그램 전수조사(총 226건) 완료: 파보겔 게시물 0건 확인(완전 정리 상태). parvogel.official 전용 계정 완전 격리 및 교차 배포 영구 차단 검증 완료.
+
+[2026-11-08 10:01:37] [Video Auto-Renderer] 파보겔 1초 펌프 급여 가이드 & 실사 5개 씬 결합 1080x1920 세로 숏폼(41.8초) FFmpeg+OpenAI TTS 자체 렌더링 완료 (Parvogel_Clinical_Pump_Guide_Shorts.mp4).
