@@ -1,6 +1,6 @@
 {
   "version": "2.1.0",
-  "generated_at": "2026-11-08",
+  "generated_at": "2026-11-09",
   "total_sites": 7,
   "auto_approved_count": 7,
   "deploy_results": {
@@ -68,7 +68,7 @@
       "trust_score": 100,
       "status": "AUTO_APPROVED",
       "validation_flags": [],
-      "deployed_at": "2026-11-08T20:21:23.934669",
+      "deployed_at": "2026-11-09T06:15:02.152990",
       "deploy_result": "DEPLOYED_AND_PRERENDERED (puppy-parvo-recovery-case)"
     },
     {
@@ -121,7 +121,7 @@
       "trust_score": 100,
       "status": "AUTO_APPROVED",
       "validation_flags": [],
-      "deployed_at": "2026-11-08T20:21:23.935988",
+      "deployed_at": "2026-11-09T06:15:02.154420",
       "deploy_result": "DEPLOYED_QUANT_SAAS_AND_FEED"
     },
     {
@@ -179,7 +179,7 @@
       "trust_score": 100,
       "status": "AUTO_APPROVED",
       "validation_flags": [],
-      "deployed_at": "2026-11-08T20:21:23.937217",
+      "deployed_at": "2026-11-09T06:15:02.159079",
       "deploy_result": "DEPLOYED_HTML_AND_GEO_JSON (index.html)"
     },
     {
@@ -218,7 +218,7 @@
       "trust_score": 100,
       "status": "AUTO_APPROVED",
       "validation_flags": [],
-      "deployed_at": "2026-11-08T20:21:23.938317",
+      "deployed_at": "2026-11-09T06:15:02.164631",
       "deploy_result": "DEPLOYED_HTML_AND_GEO_JSON (index.html)"
     },
     {
@@ -257,7 +257,7 @@
       "trust_score": 100,
       "status": "AUTO_APPROVED",
       "validation_flags": [],
-      "deployed_at": "2026-11-08T20:21:23.939418",
+      "deployed_at": "2026-11-09T06:15:02.169115",
       "deploy_result": "DEPLOYED_HTML_AND_GEO_JSON (index.html)"
     },
     {
@@ -296,7 +296,7 @@
       "trust_score": 100,
       "status": "AUTO_APPROVED",
       "validation_flags": [],
-      "deployed_at": "2026-11-08T20:21:23.940634",
+      "deployed_at": "2026-11-09T06:15:02.181368",
       "deploy_result": "DEPLOYED_HTML_AND_GEO_JSON (index.html)"
     },
     {
@@ -337,7 +337,7 @@
       "trust_score": 100,
       "status": "AUTO_APPROVED",
       "validation_flags": [],
-      "deployed_at": "2026-11-08T20:21:23.942681",
+      "deployed_at": "2026-11-09T06:15:02.203804",
       "deploy_result": "DEPLOYED_HTML_AND_GEO_JSON (index.html)"
     }
   ]
