@@ -61,8 +61,8 @@ def evaluate_trust_score(draft: dict) -> dict:
 
 def send_telegram_briefing(text: str):
     """텔레그램 핫라인으로 주간 1-Page 요약본 자동 발송"""
-    token = os.environ.get("TELEGRAM_BOT_TOKEN", "8981618688:AAGk4fjunc3HRSTGLe9gGsOpql7tYsa48Fk")
-    chat_id = os.environ.get("TELEGRAM_CHAT_ID", "53326884")
+    token = os.environ.get("TELEGRAM_BOT_TOKEN")
+    chat_id = os.environ.get("TELEGRAM_CHAT_ID")
     
     if token and chat_id:
         try:
