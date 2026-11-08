@@ -1,6 +1,9 @@
 @echo off
 chcp 65001 > nul
 setlocal
+set PYTHONUTF8=1
+set PYTHONIOENCODING=utf-8
+
 cd /d "C:\Users\master\agrolib\reports\seo_automations"
 python weekly_seo_runner.py >> "C:\Users\master\agrolib\reports\seo_automations\weekly_seo_runner.log" 2>&1
 if %ERRORLEVEL% neq 0 (

@@ -68,7 +68,7 @@
       "trust_score": 100,
       "status": "AUTO_APPROVED",
       "validation_flags": [],
-      "deployed_at": "2026-11-08T20:08:29.799757",
+      "deployed_at": "2026-11-08T20:21:23.934669",
       "deploy_result": "DEPLOYED_AND_PRERENDERED (puppy-parvo-recovery-case)"
     },
     {
@@ -121,7 +121,7 @@
       "trust_score": 100,
       "status": "AUTO_APPROVED",
       "validation_flags": [],
-      "deployed_at": "2026-11-08T20:08:29.801148",
+      "deployed_at": "2026-11-08T20:21:23.935988",
       "deploy_result": "DEPLOYED_QUANT_SAAS_AND_FEED"
     },
     {
@@ -179,7 +179,7 @@
       "trust_score": 100,
       "status": "AUTO_APPROVED",
       "validation_flags": [],
-      "deployed_at": "2026-11-08T20:08:29.802389",
+      "deployed_at": "2026-11-08T20:21:23.937217",
       "deploy_result": "DEPLOYED_HTML_AND_GEO_JSON (index.html)"
     },
     {
@@ -218,7 +218,7 @@
       "trust_score": 100,
       "status": "AUTO_APPROVED",
       "validation_flags": [],
-      "deployed_at": "2026-11-08T20:08:29.803594",
+      "deployed_at": "2026-11-08T20:21:23.938317",
       "deploy_result": "DEPLOYED_HTML_AND_GEO_JSON (index.html)"
     },
     {
@@ -257,7 +257,7 @@
       "trust_score": 100,
       "status": "AUTO_APPROVED",
       "validation_flags": [],
-      "deployed_at": "2026-11-08T20:08:29.804623",
+      "deployed_at": "2026-11-08T20:21:23.939418",
       "deploy_result": "DEPLOYED_HTML_AND_GEO_JSON (index.html)"
     },
     {
@@ -296,7 +296,7 @@
       "trust_score": 100,
       "status": "AUTO_APPROVED",
       "validation_flags": [],
-      "deployed_at": "2026-11-08T20:08:29.805830",
+      "deployed_at": "2026-11-08T20:21:23.940634",
       "deploy_result": "DEPLOYED_HTML_AND_GEO_JSON (index.html)"
     },
     {
@@ -337,7 +337,7 @@
       "trust_score": 100,
       "status": "AUTO_APPROVED",
       "validation_flags": [],
-      "deployed_at": "2026-11-08T20:08:29.807443",
+      "deployed_at": "2026-11-08T20:21:23.942681",
       "deploy_result": "DEPLOYED_HTML_AND_GEO_JSON (index.html)"
     }
   ]
