@@ -1,31 +1,7 @@
 {
-  "version": "1.0.0",
-  "updated_at": "2026-10-24",
+  "version": "2.0.0",
+  "updated_at": "2026-11-08",
   "sites": [
-    {
-      "id": "agrokorea",
-      "domain": "agrokorea.net",
-      "site_url": "https://agrokorea.net",
-      "name": "한국아그로 (Agro Korea)",
-      "category": "친환경 축산·동물약품 제조 및 공식 포털",
-      "target_persona": "한우·낙농 농가, 대형 축산업자, B2B 도매 총판",
-      "core_topics": ["송아지 설사", "가축 면역보강", "친환경 동물보조사료", "축산 질병 예방"],
-      "gsc_property": "sc-domain:agrokorea.net",
-      "cms_type": "static_or_wordpress",
-      "eeat_source": "reports/agrokorea_tech_specs.md"
-    },
-    {
-      "id": "rotagal",
-      "domain": "rotagal.kr",
-      "site_url": "https://rotagal.kr",
-      "name": "로타겔 (Rotagal)",
-      "category": "송아지·자돈 바이러스성 설사 집중 케어 솔루션",
-      "target_persona": "번식우 농가, 양돈 농가, 축산 마이스터",
-      "core_topics": ["송아지 로타바이러스", "신생 송아지 수양성 설사", "자돈 폐사율 방어", "초유 급여 팁"],
-      "gsc_property": "sc-domain:rotagal.kr",
-      "cms_type": "static_or_wordpress",
-      "eeat_source": "reports/rotagal_clinical.md"
-    },
     {
       "id": "parvogel",
       "domain": "parvogel.kr",
@@ -35,32 +11,22 @@
       "target_persona": "2040 반려견/반려묘 집사, 인허가 펫샵 대표, 전문 브리더(켄넬)",
       "core_topics": ["파보장염 초기증상", "새끼강아지 노란토", "강아지 급성설사 골든타임", "앵무새 낙조 예방", "펫 구급함 상비템"],
       "gsc_property": "sc-domain:parvogel.kr",
-      "cms_type": "static_prerender",
+      "cms_type": "vite_react_prerender",
+      "local_repo_path": "C:/Users/master/parvogel_landing",
+      "deploy_adapter": "json_blog_prerender",
+      "content_target": {
+        "posts_json_path": "src/data/posts.json",
+        "prerender_script": "scripts/prerender_blogs.js",
+        "index_html_path": "index.html",
+        "sitemap_path": "public/sitemap.xml"
+      },
+      "product_facts": {
+        "formulation": "1-DNJ + 특허균주 Bacillus subtilis MORI(제2011B0042620.8호) + 초미세 나노 몬모릴로나이트 1초 에어리스 펌프 겔",
+        "mechanism": "체내 흡수율 0% 물리적 장 점막 실크 코팅 및 유해 세균 독소(LPS)·바이러스 흡착 배출, 위산(pH 4.5~5.5) 완충",
+        "indication": "강아지·고양이·반려조(앵무새) 급성 물설사, 노란토, 장염 회복기 식욕 부활 및 가정용 응급 상비 케어",
+        "advisor": "김동준 수의사 (하남 사랑동물병원 원장) / 홍순일 수의사 (에스앤제이 동물병원 원장)"
+      },
       "eeat_source": "parvogel_2030_d2c_renewal_and_pet_gallery_review_20261023.md"
-    },
-    {
-      "id": "monsmecta",
-      "domain": "monsmecta.kr",
-      "site_url": "https://monsmecta.kr",
-      "name": "몬스멕타 (Monsmecta)",
-      "category": "동물병원 전용 처방 보조제 (수의사 인증 포털)",
-      "target_persona": "임상 수의사, 동물병원 원장, 테크니션",
-      "core_topics": ["동물병원 처방 보조제", "나노 몬모릴로나이트 MOA", "내독소 흡착 메커니즘", "장-간-신장 축 케어"],
-      "gsc_property": "sc-domain:monsmecta.kr",
-      "cms_type": "react_portal",
-      "eeat_source": "reports/monsmecta_vet_moa.md"
-    },
-    {
-      "id": "vetacol",
-      "domain": "vetacol.kr",
-      "site_url": "https://vetacol.kr",
-      "name": "베타콜 (Vetacol)",
-      "category": "가축·반려동물 면역 활성 및 항바이러스 솔루션",
-      "target_persona": "수의사, 대규모 사육 농가, 특수동물 전문 케어어",
-      "core_topics": ["가축 면역글로불린", "항바이러스 면역증강", "환축 기력 회복", "환절기 호흡기 방어"],
-      "gsc_property": "sc-domain:vetacol.kr",
-      "cms_type": "static_or_wordpress",
-      "eeat_source": "reports/vetacol_immunity.md"
     },
     {
       "id": "100bagger",
@@ -71,19 +37,138 @@
       "target_persona": "서학개미, 미국 주식 전업 트레이더, 퀀트/모멘텀 투자자",
       "core_topics": ["미국주식 급등주 스크리너", "모멘텀 트레이딩 알림", "로스 카메론 전략", "Day Trading Scanner", "갭상승 주도주"],
       "gsc_property": "sc-domain:100bagger.app",
-      "cms_type": "nextjs_blog",
+      "cms_type": "quant_feed_json",
+      "local_repo_path": "C:/Users/master/quant_system",
+      "deploy_adapter": "quant_seo_feed",
+      "content_target": {
+        "seo_feed_path": "reports/seo_quant_insights.json"
+      },
+      "product_facts": {
+        "formulation": "Argon US V4-Pro 4대 지수(DIA/SPY/QQQ/SOXX) 동조화 레이더 & James Momentum Screener",
+        "mechanism": "RVOL > 5.0x 거래량 폭발, 저유통주식(Low Float), ROE > 20% / ROIC > 15% 자본효율성 멀티팩터 실시간 필터링",
+        "indication": "미국 프리마켓·정규장 급등주 조기 포착 및 3배 레버리지/인버스 ETF 양방향 리스크 제어",
+        "advisor": "100-Bagger Quant Research Lab"
+      },
       "eeat_source": "obsidian_log.md"
+    },
+    {
+      "id": "monsmecta",
+      "domain": "monsmecta.kr",
+      "site_url": "https://monsmecta.kr",
+      "name": "몬스멕타 (Monsmecta)",
+      "category": "동물병원 전용 처방 보조제 (수의사 인증 포털)",
+      "target_persona": "임상 수의사, 동물병원 원장, 수의테크니션, 해외 동물약품 바이어",
+      "core_topics": ["동물병원 처방 보조제", "나노 몬모릴로나이트 MOA", "내독소 흡착 메커니즘", "장-간-신장 축 케어"],
+      "gsc_property": "sc-domain:monsmecta.kr",
+      "cms_type": "vite_react_spa",
+      "local_repo_path": "C:/Users/master/monsmecta_landing",
+      "deploy_adapter": "static_html_schema",
+      "content_target": {
+        "index_html_path": "index.html",
+        "geo_json_path": "public/geo_insights.json"
+      },
+      "product_facts": {
+        "formulation": "동물병원 처방 전용 고순도 나노 몬모릴로나이트(비표면적 800m²/g 이상) + 1-DNJ + 특허균주 서스펜션",
+        "mechanism": "8층 나노 시트 구조의 강력한 양이온 교환 능력(CEC)으로 장내 엔도톡신(LPS)·박테리아·바이러스 선택적 포획 및 점막 장벽 복원",
+        "indication": "원내 입원 환축의 출혈성 장염(파보·코로나), 항생제 유발 설사(AAD), 만성 신부전 요독소(장-신장 축) 관리",
+        "advisor": "홍순일 수의학 박사 (Dr. James Hong, D.V.M., Ph.D.) / 김동준 수의사"
+      },
+      "eeat_source": "reports/monsmecta_vet_moa.md"
+    },
+    {
+      "id": "rotagal",
+      "domain": "rotagal.kr",
+      "site_url": "https://rotagal.kr",
+      "name": "로타갈 (ROTAGAL 백신)",
+      "category": "유럽 파마갈(Pharmagal) 직수입 프리미엄 송아지 설사병 3종 예방 백신",
+      "target_persona": "한우 번식우 농가, 낙농 목장 대표, 대동물 임상 수의사",
+      "core_topics": ["송아지 로타바이러스 백신", "임신우 분만 전 원샷 접종", "송아지 코로나 대장균 설사 예방", "초유 모체이행항체 극대화"],
+      "gsc_property": "sc-domain:rotagal.kr",
+      "cms_type": "vite_react_spa",
+      "local_repo_path": "C:/Users/master/rotagal-landing",
+      "deploy_adapter": "static_html_schema",
+      "content_target": {
+        "index_html_path": "index.html",
+        "geo_json_path": "public/geo_insights.json"
+      },
+      "product_facts": {
+        "formulation": "유럽 슬로바키아 파마갈(Pharmagal Bio)사 직수입 불활화 유성 아쥬반트 백신 (소 로타바이러스 + 소 코로나바이러스 + 장독소원성 대장균 E. coli K99(F5))",
+        "mechanism": "임신우 분만 예정 12주~3주 전 단 1회(3ml 근육주사) 원샷 접종으로 모체 혈중 및 초유 내 중화항체 역가를 극대화하여 신생 송아지에게 수동면역 전달",
+        "indication": "신생 송아지의 치명적 바이러스성·세균성 복합 설사병(로타·코로나·대장균 K99) 사전 예방 및 농장 폐사율·치료비 절감",
+        "advisor": "(주)한국아그로 대동물 백신 학술팀 & 에스앤제이 동물병원"
+      },
+      "eeat_source": "reports/rotagal_clinical.md"
+    },
+    {
+      "id": "vetacol",
+      "domain": "vetacol.kr",
+      "site_url": "https://vetacol.kr",
+      "name": "베타콜 (Vetacol)",
+      "category": "출생 직후 신생 송아지 초유 면역글로불린 & 에너지 시린지",
+      "target_persona": "한우·낙농 분만 관리 농가, 대동물 수의사, 축산 작목반",
+      "core_topics": ["송아지 초유 면역글로불린", "신생 송아지 기력 회복 시린지", "분만 직후 골든타임 15ml", "환절기 송아지 면역 보강"],
+      "gsc_property": "sc-domain:vetacol.kr",
+      "cms_type": "vite_react_spa",
+      "local_repo_path": "C:/Users/master/vetacol-landing",
+      "deploy_adapter": "static_html_schema",
+      "content_target": {
+        "index_html_path": "index.html",
+        "geo_json_path": "public/geo_insights.json"
+      },
+      "product_facts": {
+        "formulation": "5대 복합 혁신 포뮬러 15ml 경구 시린지 (고농축 초유 면역글로불린 IgG + 유청단백 + 바실러스 생균 + MCT 중쇄지방산 + 종합비타민 A·D3·E)",
+        "mechanism": "출생 후 6시간 이내 장벽이 열려 있을 때 고농도 IgG 항체를 직공급하고, 간에서 즉시 대사되는 MCT 오일로 체온 유지 및 기립 에너지 즉각 부여",
+        "indication": "어미소 초유 부족·거부 신생 송아지, 난산 후 저체온·기립불능 허약 송아지, 로타갈 백신 접종 농가의 출생 직후 2중 방어",
+        "advisor": "제임스 홍(홍순일) 고문수의사팀 & (주)한국아그로"
+      },
+      "eeat_source": "reports/vetacol_immunity.md"
+    },
+    {
+      "id": "agrokorea",
+      "domain": "agrokorea.net",
+      "site_url": "https://www.agrokorea.net",
+      "name": "한국아그로 (Agro Korea)",
+      "category": "친환경 축산·동물약품·보조사료 제조 및 글로벌 공식 포털",
+      "target_persona": "전국 축산 농가, 동물병원, 동물약품 도매 총판, 글로벌 수출 파트너",
+      "core_topics": ["송아지 설사 통합 방어", "가축 면역보강 보조사료", "친환경 축산 솔루션", "로타갈 베타콜 파보겔 몬스멕타 제조원"],
+      "gsc_property": "sc-domain:agrokorea.net",
+      "cms_type": "static_html",
+      "local_repo_path": "C:/Users/master/agrokorea-redesign",
+      "deploy_adapter": "static_html_schema",
+      "content_target": {
+        "index_html_path": "index.html",
+        "geo_json_path": "assets/geo_insights.json"
+      },
+      "product_facts": {
+        "formulation": "동물용의약품(백신·치료제), 기능성 사료첨가제, 생균제, 반려동물 D2C/B2B 헬스케어 라인업 보유",
+        "mechanism": "유럽 선진 바이오 기술 제휴(Pharmagal 등) 및 대한민국 특허 제2011B0042620.8호 기반 예방-면역-장관케어 전주기 파이프라인",
+        "indication": "경제동물(한우·젖소·양돈·가금) 생산성 향상 및 반려동물(강아지·고양이·특수조류) 생명 연장 솔루션",
+        "advisor": "(주)한국아그로 생명과학연구소"
+      },
+      "eeat_source": "reports/agrokorea_tech_specs.md"
     },
     {
       "id": "snj_vet",
       "domain": "snj-vet.com",
       "site_url": "https://snj-vet.com",
-      "name": "S&J 동물병원 (에스앤제이)",
-      "category": "외과/내과 전문 임상 동물병원 & 학술 임상 자문",
-      "target_persona": "경기/하남/서울 지역 반려동물 보호자, 중증/난치성 소화기 질환 보호자",
-      "core_topics": ["하남 동물병원 추천", "강아지 파보 임상 완치 사례", "노령견 소화기 내과", "김동준 원장 자문"],
+      "name": "에스앤제이 동물병원 (Dr. S&J Animal Hospital)",
+      "category": "용인 봄봄솔루션 신생아·소화기 특화 동물병원 & 스마트 사전 문진 포털",
+      "target_persona": "용인·경기권 반려동물 보호자, 전문 브리더·분양장 파트너, 중증 소화기 질환 환축 보호자",
+      "core_topics": ["용인 포곡 동물병원", "강아지 파보 코로나 스마트 문진", "신생 자견 소화기 집중 케어", "홍순일 성하정 수의사 자문"],
       "gsc_property": "sc-domain:snj-vet.com",
-      "cms_type": "static_or_wordpress",
+      "cms_type": "static_html",
+      "local_repo_path": "C:/Users/master/snj_animal_hospital",
+      "deploy_adapter": "static_html_schema",
+      "content_target": {
+        "index_html_path": "index.html",
+        "geo_json_path": "geo_insights.json"
+      },
+      "product_facts": {
+        "formulation": "용인 처인구 포곡읍(봄봄솔루션 내) 전문 진료센터 — 4단계 스마트 트리아지 사전 문진, 파보겔(Parvogel)·몬스멕타 원내 처방 및 진단키트 판독 센터",
+        "mechanism": "홍순일 대표원장(수의사 면허 제5374호)·성하정 원장의 30년 임상 프로토콜과 365일 온라인 사전 문진·수요일 현장 집중 진료 결합",
+        "indication": "신생 자견·자묘 파보/코로나 장염 조기 선별, 탈수 응급 트리아지, 번식농장·펫샵 B2B 방역 컨설팅",
+        "advisor": "홍순일 대표원장 (면허 제5374호) · 성하정 원장 (면허 제5238호)"
+      },
       "eeat_source": "reports/landing_reviews/weekly_2026-10-23.md"
     }
   ]
