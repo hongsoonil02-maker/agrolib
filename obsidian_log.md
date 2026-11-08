@@ -1600,3 +1600,11 @@
 [2026-11-07 11:10:12] Completely removed KIS real portfolio sync step from GitHub Actions daily_pipeline.yml and placed kis_portfolio_sync.py on permanent hold (disabled) per user request.
 
 - [2026-11-08 08:15:13] GCP coinbot OKX 데모 48시간 거래원장 및 Argon V4-Pro(20x) 배포(11/07 09:35 KST) 전후 비교 분석 완료: 변경 전 횡보장 4연속 손절(-.06 신규손실 / 전체 -.22) 대비, 변경 후 구버전 유산 포지션 조기 구조청산(-.61 방어) 및 BTC 0.91% 주말 박스권 가짜 신호 100% 차단(신규 손실 , USDT 잔고 ,465.31 보존) 검증.
+
+- **2026-11-08 09:14:00**: [노마드크리스형 랭킹 쇼츠 엔진] 2번 범용 스크립트(scripts/nomad_ranking_cutter.py) 개발 및 파보겔 임상 영상(49초, 1080x1920 세로 리프레이밍, 하단 자막 영역 블러, 좌측 상단 5위~1위 동적 언베일링 HUD 보드, 가슴선 볼드 숏폼 자막) 9초 초고속 렌더링 검증 완료.
+
+- **2026-11-08 09:22:00**: [파보겔 마케팅 팩토리 탑재 완료] 노마드크리스 스타일 랭킹 숏폼 코어 모듈(ranking_shorts_generator.py)을 marketing_factory/core/marketing_master.py 및 run_parvogel_marketing.bat에 정규 엔진으로 결합 완료. 매일 마케팅 공장 가동 시 5대 랭킹 쇼츠(언베일링 HUD, 자막 블러, 가슴선 자막, 제목 3종 메타) 자동 병렬 생산.
+
+- **2026-11-08 09:28:00**: [완전 무인 자동화 구축 완료] 수동 bat 클릭 없이 매일 아침 08:30 및 PC 부팅 시 자동 실행되도록 Windows 작업 스케줄러(Parvogel_Daily_Marketing_Factory)에 풀 마케팅 파이프라인(블로그 대본, 다큐 숏폼, 노마드크리스 랭킹 숏폼 렌더링, 대시보드 갱신) 완전 통합 등록 완료.
+
+[2026-11-08 09:53:01] [Brand Guard & IG Audit] 100baggerquantlab 인스타그램 전수조사(총 226건) 완료: 파보겔 게시물 0건 확인(완전 정리 상태). parvogel.official 전용 계정 완전 격리 및 교차 배포 영구 차단 검증 완료.
