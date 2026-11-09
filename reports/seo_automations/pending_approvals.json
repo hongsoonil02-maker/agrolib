@@ -4,13 +4,13 @@
   "total_sites": 7,
   "auto_approved_count": 7,
   "deploy_results": {
-    "parvogel": "DEPLOYED_AND_PRERENDERED (puppy-parvo-recovery-case)",
-    "100bagger": "DEPLOYED_QUANT_SAAS_AND_FEED",
-    "monsmecta": "DEPLOYED_HTML_AND_GEO_JSON (index.html)",
-    "rotagal": "DEPLOYED_HTML_AND_GEO_JSON (index.html)",
-    "vetacol": "DEPLOYED_HTML_AND_GEO_JSON (index.html)",
-    "agrokorea": "DEPLOYED_HTML_AND_GEO_JSON (index.html)",
-    "snj_vet": "DEPLOYED_HTML_AND_GEO_JSON (index.html)"
+    "parvogel": "SKIPPED_REPO_MISSING (C:/Users/master/parvogel_landing)",
+    "100bagger": "SKIPPED_REPO_MISSING (C:/Users/master/quant_system)",
+    "monsmecta": "SKIPPED_REPO_MISSING (C:/Users/master/monsmecta_landing)",
+    "rotagal": "SKIPPED_REPO_MISSING (C:/Users/master/rotagal-landing)",
+    "vetacol": "SKIPPED_REPO_MISSING (C:/Users/master/vetacol-landing)",
+    "agrokorea": "SKIPPED_REPO_MISSING (C:/Users/master/agrokorea-redesign)",
+    "snj_vet": "SKIPPED_REPO_MISSING (C:/Users/master/snj_animal_hospital)"
   },
   "drafts": [
     {
@@ -67,9 +67,7 @@
       },
       "trust_score": 100,
       "status": "AUTO_APPROVED",
-      "validation_flags": [],
-      "deployed_at": "2026-11-09T06:15:02.152990",
-      "deploy_result": "DEPLOYED_AND_PRERENDERED (puppy-parvo-recovery-case)"
+      "validation_flags": []
     },
     {
       "site_id": "100bagger",
@@ -120,9 +118,7 @@
       },
       "trust_score": 100,
       "status": "AUTO_APPROVED",
-      "validation_flags": [],
-      "deployed_at": "2026-11-09T06:15:02.154420",
-      "deploy_result": "DEPLOYED_QUANT_SAAS_AND_FEED"
+      "validation_flags": []
     },
     {
       "site_id": "monsmecta",
@@ -178,9 +174,7 @@
       },
       "trust_score": 100,
       "status": "AUTO_APPROVED",
-      "validation_flags": [],
-      "deployed_at": "2026-11-09T06:15:02.159079",
-      "deploy_result": "DEPLOYED_HTML_AND_GEO_JSON (index.html)"
+      "validation_flags": []
     },
     {
       "site_id": "rotagal",
@@ -217,9 +211,7 @@
       },
       "trust_score": 100,
       "status": "AUTO_APPROVED",
-      "validation_flags": [],
-      "deployed_at": "2026-11-09T06:15:02.164631",
-      "deploy_result": "DEPLOYED_HTML_AND_GEO_JSON (index.html)"
+      "validation_flags": []
     },
     {
       "site_id": "vetacol",
@@ -256,9 +248,7 @@
       },
       "trust_score": 100,
       "status": "AUTO_APPROVED",
-      "validation_flags": [],
-      "deployed_at": "2026-11-09T06:15:02.169115",
-      "deploy_result": "DEPLOYED_HTML_AND_GEO_JSON (index.html)"
+      "validation_flags": []
     },
     {
       "site_id": "agrokorea",
@@ -295,9 +285,7 @@
       },
       "trust_score": 100,
       "status": "AUTO_APPROVED",
-      "validation_flags": [],
-      "deployed_at": "2026-11-09T06:15:02.181368",
-      "deploy_result": "DEPLOYED_HTML_AND_GEO_JSON (index.html)"
+      "validation_flags": []
     },
     {
       "site_id": "snj_vet",
@@ -336,9 +324,7 @@
       },
       "trust_score": 100,
       "status": "AUTO_APPROVED",
-      "validation_flags": [],
-      "deployed_at": "2026-11-09T06:15:02.203804",
-      "deploy_result": "DEPLOYED_HTML_AND_GEO_JSON (index.html)"
+      "validation_flags": []
     }
   ]
 }
