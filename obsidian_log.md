@@ -1648,3 +1648,6 @@
 - parvogel(b6bbe45), quant_system(c467f56d), monsmecta(886623f), rotagal(b65df0d), vetacol(436a6b8), agrokorea(7160ef4), snj-animal-hospital(289e23b) 7개 원격 저장소 푸시 및 CI/CD 배포 트리거 완료.
 
 - **2026-11-09 08:13 KST**: Diagnosed the 1-hour MA20 slope inertia delay on OKX Argon V4-Pro during the 11/09 06:00~07:00 KST waterfall breakdown (confirmed live SOL & BTC 20x SHORT entries at 08:00:05 KST), and deployed the surgical Argon V4.1-Pro Compression-Breakout Impulse Velocity upgrade (30D +203.9%, MDD 8.3%) to coinbot.
+
+## [2026-11-09 09:06:54] 주간 7~8대 랜딩페이지 & 웹사이트 통합 정기 점검 및 개선 리포트 완료 (CTO 안그래)
+- 에스앤제이 동물병원, 파보겔, 몬스멕타, 로타겔, 베타콜, 벳 동물병원, 한국아그로 리디자인, 스마트 축산단지 등 8개 사이트의 빌드/린트, GitHub 이슈/PR(파보겔 #8, 몬스멕타 #5, 로타갈 #4 머지 대기 및 한국아그로 #6 신규 기사 요청), GEO 최적화 현황을 전수 점검하고 주간 개선 리포트(reports/landing_reviews/weekly_2026-11-09.md)를 발행함.
