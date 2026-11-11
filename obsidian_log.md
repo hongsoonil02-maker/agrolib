@@ -1663,3 +1663,7 @@
 - **문제 진단**: 모던 100ml 라벨 PDF 인쇄 시 Chromium/Skia 폰트 메트릭에 의해 핵심 효능 뱃지(.fx-tab)의 텍스트가 상단 테두리에 맞닿아(TopPad 1px, BotPad 14px) 출력되던 현상 확인.
 - **수정 및 검증**: ody.size-100 .fx-tab의 패딩/행간을 padding: 0.900mm 2.000mm 0.350mm; line-height: 1.0;로 정밀 보정하여 화면(Top 5px / Bot 5px) 및 PDF(Top 8px / Bot 7px) 모두 완벽한 중앙 정렬 달성.
 - **라인업 일괄 반영**: generate_all_11_modern_labels.py 및 generate_youth_labels.py에 적용 후 11종 전체 모던/유스 HTML 라벨 및 뷰어 갱신, GitHub 푸시 완료.
+
+## [2026-11-12 08:56:40] 파보겔 모던/유스 100ml 라벨 PDF 인쇄 시 '핵심 효능' 뱃지 중앙 정렬 패딩 보정 완료
+- **수정 내용**: parvogel_100ml_modern.html (padding: 0.750mm 1.800mm 0.450mm), parvogel_youth_label.html 및 parvogel_30ml_youth.html 100ml 모드 (padding: 0.650mm 2.200mm 0.520mm)의 상하 패딩 보정으로 PDF 인쇄 시 중앙 정렬 개선 (유스 100ml Top 10px / Bot 10px 오차 0px, 모던 100ml Top 9px / Bot 7px).
+- **배포 완료**: parvogel_landing (8dd2084) 및 monsmecta_landing (436435) GitHub 푸시 완료.
