@@ -1667,3 +1667,7 @@
 ## [2026-11-12 08:56:40] 파보겔 모던/유스 100ml 라벨 PDF 인쇄 시 '핵심 효능' 뱃지 중앙 정렬 패딩 보정 완료
 - **수정 내용**: parvogel_100ml_modern.html (padding: 0.750mm 1.800mm 0.450mm), parvogel_youth_label.html 및 parvogel_30ml_youth.html 100ml 모드 (padding: 0.650mm 2.200mm 0.520mm)의 상하 패딩 보정으로 PDF 인쇄 시 중앙 정렬 개선 (유스 100ml Top 10px / Bot 10px 오차 0px, 모던 100ml Top 9px / Bot 7px).
 - **배포 완료**: parvogel_landing (8dd2084) 및 monsmecta_landing (436435) GitHub 푸시 완료.
+
+## [2026-11-12 09:21:48] 몬스멕타 모던/유스 11종 전체 라벨 박스·뱃지·용법·재활용마크 PDF 정밀 보정 및 전수 검증 완료
+- **수정 항목**: 앞면 알약 뱃지 5종(.tag, .brand-sub-en, .ing-h .ref, .pack, 유스 100ml .fx-tab) 상하 패딩 중앙 정렬, 100ml 뒷면 .dose 박스 우측 '기준' 돌출 해소(1.72/1.65mm), 재활용 마크 삼각형 내 '플라스틱' 텍스트 크기·위치 보정.
+- **검증 및 배포**: 모던/유스 22개 HTML(100ml·30ml 44개 상태) 전체 오버플로우 0건 확인, PDF 인쇄 시각 검증 후 monsmecta_landing (38834d9) 푸시 완료.
