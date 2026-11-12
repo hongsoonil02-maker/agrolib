@@ -1685,3 +1685,5 @@
 - **2026-11-12 10:58 KST**: Forensically audited OKX copy-trader IS.K (811846999954962957, 240 trades) vs current coinbot okx_blend_demo_trader.py (Long-Only 100% cash) and backtested a safe 9-asset 4H Bidirectional Swing Clone across Apr~Nov 2026.
 
 - **2026-11-12 11:25 KST**: Deployed Option 1 (IS.K Safe Clone — 9-Asset Bi-Directional 4H Trend Swing: BTC/ETH/SOL/XRP + CL/XAU/XAG + PEPE/DOGE, 5x Isolated, 1.5% risk/trade, 2.5x ATR SL, 4H DC10 exit) to coinbot (`okx_isk_swing_trader.py`) and verified service active.
+
+- **2026-11-12 11:50 KST**: Completed 6.3-year (2020-07~2026-11) Alpaca daily backtest comparing current H3 Monthly ETF Rotation vs 8-Asset Bi-Directional Swing vs 8-Asset Long+SHY Asymmetric Swing; proved US ETF shorts lose -$28k~-$68k long-term while Long 8-Asset+SHY (1.5x~1.8x) delivers +101.6%~+155.9% (1Y +34.6%~+45.1%) at the cost of deeper 6M/3M chop drawdowns (-8%~-10%).
