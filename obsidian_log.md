@@ -1683,3 +1683,5 @@
 [2026-11-12 10:22:50] Committed and pushed 22 modified/new files (commit 9beb8e5e) to origin/main on quant_system (continuous scoring, static JSON snapshots, Supabase Zero-Egress APIs, KIS hold, direct payment upgrades).
 
 - **2026-11-12 10:58 KST**: Forensically audited OKX copy-trader IS.K (811846999954962957, 240 trades) vs current coinbot okx_blend_demo_trader.py (Long-Only 100% cash) and backtested a safe 9-asset 4H Bidirectional Swing Clone across Apr~Nov 2026.
+
+- **2026-11-12 11:25 KST**: Deployed Option 1 (IS.K Safe Clone — 9-Asset Bi-Directional 4H Trend Swing: BTC/ETH/SOL/XRP + CL/XAU/XAG + PEPE/DOGE, 5x Isolated, 1.5% risk/trade, 2.5x ATR SL, 4H DC10 exit) to coinbot (`okx_isk_swing_trader.py`) and verified service active.
