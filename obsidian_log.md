@@ -1688,3 +1688,4 @@
 
 - **2026-11-12 11:50 KST**: Completed 6.3-year (2020-07~2026-11) Alpaca daily backtest comparing current H3 Monthly ETF Rotation vs 8-Asset Bi-Directional Swing vs 8-Asset Long+SHY Asymmetric Swing; proved US ETF shorts lose -$28k~-$68k long-term while Long 8-Asset+SHY (1.5x~1.8x) delivers +101.6%~+155.9% (1Y +34.6%~+45.1%) at the cost of deeper 6M/3M chop drawdowns (-8%~-10%).
 2026-11-12 18:47:12 - Adjusted typography of ����(5���� ����ü) box: increased font sizes by +0.2mm, set weight to 900, updated header color to #0f766e.
+2026-11-12 19:01 - 몬스멕타 100ml 라벨: 성분(5가지 복합체) 박스 본문 글씨를 핵심효능과 동일한 1.72mm로 통일, 특허번호 줄바꿈 방지(nowrap), 렌더링 오버플로 없음 확인.
