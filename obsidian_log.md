@@ -1677,3 +1677,5 @@
 - **검증 및 배포**: 모던/유스 22개 HTML(100ml·30ml 44개 상태) 수직·수평 오버플로우 0건 확인 후 `monsmecta_landing` (`a988381`) 푸시 완료.
 
 [2026-11-12 09:54:28] Diagnosed why US stock screener/marketing stays stuck on ATAT (missing yoy_growth in upsert_to_db, step-function score ties at 91.0/88.0, KR un-rescored) and Supabase Free Tier Grace Period quota warning (QuantDataContext realtime flood, force-dynamic no-store + select(*) egress).
+
+[2026-11-12 10:06:27] Completed Phase 1 & Phase 2 overhaul: 1) Fixed yoy_growth persistence in quant_engine_base.py. 2) Replaced integer step scoring with continuous multi-factor + momentum scoring for both US and KR in rescore_database_100baggers.py (breaking ATAT lock). 3) Added 5-day cooldown rotation in text_broadcaster.py & video_renderer.py. 4) Eliminated Supabase Realtime flood in QuantDataContext.tsx & added zero-egress static JSON snapshot serving (public/data/screener_us.json, screener_kr.json) across leaderboard/preview/tickers APIs + GitHub Actions auto-commit.
