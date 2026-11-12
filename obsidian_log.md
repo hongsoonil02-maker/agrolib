@@ -1679,3 +1679,5 @@
 [2026-11-12 09:54:28] Diagnosed why US stock screener/marketing stays stuck on ATAT (missing yoy_growth in upsert_to_db, step-function score ties at 91.0/88.0, KR un-rescored) and Supabase Free Tier Grace Period quota warning (QuantDataContext realtime flood, force-dynamic no-store + select(*) egress).
 
 [2026-11-12 10:06:27] Completed Phase 1 & Phase 2 overhaul: 1) Fixed yoy_growth persistence in quant_engine_base.py. 2) Replaced integer step scoring with continuous multi-factor + momentum scoring for both US and KR in rescore_database_100baggers.py (breaking ATAT lock). 3) Added 5-day cooldown rotation in text_broadcaster.py & video_renderer.py. 4) Eliminated Supabase Realtime flood in QuantDataContext.tsx & added zero-egress static JSON snapshot serving (public/data/screener_us.json, screener_kr.json) across leaderboard/preview/tickers APIs + GitHub Actions auto-commit.
+
+[2026-11-12 10:22:50] Committed and pushed 22 modified/new files (commit 9beb8e5e) to origin/main on quant_system (continuous scoring, static JSON snapshots, Supabase Zero-Egress APIs, KIS hold, direct payment upgrades).
