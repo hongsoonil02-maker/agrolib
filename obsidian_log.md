@@ -1675,3 +1675,5 @@
 ## [2026-11-12 09:36:28] 몬스멕타 모던/유스 11종 전체 '핵심 효능' 박스 하단 `(*등의 개선에 도움)` 문구 일괄 추가 및 검증 완료
 - **수정 내용**: `generate_all_11_modern_labels.py` 및 `01_monsmecta_original_youth.html` / `generate_youth_labels.py`의 `.fx-card-100`·`.fx-card-30` 내부 우측 하단에 `.fx-note` (`(*등의 개선에 도움)`) 일괄 반영.
 - **검증 및 배포**: 모던/유스 22개 HTML(100ml·30ml 44개 상태) 수직·수평 오버플로우 0건 확인 후 `monsmecta_landing` (`a988381`) 푸시 완료.
+
+[2026-11-12 09:54:28] Diagnosed why US stock screener/marketing stays stuck on ATAT (missing yoy_growth in upsert_to_db, step-function score ties at 91.0/88.0, KR un-rescored) and Supabase Free Tier Grace Period quota warning (QuantDataContext realtime flood, force-dynamic no-store + select(*) egress).
