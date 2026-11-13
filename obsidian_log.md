@@ -1724,3 +1724,5 @@
 [2026-11-13 09:30:30] [11st Shorts] 11번가(슈팅배송 & SK pay 혜택) 파보겔 프로모션 숏폼(Parvogel_11st_Promo_Shorts.mp4, 39.0초) 렌더링 완료 및 4대 오픈마켓 라인업 확장.
 
 - [2026-11-13 09:38:50] [Parvogel Video Engine] Completed Toss Shopping promo shorts rendering (1080x1920 yuv420p) with live store data and auto-launched preview.
+
+- [2026-11-13 12:07:10] [Parvogel Marketing Engine] Executed daily marketing automation pipeline: rendered 3 new 9:16 shorts and published live to YouTube Shorts (BnA86lMyOzI), TikTok, Facebook, Bluesky, and Discord.
