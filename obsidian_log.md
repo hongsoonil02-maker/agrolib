@@ -1712,3 +1712,5 @@
 - **[2026-11-13 08:39:06 KST] 자산군 확장 검토 완료 및 현행 시스템 유지 확정:** 신규 상장 코인 및 합성 주식 SWAP 도입 배제 확정. 원유/금 등 거시 지정학적 추세 자산과 메이저 코인 중심의 IS.K 4H 스윙(OKX) 및 H3 다자산 ETF 로테이션(Alpaca) 현행 운용 유지.
 
 [2026-11-13 08:52:47] [Hybrid Setup] 메이커 셀링 도우미 외부 숏폼 인입 디렉터리(input_external/maker_selling) 구축 및 external_shorts_watcher 자동 배포 큐 연동 세팅 완료.
+
+[2026-11-13 09:10:28] [Coupang Shorts] 쿠팡 파보겔 검색 링크(100g 18,000원 무료배송) 실시간 데이터 파싱 및 실사 5개 씬 결합 38.2초 완성 숏폼(Parvogel_Coupang_Promo_Shorts.mp4) 렌더링 완료.
