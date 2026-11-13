@@ -1726,3 +1726,7 @@
 - [2026-11-13 09:38:50] [Parvogel Video Engine] Completed Toss Shopping promo shorts rendering (1080x1920 yuv420p) with live store data and auto-launched preview.
 
 - [2026-11-13 12:07:10] [Parvogel Marketing Engine] Executed daily marketing automation pipeline: rendered 3 new 9:16 shorts and published live to YouTube Shorts (BnA86lMyOzI), TikTok, Facebook, Bluesky, and Discord.
+
+### [2026-11-13 13:24:50] 몬스멕타 및 파보겔 라벨 맨 우측 접착 여백 3mm -> 2mm 축소 및 뷰어 동기화 완료
+- **작업 내용**: 몬스멕타 100ml(총 117x76mm: 좌7+본체108+우2) 및 파보겔(100ml: 117x76mm, 200ml: 144x96mm, 500ml: 180x126mm, 30ml: 100x42mm) 라벨의 맨 우측 접착 여백을 3mm에서 2mm로 축소 조정 완료.
+- **뷰어 및 파일 수정 일자 최신화**: parvogel_labels_viewer.html 및 monsmecta_labels_viewer.html 규격 텍스트 최신화 및 파일 수정 일자 갱신 완료, 바탕화면(Desktop) 인쇄용 폴더까지 완전 동기화.
