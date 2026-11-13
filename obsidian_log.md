@@ -1714,3 +1714,5 @@
 [2026-11-13 08:52:47] [Hybrid Setup] 메이커 셀링 도우미 외부 숏폼 인입 디렉터리(input_external/maker_selling) 구축 및 external_shorts_watcher 자동 배포 큐 연동 세팅 완료.
 
 [2026-11-13 09:10:28] [Coupang Shorts] 쿠팡 파보겔 검색 링크(100g 18,000원 무료배송) 실시간 데이터 파싱 및 실사 5개 씬 결합 38.2초 완성 숏폼(Parvogel_Coupang_Promo_Shorts.mp4) 렌더링 완료.
+
+[2026-11-13 09:12:28] [Video Compatibility Fix] 쿠팡 프로모션 숏폼 영상 픽셀 포맷 yuv444p -> yuv420p 표준 규격 인코딩 변환 완료 (Windows 미디어 플레이어 재생 호환성 해결).
