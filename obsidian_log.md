@@ -1720,3 +1720,5 @@
 [2026-11-13 09:14:19] [Multi-Mall Engine] 네이버 스마트스토어, G마켓/옥션, 공식 직영몰 등 멀티 쇼핑몰 유입 프로모션 숏폼 생성 엔진(generate_mall_promo_shorts.py) 및 일괄 렌더링 배치 구축 완료.
 
 [2026-11-13 09:27:24] [Smartstore Shorts] 네이버 스마트스토어(신젠펫 100ml 18,000원) 실화면 스크린샷 및 실사 결합 41.3초 프로모션 숏폼(Parvogel_Smartstore_Promo_Shorts.mp4) 렌더링 완료.
+
+[2026-11-13 09:30:30] [11st Shorts] 11번가(슈팅배송 & SK pay 혜택) 파보겔 프로모션 숏폼(Parvogel_11st_Promo_Shorts.mp4, 39.0초) 렌더링 완료 및 4대 오픈마켓 라인업 확장.
