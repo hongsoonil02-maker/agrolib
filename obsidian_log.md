@@ -1716,3 +1716,5 @@
 [2026-11-13 09:10:28] [Coupang Shorts] 쿠팡 파보겔 검색 링크(100g 18,000원 무료배송) 실시간 데이터 파싱 및 실사 5개 씬 결합 38.2초 완성 숏폼(Parvogel_Coupang_Promo_Shorts.mp4) 렌더링 완료.
 
 [2026-11-13 09:12:28] [Video Compatibility Fix] 쿠팡 프로모션 숏폼 영상 픽셀 포맷 yuv444p -> yuv420p 표준 규격 인코딩 변환 완료 (Windows 미디어 플레이어 재생 호환성 해결).
+
+[2026-11-13 09:14:19] [Multi-Mall Engine] 네이버 스마트스토어, G마켓/옥션, 공식 직영몰 등 멀티 쇼핑몰 유입 프로모션 숏폼 생성 엔진(generate_mall_promo_shorts.py) 및 일괄 렌더링 배치 구축 완료.
