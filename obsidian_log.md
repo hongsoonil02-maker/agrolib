@@ -1803,3 +1803,4 @@
 - **동기화 및 검증**: public, dist, Desktop 인쇄용 폴더 및 통합 뷰어 일괄 반영 완료, Playwright 렌더링 실측 검증 통과.
 
 - [2026-11-14 18:46:37] OKX IS.K 스윙봇(okx_isk_swing_trader.py) 코드·실전포지션·다중 백테스트(5Y 8암호화폐 + 500일 9자산 펀딩/슬리피지 + Maker 체결률 민감도) 정밀 리뷰 완료: DC15/8 채널 속도 개선, Post-Only Maker 추격전환, 크립토 동방향 슬롯상한(SameDir 2~3), MAX_SL_PCT 10% 하향 및 3대 개선 패키지(S2/S5/S11) 검증 완료.
+- [2026-11-14 19:03:05] OKX IS.K 봇 옵션3(S11 Dual-Speed 12/6+24/12 + Post-Only Maker 18s 추격 + MAX_SL 10%) 업그레이드 및 유닛테스트 7건 통과 후 coinbot(okx_jev_demo_trader.service PID 502383) 무중단 실전 반영 완료: 기존 5개 오픈 숏 포지션 50/50 안전 승계 및 PEPE 거래소 SL -10.00% 자동 타이트닝 확인.
