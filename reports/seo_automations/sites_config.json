@@ -13,6 +13,7 @@
       "gsc_property": "sc-domain:parvogel.kr",
       "cms_type": "vite_react_prerender",
       "local_repo_path": "C:/Users/master/parvogel_landing",
+      "linux_repo_path": "~/seo_repos/parvogel",
       "deploy_adapter": "json_blog_prerender",
       "content_target": {
         "posts_json_path": "src/data/posts.json",
@@ -39,6 +40,7 @@
       "gsc_property": "sc-domain:100bagger.app",
       "cms_type": "quant_feed_json",
       "local_repo_path": "C:/Users/master/quant_system",
+      "linux_repo_path": "~/quant_system",
       "deploy_adapter": "quant_seo_feed",
       "content_target": {
         "seo_feed_path": "reports/seo_quant_insights.json"
@@ -62,6 +64,7 @@
       "gsc_property": "sc-domain:monsmecta.kr",
       "cms_type": "vite_react_spa",
       "local_repo_path": "C:/Users/master/monsmecta_landing",
+      "linux_repo_path": "~/seo_repos/monsmecta",
       "deploy_adapter": "static_html_schema",
       "content_target": {
         "index_html_path": "index.html",
@@ -86,6 +89,7 @@
       "gsc_property": "sc-domain:rotagal.kr",
       "cms_type": "vite_react_spa",
       "local_repo_path": "C:/Users/master/rotagal-landing",
+      "linux_repo_path": "~/seo_repos/rotagal",
       "deploy_adapter": "static_html_schema",
       "content_target": {
         "index_html_path": "index.html",
@@ -110,6 +114,7 @@
       "gsc_property": "sc-domain:vetacol.kr",
       "cms_type": "vite_react_spa",
       "local_repo_path": "C:/Users/master/vetacol-landing",
+      "linux_repo_path": "~/seo_repos/vetacol",
       "deploy_adapter": "static_html_schema",
       "content_target": {
         "index_html_path": "index.html",
@@ -134,6 +139,7 @@
       "gsc_property": "sc-domain:agrokorea.net",
       "cms_type": "static_html",
       "local_repo_path": "C:/Users/master/agrokorea-redesign",
+      "linux_repo_path": "~/seo_repos/agrokorea",
       "deploy_adapter": "static_html_schema",
       "content_target": {
         "index_html_path": "index.html",
@@ -158,6 +164,7 @@
       "gsc_property": "sc-domain:snj-vet.com",
       "cms_type": "static_html",
       "local_repo_path": "C:/Users/master/snj_animal_hospital",
+      "linux_repo_path": "~/seo_repos/snj_vet",
       "deploy_adapter": "static_html_schema",
       "content_target": {
         "index_html_path": "index.html",

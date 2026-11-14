@@ -15,6 +15,7 @@ import sys
 import json
 import time
 import logging
+import argparse
 import requests
 from pathlib import Path
 from datetime import datetime
@@ -32,6 +33,9 @@ try:
     for _env_candidate in [
         _curr / ".env",
         _curr.parent.parent / ".env",
+        Path.home() / "seo_workspace" / ".env",
+        Path.home() / "quant_system" / ".env",
+        Path.home() / "quant_system" / "100_bagger_saas" / ".env",
         Path("C:/Users/master/quant_system/100_bagger_saas/.env"),
         Path("C:/Users/master/quant_system/.env"),
         Path("C:/Users/master/parvogel_landing/.env"),
@@ -140,7 +144,7 @@ def send_telegram_briefing(text: str, max_retries: int = 3) -> bool:
     return False
 
 
-def run_weekly_pipeline():
+def run_weekly_pipeline(dry_run: bool = False, no_notify: bool = False):
     base_dir = os.path.dirname(os.path.abspath(__file__))
     agrolib_root = os.path.abspath(os.path.join(base_dir, "..", ".."))
     today_str = datetime.now().strftime("%Y-%m-%d")
@@ -173,8 +177,8 @@ def run_weekly_pipeline():
         else:
             site_rows_meta.append((site, None, None))
 
-    # 실제 7개 홈페이지 로컬 레포지토리에 AUTO_APPROVED 초안 및 JSON-LD 즉시 주입/배포
-    deploy_results = deployer.deploy_approved_drafts(drafts_generated)
+    # 실제 7개 홈페이지 로컬 레포지토리에 AUTO_APPROVED 초안 및 JSON-LD 즉시 주입/배포 (dry_run 시 경로 검증만)
+    deploy_results = deployer.deploy_approved_drafts(drafts_generated, dry_run=dry_run)
 
     report_lines = [
         f"# 🚀 7대 전 도메인 AI SEO & GEO 통합 분석 및 End-to-End 자율 배포 리포트 ({today_str})",
@@ -245,6 +249,10 @@ def run_weekly_pipeline():
     report_filename = f"weekly_{today_str}.md"
     report_path = os.path.join(base_dir, report_filename)
 
+    if dry_run:
+        logging.info(f"[DRY-RUN] 리포트/배포 파일 저장 및 텔레그램 발송 생략 (deploy_results={deploy_results})")
+        return report_path
+
     with open(report_path, "w", encoding="utf-8") as f:
         f.write(report_content)
     logging.info(f"주간 리포트 저장 완료: {report_path}")
@@ -289,9 +297,14 @@ def run_weekly_pipeline():
     )
 
     print("\n" + telegram_text + "\n")
-    send_telegram_briefing(telegram_text)
+    if not no_notify:
+        send_telegram_briefing(telegram_text)
     return report_path
 
 
 if __name__ == "__main__":
-    run_weekly_pipeline()
+    parser = argparse.ArgumentParser(description="7-Site Weekly AI SEO & GEO Runner")
+    parser.add_argument("--dry-run", action="store_true", help="Verify repos and drafts without writing files or sending Telegram")
+    parser.add_argument("--no-notify", action="store_true", help="Run pipeline without sending Telegram notification")
+    cli_args = parser.parse_args()
+    run_weekly_pipeline(dry_run=cli_args.dry_run, no_notify=cli_args.no_notify)

@@ -26,7 +26,33 @@ class SEOAutoDeployer:
             self.config = json.load(f)
         self.sites_by_id = {s["id"]: s for s in self.config.get("sites", [])}
 
-    def deploy_approved_drafts(self, drafts: List[Dict[str, Any]]) -> Dict[str, str]:
+    def _resolve_repo_path(self, site: Dict[str, Any]) -> str:
+        """Resolves Windows or Linux local repository checkout path for a configured site."""
+        raw = site.get("local_repo_path", "") if os.name == "nt" else (
+            site.get("linux_repo_path") or site.get("local_repo_path", "")
+        )
+        return os.path.expanduser(raw) if raw else ""
+
+    def verify_repo_targets(self, site: Dict[str, Any]) -> str:
+        """Dry-run check that the site's local repository and target entry file exist."""
+        repo_path = self._resolve_repo_path(site)
+        if not repo_path or not os.path.exists(repo_path):
+            return f"SKIPPED_REPO_MISSING ({repo_path})"
+        adapter_type = site.get("deploy_adapter", "static_html_schema")
+        target_cfg = site.get("content_target", {})
+        if adapter_type == "json_blog_prerender":
+            posts_rel = target_cfg.get("posts_json_path", "src/data/posts.json")
+            if not os.path.exists(os.path.join(repo_path, posts_rel)):
+                return f"SKIPPED_NO_POSTS_JSON ({posts_rel})"
+            return "DRYRUN_READY_POSTS_JSON"
+        if adapter_type == "quant_seo_feed":
+            return "DRYRUN_READY_QUANT_FEED"
+        index_rel = target_cfg.get("index_html_path", "index.html")
+        if os.path.exists(os.path.join(repo_path, index_rel)):
+            return f"DRYRUN_READY_HTML_AND_GEO_JSON ({index_rel})"
+        return "DRYRUN_READY_GEO_JSON"
+
+    def deploy_approved_drafts(self, drafts: List[Dict[str, Any]], dry_run: bool = False) -> Dict[str, str]:
         """AUTO_APPROVED 상태인 초안들을 각 사이트 어댑터로 실제 배포합니다."""
         deploy_results: Dict[str, str] = {}
         today_str = datetime.now().strftime("%Y-%m-%d")
@@ -42,9 +68,15 @@ class SEOAutoDeployer:
                 deploy_results[sid] = "ERROR_SITE_NOT_FOUND"
                 continue
 
-            repo_path = site.get("local_repo_path", "")
+            repo_path = self._resolve_repo_path(site)
             if not repo_path or not os.path.exists(repo_path):
                 deploy_results[sid] = f"SKIPPED_REPO_MISSING ({repo_path})"
+                continue
+
+            if dry_run:
+                res = self.verify_repo_targets(site)
+                draft["deploy_result"] = res
+                deploy_results[sid] = res
                 continue
 
             adapter_type = site.get("deploy_adapter", "static_html_schema")
@@ -71,7 +103,7 @@ class SEOAutoDeployer:
         1. `src/data/posts.json`의 타겟 블로그 포스트에 최신 GEO 섹션 및 `schema_json_ld`, `dateModified` 병합
         2. `dist/`가 존재할 경우 `node scripts/prerender_blogs.js` 즉시 실행하여 정적 HTML 재생성
         """
-        repo_path = site["local_repo_path"]
+        repo_path = self._resolve_repo_path(site)
         target_cfg = site.get("content_target", {})
         posts_rel = target_cfg.get("posts_json_path", "src/data/posts.json")
         posts_path = os.path.join(repo_path, posts_rel)
@@ -133,7 +165,7 @@ class SEOAutoDeployer:
         1. `geo_insights.json`에 최신 GEO 마크다운, JSON-LD, 숏폼/커뮤니티 파생 원고 저장
         2. `index.html`에 `<script id="geo-weekly-ld" type="application/ld+json">` 동적 스키마 자동 주입/갱신
         """
-        repo_path = site["local_repo_path"]
+        repo_path = self._resolve_repo_path(site)
         target_cfg = site.get("content_target", {})
         geo_json_rel = target_cfg.get("geo_json_path", "geo_insights.json")
         geo_json_path = os.path.join(repo_path, geo_json_rel)
@@ -184,7 +216,7 @@ class SEOAutoDeployer:
         Type C (100-Bagger 퀀트 시스템):
         `quant_system/reports/seo_quant_insights.json` 및 `100_bagger_saas/public/geo_quant_insights.json`에 동시 배포
         """
-        repo_path = site["local_repo_path"]
+        repo_path = self._resolve_repo_path(site)
         target_cfg = site.get("content_target", {})
         feed_rel = target_cfg.get("seo_feed_path", "reports/seo_quant_insights.json")
         feed_path = os.path.join(repo_path, feed_rel)
