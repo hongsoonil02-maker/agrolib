@@ -1796,3 +1796,8 @@
 - **2026-11-14 14:58 KST**: `@parvogel.official` Threads API 연동 점검 결과, `accountscenter.instagram.com/profiles` 상 Threads 프로필 미개설(Instagram 전용 분리 계정 센터 확인) 및 Meta Threads 웹/앱 SSO·비밀번호 복구 에러(`문제가 발생했습니다`)로 인해 자동 발행 연동은 보류(드래프트/큐 `golden_time_35s_20261114.json` 보존). YouTube Shorts, Instagram Reels(`DftJ8yHHCAC/`), Facebook(`Agrokorea`), TikTok, Bluesky, Discord 라이브 배포 및 Naver Blog 하이브리드 큐(`QUEUED_HYBRID`) 완료 상태 확정.
 
 - **2026-11-14 15:52 KST**: `@parvogel.official` 모바일 Threads 앱 개설 및 `ParvoGel Official` 테스터 수락 완료. 단, PC·모바일 웹(`threads.com`) OAuth 로그인 구간에서 Meta 측 비밀번호 오류/리디렉션 차단이 지속되어 사용자 요청에 따라 Threads API 토큰 연동은 여기서 공식 보류·종료하고, YouTube Shorts · Instagram Reels(`DftJ8yHHCAC/`) · Facebook(`Agrokorea`) · TikTok · Bluesky · Discord 라이브 배포 및 Naver Blog 하이브리드 큐 완료 상태로 최종 마감.
+
+### [2026-11-14 18:09:13] 몬스멕타·파보겔 라벨 상하단 황금선 굵기 각 +1mm 확장 (상하 폭 +2mm 증가)
+- **몬스멕타 100ml**: 상/하단 황금선 각 0.55mm->1.55mm(+1mm), 전체 세로 높이 76mm->78mm (117x78mm).
+- **파보겔 전 규격**: 100ml (0.60mm->1.60mm, 117x78mm), 200ml (0.75mm->1.75mm, 144x98mm), 500ml (0.95mm->1.95mm, 180x128mm).
+- **동기화 및 검증**: public, dist, Desktop 인쇄용 폴더 및 통합 뷰어 일괄 반영 완료, Playwright 렌더링 실측 검증 통과.
