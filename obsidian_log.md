@@ -1792,3 +1792,5 @@
 - **2026-11-14 11:30 KST**: 〈기적의 골든타임〉 35초 애니메이션 다큐멘터리(파보겔/(주)한국아그로 단독 격리) 자동배포 파이프라인(custom_video_dispatcher.py) 라이브 실행 완료. YouTube Shorts(https://youtube.com/shorts/b98-dL8U9S0), TikTok, Facebook(1691842199248751), Bluesky, Discord 배포 성공 및 Naver Blog 하이브리드 큐·Threads 드래프트/큐(golden_time_35s_20261114.json) 적재, Aligo LMS 즉시 발송 스크립트(dispatch_golden_time_lms_now.py) 드라이런 검증 완료.
 
 - **2026-11-14 11:42 KST**: parvogel.kr/assets/parvogel_golden_time_35s_9x16.mp4 배포 및 instagram_adapter.py status_code 폴링 수정 완료 → Instagram Reels(@parvogel.official) 라이브 게시 성공(https://www.instagram.com/reel/DftJ8yHHCAC/).
+
+- **2026-11-14 14:58 KST**: `@parvogel.official` Threads API 연동 점검 결과, `accountscenter.instagram.com/profiles` 상 Threads 프로필 미개설(Instagram 전용 분리 계정 센터 확인) 및 Meta Threads 웹/앱 SSO·비밀번호 복구 에러(`문제가 발생했습니다`)로 인해 자동 발행 연동은 보류(드래프트/큐 `golden_time_35s_20261114.json` 보존). YouTube Shorts, Instagram Reels(`DftJ8yHHCAC/`), Facebook(`Agrokorea`), TikTok, Bluesky, Discord 라이브 배포 및 Naver Blog 하이브리드 큐(`QUEUED_HYBRID`) 완료 상태 확정.
