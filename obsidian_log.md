@@ -1790,3 +1790,5 @@
 - [2026-11-14 10:36:16] 〈기적의 골든타임〉 35초 파보겔 강아지 애니메이션 다큐멘터리 완성: Gemini 3D 애니메이션 강아지 클립 3종(위기/회복/엔딩) + 파보겔 펌핑/급여 실사 클립 + 48kHz 감성 피아노·스트링 BGM/성우 나레이션 통합, 16:9 가로형 및 9:16 쇼츠 2종 최종 렌더링 및 검증 완료.
 - [2026-11-14 11:08:35] 대표님 〈기적의 골든타임〉 35초 애니메이션 다큐멘터리(16:9 및 9:16 쇼츠) 최종 확인 및 승인 완료. 일요일 예약 세팅 및 월요일 14:00 배포 대기 상태.
 - **2026-11-14 11:30 KST**: 〈기적의 골든타임〉 35초 애니메이션 다큐멘터리(파보겔/(주)한국아그로 단독 격리) 자동배포 파이프라인(custom_video_dispatcher.py) 라이브 실행 완료. YouTube Shorts(https://youtube.com/shorts/b98-dL8U9S0), TikTok, Facebook(1691842199248751), Bluesky, Discord 배포 성공 및 Naver Blog 하이브리드 큐·Threads 드래프트/큐(golden_time_35s_20261114.json) 적재, Aligo LMS 즉시 발송 스크립트(dispatch_golden_time_lms_now.py) 드라이런 검증 완료.
+
+- **2026-11-14 11:42 KST**: parvogel.kr/assets/parvogel_golden_time_35s_9x16.mp4 배포 및 instagram_adapter.py status_code 폴링 수정 완료 → Instagram Reels(@parvogel.official) 라이브 게시 성공(https://www.instagram.com/reel/DftJ8yHHCAC/).
