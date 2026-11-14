@@ -1814,3 +1814,5 @@
 
 - [2026-11-15 08:37:57] Agro_Weekly_SEO_Automation coinbot 이전(sites_config.json/seo_auto_deployer.py/weekly_seo_runner.py Linux 경로·--dry-run 지원, ~/seo_repos 6종 및 systemd weekly_seo_automation.timer Mon 06:15 KST/Persistent=true 구축, Windows 작업 비활성화) 및 7개 사이트 드라이런·샌드박스 배포 검증 완료.
 - [2026-11-15 08:37:57] OKX 실전계좌 IS.K Option-3 S11 가동 사전준비 및 격리 아키텍처 구축 완료: okx_isk_swing_trader.py(--live --confirm-live, x-simulated-trading 배제, live 전용 상태/로그·$50 잔고 가드), okx_isk_live_trader.service 스테이징, 실계좌 posMode=net_mode 전환 및 daily_quant_auditor.py 실전계좌 연동(유닛테스트 20/20 + SEO 2/2 통과) 완료. 단, 3,333.44 USDT가 API 이체권한(50120) 제약으로 자금계정(Funding)에 대기 중이므로 트레이딩 계정 이체 확인 후 실전 서비스 가동 예정.
+
+- [2026-11-15 08:58:25] OKX 실전계좌 IS.K Option-3 S11 실전 가동 개시 완료: 트레이딩 계정 3,333.4425 USDT 착금 및 net_mode 확인 후 okx_isk_live_trader.service 활성화(active). 초기 4H 스캔(INITIAL_SYNC)에서 4종목(PEPE -12.8ct, XRP -8.24ct, SOL -9.11ct, DOGE -11.26ct) SHORT 41.41ct 100% Post-Only Maker 체결(Taker 0%) 및 4종목 전량 거래소 reduceOnly 조건부 하드 SL(live) 동기화 검증 완료(USDT Eq $3,329.61 / 가용 $2,826.68, 데모·알파카 서비스 무중단 유지).
