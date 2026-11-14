@@ -13,6 +13,7 @@ weekly_seo_runner.py (v2.1 Universal 7-Site End-to-End Auto-Deploy Edition)
 import os
 import sys
 import json
+import time
 import logging
 import requests
 from pathlib import Path
@@ -98,33 +99,45 @@ def evaluate_trust_score(draft: dict) -> dict:
     }
 
 
-def send_telegram_briefing(text: str) -> bool:
-    """텔레그램 핫라인으로 주간 1-Page 요약본 자동 발송 (Fallback 포함)"""
-    token = os.environ.get("TELEGRAM_BOT_TOKEN")
-    chat_id = os.environ.get("TELEGRAM_CHAT_ID")
+def send_telegram_briefing(text: str, max_retries: int = 3) -> bool:
+    """텔레그램 핫라인으로 주간 1-Page 요약본 자동 발송 (재시도 + 일반 텍스트 Fallback 포함)"""
+    token = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
+    chat_id = os.environ.get("TELEGRAM_CHAT_ID", "").strip()
 
     if not token or not chat_id:
         logging.warning("[TELEGRAM] ⚠️ TELEGRAM_BOT_TOKEN 또는 TELEGRAM_CHAT_ID 환경변수가 설정되지 않아 발송을 건너뜁니다.")
         return False
 
-    try:
-        url = f"https://api.telegram.org/bot{token}/sendMessage"
+    url = f"https://api.telegram.org/bot{token}/sendMessage"
+    use_markdown = True
+
+    for attempt in range(1, max(1, max_retries) + 1):
         payload = {
             "chat_id": chat_id,
-            "text": text,
-            "parse_mode": "Markdown",
-            "disable_web_page_preview": True
+            "text": text[:4000],
+            "disable_web_page_preview": True,
         }
-        res = requests.post(url, json=payload, timeout=8)
-        if res.status_code == 200:
-            logging.info("텔레그램 주간 브리핑 발송 성공!")
-            return True
-        else:
-            logging.warning(f"텔레그램 발송 실패 (Status {res.status_code}): {res.text}")
-            return False
-    except Exception as e:
-        logging.warning(f"텔레그램 발송 예외: {e}")
-        return False
+        if use_markdown:
+            payload["parse_mode"] = "Markdown"
+        try:
+            res = requests.post(url, json=payload, timeout=10)
+            if res.status_code == 200 and res.json().get("ok"):
+                logging.info("텔레그램 주간 브리핑 발송 성공!")
+                return True
+            if res.status_code == 400 and use_markdown and "parse" in res.text.lower():
+                logging.warning(f"텔레그램 Markdown 파싱 오류 → 일반 텍스트로 재시도 ({res.text[:140]})")
+                use_markdown = False
+                continue
+            logging.warning(f"텔레그램 발송 실패 (attempt {attempt}/{max_retries}, Status {res.status_code}): {res.text[:200]}")
+            if res.status_code in (400, 401, 403, 404):
+                return False
+        except Exception as e:
+            logging.warning(f"텔레그램 발송 예외 (attempt {attempt}/{max_retries}): {e}")
+
+        if attempt < max_retries:
+            time.sleep(min(2 ** (attempt - 1), 4))
+
+    return False
 
 
 def run_weekly_pipeline():
