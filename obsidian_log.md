@@ -1827,3 +1827,5 @@
 - 실거래/모의 `okx_isk_live_trader.service` 및 `okx_jev_demo_trader.service`는 수정 없이 정상 가동 유지 확인 (`IS.K_S11+F3_StepROE` 전체 +193.85% / OOS +70.48% vs `Livermore_Raw_RealSL` +2.05% / OOS -5.62%).
 
 - [2026-11-15 16:10 KST] Re-engineered and verified clean background-removed silent video clips (01_scene1 and 02_scene2) with tracked cage-wire fur inpainting and dual-model matting.
+
+- [2026-11-15 16:47 KST] Created clean background-removed silent clips for additional videos KakaoTalk_20261113_151315751.mp4 and KakaoTalk_20261113_151316829.mp4 isolating only the ParvoGel pumping/feeding action.
