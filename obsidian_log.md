@@ -1821,3 +1821,7 @@
 - [2026-11-15 09:38:57] 구글 `coinbot` 서버 무중단 정밀 청소 및 가동/메모리 상태 점검 완료: 미푸시 11월 리포트 3종(11-01 OKX/Alpaca·11-09 로드맵)을 로컬 `agrolib`에 백업·푸시한 뒤 중복 레포(`~/monsmecta` 1.1G·`~/agrolib` 540M), 고스트 IDE 서버/세션 캐시(`.vscode-server` 1.5G·`.antigravity-ide-server` 225M·`.gemini/antigravity-ide` 818M·구 대화DB/kilo/opencode/copilot 등), `quant_system` 구 백업·Aug-2026 `.pkl` 8종·stale `__pycache__`·0B 로그 및 시스템 캐시(`/root/.npm` 696M·`apt-get clean`·로테이트 로그·`journalctl --vacuum-size=16M` 104M 회수 및 `systemd-journald` 재시작)를 정리해 디스크 5,801MB 회수(16G 33% -> 9.8G 21%, 가용 38G) 및 `systemd-journald` RSS 66.6MB -> 10.7MB 절감. 좀비 프로세스 0개·유닛테스트 38/38(0.129s)·`daily_quant_auditor.py --dry-run` 통과 및 3대 봇 데몬(PID 518045 실전/518044 데모/515806 알파카 무중단 유지)·3대 타이머 정상 가동, 가용 RAM 3.2Gi(3,294Mi / free 2,274Mi / Swap 1Mi) 확인.
 
 - **2026-11-15 11:44 KST**: 카카오톡 업로드 원본 영상(`KakaoTalk_20261113_151309307.mp4`)에서 1) 침울하게 앉아 있는 강아지 장면(0.0s~4.8s)과 2) 파보겔 펌핑 급여 장면(15.0s~19.5s) 2개로 분리 완료. 잡음·음성 100% 완전 제거(무음) 및 세로 9:16(1080x1920) H.264로 1) 원본 화각 무음, 2) 피사체 집중 포커스 무음, 3) AI 배경 제거 누끼 무음 등 각 3종(총 6종) 렌더링 배포 완료.
+
+### 2026-11-15 15:40 KST — OKX 자동매매 봇 vs 제미나이 LivermoreTrendBot 코드 리뷰 및 백테스트 비교
+- 제미나이 제안 `LivermoreTrendBot` 코드 정적 리뷰(2xATR vs 3xATR Dead-Code 종료 로직, `TRALLING` 오타, Long-only 하락장 무방비, `iloc[-window:-1]` 19봉 Off-by-one, 정적 자본/슬리피지/계약 단위 누락) 및 OKX 9종목 4시간봉(IS.K Option-3 S11 + F3_StepROE 대비) 무미래참조 백테스트·Ablation 비교를 완료했다.
+- 실거래/모의 `okx_isk_live_trader.service` 및 `okx_jev_demo_trader.service`는 수정 없이 정상 가동 유지 확인 (`IS.K_S11+F3_StepROE` 전체 +193.85% / OOS +70.48% vs `Livermore_Raw_RealSL` +2.05% / OOS -5.62%).
