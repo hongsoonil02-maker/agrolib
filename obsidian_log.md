@@ -1825,3 +1825,5 @@
 ### 2026-11-15 15:40 KST — OKX 자동매매 봇 vs 제미나이 LivermoreTrendBot 코드 리뷰 및 백테스트 비교
 - 제미나이 제안 `LivermoreTrendBot` 코드 정적 리뷰(2xATR vs 3xATR Dead-Code 종료 로직, `TRALLING` 오타, Long-only 하락장 무방비, `iloc[-window:-1]` 19봉 Off-by-one, 정적 자본/슬리피지/계약 단위 누락) 및 OKX 9종목 4시간봉(IS.K Option-3 S11 + F3_StepROE 대비) 무미래참조 백테스트·Ablation 비교를 완료했다.
 - 실거래/모의 `okx_isk_live_trader.service` 및 `okx_jev_demo_trader.service`는 수정 없이 정상 가동 유지 확인 (`IS.K_S11+F3_StepROE` 전체 +193.85% / OOS +70.48% vs `Livermore_Raw_RealSL` +2.05% / OOS -5.62%).
+
+- [2026-11-15 16:10 KST] Re-engineered and verified clean background-removed silent video clips (01_scene1 and 02_scene2) with tracked cage-wire fur inpainting and dual-model matting.
