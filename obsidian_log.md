@@ -1833,3 +1833,7 @@
 - [2026-11-15 17:12 KST] Created clean background-removed silent clips for KakaoTalk_20261113_151319691.mp4 and KakaoTalk_20261113_151322497.mp4 (both pumping/feeding and resting/care scenes).
 
 - [2026-11-15 17:41:25] Rebuilt 35s Golden Time 9x16 Shorts and 16x9 video using real puppy and pumping clips (video_20261115_1~5, video_0261115_6).
+
+### 2026-11-16 08:51 KST — OKX 24시간 거래내역 정밀분석 및 Fast StepROE 사후 4H 역행청산 방지 패치
+- OKX 실전(LIVE)·모의(DEMO) 계좌 24시간 체결/정산 API 및 로그를 정밀 분석하고, `DOGE` Fast(`-$9.08`) 사례처럼 4H 마감 역추적 중 이미 `lock_px`를 반등 이탈한 상태에서 즉시 손실 청산되던 타이밍 누수를 차단하도록 `coinbot:~/quant_system/okx_isk_swing_trader.py`의 `update_fast_peaks_from_4h_bars`를 패치했다.
+- 회귀 단위 테스트 `test_update_fast_peaks_from_4h_bars_skips_retroactive_lock_when_already_breached` 포함 루트 45개 테스트 통과(12개 `test_okx_isk_swing_trader` 재확인 포함) 후 `okx_isk_live_trader.service` 및 `okx_jev_demo_trader.service`를 재기동해 정상 가동(`active`)을 검증했다.
