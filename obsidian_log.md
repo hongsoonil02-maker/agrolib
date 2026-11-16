@@ -1851,3 +1851,5 @@
 - [2026-11-16 19:54:22] Rebuilt 35s Golden Time 9x16 Shorts and 16x9 video using the 4 high-quality studio-edited videos (video_20261115_2, 3, 4, video_0261115_6) with zero cutout artifacts.
 
 - [2026-11-16 20:02:33] Updated Cut 3 (18.5s~26.8s) narration voice and top/bottom subtitles from 15분 to 30분 in both 9:16 and 16:9 35s Golden Time videos.
+
+- [2026-11-16 20:14:32] Positioned ParvoGel 500ml product bottle directly next to the puppy inside the center frame in Cut 4 of the 16:9 widescreen 35s Golden Time video.
