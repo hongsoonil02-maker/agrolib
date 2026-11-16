@@ -1871,3 +1871,5 @@
 - [2026-11-16 23:58:33] Confirmed Kakao Business Wallet daily card spend limit lowered from 50,000 KRW to 15,000 KRW (비즈월렛 ID 1008097), establishing double budget protection alongside ad-group daily cap.
 
 - [2026-11-17 08:36] **파보겔 35초 9x16 바이럴 쇼츠 전면 리디자인 및 배포 완료**: H2HDRM 74px 대형 화이트 후킹 카드·블랙 키커·1080x790 스튜디오 영상·하단 UI 회피형 42px 자막 카드 구조로 재렌더링(35.00초, 1080x1920, 30fps) 및 4개 경로·Git 배포 완료.
+
+- [2026-11-17 08:49] **파보겔 35초 바이럴 쇼츠(9x16) 전 채널 라이브 재배포 완료**: 캠페인 PARVOGEL_GOLDEN_TIME_STUDIO_DOCU_35S_V3 실행 — YouTube Shorts(_oDmS3jv0I8), Instagram Reels(Df0koN1DLvy), Facebook(1003639092172971), TikTok(v_inbox_file), Bluesky, Discord 라이브 발행 및 네이버 블로그 하이브리드 큐(2c8e4c63) 등록 완료.
