@@ -1842,3 +1842,8 @@
 - **텔레그램 채널 분리**: 개인 실전/선물 매매 알림방(James OKX Trade Bot, chat_id 53326884)과 100-Bagger 공개 마케팅 채널(@hundred_bagger_alpha) 간의 라우팅 분리 완료 (비디오 쇼츠 누출 차단).
 - **중복 발송 방지**: GitHub Actions와 로컬 작업 스케줄러 간 충돌 방지를 위해 당일(KST 기준) 1회 배포 보장 아이뎀포턴시 락(Idempotency Lock) 적용.
 - **종목 불일치 해결**: 텍스트 시그널 1위 종목(today_hero_pick.json)과 비디오 쇼츠 렌더러 대상 종목 100% 완전 동기화 및 제임스 레이더 0% 표기 버그 수정.
+
+### [2026-11-16 19:03:22 KST] 100-Bagger 랜딩페이지 종목 불일치·마스킹·CAGR/ROE 버그 전수 해결 및 SSOT 통일
+- **종목 SSOT 통일**: text_broadcaster의 5일 제외 로테이션 제거 및 로컬 중복 스케줄러(100_Bagger_Marketing_Pipeline) 비활성화로 텔레그램·쇼츠·SEO·랜딩페이지 Top 3(IT·APAM·BKE) 완전 일치화.
+- **유료 회원 마스킹 버그 수정**: /api/screener/preview에서 미존재 컬럼(trial_end_date) 조회로 인해 INSTITUTIONAL/PRO 회원이 FREE로 강등되며 상단 티커가 마스킹(R••• 등)되던 장애 수정.
+- **UI·메타데이터 복구**: HeroConversionTable의 일일 등락률(+1%) CAGR 오표기 및 강도 기준 보정, TickerTape 2행 역순 제거, 누락 섹터/기업명 25건 yfinance 백필 및 정적 스냅샷 재배포 완료.
