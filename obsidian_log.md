@@ -1861,3 +1861,5 @@
 - [2026-11-16 21:33:01] Created brand-new Kakao Business/Moment creative banner suite (1029x258 Bizboard, 315x258 Object, 1200x600 Feed, 800x800 Square) featuring the new puppy licking ParvoGel nozzle + 500ml bottle, plus step-by-step Kakao News & Moment ad copy pack.
 
 - [2026-11-16 22:17:29] Implemented full Kakao Pixel (9019188145294848683) conversion tracking (addToCart/purchase/participation/completeRegistration/viewContent) across all 6 shopping mall buttons, Kakao Channel chat, and B2B sample/order submission on parvogel.kr, added Kakao Shopping & 6-mall buttons to OrderForm/Landing, and pushed to master for GitHub Pages auto-deploy.
+
+- [2026-11-16 22:21:52] Removed free-sample phrasing from consumer-facing Kakao Bizboard banner (01_비즈보드_전체배너_1029x258.png), parvogel.kr top navigation, and B2C ad copy; rebuilt and pushed commit 0b0ea3d to parvogel.kr.
