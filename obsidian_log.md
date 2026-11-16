@@ -1849,3 +1849,5 @@
 - **UI·메타데이터 복구**: HeroConversionTable의 일일 등락률(+1%) CAGR 오표기 및 강도 기준 보정, TickerTape 2행 역순 제거, 누락 섹터/기업명 25건 yfinance 백필 및 정적 스냅샷 재배포 완료.
 
 - [2026-11-16 19:54:22] Rebuilt 35s Golden Time 9x16 Shorts and 16x9 video using the 4 high-quality studio-edited videos (video_20261115_2, 3, 4, video_0261115_6) with zero cutout artifacts.
+
+- [2026-11-16 20:02:33] Updated Cut 3 (18.5s~26.8s) narration voice and top/bottom subtitles from 15분 to 30분 in both 9:16 and 16:9 35s Golden Time videos.
