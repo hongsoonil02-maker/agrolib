@@ -1867,3 +1867,5 @@
 - [2026-11-16 23:43:03] Completed Kakao Business Channel News post prep and Kakao Moment new Display Conversion campaign setup (파보겔_골든타임35초_디스플레이_전환, ID 1668755) with new Image Native (1200x600) and Video Native (35s Golden Time 16:9) creatives, domestic 25-59 targeting, and ad-group daily spend control.
 
 - [2026-11-16 23:56:10] Verified Kakao Moment live launch state: legacy 50,000 KRW/day Bizboard campaign switched OFF (사용자 OFF), new Display Conversion campaign (파보겔_골든타임35초_디스플레이_전환, 15,000 KRW/day ad-group cap) active and running (진행 중).
+
+- [2026-11-16 23:58:33] Confirmed Kakao Business Wallet daily card spend limit lowered from 50,000 KRW to 15,000 KRW (비즈월렛 ID 1008097), establishing double budget protection alongside ad-group daily cap.
