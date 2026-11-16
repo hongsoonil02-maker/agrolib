@@ -1857,3 +1857,5 @@
 - [2026-11-16 20:32:29] Wired the newly rendered 35s Golden Time 9x16 Shorts and 16x9 Widescreen videos into the Parvogel daily marketing distribution pipeline (custom_video_dispatcher.py, marketing_master.py, daily_calendar.json, run_marketing_factory.bat) scheduled for 2026-11-17 08:30 AM.
 
 - [2026-11-16 21:22:15] Added all 6 official e-commerce mall URLs (Naver SmartStore, Coupang, Gmarket, 11st, Kakao Shopping, Toss Shopping) into storeLinks.js, channels_config.json, custom_video_dispatcher.py, and content_formatter.py.
+
+- [2026-11-16 21:33:01] Created brand-new Kakao Business/Moment creative banner suite (1029x258 Bizboard, 315x258 Object, 1200x600 Feed, 800x800 Square) featuring the new puppy licking ParvoGel nozzle + 500ml bottle, plus step-by-step Kakao News & Moment ad copy pack.
