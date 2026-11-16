@@ -1859,3 +1859,5 @@
 - [2026-11-16 21:22:15] Added all 6 official e-commerce mall URLs (Naver SmartStore, Coupang, Gmarket, 11st, Kakao Shopping, Toss Shopping) into storeLinks.js, channels_config.json, custom_video_dispatcher.py, and content_formatter.py.
 
 - [2026-11-16 21:33:01] Created brand-new Kakao Business/Moment creative banner suite (1029x258 Bizboard, 315x258 Object, 1200x600 Feed, 800x800 Square) featuring the new puppy licking ParvoGel nozzle + 500ml bottle, plus step-by-step Kakao News & Moment ad copy pack.
+
+- [2026-11-16 22:17:29] Implemented full Kakao Pixel (9019188145294848683) conversion tracking (addToCart/purchase/participation/completeRegistration/viewContent) across all 6 shopping mall buttons, Kakao Channel chat, and B2B sample/order submission on parvogel.kr, added Kakao Shopping & 6-mall buttons to OrderForm/Landing, and pushed to master for GitHub Pages auto-deploy.
