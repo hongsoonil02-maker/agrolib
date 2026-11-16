@@ -1855,3 +1855,5 @@
 - [2026-11-16 20:14:32] Positioned ParvoGel 500ml product bottle directly next to the puppy inside the center frame in Cut 4 of the 16:9 widescreen 35s Golden Time video.
 
 - [2026-11-16 20:32:29] Wired the newly rendered 35s Golden Time 9x16 Shorts and 16x9 Widescreen videos into the Parvogel daily marketing distribution pipeline (custom_video_dispatcher.py, marketing_master.py, daily_calendar.json, run_marketing_factory.bat) scheduled for 2026-11-17 08:30 AM.
+
+- [2026-11-16 21:22:15] Added all 6 official e-commerce mall URLs (Naver SmartStore, Coupang, Gmarket, 11st, Kakao Shopping, Toss Shopping) into storeLinks.js, channels_config.json, custom_video_dispatcher.py, and content_formatter.py.
