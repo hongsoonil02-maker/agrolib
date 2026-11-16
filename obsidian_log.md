@@ -1837,3 +1837,8 @@
 ### 2026-11-16 08:51 KST — OKX 24시간 거래내역 정밀분석 및 Fast StepROE 사후 4H 역행청산 방지 패치
 - OKX 실전(LIVE)·모의(DEMO) 계좌 24시간 체결/정산 API 및 로그를 정밀 분석하고, `DOGE` Fast(`-$9.08`) 사례처럼 4H 마감 역추적 중 이미 `lock_px`를 반등 이탈한 상태에서 즉시 손실 청산되던 타이밍 누수를 차단하도록 `coinbot:~/quant_system/okx_isk_swing_trader.py`의 `update_fast_peaks_from_4h_bars`를 패치했다.
 - 회귀 단위 테스트 `test_update_fast_peaks_from_4h_bars_skips_retroactive_lock_when_already_breached` 포함 루트 45개 테스트 통과(12개 `test_okx_isk_swing_trader` 재확인 포함) 후 `okx_isk_live_trader.service` 및 `okx_jev_demo_trader.service`를 재기동해 정상 가동(`active`)을 검증했다.
+
+### [2026-11-16 18:38:33 KST] 100-Bagger 마케팅 파이프라인 전수 감사, 텔레그램 채널 교통정리 및 당일 중복 발송 원천 차단
+- **텔레그램 채널 분리**: 개인 실전/선물 매매 알림방(James OKX Trade Bot, chat_id 53326884)과 100-Bagger 공개 마케팅 채널(@hundred_bagger_alpha) 간의 라우팅 분리 완료 (비디오 쇼츠 누출 차단).
+- **중복 발송 방지**: GitHub Actions와 로컬 작업 스케줄러 간 충돌 방지를 위해 당일(KST 기준) 1회 배포 보장 아이뎀포턴시 락(Idempotency Lock) 적용.
+- **종목 불일치 해결**: 텍스트 시그널 1위 종목(today_hero_pick.json)과 비디오 쇼츠 렌더러 대상 종목 100% 완전 동기화 및 제임스 레이더 0% 표기 버그 수정.
