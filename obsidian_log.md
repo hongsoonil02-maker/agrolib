@@ -1903,3 +1903,7 @@
 - [2026-11-17 15:56] **몬스멕타 9x16 쇼츠 '온라인 동물병원 / 010-8990-8003' 버전 제작 완료**: render_monsmecta_35s_viral_9x16.py --variant online 실행으로 상단 배지('몬스멕타 | 온라인 동물병원')·하단 문의('monsmecta.kr / 온라인 동물병원 / 문의 010-8990-8003') 및 띄어읽기 수정 오디오 반영본(몬스멕타_기적의골든타임_애니메이션다큐_35초_쇼츠_온라인동물병원(9x16).mp4, 35.00초) 렌더링·시각검수 완료.
 
 - [2026-11-17 16:07] **monsmecta.kr 타이틀·파비콘·OG 메타/이미지 전면 갱신 및 배포**: Chrome 번개(Vite) favicon.svg를 딥그린 M 엠블럼 및 sj_logo.png로 교체, index.html 타이틀·OG·Twitter·JSON-LD를 '온라인동물병원 박선생 공식 협업 / 에스앤제이동물병원'으로 통일((주)한국아그로 제거), 몬스멕타 사진2 실물 누끼 기반 og_image.jpg(1200x630) 제작 후 빌드·푸시 완료.
+
+### [2026-11-17 16:32:04 KST] GitHub Actions Daily Backend Pipeline 오류 수정 및 배포 락 분리
+- **UnboundLocalError 해결**: video_renderer.py의 run_video_pipeline() 내부 지연 임포트(import datetime, import json)로 인해 발생하던 로컬 변수 섀도잉 오류(line 460/466) 제거.
+- **DB 배포 락 오작동 수정**: fear_greed_index.py의 공포/탐욕 지수 발송 기록이 text_broadcaster.py의 AI Alpha Signal 발송을 차단하던 DB 조회 필터 수정 및 공포/탐욕 지수 자체 당일 중복 방지 락 추가.
