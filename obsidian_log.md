@@ -1907,3 +1907,5 @@
 ### [2026-11-17 16:32:04 KST] GitHub Actions Daily Backend Pipeline 오류 수정 및 배포 락 분리
 - **UnboundLocalError 해결**: video_renderer.py의 run_video_pipeline() 내부 지연 임포트(import datetime, import json)로 인해 발생하던 로컬 변수 섀도잉 오류(line 460/466) 제거.
 - **DB 배포 락 오작동 수정**: fear_greed_index.py의 공포/탐욕 지수 발송 기록이 text_broadcaster.py의 AI Alpha Signal 발송을 차단하던 DB 조회 필터 수정 및 공포/탐욕 지수 자체 당일 중복 방지 락 추가.
+
+- [2026-11-18 08:54] **젬스밀크(JAMES MILK) 1kg 포장지(290×370mm) 신규 도안 및 편집용 HTML/SVG 패키지 제작 완료**: 네오베이스(주) 제조원 주소(충청남도 논산시 연무읍 황화로 23 (마전리))·전화(041-742-9162), 실중량 1kg, 오탈자·서체 통일 교정 인쇄용 PDF 3종 및 브라우저 1:1 PDF 저장·SVG 내보내기 지원 편집용 HTML(젬스밀크_1kg_포장지_편집용원본.html) 생성 및 시각 검수 완료.
