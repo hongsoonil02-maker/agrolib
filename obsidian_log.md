@@ -1958,3 +1958,7 @@
 ### 2026-11-19 08:00 KST — OKX IS.K S11 전체 자본대비 수익률(CAGR/Calmar) 극대화 6축 백테스트 연구 완료
 - 9종목 4H 캐시 데이터로 레버리지(5x~10x, 격리 강제청산 포함)·사이징(1.5%~3.0%)·북 비중·진입/청산·StepROE 29개 단일축 및 12개 통합 조합(IS/OOS·3분할·공통구간)을 검증했다.
 - 핵심 발견: `SL 3.0x ATR` + `Slow StepROE(35/60/100)` + `Fast65/Slow35` + `익절 쿨다운 0` 조합이 MDD를 `-45.18% -> -30.60%`로 낮추며, 이를 기반으로 `T2A(5x, R2.0%/Cap2.0x)`는 CAGR `+164.72%`(MDD `-38.64%`, Calmar `4.26`, 청산 0), `T3B(7x, R2.5%/Cap2.5x)`는 CAGR `+210.02%`(MDD `-45.82%`, Calmar `4.58`, 청산 0)를 달성함을 실증했다(10x는 14회 강제청산으로 부적합).
+
+### 2026-11-19 08:14 KST — OKX 실전 Tier2-T2A(5x) vs 데모 Tier3-T3B(7x) A/B 실전 비교 배포 완료
+- `coinbot:~/quant_system/okx_isk_swing_trader.py`에 프로파일 엔진(`PROFILE_CONFIGS`: LIVE=`T2A` 5x/R2.0%/Cap2.0x, DEMO=`T3B` 7x/R2.5%/Cap2.5x, 공통 Fast65/Slow35 + SL 3.0xATR + Slow StepROE 35/60/100 + 익절 쿨다운 0s + G7 XAG 0.5x)과 `daily_quant_auditor.py` 프로파일 표기를 반영했다.
+- 신규 회귀 테스트 3건 포함 55개 단위 테스트 통과(`1.403s`, `OK`) 후 양쪽 서비스를 재기동해 `active` 상태를 검증했다(비교 기준 자본 `08:13 KST`: LIVE `$6,966.79` / DEMO `$4,561.29`, DEMO Slow `DOGE/BTC/PEPE` StepROE 수익 잠금 즉시 가동 확인).
