@@ -1950,3 +1950,7 @@
 ### 2026-11-19 07:49 KST — OKX 실전·데모 자동매매 봇 종합 리뷰 완료
 - G7 배포 후 약 9.3시간 동안 LIVE(`USDT Eq $6,987.13`, 추가 입금 약 `$3,645` + 순수 트레이딩 `+$114.5`, `BTC` Fast R1 Maker 신규 숏 진입, 6종목 중 5종목 수익권 `UPL +$132.72`)와 DEMO(`USDT Eq $4,586.66`, 전일 대비 `+$119.87/+2.68%`, 5종목 전원 수익권 `UPL +$397.05`) 모두 무장애(`active`, 에러 0건, 상태·거래소·SL 100% 일치) 가동 중임을 확인했다.
 - 서버 리소스(RAM 가용 3,320MB/3,930MB, Disk 22%, 좀비 0개) 및 `daily_quant_auditor`의 입금 포함 수익률 왜곡(+117.09% 표기) 주의점을 함께 보고했다.
+
+### 2026-11-19 07:54 KST — daily_quant_auditor 입출금 제외 순수익률(Modified Dietz) 보정 패치 완료
+- `coinbot:~/quant_system/daily_quant_auditor.py`에 OKX `/api/v5/account/bills?ccy=USDT&type=1` 조회 기반 순입출금 차감(`compute_transfer_adjusted_pnl`, `sum_okx_usdt_transfers`) 및 텔레그램/마크다운 순입출금 병기 로직을 반영했다.
+- 신규 단위 테스트 3건 포함 52개 전체 유닛 테스트 통과(`0.217s`, `OK`) 및 `daily_quant_auditor.py --dry-run` 실API 검증을 완료했다.
