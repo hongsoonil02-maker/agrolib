@@ -1954,3 +1954,7 @@
 ### 2026-11-19 07:54 KST — daily_quant_auditor 입출금 제외 순수익률(Modified Dietz) 보정 패치 완료
 - `coinbot:~/quant_system/daily_quant_auditor.py`에 OKX `/api/v5/account/bills?ccy=USDT&type=1` 조회 기반 순입출금 차감(`compute_transfer_adjusted_pnl`, `sum_okx_usdt_transfers`) 및 텔레그램/마크다운 순입출금 병기 로직을 반영했다.
 - 신규 단위 테스트 3건 포함 52개 전체 유닛 테스트 통과(`0.217s`, `OK`) 및 `daily_quant_auditor.py --dry-run` 실API 검증을 완료했다.
+
+### 2026-11-19 08:00 KST — OKX IS.K S11 전체 자본대비 수익률(CAGR/Calmar) 극대화 6축 백테스트 연구 완료
+- 9종목 4H 캐시 데이터로 레버리지(5x~10x, 격리 강제청산 포함)·사이징(1.5%~3.0%)·북 비중·진입/청산·StepROE 29개 단일축 및 12개 통합 조합(IS/OOS·3분할·공통구간)을 검증했다.
+- 핵심 발견: `SL 3.0x ATR` + `Slow StepROE(35/60/100)` + `Fast65/Slow35` + `익절 쿨다운 0` 조합이 MDD를 `-45.18% -> -30.60%`로 낮추며, 이를 기반으로 `T2A(5x, R2.0%/Cap2.0x)`는 CAGR `+164.72%`(MDD `-38.64%`, Calmar `4.26`, 청산 0), `T3B(7x, R2.5%/Cap2.5x)`는 CAGR `+210.02%`(MDD `-45.82%`, Calmar `4.58`, 청산 0)를 달성함을 실증했다(10x는 14회 강제청산으로 부적합).
