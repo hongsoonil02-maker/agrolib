@@ -1964,3 +1964,5 @@
 - 신규 회귀 테스트 3건 포함 55개 단위 테스트 통과(`1.403s`, `OK`) 후 양쪽 서비스를 재기동해 `active` 상태를 검증했다(비교 기준 자본 `08:13 KST`: LIVE `$6,966.79` / DEMO `$4,561.29`, DEMO Slow `DOGE/BTC/PEPE` StepROE 수익 잠금 즉시 가동 확인).
 
 - [2026-11-19 09:07] **리얼 진료실 실사 기반 비광고형 28초 쇼츠 2종 시안 제작 완료**: AI 강아지/제품 누끼/광고 틀을 전면 제거하고 실제 동물병원 진료실 무편집 원본 5컷(kimdongjun_case_01/08/03/07/06, 1080x1920)으로 시안1(순수 진료실 다큐·남성 내레이션) 및 시안2(실사 풀스크린+우상단 원형 아바타 PiP·1인칭 감성) 렌더링 및 시각 검수 완료.
+
+- [2026-11-19 09:29] **리얼 진료실 28초 쇼츠 채널별 맞춤 분리 파이프라인 반영 및 전 채널 라이브 배포 완료**: custom_video_dispatcher.py(V4: YouTube=시안1 다큐 gZpPBYXpYGM, IG Reels=시안2 아바타PiP Df5yuFmDCkj, TikTok=시안2, Facebook/Bluesky/Discord/블로그큐 완료) 및 run_marketing_factory.bat 중복 철장 반복 업로드(marketing_master.py) 중지 처리·Git 푸시 완료.
