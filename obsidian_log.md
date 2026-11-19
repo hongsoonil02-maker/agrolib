@@ -1978,3 +1978,5 @@
 - **2026-11-19 12:32**: 파보겔(ParvoGel) 라벨 앞면 초안 검토 및 사료관리법 안전 문구·100g 원통 용기 세로 비율·프리미엄 메디컬 톤을 반영한 A/B 개선 시안(parvogel_label_draft_v2.html) 작성 완료.
 
 - **2026-11-19 12:35**: 파보겔 B2C 온라인 쇼핑몰 전용 포지셔닝 및 100mL 용량 통일 반영하여 라벨 앞면 시안(parvogel_label_draft_v2.html) 업데이트 완료.
+
+- **2026-11-19 12:50**: 기존 라벨에서 (주)한국아그로 공식 로고(hankook_agro_logo.png) 추출 후 파보겔 개선 시안 A/B안(public/assets/labels/parvogel_label_draft_v2.html)에 적용 완료.
