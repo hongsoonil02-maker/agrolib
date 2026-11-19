@@ -1968,3 +1968,5 @@
 - [2026-11-19 09:29] **리얼 진료실 28초 쇼츠 채널별 맞춤 분리 파이프라인 반영 및 전 채널 라이브 배포 완료**: custom_video_dispatcher.py(V4: YouTube=시안1 다큐 gZpPBYXpYGM, IG Reels=시안2 아바타PiP Df5yuFmDCkj, TikTok=시안2, Facebook/Bluesky/Discord/블로그큐 완료) 및 run_marketing_factory.bat 중복 철장 반복 업로드(marketing_master.py) 중지 처리·Git 푸시 완료.
 
 - [2026-11-19 10:36] **파보겔 옥션 입점(총 8개 공식 온라인몰) 랜딩페이지·카카오픽셀·마케팅 파이프라인 일괄 반영 및 배포 완료**: storeLinks.js, kakaoPixel.js(auction 클릭 추적), Landing.jsx(옥션 버튼 추가), channels_config.json, custom_video_dispatcher.py, content_formatter.py, 카카오 원고모음에 옥션(F684977056) 반영 및 빌드·Git 푸시 완료.
+
+- [2026-11-19 11:32] parvogel_landing: 랜딩페이지 7일 임상 다큐멘터리 및 온라인동물병원 추천 섹션을 제거하고 35초 세로형 쇼츠 영상(parvogel_golden_time_35s.mp4) 중심의 심플 섹션으로 교체 및 빌드 검증 완료.
