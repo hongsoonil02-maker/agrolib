@@ -1970,3 +1970,5 @@
 - [2026-11-19 10:36] **파보겔 옥션 입점(총 8개 공식 온라인몰) 랜딩페이지·카카오픽셀·마케팅 파이프라인 일괄 반영 및 배포 완료**: storeLinks.js, kakaoPixel.js(auction 클릭 추적), Landing.jsx(옥션 버튼 추가), channels_config.json, custom_video_dispatcher.py, content_formatter.py, 카카오 원고모음에 옥션(F684977056) 반영 및 빌드·Git 푸시 완료.
 
 - [2026-11-19 11:32] parvogel_landing: 랜딩페이지 7일 임상 다큐멘터리 및 온라인동물병원 추천 섹션을 제거하고 35초 세로형 쇼츠 영상(parvogel_golden_time_35s.mp4) 중심의 심플 섹션으로 교체 및 빌드 검증 완료.
+
+- [2026-11-19 11:42] parvogel_landing: 기존 추적 영상(parvogel_golden_time_35s_9x16.mp4) 연동으로 중복 용량 제거 후 GitHub master 브랜치 커밋/푸시(3e3d106) 완료.
