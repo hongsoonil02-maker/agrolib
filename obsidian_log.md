@@ -1990,3 +1990,5 @@
 - [2026-11-19 18:35] parvogel_landing: 카카오 픽셀 viewContent/addToCart 최신 products 배열 규격 업그레이드, 히어로/35초영상/하단공식몰 3곳 모두 카카오 쇼핑하기 메인 CTA 추가, WCAG 명도비·터치영역·영상 텍스트 자막 토글 및 15개 언어 i18n 반영 후 master 푸시(072a174) 완료.
 
 - [2026-11-19 18:43] parvogel_landing: 카카오모먼트 광고 연계를 위해 히어로·35초영상·하단공식몰 전 구간에서 '카카오 쇼핑하기' 버튼을 1순위(맨 위/맨 앞)로 재배치 및 빌드·푸시(54f2ed4) 완료.
+
+- [2026-11-19 18:57] parvogel_landing: 누락되었던 OrderForm, 상단 헤더(PC/모바일/드롭다운), 모달 2종(CertifiedBusinessNotice/DuplicateSample), QR코드(공식몰/푸터)까지 전수 점검해 '카카오 쇼핑하기' 1순위 배치 및 15개 언어 동기화 후 master 푸시(f439d55) 완료.
