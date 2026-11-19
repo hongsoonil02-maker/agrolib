@@ -1994,3 +1994,5 @@
 - [2026-11-19 18:57] parvogel_landing: 누락되었던 OrderForm, 상단 헤더(PC/모바일/드롭다운), 모달 2종(CertifiedBusinessNotice/DuplicateSample), QR코드(공식몰/푸터)까지 전수 점검해 '카카오 쇼핑하기' 1순위 배치 및 15개 언어 동기화 후 master 푸시(f439d55) 완료.
 
 - [2026-11-19 19:03] parvogel_landing: 유튜브 임베드(GomiPoopStory, BlogPost)에 compute-pressure 권한 및 loading=lazy 적용해 base.js 콘솔 경고 제거 및 초기 로딩 속도 개선, master 푸시(bd0f21d) 완료.
+
+- [2026-11-20 07:39] parvogel_landing: 320~360px 실기기 스마트폰 및 안드로이드 큰 글꼴 설정에서 상단 헤더 우측 버튼 잘림 현상 수정(모바일 로고/버튼 경량화, 플로팅 배지 안전 여백, overflow-x:clip 및 text-size-adjust 적용) 후 master 푸시(65fa158) 완료.
