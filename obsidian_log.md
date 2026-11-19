@@ -1962,3 +1962,5 @@
 ### 2026-11-19 08:14 KST — OKX 실전 Tier2-T2A(5x) vs 데모 Tier3-T3B(7x) A/B 실전 비교 배포 완료
 - `coinbot:~/quant_system/okx_isk_swing_trader.py`에 프로파일 엔진(`PROFILE_CONFIGS`: LIVE=`T2A` 5x/R2.0%/Cap2.0x, DEMO=`T3B` 7x/R2.5%/Cap2.5x, 공통 Fast65/Slow35 + SL 3.0xATR + Slow StepROE 35/60/100 + 익절 쿨다운 0s + G7 XAG 0.5x)과 `daily_quant_auditor.py` 프로파일 표기를 반영했다.
 - 신규 회귀 테스트 3건 포함 55개 단위 테스트 통과(`1.403s`, `OK`) 후 양쪽 서비스를 재기동해 `active` 상태를 검증했다(비교 기준 자본 `08:13 KST`: LIVE `$6,966.79` / DEMO `$4,561.29`, DEMO Slow `DOGE/BTC/PEPE` StepROE 수익 잠금 즉시 가동 확인).
+
+- [2026-11-19 09:07] **리얼 진료실 실사 기반 비광고형 28초 쇼츠 2종 시안 제작 완료**: AI 강아지/제품 누끼/광고 틀을 전면 제거하고 실제 동물병원 진료실 무편집 원본 5컷(kimdongjun_case_01/08/03/07/06, 1080x1920)으로 시안1(순수 진료실 다큐·남성 내레이션) 및 시안2(실사 풀스크린+우상단 원형 아바타 PiP·1인칭 감성) 렌더링 및 시각 검수 완료.
