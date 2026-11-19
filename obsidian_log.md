@@ -1972,3 +1972,5 @@
 - [2026-11-19 11:32] parvogel_landing: 랜딩페이지 7일 임상 다큐멘터리 및 온라인동물병원 추천 섹션을 제거하고 35초 세로형 쇼츠 영상(parvogel_golden_time_35s.mp4) 중심의 심플 섹션으로 교체 및 빌드 검증 완료.
 
 - [2026-11-19 11:42] parvogel_landing: 기존 추적 영상(parvogel_golden_time_35s_9x16.mp4) 연동으로 중복 용량 제거 후 GitHub master 브랜치 커밋/푸시(3e3d106) 완료.
+
+- [2026-11-19 11:57] parvogel_landing: 하단 구매 섹션(#official-stores)에 옥션(F684977056) 포함 공식 입점 쇼핑몰 7곳을 심플한 2단 카드 그리드로 정리하고, 35초 영상 섹션에서 바로 이동 링크 연결 후 빌드·푸시(c93cc3c) 완료.
