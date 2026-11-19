@@ -1996,3 +1996,7 @@
 - [2026-11-19 19:03] parvogel_landing: 유튜브 임베드(GomiPoopStory, BlogPost)에 compute-pressure 권한 및 loading=lazy 적용해 base.js 콘솔 경고 제거 및 초기 로딩 속도 개선, master 푸시(bd0f21d) 완료.
 
 - [2026-11-20 07:39] parvogel_landing: 320~360px 실기기 스마트폰 및 안드로이드 큰 글꼴 설정에서 상단 헤더 우측 버튼 잘림 현상 수정(모바일 로고/버튼 경량화, 플로팅 배지 안전 여백, overflow-x:clip 및 text-size-adjust 적용) 후 master 푸시(65fa158) 완료.
+
+### 2026-11-20 08:44 KST — OKX 실전(Tier2-T2A) vs 데모(Tier3-T3B) 24시간 1일차 A/B 거래내역 리뷰
+- 배포 후 24.5시간 기준 LIVE(`T2A 5x`)는 `$6,966.79 -> $7,097.76 (+$130.97 / +1.88%, UPL +$245.81, PEPE Slow Maker 청산 -$3.39, XAG 양북 StepROE 잠금 및 거래소 SL $45.08 수익구간 자동 이동)`, DEMO(`T3B 7x`)는 `$4,561.29 -> $4,687.66 (+$126.37 / +2.77%, 펀딩 +$38.69 제외 순매매 +1.92%, PEPE Slow +$21.45, XAG Fast 7x+G7 0.5x 첫 신규진입 후 +15% 락)`를 기록했다.
+- 양쪽 모두 서비스 무장애(`active`, 재시작 0회, 상태↔거래소↔SL 100% PASS)를 확인했으며, 데모 `XAG` 얇은 호가 지연체결도 `reconcile_virtual_books`가 정상 자가복구했음을 확인했다.
