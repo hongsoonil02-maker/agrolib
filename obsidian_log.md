@@ -2002,3 +2002,7 @@
 - 양쪽 모두 서비스 무장애(`active`, 재시작 0회, 상태↔거래소↔SL 100% PASS)를 확인했으며, 데모 `XAG` 얇은 호가 지연체결도 `reconcile_virtual_books`가 정상 자가복구했음을 확인했다.
 
 - **2026-11-20 20:40** | agrokorea-redesign: 홍효선 대표 GitHub 이슈(#2~#6) 및 #1 전체 점검 후 PR #7 미비점(전 페이지 공지사항 메뉴 통합, 뉴스 카드 링크/썸네일 보완, CSS 캐시 버스터 갱신)을 추가 개선하고 main 브랜치에 병합 배포 완료.
+
+### [2026-11-21 07:19:29 KST] SOUN 하드코딩 제거, 유튜브/텔레그램 캡션 병합 버그 수정 및 6일 히어로 로테이션 도입
+- **SOUN 하드코딩 제거 및 캡션 병합**: video_renderer.py의 SOUN 고정 딕셔너리를 제거하고 cameron_runners.json 실시간 연동으로 교체했으며, aws_social-uploader.js에서 영상별 메타데이터({...manifest, ...video}) 병합으로 2번째 영상이 100배거 제목으로 잘못 올라가던 버그를 해결.
+- **1위 종목(IT) 연속 고정 방지**: rescore_database_100baggers.py에 하락 종목 가산점 제거 및 최근 6일 #1 추천 종목 쿨다운(-10점)을 도입하고 text_broadcaster가 공개된 #1 종목만 추천 이력에 기록하도록 개선해 랜딩페이지·텔레그램·쇼츠가 동일하게 매일 새 S-Grade 종목(BKE→ADSK→BWMX 등)으로 순환되도록 조치.
