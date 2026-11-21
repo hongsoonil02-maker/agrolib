@@ -2014,3 +2014,5 @@
 - [2026-11-21 11:46] GitHub Repository Secrets에 파보겔·몬스멕타 Android 업로드 키스토어 4종(PARVOGEL_KEYSTORE_BASE64/PASSWORD, MONSMECTA_KEYSTORE_BASE64/PASSWORD) NaCl 암호화 등록 완료. 향후 git push만으로 동일 서명 키 기반 .aab 자동 빌드 고정.
 
 - [2026-11-21 12:04] 브랜드 완전 격리 조치 완료: 공개 parvogel 저장소에서 몬스멕타 앱 소스·Secrets·Actions 로그·커밋 히스토리 100% 제거 후 monsmecta_landing/apps로 보류 이관. 파보겔 전용 GitHub Secrets(PARVOGEL_KEYSTORE_BASE64) 서명 빌드(Run #44858897803) 성공 및 최신 .aab/.apk 검증 완료.
+
+- **2026-11-22 08:12 KST**: 코인봇 서버 72시간(11/19~11/22) 정밀 감사 및 Tier2-T2A(실전, 5x/R2.0%) vs Tier3-T3B(데모, 7x/R2.5%) A/B 성과 비교 완료 — 실전 순수 수익률 +2.21%(펀딩 제외 +2.19%, 실현 +$134.88, 승률 83.3%, Intraday MDD -4.10%, 정합성 100%) vs 데모 +6.34%(테스트넷 펀딩 +$171.56 제외 시 +2.58%, PEPE 테스트넷 -10.3% 슬리피지 손절 -$122.04 제외 시 약 +5.25%, MDD -6.61%). Alpaca 2개 봇과 서버 자원(RAM 361MB/3930MB, 좀비 0) 모두 정상 가동 확인, 실전 T2A 유지 및 T3B 최소 1주일 추가 관찰 권고.
