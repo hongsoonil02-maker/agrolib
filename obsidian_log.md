@@ -2006,3 +2006,5 @@
 ### [2026-11-21 07:19:29 KST] SOUN 하드코딩 제거, 유튜브/텔레그램 캡션 병합 버그 수정 및 6일 히어로 로테이션 도입
 - **SOUN 하드코딩 제거 및 캡션 병합**: video_renderer.py의 SOUN 고정 딕셔너리를 제거하고 cameron_runners.json 실시간 연동으로 교체했으며, aws_social-uploader.js에서 영상별 메타데이터({...manifest, ...video}) 병합으로 2번째 영상이 100배거 제목으로 잘못 올라가던 버그를 해결.
 - **1위 종목(IT) 연속 고정 방지**: rescore_database_100baggers.py에 하락 종목 가산점 제거 및 최근 6일 #1 추천 종목 쿨다운(-10점)을 도입하고 text_broadcaster가 공개된 #1 종목만 추천 이력에 기록하도록 개선해 랜딩페이지·텔레그램·쇼츠가 동일하게 매일 새 S-Grade 종목(BKE→ADSK→BWMX 등)으로 순환되도록 조치.
+
+- [2026-11-21 11:04] 파보겔(ParvoGel) B2C 전용 '파보겔 펫케어 VIP'(https://parvogel-petcare-vip.web.app) 및 몬스멕타(MONSMECTA) B2B 전용 '몬스멕타 프로'(https://monsmecta-pro-b2b.web.app) 독립 Firebase 프로젝트 2종 생성, 서울 Firestore DB·Google Auth·보안규칙 배포, Gemini 3.5 Flash Lite 실연동, 유튜브 쇼츠→Firestore shorts_feed 자동 파이프라인(firebase_shorts_sync.py) 및 5,545개 동물병원 DB 검색 연동까지 풀스택 구축·검증 완료.
