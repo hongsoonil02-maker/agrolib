@@ -2012,3 +2012,5 @@
 - [2026-11-21 11:35] GitHub Actions 클라우드 빌드 파이프라인(.github/workflows/build-android-apps.yml)으로 파보겔 펫케어 VIP(kr.parvogel.vip, 3.08MB .aab) 및 몬스멕타 프로(kr.monsmecta.pro, 3.13MB .aab) 서명 릴리즈 AAB/APK 빌드 성공, 로컬 다운로드 및 양쪽 Firebase 프로젝트에 SHA-1/SHA-256 인증서 지문 등록 완료.
 
 - [2026-11-21 11:46] GitHub Repository Secrets에 파보겔·몬스멕타 Android 업로드 키스토어 4종(PARVOGEL_KEYSTORE_BASE64/PASSWORD, MONSMECTA_KEYSTORE_BASE64/PASSWORD) NaCl 암호화 등록 완료. 향후 git push만으로 동일 서명 키 기반 .aab 자동 빌드 고정.
+
+- [2026-11-21 12:04] 브랜드 완전 격리 조치 완료: 공개 parvogel 저장소에서 몬스멕타 앱 소스·Secrets·Actions 로그·커밋 히스토리 100% 제거 후 monsmecta_landing/apps로 보류 이관. 파보겔 전용 GitHub Secrets(PARVOGEL_KEYSTORE_BASE64) 서명 빌드(Run #44858897803) 성공 및 최신 .aab/.apk 검증 완료.
