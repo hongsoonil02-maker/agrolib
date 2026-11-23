@@ -2043,3 +2043,5 @@
 - [2026-11-23 09:36 KST] [네이버 블로그 세션 만료 버그 근본 수정 (e51321e)] naver_blog_adapter.py가 구형 만료 쿠키(2026-10-24 naver_cookies.json)로 신규 프로필 세션을 덮어쓰던 버그 수정 및 카카오 쇼핑하기 1순위 CTA 반영, setup_naver_session.py 로그인 상태 유지 자동 체크 + GoBlogWrite.naver 글쓰기 권한 실검증 추가, 네이버_블로그_1회_로그인.bat을 구형 몬스멕타 스크립트 대신 setup_naver_session + run_local_naver_worker 원패스 실행으로 교체 완료.
 
 - [2026-11-23 09:41 KST] [파보겔 네이버 블로그 자동 발행 실전 성공 확인] 로컬 Playwright 세션 갱신 완료(15개 쿠키, soonilhong) 후 run_local_naver_worker.py 실행으로 정화된 순수 B2C 1번 원고(ID: 39397d68, [우리 집 펫 구급함 1순위] 강아지 급성 설사 응급처치) 자동 발행 완료(https://blog.naver.com/soonilhong/224487978585). 큐 잔여 6건(화~일)은 매일 08:30 로컬 스케줄러가 자동 1건씩 발행, 숏폼 7채널(YouTube/IG/FB/TikTok/Bluesky/Discord/Firebase)은 GitHub Actions가 매일 KST 07:00 기준 단일 자동 발행하는 1A+2 체계 100% 정상 가동 확인.
+
+- [2026-11-23 11:14] Google Play Console/D-U-N-S 유료 절차 전면 중단. Android 패키징·CI·Keystore Secrets 모두 깔끔히 제거하고 0원 무료 PWA 웹앱(https://parvogel-petcare-vip.web.app) + 유튜브 쇼츠→Firestore 실시간 연동만 유지 확정.
