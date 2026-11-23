@@ -2049,3 +2049,5 @@
 - [2026-11-23 19:02] 파보겔 카카오모먼트 광고 보고서(11/17~11/23) 점검: 구매 7건/ROAS 395%는 11/22 이전 외부몰 링크 클릭 시 purchase 이벤트가 발사되던 픽셀 버그(0a3849e에서 수정됨)로 생긴 허수로 확인. 실제 병목은 클릭 후 쇼핑몰 이동률 1.1%.
 
 - [2026-11-23 19:09] parvogel_landing: Microsoft Clarity 로더(src/utils/clarity.js, VITE_CLARITY_PROJECT_ID)와 외부몰 링크 UTM/nt_* 자동 부착(src/utils/attribution.js, kakaoPixel.js 전역 클릭 트래커)을 추가하고 빌드 검증까지 마침. 커밋/배포는 아직 안 함.
+
+- [2026-11-23 20:03] parvogel_landing: Microsoft Clarity 프로젝트 ID(zi3higndpj)를 index.html(<head> 비동기 스니펫) 및 src/utils/clarity.js(중복 로드 가드·기본값)에 반영하고 attribution.js/kakaoPixel.js와 함께 master 푸시(fe8b8c3) 및 GitHub Pages 배포(Run #45161306677) 완료, https://parvogel.kr/ 및 /blog/ 라이브 반영 확인.
