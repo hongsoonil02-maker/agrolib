@@ -2051,3 +2051,5 @@
 - [2026-11-23 19:09] parvogel_landing: Microsoft Clarity 로더(src/utils/clarity.js, VITE_CLARITY_PROJECT_ID)와 외부몰 링크 UTM/nt_* 자동 부착(src/utils/attribution.js, kakaoPixel.js 전역 클릭 트래커)을 추가하고 빌드 검증까지 마침. 커밋/배포는 아직 안 함.
 
 - [2026-11-23 20:03] parvogel_landing: Microsoft Clarity 프로젝트 ID(zi3higndpj)를 index.html(<head> 비동기 스니펫) 및 src/utils/clarity.js(중복 로드 가드·기본값)에 반영하고 attribution.js/kakaoPixel.js와 함께 master 푸시(fe8b8c3) 및 GitHub Pages 배포(Run #45161306677) 완료, https://parvogel.kr/ 및 /blog/ 라이브 반영 확인.
+
+- **2026-11-24 07:58 KST**: 코인봇 전체 자동매매 봇 5일차(119.7시간) 거래내역 리뷰 완료 — Alpaca 실전 계좌는 11/23 23:32 KST 미국 장 개시 직후 3종목(SPY/UUP/QQQ) 3초 만에 전량 청산($1,076.76 100% 현금화, 전일 대비 +$37.23 반등 매도) 및 타이머 자동 비활성화 완료, Alpaca Paper 데모는 주간 로테이션(QQQ 전량·SPY 일부 매도→UUP 매수) 후 $89,242.86(+3.59%) 반등. OKX 실전 Tier2-T2A는 원유(CL) 풀사이즈 숏 대박(+$259.32)과 XAU/XAG 메이커 익절로 $10,000.47 돌파(5일 펀딩 제외 +4.14%, 승률 80%, MDD -5.31%)하며 데모 Tier3-T3B(전 포지션 청산 0개, 펀딩 제외 -0.13%, MDD -7.08%)를 크게 앞섬.
