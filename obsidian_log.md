@@ -2045,3 +2045,5 @@
 - [2026-11-23 09:41 KST] [파보겔 네이버 블로그 자동 발행 실전 성공 확인] 로컬 Playwright 세션 갱신 완료(15개 쿠키, soonilhong) 후 run_local_naver_worker.py 실행으로 정화된 순수 B2C 1번 원고(ID: 39397d68, [우리 집 펫 구급함 1순위] 강아지 급성 설사 응급처치) 자동 발행 완료(https://blog.naver.com/soonilhong/224487978585). 큐 잔여 6건(화~일)은 매일 08:30 로컬 스케줄러가 자동 1건씩 발행, 숏폼 7채널(YouTube/IG/FB/TikTok/Bluesky/Discord/Firebase)은 GitHub Actions가 매일 KST 07:00 기준 단일 자동 발행하는 1A+2 체계 100% 정상 가동 확인.
 
 - [2026-11-23 11:14] Google Play Console/D-U-N-S 유료 절차 전면 중단. Android 패키징·CI·Keystore Secrets 모두 깔끔히 제거하고 0원 무료 PWA 웹앱(https://parvogel-petcare-vip.web.app) + 유튜브 쇼츠→Firestore 실시간 연동만 유지 확정.
+
+- [2026-11-23 19:02] 파보겔 카카오모먼트 광고 보고서(11/17~11/23) 점검: 구매 7건/ROAS 395%는 11/22 이전 외부몰 링크 클릭 시 purchase 이벤트가 발사되던 픽셀 버그(0a3849e에서 수정됨)로 생긴 허수로 확인. 실제 병목은 클릭 후 쇼핑몰 이동률 1.1%.
