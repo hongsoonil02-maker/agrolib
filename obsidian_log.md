@@ -2081,3 +2081,7 @@
 ### 2026-11-25 08:15 KST — OKX 자동매매 봇 옵션 3(C5U: ST10,3 + EMA50기울기 + Macro1.25x + Risk2.3% + UNI 10종목) 실전·데모 배포 완료
 - `okx_isk_swing_trader.py`에 `UNI-USDT-SWAP` 10번째 종목(데모 `51001` 미지원 자동 제외 가드 포함), 200봉 확정 히스토리 워밍업, 무리페인팅 `Supertrend(10,3.0)` + `EMA50` 기울기 진입 게이트, 매크로(`CL·XAU·XAG`) `1.25x` 리스크 패리티 및 실전 `Risk 2.3%`를 반영했다.
 - 신규 테스트 포함 33개 유닛 테스트 전 건 통과(`2.77s`, `OK`) 후 양 서비스를 무중단 재기동(`ActiveState=active`, `NRestarts=0`)하고 기존 보유 포지션 및 `CL` `$83.08` SL 무결성을 검증했다.
+
+### 2026-11-25 08:24 KST — OKX 데모 봇(okx_jev_demo_trader) 영구 종료 및 일일 감사 리포트 실전 전용 개편 완료
+- `okx_jev_demo_trader.service` 중지·비활성화(`inactive/disabled`) 후 데모 잔여 가상 포지션 3종(`SUI/SOL/XAG`) 및 조건부 주문을 전량 청산(`$4,757.12` 100% 현금화)해 실전 봇(`okx_isk_live_trader`) 전용 리소스와 API 여유폭을 확보했다.
+- `daily_quant_auditor.py`에서도 OKX 데모 호출·표기를 제거하고 OKX LIVE(`Tier2-T2A+ C5U`, Maker `94.8%`) + Alpaca Paper 중심 브리핑으로 개편한 뒤 32개 유닛 테스트 및 `--dry-run` 검증을 완료했다.
