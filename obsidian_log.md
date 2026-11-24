@@ -2061,3 +2061,7 @@
 ## 2026-11-24 09:15 KST - OKX 자동매매 봇 수익률 개선 리서치 및 백테스트 완료
 - 350일(4H 2,099봉) IS/OOS 백테스트를 통해 기존 T2A(+237.86%) 대비 T2A+(+327.50%, Sharpe 2.79), T3B(+311.41%) 대비 T3B+(+441.68%, Sharpe 2.75) 개선안(DOGE->SUI 교체, Cap 3.5x, Fast/Slow 75/25, EMA20/50 반전청산)을 도출함.
 - 단일북 StepROE 거래소 Taker 청산 방지를 위한 0.4% Maker 쿠션 보완 및 OKX Auto-Earn 유휴현금(약 70~80%) 활용 방안을 검증·정리함.
+
+## 2026-11-24 09:52 KST - OKX 자동매매 봇 T2A+/T3B+ 실전·데모 배포 완료
+- `okx_isk_swing_trader.py`에 `T2A+`(LIVE) 및 `T3B+`(DEMO) 프로파일을 반영하여 `DOGE->SUI` 교체, `Cap 3.5x`, `Fast/Slow 75/25`, `EMA20/50` 반전 청산 및 단일북 `StepROE` `0.40%` Maker 쿠션을 적용함.
+- 단위 테스트 28건 통과(`2.817s`) 및 양 서비스 재가동(`okx_isk_live_trader` PID 722319 / `okx_jev_demo_trader` PID 722320, `NRestarts=0`) 후 실전 `CL-USDT-SWAP` 포지션·SL 무결성을 확인함.
