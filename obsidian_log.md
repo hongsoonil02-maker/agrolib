@@ -2085,3 +2085,5 @@
 ### 2026-11-25 08:24 KST — OKX 데모 봇(okx_jev_demo_trader) 영구 종료 및 일일 감사 리포트 실전 전용 개편 완료
 - `okx_jev_demo_trader.service` 중지·비활성화(`inactive/disabled`) 후 데모 잔여 가상 포지션 3종(`SUI/SOL/XAG`) 및 조건부 주문을 전량 청산(`$4,757.12` 100% 현금화)해 실전 봇(`okx_isk_live_trader`) 전용 리소스와 API 여유폭을 확보했다.
 - `daily_quant_auditor.py`에서도 OKX 데모 호출·표기를 제거하고 OKX LIVE(`Tier2-T2A+ C5U`, Maker `94.8%`) + Alpaca Paper 중심 브리핑으로 개편한 뒤 32개 유닛 테스트 및 `--dry-run` 검증을 완료했다.
+
+- [2026-11-25 17:12:26] Completed forensic audit of Alpaca Paper account (,000 -> ,541.18), fixed HOLD-day infinite bar re-fetch & T+1 open slippage bugs, and deployed 19Y-validated Alpha-1 V3 All-Weather (Dual-Speed FastCut + Top-2 XLV/UUP/GLD/TLT Havens + 20% PSQ Bear Hedge + 2-Slot T+0 Bidirectional MR Overlay, CAGR +17.27%, MDD -23.62%) to alpaca_etf_rotation.service while keeping Alpaca Live stopped.
