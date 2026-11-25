@@ -2087,3 +2087,5 @@
 - `daily_quant_auditor.py`ì—ì„œë„ OKX ë°ëª¨ í˜¸ì¶œÂ·í‘œê¸°ë¥¼ ì œê±°í•˜ê³  OKX LIVE(`Tier2-T2A+ C5U`, Maker `94.8%`) + Alpaca Paper ì¤‘ì‹¬ ë¸Œë¦¬í•‘ìœ¼ë¡œ ê°œíŽ¸í•œ ë’¤ 32ê°œ ìœ ë‹› í…ŒìŠ¤íŠ¸ ë° `--dry-run` ê²€ì¦ì„ ì™„ë£Œí–ˆë‹¤.
 
 - [2026-11-25 17:12:26] Completed forensic audit of Alpaca Paper account (,000 -> ,541.18), fixed HOLD-day infinite bar re-fetch & T+1 open slippage bugs, and deployed 19Y-validated Alpha-1 V3 All-Weather (Dual-Speed FastCut + Top-2 XLV/UUP/GLD/TLT Havens + 20% PSQ Bear Hedge + 2-Slot T+0 Bidirectional MR Overlay, CAGR +17.27%, MDD -23.62%) to alpaca_etf_rotation.service while keeping Alpaca Live stopped.
+
+- 2026-11-26 08:37 parvogel_landing: Clarity º¸°í¼­ ±â¹Ý °³¼± - ¸ð¹ÙÀÏ È÷¾î·Î ¾ÐÃà(CTA »ó´Ü ³ëÃâ), kakao pixel ºñµ¿±â ·Îµå(INP), UTM Á¤±ÔÈ­ ¹× utm_content Clarity ÅÂ±× Ãß°¡.
