@@ -2093,3 +2093,6 @@
 - [2026-11-26 13:54:41] OKX LIVE 72h trade review: USDT eq 9736->9554 (-1.88%), realized -36 USD, unrealized -270 USD (mostly PEPE short); ContROE trailing locked profits on CL/SOL/SUI/XAG; flagged all-short concentration, XAU Macro 1.25x oversizing, PEPE 10pct SL cap.
 
 - [2026-11-26 14:13:51] Validated across 2,399 4H bars (390d) and deployed C5U-ABC (A: Crypto same-dir unlocked risk cap 6.5% + XAG 0.5x when XAU open; B: True-Volatility sizing denom max(raw_sl, sl_pct); C: Fast/Slow overlap Slow 50% scaling) to okx_isk_live_trader.service (MDD -24.77% -> -19.85%, Sharpe 3.48 -> 3.71, Calmar 37.53 -> 40.98; 42/42 tests OK).
+
+## 2026-11-26 14:33 KST — ParvoGel·SNJ 리뷰 후킹 쇼츠 및 Higgsfield 720p B-roll MCP 파이프라인 구축 완료
+- ReviewShortsGenerator, HiggsfieldBrollClient(720p 고정·제품 용기 왜곡 차단 가드), 무의존성 higgsfield_mcp_server.py, ShortformAutoRenderer·YouTubeAdapter·marketing_master(--track review_hook) 통합 및 19개 테스트 통과 확인.
