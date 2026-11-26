@@ -2096,3 +2096,6 @@
 
 ## 2026-11-26 14:33 KST — ParvoGel·SNJ 리뷰 후킹 쇼츠 및 Higgsfield 720p B-roll MCP 파이프라인 구축 완료
 - ReviewShortsGenerator, HiggsfieldBrollClient(720p 고정·제품 용기 왜곡 차단 가드), 무의존성 higgsfield_mcp_server.py, ShortformAutoRenderer·YouTubeAdapter·marketing_master(--track review_hook) 통합 및 19개 테스트 통과 확인.
+
+## 2026-11-26 14:40 KST — 권장안 3(720p + 디스크 캐시 50% 재사용) 기본 모드 적용
+- HiggsfieldBrollClient 편당 신규 AI 생성 상한(기본 1컷) + 동일 scene_role 디스크 캐시 재사용 및 GitHub Actions broll_cache 영속화 적용(20/20 테스트 통과).
