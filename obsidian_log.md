@@ -2091,3 +2091,5 @@
 - 2026-11-26 08:37 parvogel_landing: Clarity 보고서 기반 개선 - 모바일 히어로 압축(CTA 상단 노출), kakao pixel 비동기 로드(INP), UTM 정규화 및 utm_content Clarity 태그 추가.
 
 - [2026-11-26 13:54:41] OKX LIVE 72h trade review: USDT eq 9736->9554 (-1.88%), realized -36 USD, unrealized -270 USD (mostly PEPE short); ContROE trailing locked profits on CL/SOL/SUI/XAG; flagged all-short concentration, XAU Macro 1.25x oversizing, PEPE 10pct SL cap.
+
+- [2026-11-26 14:13:51] Validated across 2,399 4H bars (390d) and deployed C5U-ABC (A: Crypto same-dir unlocked risk cap 6.5% + XAG 0.5x when XAU open; B: True-Volatility sizing denom max(raw_sl, sl_pct); C: Fast/Slow overlap Slow 50% scaling) to okx_isk_live_trader.service (MDD -24.77% -> -19.85%, Sharpe 3.48 -> 3.71, Calmar 37.53 -> 40.98; 42/42 tests OK).
