@@ -2099,3 +2099,6 @@
 
 ## 2026-11-26 14:40 KST — 권장안 3(720p + 디스크 캐시 50% 재사용) 기본 모드 적용
 - HiggsfieldBrollClient 편당 신규 AI 생성 상한(기본 1컷) + 동일 scene_role 디스크 캐시 재사용 및 GitHub Actions broll_cache 영속화 적용(20/20 테스트 통과).
+
+## 2026-11-26 14:56 KST — 월 0원 실사 기반 review_hook 주간 auto_mix 가동 확정
+- Artlist 유료 구독 대신 검증된 로컬 실사 클립 로테이션(1초 원터치 펌프 문구 교정 포함) + 화/금요일 auto_mix review_hook 편성 완료 (20/20 테스트 및 Friday dry-run 통과).
