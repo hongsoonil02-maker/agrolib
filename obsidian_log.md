@@ -2089,3 +2089,5 @@
 - [2026-11-25 17:12:26] Completed forensic audit of Alpaca Paper account (,000 -> ,541.18), fixed HOLD-day infinite bar re-fetch & T+1 open slippage bugs, and deployed 19Y-validated Alpha-1 V3 All-Weather (Dual-Speed FastCut + Top-2 XLV/UUP/GLD/TLT Havens + 20% PSQ Bear Hedge + 2-Slot T+0 Bidirectional MR Overlay, CAGR +17.27%, MDD -23.62%) to alpaca_etf_rotation.service while keeping Alpaca Live stopped.
 
 - 2026-11-26 08:37 parvogel_landing: Clarity 보고서 기반 개선 - 모바일 히어로 압축(CTA 상단 노출), kakao pixel 비동기 로드(INP), UTM 정규화 및 utm_content Clarity 태그 추가.
+
+- [2026-11-26 13:54:41] OKX LIVE 72h trade review: USDT eq 9736->9554 (-1.88%), realized -36 USD, unrealized -270 USD (mostly PEPE short); ContROE trailing locked profits on CL/SOL/SUI/XAG; flagged all-short concentration, XAU Macro 1.25x oversizing, PEPE 10pct SL cap.
