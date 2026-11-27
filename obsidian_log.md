@@ -2127,3 +2127,5 @@
 - [2026-11-27 10:50] monsmecta_landing: 네이버 블로그 '온라인동물병원' 검색 결과 및 협업 병원(한경한 박선생님, kdj00921) 몬스멕타 포스팅 리뷰 완료.
 
 - [2026-11-27 11:05] parvogel_landing & monsmecta_landing: 온라인동물병원 박선생(월 60병 판매) 임상 노하우를 파보겔 FAQ·B2C 마케팅 파이프라인 및 몬스멕타 B2B 파이프라인·5,545개 병원 팩스/LMS 템플릿에 반영 및 생성 검증 완료.
+
+- [2026-11-27 11:10] parvogel_landing: GitHub Actions 일일 자동배포(marketing-factory.yml) 참조 데이터인 daily_calendar.json 및 marketing_pipeline/config.yaml에 협업 온라인동물병원(박선생) 임상 노하우 반영 완료.
