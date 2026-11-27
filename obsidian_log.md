@@ -2129,3 +2129,5 @@
 - [2026-11-27 11:05] parvogel_landing & monsmecta_landing: ì˜¨ë¼ì¸ë™ë¬¼ë³‘ì› ë°•ì„ ìƒ(ì›” 60ë³‘ íŒë§¤) ì„ìƒ ë…¸í•˜ìš°ë¥¼ íŒŒë³´ê²” FAQÂ·B2C ë§ˆì¼€íŒ… íŒŒì´í”„ë¼ì¸ ë° ëª¬ìŠ¤ë©•íƒ€ B2B íŒŒì´í”„ë¼ì¸Â·5,545ê°œ ë³‘ì› íŒ©ìŠ¤/LMS í…œí”Œë¦¿ì— ë°˜ì˜ ë° ìƒì„± ê²€ì¦ ì™„ë£Œ.
 
 - [2026-11-27 11:10] parvogel_landing: GitHub Actions ì¼ì¼ ìë™ë°°í¬(marketing-factory.yml) ì°¸ì¡° ë°ì´í„°ì¸ daily_calendar.json ë° marketing_pipeline/config.yamlì— í˜‘ì—… ì˜¨ë¼ì¸ë™ë¬¼ë³‘ì›(ë°•ì„ ìƒ) ì„ìƒ ë…¸í•˜ìš° ë°˜ì˜ ì™„ë£Œ.
+
+- 2026-11-27 13:29 parvogel_landing & parvogel-petcare-vip: ·£µù/Ãªº¿¿¡ Ä«Åå 1:1 ±Ş¿© »ó´ã¡¤VIP ±Ş¿©°è»ê ¾Û ¸µÅ© ¿¬µ¿ ¹× VIP ¾Û AiCareTab¿¡ ½Å»ı¾Æ/Ã¼Áßº°(kg) ½Ç½Ã°£ 1ÃÊ ÆßÇÁ °è»ê±â Ãß°¡ ÈÄ Firebase Hosting ¹èÆ÷(parvogel-petcare-vip.web.app) ¹× master Çª½Ã ¿Ï·á.
