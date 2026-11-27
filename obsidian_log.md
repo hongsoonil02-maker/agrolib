@@ -2131,3 +2131,5 @@
 - [2026-11-27 11:10] parvogel_landing: GitHub Actions 일일 자동배포(marketing-factory.yml) 참조 데이터인 daily_calendar.json 및 marketing_pipeline/config.yaml에 협업 온라인동물병원(박선생) 임상 노하우 반영 완료.
 
 - 2026-11-27 13:29 parvogel_landing & parvogel-petcare-vip: ����/ê���� ī�� 1:1 �޿� ��㡤VIP �޿���� �� ��ũ ���� �� VIP �� AiCareTab�� �Ż���/ü�ߺ�(kg) �ǽð� 1�� ���� ���� �߰� �� Firebase Hosting ����(parvogel-petcare-vip.web.app) �� master Ǫ�� �Ϸ�.
+
+- [2026-11-27 17:26] 파보겔 카카오 쉬운광고(채널 친구 추가) 스크린샷 5건 정밀 분석 완료: 미수금(-9,204원) 정산, 미승인 소재 및 채널명 수식어 점검, 중복 캠페인 정리, 리워드형(쇼핑포인트 100원) 전연령 타겟 허수 유입 방지용 연령 타겟팅·단가 조정·웰컴 메시지 연계 전략 제시.
