@@ -2139,3 +2139,5 @@
 - [2026-11-27 18:00] 파보겔 카카오모먼트(ID 1008240) 대시보드 점검: 11/27 소진 10,899원(노출 8,158 / 클릭 45 / CPC 242.2원), 이번달 총 소진 147,008원, 잔액 11,989.2원. 쉬운광고 OFF 유지 + 모먼트 중심 운영 및 잔액 충전/나머지 캠페인 필터 해제 확인 안내.
 
 - [2026-11-27 18:05] 카카오모먼트 캠페인 구성 최종 확인: 자동충전 적용(-11,989.2원 후불정산), 디스플레이 전환 캠페인(CPC 281.6원) OFF 정리, 비즈보드 유입 캠페인(CPC 193.0원) 단독 집행 상태로 모니터링 확정.
+
+- [2026-11-27 20:19:34] Completed 7-day OKX Live forensic audit (11/20-11/27): reconciled Overview ,914.46 (,456 Trading USDT +  Funding BABYDOGE vs ,666.79 net deposits, -7.56% from 11/21 peak due to V-reversal whipsaw & pre-ABC PEPE -.7/XAU -.4 stops) and validated PEPE+SUI 0.5x half-risk upgrade (OOS +143.7% -> +154.5%, MDD -18.18%).
