@@ -2141,3 +2141,5 @@
 - [2026-11-27 18:05] 카카오모먼트 캠페인 구성 최종 확인: 자동충전 적용(-11,989.2원 후불정산), 디스플레이 전환 캠페인(CPC 281.6원) OFF 정리, 비즈보드 유입 캠페인(CPC 193.0원) 단독 집행 상태로 모니터링 확정.
 
 - [2026-11-27 20:19:34] Completed 7-day OKX Live forensic audit (11/20-11/27): reconciled Overview ,914.46 (,456 Trading USDT +  Funding BABYDOGE vs ,666.79 net deposits, -7.56% from 11/21 peak due to V-reversal whipsaw & pre-ABC PEPE -.7/XAU -.4 stops) and validated PEPE+SUI 0.5x half-risk upgrade (OOS +143.7% -> +154.5%, MDD -18.18%).
+
+- [2026-11-27 20:30:51] Deployed Option 1 (PEPE-USDT-SWAP & SUI-USDT-SWAP 0.50x half-risk alongside XAG 0.50x in Tier2-T2A+ C5U-ABC) to okx_isk_live_trader.service (OOS +154.5%, MDD -18.18%; 42/42 unit tests OK, live CL LONG +724ct intact).
