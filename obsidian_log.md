@@ -2150,3 +2150,5 @@
 - **2026-11-28 19:44**: parvogel_landing GA4 측정 ID(G-TCS7K95KBC, 스트림 ID 16434126813)를 .env, index.html, src/utils/kakaoPixel.js, marketing_factory/config/data_infrastructure.json에 반영하고 프로덕션 빌드 검증 완료. (GTM 컨테이너 ID 확정 대기)
 
 - **2026-11-28 19:58**: parvogel_landing GTM 컨테이너 ID(GTM-PPDL8QLB) 발급 확인 후 .env, index.html, marketing_factory/config/data_infrastructure.json에 GA4(G-TCS7K95KBC) + GTM(GTM-PPDL8QLB) 모두 반영 및 npm run build 검증 완료.
+
+- **2026-11-28 20:07**: parvogel_landing 커밋(069e279) 푸시 및 GitHub Pages 배포(run 46138253791) 완료. 실서버 https://parvogel.kr 내 GA4(G-TCS7K95KBC) 및 GTM(GTM-PPDL8QLB) 태그 200 OK 최종 검증 완료.
