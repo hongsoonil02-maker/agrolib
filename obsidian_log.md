@@ -2145,3 +2145,5 @@
 - [2026-11-27 20:30:51] Deployed Option 1 (PEPE-USDT-SWAP & SUI-USDT-SWAP 0.50x half-risk alongside XAG 0.50x in Tier2-T2A+ C5U-ABC) to okx_isk_live_trader.service (OOS +154.5%, MDD -18.18%; 42/42 unit tests OK, live CL LONG +724ct intact).
 
 - [2026-11-28 11:57] **젬스밀크 1kg 포장지 규격(200×270×90mm) 및 뒷면 '위탁제조판매원' 수정 완료**: 뒷면 '11. 제조원 및 판매원'과 '▣ 판매원'을 '위탁제조판매원'(HANYoonGothic760)으로 교정하고, 290×370mm 도안을 로고·사진 왜곡 없이 균일 축소(0.690x)+하단 여백 보정으로 앞면(200×270mm)·뒷면(200×270mm)·밑지(200×90mm, 45+45mm 접지선) 3면 구성 PDF 3종, OneDrive 교정본(_261128.pdf), 300 DPI 클린 배경판 및 HTML 편집기(localStorage v1)까지 일괄 갱신·시각 검수 완료.
+
+- **2026-11-28 12:09** `[quant_system / james_milk_1kg]` 젬스밀크 1kg 포장지(200×270×90mm, 위탁제조판매원) 앞면 하단 `Net WT. 1kg` 표기를 약 2줄(9.17mm) 위로 상향 조정하여 하단 붉은 바와의 겹침을 해소하고, 인쇄도안·정사이즈·원본문구유지 PDF 3종, 편집용 HTML/SVG(`y="240.63"`), OneDrive 배포본 및 미리보기 PNG를 재생성·검증 완료.
