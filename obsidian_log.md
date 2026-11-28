@@ -2152,3 +2152,5 @@
 - **2026-11-28 19:58**: parvogel_landing GTM 컨테이너 ID(GTM-PPDL8QLB) 발급 확인 후 .env, index.html, marketing_factory/config/data_infrastructure.json에 GA4(G-TCS7K95KBC) + GTM(GTM-PPDL8QLB) 모두 반영 및 npm run build 검증 완료.
 
 - **2026-11-28 20:07**: parvogel_landing 커밋(069e279) 푸시 및 GitHub Pages 배포(run 46138253791) 완료. 실서버 https://parvogel.kr 내 GA4(G-TCS7K95KBC) 및 GTM(GTM-PPDL8QLB) 태그 200 OK 최종 검증 완료.
+
+- **2026-11-28 20:28**: 카카오 채널(파보겔 공식 _rqxnJX) 운영 방식을 관리자 센터(center-pf.kakao.com) 직접 운영 모드(방법 A)로 정리. .env(KAKAO_CHANNEL_ID=_rqxnJX), channels_config.json(enabled=false, publish_mode=off), kakao_channel_adapter.py 정리 및 JSON/Python 구문 검증 완료.
