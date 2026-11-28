@@ -2156,3 +2156,5 @@
 - **2026-11-28 20:28**: 카카오 채널(파보겔 공식 _rqxnJX) 운영 방식을 관리자 센터(center-pf.kakao.com) 직접 운영 모드(방법 A)로 정리. .env(KAKAO_CHANNEL_ID=_rqxnJX), channels_config.json(enabled=false, publish_mode=off), kakao_channel_adapter.py 정리 및 JSON/Python 구문 검증 완료.
 
 - **2026-11-28 21:12**: 카카오비즈니스 파트너센터(_rqxnJX) 첫인사·부재중·카나나 AI 상담매니저·자동응답 2건·6칸 커스텀 채팅방 메뉴 활성화 및 셀프 검증 완료. marketing_factory 내 Kakao_Channel 비활성화 및 _rqxnJX 정리본 커밋·푸시 완료.
+
+- **2026-11-28 21:23**: weekly_review.py Discord 웹훅·published_ledger.json 연동 완료, .github/workflows/weekly-review.yml(매주 일요일 21시 KST) 생성, YOUTUBE_REFRESH_TOKEN GitHub Secret 최신화 완료. 오후 커밋 c4ed410 정밀 재리뷰에서 P0 번역 유실·OG 미교체·인스타 캡션 버그 등 다수 결함 발견하여 보고.
