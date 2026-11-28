@@ -2148,3 +2148,5 @@
 
 - **2026-11-28 12:09** `[quant_system / james_milk_1kg]` 젬스밀크 1kg 포장지(200×270×90mm, 위탁제조판매원) 앞면 하단 `Net WT. 1kg` 표기를 약 2줄(9.17mm) 위로 상향 조정하여 하단 붉은 바와의 겹침을 해소하고, 인쇄도안·정사이즈·원본문구유지 PDF 3종, 편집용 HTML/SVG(`y="240.63"`), OneDrive 배포본 및 미리보기 PNG를 재생성·검증 완료.
 - **2026-11-28 19:44**: parvogel_landing GA4 측정 ID(G-TCS7K95KBC, 스트림 ID 16434126813)를 .env, index.html, src/utils/kakaoPixel.js, marketing_factory/config/data_infrastructure.json에 반영하고 프로덕션 빌드 검증 완료. (GTM 컨테이너 ID 확정 대기)
+
+- **2026-11-28 19:58**: parvogel_landing GTM 컨테이너 ID(GTM-PPDL8QLB) 발급 확인 후 .env, index.html, marketing_factory/config/data_infrastructure.json에 GA4(G-TCS7K95KBC) + GTM(GTM-PPDL8QLB) 모두 반영 및 npm run build 검증 완료.
